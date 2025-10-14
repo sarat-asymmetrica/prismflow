@@ -1,0 +1,2880 @@
+{
+  "timestamp": "2025-10-14T15:37:04.957154",
+  "total": 324,
+  "by_type": {
+    "TS2305": 25,
+    "TS2339": 18,
+    "TS2353": 4,
+    "TS2345": 21,
+    "TS2307": 145,
+    "TS1117": 1,
+    "TS2322": 12,
+    "TS2769": 6,
+    "TS18047": 1,
+    "TS7006": 53,
+    "TS2352": 1,
+    "TS2678": 4,
+    "TS2366": 3,
+    "TS2604": 1,
+    "TS2786": 1,
+    "TS2739": 4,
+    "TS7053": 10,
+    "TS2554": 4,
+    "TS2551": 7,
+    "TS2741": 1,
+    "TS7031": 2
+  },
+  "errors": [
+    {
+      "file": "lib/approval-engine.ts",
+      "line": 16,
+      "column": 15,
+      "error_code": "TS2305",
+      "message": "Module '\"../src/generated/prisma\"' has no exported member 'Role'.",
+      "raw": "lib/approval-engine.ts(16,15): error TS2305: Module '\"../src/generated/prisma\"' has no exported member 'Role'.",
+      "module": "../src/generated/prisma"
+    },
+    {
+      "file": "lib/approval-engine.ts",
+      "line": 16,
+      "column": 21,
+      "error_code": "TS2305",
+      "message": "Module '\"../src/generated/prisma\"' has no exported member 'ApprovalStatus'.",
+      "raw": "lib/approval-engine.ts(16,21): error TS2305: Module '\"../src/generated/prisma\"' has no exported member 'ApprovalStatus'.",
+      "module": "../src/generated/prisma"
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 1,
+      "column": 24,
+      "error_code": "TS2305",
+      "message": "Module '\"../src/generated/prisma\"' has no exported member 'Role'.",
+      "raw": "prisma/seed.ts(1,24): error TS2305: Module '\"../src/generated/prisma\"' has no exported member 'Role'.",
+      "module": "../src/generated/prisma"
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 1,
+      "column": 30,
+      "error_code": "TS2305",
+      "message": "Module '\"../src/generated/prisma\"' has no exported member 'Permission'.",
+      "raw": "prisma/seed.ts(1,30): error TS2305: Module '\"../src/generated/prisma\"' has no exported member 'Permission'.",
+      "module": "../src/generated/prisma"
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 1,
+      "column": 42,
+      "error_code": "TS2305",
+      "message": "Module '\"../src/generated/prisma\"' has no exported member 'OpportunityStatus'.",
+      "raw": "prisma/seed.ts(1,42): error TS2305: Module '\"../src/generated/prisma\"' has no exported member 'OpportunityStatus'.",
+      "module": "../src/generated/prisma"
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 1,
+      "column": 61,
+      "error_code": "TS2305",
+      "message": "Module '\"../src/generated/prisma\"' has no exported member 'QuotationStatus'.",
+      "raw": "prisma/seed.ts(1,61): error TS2305: Module '\"../src/generated/prisma\"' has no exported member 'QuotationStatus'.",
+      "module": "../src/generated/prisma"
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 205,
+      "column": 20,
+      "error_code": "TS2339",
+      "message": "Property 'rolePermission' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.",
+      "raw": "prisma/seed.ts(205,20): error TS2339: Property 'rolePermission' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.",
+      "property": "rolePermission",
+      "type": "PrismaClient<PrismaClientOptions, never, DefaultArgs>"
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 221,
+      "column": 31,
+      "error_code": "TS2339",
+      "message": "Property 'staffUser' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.",
+      "raw": "prisma/seed.ts(221,31): error TS2339: Property 'staffUser' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.",
+      "property": "staffUser",
+      "type": "PrismaClient<PrismaClientOptions, never, DefaultArgs>"
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 257,
+      "column": 9,
+      "error_code": "TS2353",
+      "message": "Object literal may only specify known properties, and 'customerType' does not exist in type '(Without<CustomerUpdateInput, CustomerUncheckedUpdateInput> & CustomerUncheckedUpdateInput) | (Without<...> & CustomerUpdateInput)'.",
+      "raw": "prisma/seed.ts(257,9): error TS2353: Object literal may only specify known properties, and 'customerType' does not exist in type '(Without<CustomerUpdateInput, CustomerUncheckedUpdateInput> & CustomerUncheckedUpdateInput) | (Without<...> & CustomerUpdateInput)'."
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 265,
+      "column": 9,
+      "error_code": "TS2353",
+      "message": "Object literal may only specify known properties, and 'cid' does not exist in type '(Without<CustomerCreateInput, CustomerUncheckedCreateInput> & CustomerUncheckedCreateInput) | (Without<...> & CustomerCreateInput)'.",
+      "raw": "prisma/seed.ts(265,9): error TS2353: Object literal may only specify known properties, and 'cid' does not exist in type '(Without<CustomerCreateInput, CustomerUncheckedCreateInput> & CustomerUncheckedCreateInput) | (Without<...> & CustomerCreateInput)'."
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 302,
+      "column": 38,
+      "error_code": "TS2339",
+      "message": "Property 'opportunity' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.",
+      "raw": "prisma/seed.ts(302,38): error TS2339: Property 'opportunity' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.",
+      "property": "opportunity",
+      "type": "PrismaClient<PrismaClientOptions, never, DefaultArgs>"
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 337,
+      "column": 36,
+      "error_code": "TS2339",
+      "message": "Property 'quotation' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.",
+      "raw": "prisma/seed.ts(337,36): error TS2339: Property 'quotation' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.",
+      "property": "quotation",
+      "type": "PrismaClient<PrismaClientOptions, never, DefaultArgs>"
+    },
+    {
+      "file": "prisma/seed.ts",
+      "line": 361,
+      "column": 18,
+      "error_code": "TS2339",
+      "message": "Property 'quoteItem' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.",
+      "raw": "prisma/seed.ts(361,18): error TS2339: Property 'quoteItem' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.",
+      "property": "quoteItem",
+      "type": "PrismaClient<PrismaClientOptions, never, DefaultArgs>"
+    },
+    {
+      "file": "src/app/api/customers/route.ts",
+      "line": 42,
+      "column": 10,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/sockets/socket-validator\"' has no exported member 'CustomerQuery'.",
+      "raw": "src/app/api/customers/route.ts(42,10): error TS2305: Module '\"@/lib/sockets/socket-validator\"' has no exported member 'CustomerQuery'.",
+      "module": "@/lib/sockets/socket-validator"
+    },
+    {
+      "file": "src/app/api/customers/route.ts",
+      "line": 58,
+      "column": 35,
+      "error_code": "TS2345",
+      "message": "Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'.",
+      "raw": "src/app/api/customers/route.ts(58,35): error TS2345: Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'."
+    },
+    {
+      "file": "src/app/api/customers/route.ts",
+      "line": 229,
+      "column": 36,
+      "error_code": "TS2345",
+      "message": "Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'.",
+      "raw": "src/app/api/customers/route.ts(229,36): error TS2345: Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'."
+    },
+    {
+      "file": "src/app/api/deliveries/route.ts",
+      "line": 13,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/lib/db/prisma' or its corresponding type declarations.",
+      "raw": "src/app/api/deliveries/route.ts(13,24): error TS2307: Cannot find module '@/lib/db/prisma' or its corresponding type declarations.",
+      "module": "@/lib/db/prisma"
+    },
+    {
+      "file": "src/app/api/goals/current-month/route.ts",
+      "line": 80,
+      "column": 35,
+      "error_code": "TS2345",
+      "message": "Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'.",
+      "raw": "src/app/api/goals/current-month/route.ts(80,35): error TS2345: Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'."
+    },
+    {
+      "file": "src/app/api/goals/current-month/route.ts",
+      "line": 262,
+      "column": 37,
+      "error_code": "TS2345",
+      "message": "Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'.",
+      "raw": "src/app/api/goals/current-month/route.ts(262,37): error TS2345: Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'."
+    },
+    {
+      "file": "src/app/api/health/route.ts",
+      "line": 9,
+      "column": 10,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/cache/redis-cache\"' has no exported member 'cache'.",
+      "raw": "src/app/api/health/route.ts(9,10): error TS2305: Module '\"@/lib/cache/redis-cache\"' has no exported member 'cache'.",
+      "module": "@/lib/cache/redis-cache"
+    },
+    {
+      "file": "src/app/api/health/route.ts",
+      "line": 10,
+      "column": 10,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/cache/cache-metrics\"' has no exported member 'getAggregatedStatistics'.",
+      "raw": "src/app/api/health/route.ts(10,10): error TS2305: Module '\"@/lib/cache/cache-metrics\"' has no exported member 'getAggregatedStatistics'.",
+      "module": "@/lib/cache/cache-metrics"
+    },
+    {
+      "file": "src/app/api/legal/tier/route.ts",
+      "line": 8,
+      "column": 49,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/lib/legal-ai-team' or its corresponding type declarations.",
+      "raw": "src/app/api/legal/tier/route.ts(8,49): error TS2307: Cannot find module '@/lib/legal-ai-team' or its corresponding type declarations.",
+      "module": "@/lib/legal-ai-team"
+    },
+    {
+      "file": "src/app/api/legal/tier/route.ts",
+      "line": 79,
+      "column": 60,
+      "error_code": "TS2345",
+      "message": "Argument of type 'unknown' is not assignable to parameter of type 'LogContext | undefined'.",
+      "raw": "src/app/api/legal/tier/route.ts(79,60): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'LogContext | undefined'."
+    },
+    {
+      "file": "src/app/api/legal/tier/route.ts",
+      "line": 132,
+      "column": 58,
+      "error_code": "TS2345",
+      "message": "Argument of type 'unknown' is not assignable to parameter of type 'LogContext | undefined'.",
+      "raw": "src/app/api/legal/tier/route.ts(132,58): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'LogContext | undefined'."
+    },
+    {
+      "file": "src/app/api/legal/workflow/route.ts",
+      "line": 12,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/lib/legal-ai-team' or its corresponding type declarations.",
+      "raw": "src/app/api/legal/workflow/route.ts(12,8): error TS2307: Cannot find module '@/lib/legal-ai-team' or its corresponding type declarations.",
+      "module": "@/lib/legal-ai-team"
+    },
+    {
+      "file": "src/app/api/legal/workflow/route.ts",
+      "line": 123,
+      "column": 50,
+      "error_code": "TS2345",
+      "message": "Argument of type 'unknown' is not assignable to parameter of type 'LogContext | undefined'.",
+      "raw": "src/app/api/legal/workflow/route.ts(123,50): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'LogContext | undefined'."
+    },
+    {
+      "file": "src/app/api/metrics/cache/route.ts",
+      "line": 9,
+      "column": 3,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/cache/cache-metrics\"' has no exported member 'getAllCacheStatistics'.",
+      "raw": "src/app/api/metrics/cache/route.ts(9,3): error TS2305: Module '\"@/lib/cache/cache-metrics\"' has no exported member 'getAllCacheStatistics'.",
+      "module": "@/lib/cache/cache-metrics"
+    },
+    {
+      "file": "src/app/api/metrics/cache/route.ts",
+      "line": 10,
+      "column": 3,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/cache/cache-metrics\"' has no exported member 'getAggregatedStatistics'.",
+      "raw": "src/app/api/metrics/cache/route.ts(10,3): error TS2305: Module '\"@/lib/cache/cache-metrics\"' has no exported member 'getAggregatedStatistics'.",
+      "module": "@/lib/cache/cache-metrics"
+    },
+    {
+      "file": "src/app/api/metrics/cache/route.ts",
+      "line": 11,
+      "column": 3,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/cache/cache-metrics\"' has no exported member 'checkCacheSLA'.",
+      "raw": "src/app/api/metrics/cache/route.ts(11,3): error TS2305: Module '\"@/lib/cache/cache-metrics\"' has no exported member 'checkCacheSLA'.",
+      "module": "@/lib/cache/cache-metrics"
+    },
+    {
+      "file": "src/app/api/metrics/cache/route.ts",
+      "line": 12,
+      "column": 3,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/cache/cache-metrics\"' has no exported member 'getPrometheusMetrics'.",
+      "raw": "src/app/api/metrics/cache/route.ts(12,3): error TS2305: Module '\"@/lib/cache/cache-metrics\"' has no exported member 'getPrometheusMetrics'.",
+      "module": "@/lib/cache/cache-metrics"
+    },
+    {
+      "file": "src/app/api/metrics/cache/route.ts",
+      "line": 138,
+      "column": 13,
+      "error_code": "TS2339",
+      "message": "Property 'resetCacheMetrics' does not exist on type 'typeof import(\"c:/Projects/AsymmFlow-PH-Trading/src/lib/cache/cache-metrics\")'.",
+      "raw": "src/app/api/metrics/cache/route.ts(138,13): error TS2339: Property 'resetCacheMetrics' does not exist on type 'typeof import(\"c:/Projects/AsymmFlow-PH-Trading/src/lib/cache/cache-metrics\")'.",
+      "property": "resetCacheMetrics",
+      "type": "typeof import("
+    },
+    {
+      "file": "src/app/api/metrics/performance/route.ts",
+      "line": 14,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/lib/performance/performance-tracker' or its corresponding type declarations.",
+      "raw": "src/app/api/metrics/performance/route.ts(14,8): error TS2307: Cannot find module '@/lib/performance/performance-tracker' or its corresponding type declarations.",
+      "module": "@/lib/performance/performance-tracker"
+    },
+    {
+      "file": "src/app/api/ocr/universal/route.ts",
+      "line": 34,
+      "column": 10,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/ocr/universal-language-detector\"' has no exported member 'universalLanguageDetector'.",
+      "raw": "src/app/api/ocr/universal/route.ts(34,10): error TS2305: Module '\"@/lib/ocr/universal-language-detector\"' has no exported member 'universalLanguageDetector'.",
+      "module": "@/lib/ocr/universal-language-detector"
+    },
+    {
+      "file": "src/app/api/ocr/universal/route.ts",
+      "line": 35,
+      "column": 10,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/ocr/multi-script-ocr\"' has no exported member 'multiScriptOCR'.",
+      "raw": "src/app/api/ocr/universal/route.ts(35,10): error TS2305: Module '\"@/lib/ocr/multi-script-ocr\"' has no exported member 'multiScriptOCR'.",
+      "module": "@/lib/ocr/multi-script-ocr"
+    },
+    {
+      "file": "src/app/api/ocr/universal/route.ts",
+      "line": 36,
+      "column": 10,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/ocr/universal-translator\"' has no exported member 'universalTranslator'.",
+      "raw": "src/app/api/ocr/universal/route.ts(36,10): error TS2305: Module '\"@/lib/ocr/universal-translator\"' has no exported member 'universalTranslator'.",
+      "module": "@/lib/ocr/universal-translator"
+    },
+    {
+      "file": "src/app/api/ocr/universal/route.ts",
+      "line": 37,
+      "column": 10,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/ocr/translation-cache\"' has no exported member 'translationCache'.",
+      "raw": "src/app/api/ocr/universal/route.ts(37,10): error TS2305: Module '\"@/lib/ocr/translation-cache\"' has no exported member 'translationCache'.",
+      "module": "@/lib/ocr/translation-cache"
+    },
+    {
+      "file": "src/app/api/ocr/universal/route.ts",
+      "line": 38,
+      "column": 28,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/lib/vedic/williams-v2-vedic' or its corresponding type declarations.",
+      "raw": "src/app/api/ocr/universal/route.ts(38,28): error TS2307: Cannot find module '@/lib/vedic/williams-v2-vedic' or its corresponding type declarations.",
+      "module": "@/lib/vedic/williams-v2-vedic"
+    },
+    {
+      "file": "src/app/api/ocr/universal/route.ts",
+      "line": 584,
+      "column": 9,
+      "error_code": "TS1117",
+      "message": "An object literal cannot have multiple properties with the same name.",
+      "raw": "src/app/api/ocr/universal/route.ts(584,9): error TS1117: An object literal cannot have multiple properties with the same name."
+    },
+    {
+      "file": "src/app/api/orders/route.ts",
+      "line": 186,
+      "column": 9,
+      "error_code": "TS2322",
+      "message": "Type 'string' is not assignable to type 'Currency | undefined'.",
+      "raw": "src/app/api/orders/route.ts(186,9): error TS2322: Type 'string' is not assignable to type 'Currency | undefined'."
+    },
+    {
+      "file": "src/app/api/payments/schedule/route.ts",
+      "line": 12,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/lib/db/prisma' or its corresponding type declarations.",
+      "raw": "src/app/api/payments/schedule/route.ts(12,24): error TS2307: Cannot find module '@/lib/db/prisma' or its corresponding type declarations.",
+      "module": "@/lib/db/prisma"
+    },
+    {
+      "file": "src/app/api/payments/schedule/route.ts",
+      "line": 49,
+      "column": 37,
+      "error_code": "TS2769",
+      "message": "No overload matches this call.",
+      "raw": "src/app/api/payments/schedule/route.ts(49,37): error TS2769: No overload matches this call."
+    },
+    {
+      "file": "src/app/api/payments/schedule/route.ts",
+      "line": 78,
+      "column": 41,
+      "error_code": "TS2769",
+      "message": "No overload matches this call.",
+      "raw": "src/app/api/payments/schedule/route.ts(78,41): error TS2769: No overload matches this call."
+    },
+    {
+      "file": "src/app/api/payments/schedule/route.ts",
+      "line": 88,
+      "column": 18,
+      "error_code": "TS18047",
+      "message": "'inv.dueDate' is possibly 'null'.",
+      "raw": "src/app/api/payments/schedule/route.ts(88,18): error TS18047: 'inv.dueDate' is possibly 'null'."
+    },
+    {
+      "file": "src/app/api/tasks/route.ts",
+      "line": 42,
+      "column": 10,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/sockets/socket-validator\"' has no exported member 'TaskQuery'.",
+      "raw": "src/app/api/tasks/route.ts(42,10): error TS2305: Module '\"@/lib/sockets/socket-validator\"' has no exported member 'TaskQuery'.",
+      "module": "@/lib/sockets/socket-validator"
+    },
+    {
+      "file": "src/app/api/tasks/route.ts",
+      "line": 60,
+      "column": 35,
+      "error_code": "TS2345",
+      "message": "Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'.",
+      "raw": "src/app/api/tasks/route.ts(60,35): error TS2345: Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'."
+    },
+    {
+      "file": "src/app/api/tasks/route.ts",
+      "line": 211,
+      "column": 36,
+      "error_code": "TS2345",
+      "message": "Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'.",
+      "raw": "src/app/api/tasks/route.ts(211,36): error TS2345: Argument of type '(request: NextRequest) => Promise<NextResponse<SocketResponse<any>>>' is not assignable to parameter of type 'SocketHandler<any, NextResponse<SocketResponse<any>>>'."
+    },
+    {
+      "file": "src/app/calendar/page.tsx",
+      "line": 7,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../../components/layout/MainLayout' or its corresponding type declarations.",
+      "raw": "src/app/calendar/page.tsx(7,24): error TS2307: Cannot find module '../../../components/layout/MainLayout' or its corresponding type declarations.",
+      "module": "../../../components/layout/MainLayout"
+    },
+    {
+      "file": "src/app/delivery/page.tsx",
+      "line": 52,
+      "column": 26,
+      "error_code": "TS2322",
+      "message": "Type '{ data: any; onRefresh: () => Promise<void>; }' is not assignable to type 'IntrinsicAttributes'.",
+      "raw": "src/app/delivery/page.tsx(52,26): error TS2322: Type '{ data: any; onRefresh: () => Promise<void>; }' is not assignable to type 'IntrinsicAttributes'."
+    },
+    {
+      "file": "src/app/payments/page.tsx",
+      "line": 50,
+      "column": 26,
+      "error_code": "TS2322",
+      "message": "Type '{ data: any; onRefresh: () => Promise<void>; }' is not assignable to type 'IntrinsicAttributes'.",
+      "raw": "src/app/payments/page.tsx(50,26): error TS2322: Type '{ data: any; onRefresh: () => Promise<void>; }' is not assignable to type 'IntrinsicAttributes'."
+    },
+    {
+      "file": "src/components/analytics/pipeline/Confetti.tsx",
+      "line": 2,
+      "column": 22,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'canvas-confetti' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/Confetti.tsx(2,22): error TS2307: Cannot find module 'canvas-confetti' or its corresponding type declarations.",
+      "module": "canvas-confetti"
+    },
+    {
+      "file": "src/components/analytics/pipeline/ConversionRatesChart.tsx",
+      "line": 15,
+      "column": 22,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/card' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/ConversionRatesChart.tsx(15,22): error TS2307: Cannot find module '../ui/card' or its corresponding type declarations.",
+      "module": "../ui/card"
+    },
+    {
+      "file": "src/components/analytics/pipeline/FilterPanel.tsx",
+      "line": 3,
+      "column": 22,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/card' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/FilterPanel.tsx(3,22): error TS2307: Cannot find module '../ui/card' or its corresponding type declarations.",
+      "module": "../ui/card"
+    },
+    {
+      "file": "src/components/analytics/pipeline/FilterPanel.tsx",
+      "line": 4,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/FilterPanel.tsx(4,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/analytics/pipeline/FilterPanel.tsx",
+      "line": 5,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/input' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/FilterPanel.tsx(5,23): error TS2307: Cannot find module '../ui/input' or its corresponding type declarations.",
+      "module": "../ui/input"
+    },
+    {
+      "file": "src/components/analytics/pipeline/FilterPanel.tsx",
+      "line": 6,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/label' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/FilterPanel.tsx(6,23): error TS2307: Cannot find module '../ui/label' or its corresponding type declarations.",
+      "module": "../ui/label"
+    },
+    {
+      "file": "src/components/analytics/pipeline/FilterPanel.tsx",
+      "line": 7,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/FilterPanel.tsx(7,23): error TS2307: Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "module": "../ui/badge"
+    },
+    {
+      "file": "src/components/analytics/pipeline/FilterPanel.tsx",
+      "line": 14,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/select' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/FilterPanel.tsx(14,8): error TS2307: Cannot find module '../ui/select' or its corresponding type declarations.",
+      "module": "../ui/select"
+    },
+    {
+      "file": "src/components/analytics/pipeline/FilterPanel.tsx",
+      "line": 226,
+      "column": 26,
+      "error_code": "TS7006",
+      "message": "Parameter 'e' implicitly has an 'any' type.",
+      "raw": "src/components/analytics/pipeline/FilterPanel.tsx(226,26): error TS7006: Parameter 'e' implicitly has an 'any' type.",
+      "parameter": "e"
+    },
+    {
+      "file": "src/components/analytics/pipeline/FilterPanel.tsx",
+      "line": 241,
+      "column": 26,
+      "error_code": "TS7006",
+      "message": "Parameter 'e' implicitly has an 'any' type.",
+      "raw": "src/components/analytics/pipeline/FilterPanel.tsx(241,26): error TS7006: Parameter 'e' implicitly has an 'any' type.",
+      "parameter": "e"
+    },
+    {
+      "file": "src/components/analytics/pipeline/InsightsPanel.tsx",
+      "line": 8,
+      "column": 22,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/card' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/InsightsPanel.tsx(8,22): error TS2307: Cannot find module '../ui/card' or its corresponding type declarations.",
+      "module": "../ui/card"
+    },
+    {
+      "file": "src/components/analytics/pipeline/InsightsPanel.tsx",
+      "line": 20,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/InsightsPanel.tsx(20,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/analytics/pipeline/InsightsPanel.tsx",
+      "line": 111,
+      "column": 56,
+      "error_code": "TS2345",
+      "message": "Argument of type 'string' is not assignable to parameter of type '\"error\" | \"success\" | \"info\" | \"warning\"'.",
+      "raw": "src/components/analytics/pipeline/InsightsPanel.tsx(111,56): error TS2345: Argument of type 'string' is not assignable to parameter of type '\"error\" | \"success\" | \"info\" | \"warning\"'."
+    },
+    {
+      "file": "src/components/analytics/pipeline/InsightsPanel.tsx",
+      "line": 112,
+      "column": 48,
+      "error_code": "TS2345",
+      "message": "Argument of type 'string' is not assignable to parameter of type '\"error\" | \"success\" | \"info\" | \"warning\"'.",
+      "raw": "src/components/analytics/pipeline/InsightsPanel.tsx(112,48): error TS2345: Argument of type 'string' is not assignable to parameter of type '\"error\" | \"success\" | \"info\" | \"warning\"'."
+    },
+    {
+      "file": "src/components/analytics/pipeline/InsightsPanel.tsx",
+      "line": 118,
+      "column": 43,
+      "error_code": "TS2345",
+      "message": "Argument of type 'string' is not assignable to parameter of type '\"error\" | \"success\" | \"info\" | \"warning\"'.",
+      "raw": "src/components/analytics/pipeline/InsightsPanel.tsx(118,43): error TS2345: Argument of type 'string' is not assignable to parameter of type '\"error\" | \"success\" | \"info\" | \"warning\"'."
+    },
+    {
+      "file": "src/components/analytics/pipeline/LossAnalysisChart.tsx",
+      "line": 12,
+      "column": 22,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/card' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/LossAnalysisChart.tsx(12,22): error TS2307: Cannot find module '../ui/card' or its corresponding type declarations.",
+      "module": "../ui/card"
+    },
+    {
+      "file": "src/components/analytics/pipeline/PipelineAnalytics.tsx",
+      "line": 23,
+      "column": 22,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/card' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/PipelineAnalytics.tsx(23,22): error TS2307: Cannot find module '../ui/card' or its corresponding type declarations.",
+      "module": "../ui/card"
+    },
+    {
+      "file": "src/components/analytics/pipeline/PipelineAnalytics.tsx",
+      "line": 24,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/PipelineAnalytics.tsx(24,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/analytics/pipeline/PipelineAnalytics.tsx",
+      "line": 31,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/select' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/PipelineAnalytics.tsx(31,8): error TS2307: Cannot find module '../ui/select' or its corresponding type declarations.",
+      "module": "../ui/select"
+    },
+    {
+      "file": "src/components/analytics/pipeline/PipelineAnalytics.tsx",
+      "line": 32,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/PipelineAnalytics.tsx(32,23): error TS2307: Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "module": "../ui/badge"
+    },
+    {
+      "file": "src/components/analytics/pipeline/PipelineAnalytics.tsx",
+      "line": 33,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'sonner@2.0.3' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/PipelineAnalytics.tsx(33,23): error TS2307: Cannot find module 'sonner@2.0.3' or its corresponding type declarations.",
+      "module": "sonner@2.0.3"
+    },
+    {
+      "file": "src/components/analytics/pipeline/PipelineAnalytics.tsx",
+      "line": 50,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/dropdown-menu' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/PipelineAnalytics.tsx(50,8): error TS2307: Cannot find module '../ui/dropdown-menu' or its corresponding type declarations.",
+      "module": "../ui/dropdown-menu"
+    },
+    {
+      "file": "src/components/analytics/pipeline/PipelineAnalytics.tsx",
+      "line": 51,
+      "column": 66,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/dialog' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/PipelineAnalytics.tsx(51,66): error TS2307: Cannot find module '../ui/dialog' or its corresponding type declarations.",
+      "module": "../ui/dialog"
+    },
+    {
+      "file": "src/components/analytics/pipeline/PipelineAnalytics.tsx",
+      "line": 325,
+      "column": 31,
+      "error_code": "TS7006",
+      "message": "Parameter 'value' implicitly has an 'any' type.",
+      "raw": "src/components/analytics/pipeline/PipelineAnalytics.tsx(325,31): error TS7006: Parameter 'value' implicitly has an 'any' type.",
+      "parameter": "value"
+    },
+    {
+      "file": "src/components/analytics/pipeline/PipelineAnalytics.tsx",
+      "line": 364,
+      "column": 19,
+      "error_code": "TS2322",
+      "message": "Type '(el: HTMLDivElement | null) => HTMLDivElement | null' is not assignable to type 'Ref<HTMLDivElement> | undefined'.",
+      "raw": "src/components/analytics/pipeline/PipelineAnalytics.tsx(364,19): error TS2322: Type '(el: HTMLDivElement | null) => HTMLDivElement | null' is not assignable to type 'Ref<HTMLDivElement> | undefined'."
+    },
+    {
+      "file": "src/components/analytics/pipeline/SankeyFlowParticles.tsx",
+      "line": 35,
+      "column": 20,
+      "error_code": "TS2352",
+      "message": "Conversion of type 'HTMLElement | null' to type 'SVGPathElement' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.",
+      "raw": "src/components/analytics/pipeline/SankeyFlowParticles.tsx(35,20): error TS2352: Conversion of type 'HTMLElement | null' to type 'SVGPathElement' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first."
+    },
+    {
+      "file": "src/components/analytics/pipeline/StageDetailsModal.tsx",
+      "line": 2,
+      "column": 66,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/dialog' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/StageDetailsModal.tsx(2,66): error TS2307: Cannot find module '../ui/dialog' or its corresponding type declarations.",
+      "module": "../ui/dialog"
+    },
+    {
+      "file": "src/components/analytics/pipeline/StageDetailsModal.tsx",
+      "line": 12,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/table' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/StageDetailsModal.tsx(12,8): error TS2307: Cannot find module '../ui/table' or its corresponding type declarations.",
+      "module": "../ui/table"
+    },
+    {
+      "file": "src/components/analytics/pipeline/StageDetailsModal.tsx",
+      "line": 13,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/input' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/StageDetailsModal.tsx(13,23): error TS2307: Cannot find module '../ui/input' or its corresponding type declarations.",
+      "module": "../ui/input"
+    },
+    {
+      "file": "src/components/analytics/pipeline/StageDetailsModal.tsx",
+      "line": 14,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/StageDetailsModal.tsx(14,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/analytics/pipeline/StageDetailsModal.tsx",
+      "line": 15,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/StageDetailsModal.tsx(15,23): error TS2307: Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "module": "../ui/badge"
+    },
+    {
+      "file": "src/components/analytics/pipeline/StageDetailsModal.tsx",
+      "line": 25,
+      "column": 22,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/card' or its corresponding type declarations.",
+      "raw": "src/components/analytics/pipeline/StageDetailsModal.tsx(25,22): error TS2307: Cannot find module '../ui/card' or its corresponding type declarations.",
+      "module": "../ui/card"
+    },
+    {
+      "file": "src/components/analytics/pipeline/StageDetailsModal.tsx",
+      "line": 192,
+      "column": 26,
+      "error_code": "TS7006",
+      "message": "Parameter 'e' implicitly has an 'any' type.",
+      "raw": "src/components/analytics/pipeline/StageDetailsModal.tsx(192,26): error TS7006: Parameter 'e' implicitly has an 'any' type.",
+      "parameter": "e"
+    },
+    {
+      "file": "src/components/analytics/pipeline/StageDetailsModal.tsx",
+      "line": 296,
+      "column": 33,
+      "error_code": "TS7006",
+      "message": "Parameter 'e' implicitly has an 'any' type.",
+      "raw": "src/components/analytics/pipeline/StageDetailsModal.tsx(296,33): error TS7006: Parameter 'e' implicitly has an 'any' type.",
+      "parameter": "e"
+    },
+    {
+      "file": "src/components/calendar/SharedCalendar.tsx",
+      "line": 320,
+      "column": 34,
+      "error_code": "TS2769",
+      "message": "No overload matches this call.",
+      "raw": "src/components/calendar/SharedCalendar.tsx(320,34): error TS2769: No overload matches this call."
+    },
+    {
+      "file": "src/components/calendar/SharedCalendar.tsx",
+      "line": 496,
+      "column": 64,
+      "error_code": "TS2345",
+      "message": "Argument of type 'string | undefined' is not assignable to parameter of type 'string'.",
+      "raw": "src/components/calendar/SharedCalendar.tsx(496,64): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'."
+    },
+    {
+      "file": "src/components/calendar/SharedCalendar.tsx",
+      "line": 527,
+      "column": 49,
+      "error_code": "TS2345",
+      "message": "Argument of type 'string | undefined' is not assignable to parameter of type 'string'.",
+      "raw": "src/components/calendar/SharedCalendar.tsx(527,49): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'."
+    },
+    {
+      "file": "src/components/calendar/SharedCalendar.tsx",
+      "line": 543,
+      "column": 33,
+      "error_code": "TS2345",
+      "message": "Argument of type 'string | undefined' is not assignable to parameter of type 'string'.",
+      "raw": "src/components/calendar/SharedCalendar.tsx(543,33): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'."
+    },
+    {
+      "file": "src/components/calendar/SharedCalendar.tsx",
+      "line": 603,
+      "column": 58,
+      "error_code": "TS2345",
+      "message": "Argument of type 'string | undefined' is not assignable to parameter of type 'string'.",
+      "raw": "src/components/calendar/SharedCalendar.tsx(603,58): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'."
+    },
+    {
+      "file": "src/components/calendar/SharedCalendar.tsx",
+      "line": 607,
+      "column": 31,
+      "error_code": "TS2769",
+      "message": "No overload matches this call.",
+      "raw": "src/components/calendar/SharedCalendar.tsx(607,31): error TS2769: No overload matches this call."
+    },
+    {
+      "file": "src/components/calendar/SharedCalendar.tsx",
+      "line": 886,
+      "column": 60,
+      "error_code": "TS2345",
+      "message": "Argument of type 'string | undefined' is not assignable to parameter of type 'string'.",
+      "raw": "src/components/calendar/SharedCalendar.tsx(886,60): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'."
+    },
+    {
+      "file": "src/components/calendar/SharedCalendar.tsx",
+      "line": 895,
+      "column": 35,
+      "error_code": "TS2345",
+      "message": "Argument of type 'string | undefined' is not assignable to parameter of type 'string'.",
+      "raw": "src/components/calendar/SharedCalendar.tsx(895,35): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'."
+    },
+    {
+      "file": "src/components/customer-intelligence-dashboard.tsx",
+      "line": 4,
+      "column": 20,
+      "error_code": "TS2305",
+      "message": "Module '\"../types/customer\"' has no exported member 'CustomerGradeAnalysis'.",
+      "raw": "src/components/customer-intelligence-dashboard.tsx(4,20): error TS2305: Module '\"../types/customer\"' has no exported member 'CustomerGradeAnalysis'.",
+      "module": "../types/customer"
+    },
+    {
+      "file": "src/components/customer-intelligence-dashboard.tsx",
+      "line": 535,
+      "column": 61,
+      "error_code": "TS7006",
+      "message": "Parameter 'action' implicitly has an 'any' type.",
+      "raw": "src/components/customer-intelligence-dashboard.tsx(535,61): error TS7006: Parameter 'action' implicitly has an 'any' type.",
+      "parameter": "action"
+    },
+    {
+      "file": "src/components/customer-intelligence-dashboard.tsx",
+      "line": 535,
+      "column": 69,
+      "error_code": "TS7006",
+      "message": "Parameter 'index' implicitly has an 'any' type.",
+      "raw": "src/components/customer-intelligence-dashboard.tsx(535,69): error TS7006: Parameter 'index' implicitly has an 'any' type.",
+      "parameter": "index"
+    },
+    {
+      "file": "src/components/customer-intelligence-dashboard.tsx",
+      "line": 573,
+      "column": 56,
+      "error_code": "TS7006",
+      "message": "Parameter 'risk' implicitly has an 'any' type.",
+      "raw": "src/components/customer-intelligence-dashboard.tsx(573,56): error TS7006: Parameter 'risk' implicitly has an 'any' type.",
+      "parameter": "risk"
+    },
+    {
+      "file": "src/components/customer-intelligence-dashboard.tsx",
+      "line": 573,
+      "column": 62,
+      "error_code": "TS7006",
+      "message": "Parameter 'index' implicitly has an 'any' type.",
+      "raw": "src/components/customer-intelligence-dashboard.tsx(573,62): error TS7006: Parameter 'index' implicitly has an 'any' type.",
+      "parameter": "index"
+    },
+    {
+      "file": "src/components/customer-intelligence-dashboard.tsx",
+      "line": 614,
+      "column": 54,
+      "error_code": "TS7006",
+      "message": "Parameter 'strength' implicitly has an 'any' type.",
+      "raw": "src/components/customer-intelligence-dashboard.tsx(614,54): error TS7006: Parameter 'strength' implicitly has an 'any' type.",
+      "parameter": "strength"
+    },
+    {
+      "file": "src/components/customer-intelligence-dashboard.tsx",
+      "line": 614,
+      "column": 64,
+      "error_code": "TS7006",
+      "message": "Parameter 'index' implicitly has an 'any' type.",
+      "raw": "src/components/customer-intelligence-dashboard.tsx(614,64): error TS7006: Parameter 'index' implicitly has an 'any' type.",
+      "parameter": "index"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 21,
+      "column": 36,
+      "error_code": "TS2307",
+      "message": "Cannot find module './hooks/useMetrics' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(21,36): error TS2307: Cannot find module './hooks/useMetrics' or its corresponding type declarations.",
+      "module": "./hooks/useMetrics"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 22,
+      "column": 38,
+      "error_code": "TS2307",
+      "message": "Cannot find module './hooks/useKeyboardShortcuts' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(22,38): error TS2307: Cannot find module './hooks/useKeyboardShortcuts' or its corresponding type declarations.",
+      "module": "./hooks/useKeyboardShortcuts"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 23,
+      "column": 28,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/MetricCard' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(23,28): error TS2307: Cannot find module './components/MetricCard' or its corresponding type declarations.",
+      "module": "./components/MetricCard"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 24,
+      "column": 32,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/DrillDownModal' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(24,32): error TS2307: Cannot find module './components/DrillDownModal' or its corresponding type declarations.",
+      "module": "./components/DrillDownModal"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 25,
+      "column": 29,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/ExportModal' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(25,29): error TS2307: Cannot find module './components/ExportModal' or its corresponding type declarations.",
+      "module": "./components/ExportModal"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 26,
+      "column": 31,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/SettingsModal' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(26,31): error TS2307: Cannot find module './components/SettingsModal' or its corresponding type declarations.",
+      "module": "./components/SettingsModal"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 27,
+      "column": 22,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/ui/card' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(27,22): error TS2307: Cannot find module './components/ui/card' or its corresponding type declarations.",
+      "module": "./components/ui/card"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 28,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/ui/button' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(28,24): error TS2307: Cannot find module './components/ui/button' or its corresponding type declarations.",
+      "module": "./components/ui/button"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 29,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/ui/badge' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(29,23): error TS2307: Cannot find module './components/ui/badge' or its corresponding type declarations.",
+      "module": "./components/ui/badge"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 36,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/ui/select' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(36,8): error TS2307: Cannot find module './components/ui/select' or its corresponding type declarations.",
+      "module": "./components/ui/select"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 42,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/ui/tooltip' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(42,8): error TS2307: Cannot find module './components/ui/tooltip' or its corresponding type declarations.",
+      "module": "./components/ui/tooltip"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 43,
+      "column": 25,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/ui/sonner' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(43,25): error TS2307: Cannot find module './components/ui/sonner' or its corresponding type declarations.",
+      "module": "./components/ui/sonner"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 49,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module './utils/formatters' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/App.tsx(49,8): error TS2307: Cannot find module './utils/formatters' or its corresponding type declarations.",
+      "module": "./utils/formatters"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 321,
+      "column": 31,
+      "error_code": "TS7006",
+      "message": "Parameter 'value' implicitly has an 'any' type.",
+      "raw": "src/components/dashboard/App.tsx(321,31): error TS7006: Parameter 'value' implicitly has an 'any' type.",
+      "parameter": "value"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 569,
+      "column": 58,
+      "error_code": "TS7006",
+      "message": "Parameter 'h' implicitly has an 'any' type.",
+      "raw": "src/components/dashboard/App.tsx(569,58): error TS7006: Parameter 'h' implicitly has an 'any' type.",
+      "parameter": "h"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 587,
+      "column": 65,
+      "error_code": "TS7006",
+      "message": "Parameter 'h' implicitly has an 'any' type.",
+      "raw": "src/components/dashboard/App.tsx(587,65): error TS7006: Parameter 'h' implicitly has an 'any' type.",
+      "parameter": "h"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 874,
+      "column": 47,
+      "error_code": "TS7006",
+      "message": "Parameter 'entry' implicitly has an 'any' type.",
+      "raw": "src/components/dashboard/App.tsx(874,47): error TS7006: Parameter 'entry' implicitly has an 'any' type.",
+      "parameter": "entry"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 874,
+      "column": 54,
+      "error_code": "TS7006",
+      "message": "Parameter 'index' implicitly has an 'any' type.",
+      "raw": "src/components/dashboard/App.tsx(874,54): error TS7006: Parameter 'index' implicitly has an 'any' type.",
+      "parameter": "index"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 902,
+      "column": 48,
+      "error_code": "TS7006",
+      "message": "Parameter 'entry' implicitly has an 'any' type.",
+      "raw": "src/components/dashboard/App.tsx(902,48): error TS7006: Parameter 'entry' implicitly has an 'any' type.",
+      "parameter": "entry"
+    },
+    {
+      "file": "src/components/dashboard/App.tsx",
+      "line": 902,
+      "column": 55,
+      "error_code": "TS7006",
+      "message": "Parameter 'index' implicitly has an 'any' type.",
+      "raw": "src/components/dashboard/App.tsx(902,55): error TS7006: Parameter 'index' implicitly has an 'any' type.",
+      "parameter": "index"
+    },
+    {
+      "file": "src/components/dashboard/DrillDownModal.tsx",
+      "line": 30,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/components/utils/formatters' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/DrillDownModal.tsx(30,8): error TS2307: Cannot find module '@/components/utils/formatters' or its corresponding type declarations.",
+      "module": "@/components/utils/formatters"
+    },
+    {
+      "file": "src/components/dashboard/DrillDownModal.tsx",
+      "line": 60,
+      "column": 10,
+      "error_code": "TS2678",
+      "message": "Type '\"stable\"' is not comparable to type 'Trend'.",
+      "raw": "src/components/dashboard/DrillDownModal.tsx(60,10): error TS2678: Type '\"stable\"' is not comparable to type 'Trend'."
+    },
+    {
+      "file": "src/components/dashboard/DrillDownModal.tsx",
+      "line": 65,
+      "column": 39,
+      "error_code": "TS2366",
+      "message": "Function lacks ending return statement and return type does not include 'undefined'.",
+      "raw": "src/components/dashboard/DrillDownModal.tsx(65,39): error TS2366: Function lacks ending return statement and return type does not include 'undefined'."
+    },
+    {
+      "file": "src/components/dashboard/DrillDownModal.tsx",
+      "line": 71,
+      "column": 10,
+      "error_code": "TS2678",
+      "message": "Type '\"stable\"' is not comparable to type 'Trend'.",
+      "raw": "src/components/dashboard/DrillDownModal.tsx(71,10): error TS2678: Type '\"stable\"' is not comparable to type 'Trend'."
+    },
+    {
+      "file": "src/components/dashboard/DrillDownModal.tsx",
+      "line": 120,
+      "column": 24,
+      "error_code": "TS2604",
+      "message": "JSX element type 'TrendIcon' does not have any construct or call signatures.",
+      "raw": "src/components/dashboard/DrillDownModal.tsx(120,24): error TS2604: JSX element type 'TrendIcon' does not have any construct or call signatures."
+    },
+    {
+      "file": "src/components/dashboard/DrillDownModal.tsx",
+      "line": 120,
+      "column": 24,
+      "error_code": "TS2786",
+      "message": "'TrendIcon' cannot be used as a JSX component.",
+      "raw": "src/components/dashboard/DrillDownModal.tsx(120,24): error TS2786: 'TrendIcon' cannot be used as a JSX component."
+    },
+    {
+      "file": "src/components/dashboard/MetricCard.tsx",
+      "line": 10,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/components/utils/formatters' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/MetricCard.tsx(10,8): error TS2307: Cannot find module '@/components/utils/formatters' or its corresponding type declarations.",
+      "module": "@/components/utils/formatters"
+    },
+    {
+      "file": "src/components/dashboard/MetricCard.tsx",
+      "line": 12,
+      "column": 25,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'countup.js' or its corresponding type declarations.",
+      "raw": "src/components/dashboard/MetricCard.tsx(12,25): error TS2307: Cannot find module 'countup.js' or its corresponding type declarations.",
+      "module": "countup.js"
+    },
+    {
+      "file": "src/components/dashboard/MetricCard.tsx",
+      "line": 41,
+      "column": 38,
+      "error_code": "TS2366",
+      "message": "Function lacks ending return statement and return type does not include 'undefined'.",
+      "raw": "src/components/dashboard/MetricCard.tsx(41,38): error TS2366: Function lacks ending return statement and return type does not include 'undefined'."
+    },
+    {
+      "file": "src/components/dashboard/MetricCard.tsx",
+      "line": 47,
+      "column": 10,
+      "error_code": "TS2678",
+      "message": "Type '\"stable\"' is not comparable to type 'Trend'.",
+      "raw": "src/components/dashboard/MetricCard.tsx(47,10): error TS2678: Type '\"stable\"' is not comparable to type 'Trend'."
+    },
+    {
+      "file": "src/components/dashboard/MetricCard.tsx",
+      "line": 52,
+      "column": 39,
+      "error_code": "TS2366",
+      "message": "Function lacks ending return statement and return type does not include 'undefined'.",
+      "raw": "src/components/dashboard/MetricCard.tsx(52,39): error TS2366: Function lacks ending return statement and return type does not include 'undefined'."
+    },
+    {
+      "file": "src/components/dashboard/MetricCard.tsx",
+      "line": 58,
+      "column": 10,
+      "error_code": "TS2678",
+      "message": "Type '\"stable\"' is not comparable to type 'Trend'.",
+      "raw": "src/components/dashboard/MetricCard.tsx(58,10): error TS2678: Type '\"stable\"' is not comparable to type 'Trend'."
+    },
+    {
+      "file": "src/components/dashboard/MetricsDashboard.tsx",
+      "line": 32,
+      "column": 11,
+      "error_code": "TS2322",
+      "message": "Type '{ title: string; value: any; trend: any; format: string; }' is not assignable to type 'IntrinsicAttributes & MetricCardProps'.",
+      "raw": "src/components/dashboard/MetricsDashboard.tsx(32,11): error TS2322: Type '{ title: string; value: any; trend: any; format: string; }' is not assignable to type 'IntrinsicAttributes & MetricCardProps'."
+    },
+    {
+      "file": "src/components/dashboard/MetricsDashboard.tsx",
+      "line": 40,
+      "column": 11,
+      "error_code": "TS2322",
+      "message": "Type '{ title: string; value: any; trend: any; format: string; }' is not assignable to type 'IntrinsicAttributes & MetricCardProps'.",
+      "raw": "src/components/dashboard/MetricsDashboard.tsx(40,11): error TS2322: Type '{ title: string; value: any; trend: any; format: string; }' is not assignable to type 'IntrinsicAttributes & MetricCardProps'."
+    },
+    {
+      "file": "src/components/dashboard/MetricsDashboard.tsx",
+      "line": 48,
+      "column": 11,
+      "error_code": "TS2322",
+      "message": "Type '{ title: string; value: any; trend: any; format: string; }' is not assignable to type 'IntrinsicAttributes & MetricCardProps'.",
+      "raw": "src/components/dashboard/MetricsDashboard.tsx(48,11): error TS2322: Type '{ title: string; value: any; trend: any; format: string; }' is not assignable to type 'IntrinsicAttributes & MetricCardProps'."
+    },
+    {
+      "file": "src/components/dashboard/MetricsDashboard.tsx",
+      "line": 56,
+      "column": 11,
+      "error_code": "TS2322",
+      "message": "Type '{ title: string; value: any; trend: any; format: string; }' is not assignable to type 'IntrinsicAttributes & MetricCardProps'.",
+      "raw": "src/components/dashboard/MetricsDashboard.tsx(56,11): error TS2322: Type '{ title: string; value: any; trend: any; format: string; }' is not assignable to type 'IntrinsicAttributes & MetricCardProps'."
+    },
+    {
+      "file": "src/components/dashboard/MetricsDashboard.tsx",
+      "line": 83,
+      "column": 8,
+      "error_code": "TS2739",
+      "message": "Type '{}' is missing the following properties from type 'DrillDownModalProps': open, onClose, metric",
+      "raw": "src/components/dashboard/MetricsDashboard.tsx(83,8): error TS2739: Type '{}' is missing the following properties from type 'DrillDownModalProps': open, onClose, metric"
+    },
+    {
+      "file": "src/components/dashboard/MetricsDashboard.tsx",
+      "line": 84,
+      "column": 8,
+      "error_code": "TS2739",
+      "message": "Type '{}' is missing the following properties from type 'ExportModalProps': open, onClose",
+      "raw": "src/components/dashboard/MetricsDashboard.tsx(84,8): error TS2739: Type '{}' is missing the following properties from type 'ExportModalProps': open, onClose"
+    },
+    {
+      "file": "src/components/dashboard/MetricsDashboard.tsx",
+      "line": 85,
+      "column": 8,
+      "error_code": "TS2739",
+      "message": "Type '{}' is missing the following properties from type 'SettingsModalProps': open, onClose",
+      "raw": "src/components/dashboard/MetricsDashboard.tsx(85,8): error TS2739: Type '{}' is missing the following properties from type 'SettingsModalProps': open, onClose"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryCard.tsx",
+      "line": 1,
+      "column": 29,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@dnd-kit/sortable' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryCard.tsx(1,29): error TS2307: Cannot find module '@dnd-kit/sortable' or its corresponding type declarations.",
+      "module": "@dnd-kit/sortable"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryCard.tsx",
+      "line": 2,
+      "column": 21,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@dnd-kit/utilities' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryCard.tsx(2,21): error TS2307: Cannot find module '@dnd-kit/utilities' or its corresponding type declarations.",
+      "module": "@dnd-kit/utilities"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryCard.tsx",
+      "line": 24,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryCard.tsx(24,8): error TS2307: Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "module": "../../lib/deliveryData"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryCard.tsx",
+      "line": 25,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryCard.tsx(25,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryCard.tsx",
+      "line": 26,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryCard.tsx(26,23): error TS2307: Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "module": "../ui/badge"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryCard.tsx",
+      "line": 33,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/dropdown-menu' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryCard.tsx(33,8): error TS2307: Cannot find module '../ui/dropdown-menu' or its corresponding type declarations.",
+      "module": "../ui/dropdown-menu"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryCard.tsx",
+      "line": 39,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/tooltip' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryCard.tsx(39,8): error TS2307: Cannot find module '../ui/tooltip' or its corresponding type declarations.",
+      "module": "../ui/tooltip"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryCard.tsx",
+      "line": 86,
+      "column": 20,
+      "error_code": "TS7053",
+      "message": "Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ urgent: { icon: ForwardRefExoticComponent<Omit<LucideProps, \"ref\"> & RefAttributes<SVGSVGElement>>; color: string; label: string; }; express: { ...; }; standard: { ...; }; }'.",
+      "raw": "src/components/delivery/delivery/DeliveryCard.tsx(86,20): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ urgent: { icon: ForwardRefExoticComponent<Omit<LucideProps, \"ref\"> & RefAttributes<SVGSVGElement>>; color: string; label: string; }; express: { ...; }; standard: { ...; }; }'."
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryDetailModal.tsx",
+      "line": 1,
+      "column": 66,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/dialog' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryDetailModal.tsx(1,66): error TS2307: Cannot find module '../ui/dialog' or its corresponding type declarations.",
+      "module": "../ui/dialog"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryDetailModal.tsx",
+      "line": 2,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryDetailModal.tsx(2,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryDetailModal.tsx",
+      "line": 3,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryDetailModal.tsx(3,23): error TS2307: Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "module": "../ui/badge"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryDetailModal.tsx",
+      "line": 4,
+      "column": 27,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/separator' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryDetailModal.tsx(4,27): error TS2307: Cannot find module '../ui/separator' or its corresponding type declarations.",
+      "module": "../ui/separator"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryDetailModal.tsx",
+      "line": 25,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryDetailModal.tsx(25,8): error TS2307: Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "module": "../../lib/deliveryData"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryDetailModal.tsx",
+      "line": 44,
+      "column": 36,
+      "error_code": "TS7006",
+      "message": "Parameter 's' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/DeliveryDetailModal.tsx(44,36): error TS7006: Parameter 's' implicitly has an 'any' type.",
+      "parameter": "s"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryHeader.tsx",
+      "line": 10,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryHeader.tsx(10,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryHeader.tsx",
+      "line": 11,
+      "column": 31,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../hooks/useDeliveryTracker' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/DeliveryHeader.tsx(11,31): error TS2307: Cannot find module '../../hooks/useDeliveryTracker' or its corresponding type declarations.",
+      "module": "../../hooks/useDeliveryTracker"
+    },
+    {
+      "file": "src/components/delivery/delivery/DeliveryHeader.tsx",
+      "line": 92,
+      "column": 35,
+      "error_code": "TS2769",
+      "message": "No overload matches this call.",
+      "raw": "src/components/delivery/delivery/DeliveryHeader.tsx(92,35): error TS2769: No overload matches this call."
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 23,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(23,8): error TS2307: Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "module": "../../lib/deliveryData"
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 24,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(24,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 25,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(25,23): error TS2307: Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "module": "../ui/badge"
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 26,
+      "column": 22,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/card' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(26,22): error TS2307: Cannot find module '../ui/card' or its corresponding type declarations.",
+      "module": "../ui/card"
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 33,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/select' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(33,8): error TS2307: Cannot find module '../ui/select' or its corresponding type declarations.",
+      "module": "../ui/select"
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 34,
+      "column": 27,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/separator' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(34,27): error TS2307: Cannot find module '../ui/separator' or its corresponding type declarations.",
+      "module": "../ui/separator"
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 88,
+      "column": 29,
+      "error_code": "TS2554",
+      "message": "Expected 1 arguments, but got 0.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(88,29): error TS2554: Expected 1 arguments, but got 0."
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 327,
+      "column": 31,
+      "error_code": "TS7006",
+      "message": "Parameter 'value' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(327,31): error TS7006: Parameter 'value' implicitly has an 'any' type.",
+      "parameter": "value"
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 334,
+      "column": 30,
+      "error_code": "TS7006",
+      "message": "Parameter 'stage' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(334,30): error TS7006: Parameter 'stage' implicitly has an 'any' type.",
+      "parameter": "stage"
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 378,
+      "column": 40,
+      "error_code": "TS7006",
+      "message": "Parameter 'stage' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(378,40): error TS7006: Parameter 'stage' implicitly has an 'any' type.",
+      "parameter": "stage"
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 421,
+      "column": 31,
+      "error_code": "TS7006",
+      "message": "Parameter 's' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(421,31): error TS7006: Parameter 's' implicitly has an 'any' type.",
+      "parameter": "s"
+    },
+    {
+      "file": "src/components/delivery/delivery/MapView.tsx",
+      "line": 509,
+      "column": 32,
+      "error_code": "TS7006",
+      "message": "Parameter 's' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/MapView.tsx(509,32): error TS7006: Parameter 's' implicitly has an 'any' type.",
+      "parameter": "s"
+    },
+    {
+      "file": "src/components/delivery/delivery/PODUploadModal.tsx",
+      "line": 8,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/dialog' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/PODUploadModal.tsx(8,8): error TS2307: Cannot find module '../ui/dialog' or its corresponding type declarations.",
+      "module": "../ui/dialog"
+    },
+    {
+      "file": "src/components/delivery/delivery/PODUploadModal.tsx",
+      "line": 9,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/PODUploadModal.tsx(9,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/delivery/delivery/PODUploadModal.tsx",
+      "line": 10,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/label' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/PODUploadModal.tsx(10,23): error TS2307: Cannot find module '../ui/label' or its corresponding type declarations.",
+      "module": "../ui/label"
+    },
+    {
+      "file": "src/components/delivery/delivery/PODUploadModal.tsx",
+      "line": 11,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/input' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/PODUploadModal.tsx(11,23): error TS2307: Cannot find module '../ui/input' or its corresponding type declarations.",
+      "module": "../ui/input"
+    },
+    {
+      "file": "src/components/delivery/delivery/PODUploadModal.tsx",
+      "line": 12,
+      "column": 26,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/textarea' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/PODUploadModal.tsx(12,26): error TS2307: Cannot find module '../ui/textarea' or its corresponding type declarations.",
+      "module": "../ui/textarea"
+    },
+    {
+      "file": "src/components/delivery/delivery/PODUploadModal.tsx",
+      "line": 22,
+      "column": 26,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/PODUploadModal.tsx(22,26): error TS2307: Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "module": "../../lib/deliveryData"
+    },
+    {
+      "file": "src/components/delivery/delivery/PODUploadModal.tsx",
+      "line": 247,
+      "column": 26,
+      "error_code": "TS7006",
+      "message": "Parameter 'e' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/PODUploadModal.tsx(247,26): error TS7006: Parameter 'e' implicitly has an 'any' type.",
+      "parameter": "e"
+    },
+    {
+      "file": "src/components/delivery/delivery/PODUploadModal.tsx",
+      "line": 459,
+      "column": 26,
+      "error_code": "TS7006",
+      "message": "Parameter 'e' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/PODUploadModal.tsx(459,26): error TS7006: Parameter 'e' implicitly has an 'any' type.",
+      "parameter": "e"
+    },
+    {
+      "file": "src/components/delivery/delivery/StageColumn.tsx",
+      "line": 1,
+      "column": 30,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@dnd-kit/core' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StageColumn.tsx(1,30): error TS2307: Cannot find module '@dnd-kit/core' or its corresponding type declarations.",
+      "module": "@dnd-kit/core"
+    },
+    {
+      "file": "src/components/delivery/delivery/StageColumn.tsx",
+      "line": 5,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@dnd-kit/sortable' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StageColumn.tsx(5,8): error TS2307: Cannot find module '@dnd-kit/sortable' or its corresponding type declarations.",
+      "module": "@dnd-kit/sortable"
+    },
+    {
+      "file": "src/components/delivery/delivery/StageColumn.tsx",
+      "line": 20,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StageColumn.tsx(20,8): error TS2307: Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "module": "../../lib/deliveryData"
+    },
+    {
+      "file": "src/components/delivery/delivery/StageColumn.tsx",
+      "line": 72,
+      "column": 39,
+      "error_code": "TS2769",
+      "message": "No overload matches this call.",
+      "raw": "src/components/delivery/delivery/StageColumn.tsx(72,39): error TS2769: No overload matches this call."
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 8,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/dialog' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(8,8): error TS2307: Cannot find module '../ui/dialog' or its corresponding type declarations.",
+      "module": "../ui/dialog"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 9,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(9,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 10,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/label' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(10,23): error TS2307: Cannot find module '../ui/label' or its corresponding type declarations.",
+      "module": "../ui/label"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 11,
+      "column": 26,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/textarea' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(11,26): error TS2307: Cannot find module '../ui/textarea' or its corresponding type declarations.",
+      "module": "../ui/textarea"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 18,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/select' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(18,8): error TS2307: Cannot find module '../ui/select' or its corresponding type declarations.",
+      "module": "../ui/select"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 19,
+      "column": 26,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/calendar' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(19,26): error TS2307: Cannot find module '../ui/calendar' or its corresponding type declarations.",
+      "module": "../ui/calendar"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 20,
+      "column": 57,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/popover' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(20,57): error TS2307: Cannot find module '../ui/popover' or its corresponding type declarations.",
+      "module": "../ui/popover"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 21,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/input' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(21,23): error TS2307: Cannot find module '../ui/input' or its corresponding type declarations.",
+      "module": "../ui/input"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 29,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(29,8): error TS2307: Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "module": "../../lib/deliveryData"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 30,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(30,23): error TS2307: Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "module": "../ui/badge"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 58,
+      "column": 43,
+      "error_code": "TS7006",
+      "message": "Parameter 's' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(58,43): error TS7006: Parameter 's' implicitly has an 'any' type.",
+      "parameter": "s"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 75,
+      "column": 52,
+      "error_code": "TS7006",
+      "message": "Parameter 's' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(75,52): error TS7006: Parameter 's' implicitly has an 'any' type.",
+      "parameter": "s"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 139,
+      "column": 31,
+      "error_code": "TS7006",
+      "message": "Parameter 'value' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(139,31): error TS7006: Parameter 'value' implicitly has an 'any' type.",
+      "parameter": "value"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 150,
+      "column": 40,
+      "error_code": "TS7006",
+      "message": "Parameter 'stageId' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(150,40): error TS7006: Parameter 'stageId' implicitly has an 'any' type.",
+      "parameter": "stageId"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 151,
+      "column": 54,
+      "error_code": "TS7006",
+      "message": "Parameter 's' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(151,54): error TS7006: Parameter 's' implicitly has an 'any' type.",
+      "parameter": "s"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 190,
+      "column": 32,
+      "error_code": "TS7006",
+      "message": "Parameter 'date' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(190,32): error TS7006: Parameter 'date' implicitly has an 'any' type.",
+      "parameter": "date"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 204,
+      "column": 26,
+      "error_code": "TS7006",
+      "message": "Parameter 'e' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(204,26): error TS7006: Parameter 'e' implicitly has an 'any' type.",
+      "parameter": "e"
+    },
+    {
+      "file": "src/components/delivery/delivery/StatusUpdateModal.tsx",
+      "line": 215,
+      "column": 26,
+      "error_code": "TS7006",
+      "message": "Parameter 'e' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/StatusUpdateModal.tsx(215,26): error TS7006: Parameter 'e' implicitly has an 'any' type.",
+      "parameter": "e"
+    },
+    {
+      "file": "src/components/delivery/delivery/TimelineView.tsx",
+      "line": 14,
+      "column": 49,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/TimelineView.tsx(14,49): error TS2307: Cannot find module '../../lib/deliveryData' or its corresponding type declarations.",
+      "module": "../../lib/deliveryData"
+    },
+    {
+      "file": "src/components/delivery/delivery/TimelineView.tsx",
+      "line": 15,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/TimelineView.tsx(15,23): error TS2307: Cannot find module '../ui/badge' or its corresponding type declarations.",
+      "module": "../ui/badge"
+    },
+    {
+      "file": "src/components/delivery/delivery/ViewToggle.tsx",
+      "line": 10,
+      "column": 24,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/button' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/ViewToggle.tsx(10,24): error TS2307: Cannot find module '../ui/button' or its corresponding type declarations.",
+      "module": "../ui/button"
+    },
+    {
+      "file": "src/components/delivery/delivery/ViewToggle.tsx",
+      "line": 11,
+      "column": 23,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/input' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/ViewToggle.tsx(11,23): error TS2307: Cannot find module '../ui/input' or its corresponding type declarations.",
+      "module": "../ui/input"
+    },
+    {
+      "file": "src/components/delivery/delivery/ViewToggle.tsx",
+      "line": 18,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/select' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/ViewToggle.tsx(18,8): error TS2307: Cannot find module '../ui/select' or its corresponding type declarations.",
+      "module": "../ui/select"
+    },
+    {
+      "file": "src/components/delivery/delivery/ViewToggle.tsx",
+      "line": 19,
+      "column": 57,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/popover' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/ViewToggle.tsx(19,57): error TS2307: Cannot find module '../ui/popover' or its corresponding type declarations.",
+      "module": "../ui/popover"
+    },
+    {
+      "file": "src/components/delivery/delivery/ViewToggle.tsx",
+      "line": 20,
+      "column": 47,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../ui/calendar' or its corresponding type declarations.",
+      "raw": "src/components/delivery/delivery/ViewToggle.tsx(20,47): error TS2307: Cannot find module '../ui/calendar' or its corresponding type declarations.",
+      "module": "../ui/calendar"
+    },
+    {
+      "file": "src/components/delivery/delivery/ViewToggle.tsx",
+      "line": 109,
+      "column": 24,
+      "error_code": "TS7006",
+      "message": "Parameter 'e' implicitly has an 'any' type.",
+      "raw": "src/components/delivery/delivery/ViewToggle.tsx(109,24): error TS7006: Parameter 'e' implicitly has an 'any' type.",
+      "parameter": "e"
+    },
+    {
+      "file": "src/components/delivery/DeliveryTracker.tsx",
+      "line": 11,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@dnd-kit/core' or its corresponding type declarations.",
+      "raw": "src/components/delivery/DeliveryTracker.tsx(11,8): error TS2307: Cannot find module '@dnd-kit/core' or its corresponding type declarations.",
+      "module": "@dnd-kit/core"
+    },
+    {
+      "file": "src/components/delivery/DeliveryTracker.tsx",
+      "line": 12,
+      "column": 45,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@dnd-kit/sortable' or its corresponding type declarations.",
+      "raw": "src/components/delivery/DeliveryTracker.tsx(12,45): error TS2307: Cannot find module '@dnd-kit/sortable' or its corresponding type declarations.",
+      "module": "@dnd-kit/sortable"
+    },
+    {
+      "file": "src/components/figma-make/customers/customerHelpers.ts",
+      "line": 2,
+      "column": 41,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/components/figma-make/types/customer' or its corresponding type declarations.",
+      "raw": "src/components/figma-make/customers/customerHelpers.ts(2,41): error TS2307: Cannot find module '@/components/figma-make/types/customer' or its corresponding type declarations.",
+      "module": "@/components/figma-make/types/customer"
+    },
+    {
+      "file": "src/components/figma-make/customers/customerMockData.ts",
+      "line": 9,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/components/figma-make/types/customer' or its corresponding type declarations.",
+      "raw": "src/components/figma-make/customers/customerMockData.ts(9,8): error TS2307: Cannot find module '@/components/figma-make/types/customer' or its corresponding type declarations.",
+      "module": "@/components/figma-make/types/customer"
+    },
+    {
+      "file": "src/components/figma-make/customers/CustomerTable.tsx",
+      "line": 39,
+      "column": 61,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/components/figma-make/types/customer' or its corresponding type declarations.",
+      "raw": "src/components/figma-make/customers/CustomerTable.tsx(39,61): error TS2307: Cannot find module '@/components/figma-make/types/customer' or its corresponding type declarations.",
+      "module": "@/components/figma-make/types/customer"
+    },
+    {
+      "file": "src/components/figma-make/customers/CustomerTable.tsx",
+      "line": 40,
+      "column": 34,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/components/figma-make/hooks/useCustomerTable' or its corresponding type declarations.",
+      "raw": "src/components/figma-make/customers/CustomerTable.tsx(40,34): error TS2307: Cannot find module '@/components/figma-make/hooks/useCustomerTable' or its corresponding type declarations.",
+      "module": "@/components/figma-make/hooks/useCustomerTable"
+    },
+    {
+      "file": "src/components/figma-make/customers/CustomerTable.tsx",
+      "line": 51,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/components/figma-make/utils/customerHelpers' or its corresponding type declarations.",
+      "raw": "src/components/figma-make/customers/CustomerTable.tsx(51,8): error TS2307: Cannot find module '@/components/figma-make/utils/customerHelpers' or its corresponding type declarations.",
+      "module": "@/components/figma-make/utils/customerHelpers"
+    },
+    {
+      "file": "src/components/figma-make/customers/CustomerTable.tsx",
+      "line": 451,
+      "column": 33,
+      "error_code": "TS7006",
+      "message": "Parameter 'customer' implicitly has an 'any' type.",
+      "raw": "src/components/figma-make/customers/CustomerTable.tsx(451,33): error TS7006: Parameter 'customer' implicitly has an 'any' type.",
+      "parameter": "customer"
+    },
+    {
+      "file": "src/components/figma-make/customers/CustomerTable.tsx",
+      "line": 451,
+      "column": 43,
+      "error_code": "TS7006",
+      "message": "Parameter 'index' implicitly has an 'any' type.",
+      "raw": "src/components/figma-make/customers/CustomerTable.tsx(451,43): error TS7006: Parameter 'index' implicitly has an 'any' type.",
+      "parameter": "index"
+    },
+    {
+      "file": "src/components/figma-make/customers/CustomerTable.tsx",
+      "line": 585,
+      "column": 23,
+      "error_code": "TS7053",
+      "message": "Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ A: ForwardRefExoticComponent<Omit<LucideProps, \"ref\"> & RefAttributes<SVGSVGElement>>; B: ForwardRefExoticComponent<...>; C: ForwardRefExoticComponent<...>; D: ForwardRefExoticComponent<...>; }'.",
+      "raw": "src/components/figma-make/customers/CustomerTable.tsx(585,23): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ A: ForwardRefExoticComponent<Omit<LucideProps, \"ref\"> & RefAttributes<SVGSVGElement>>; B: ForwardRefExoticComponent<...>; C: ForwardRefExoticComponent<...>; D: ForwardRefExoticComponent<...>; }'."
+    },
+    {
+      "file": "src/components/figma-make/customers/CustomerTable.tsx",
+      "line": 594,
+      "column": 25,
+      "error_code": "TS7053",
+      "message": "Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ whatsapp: ForwardRefExoticComponent<Omit<LucideProps, \"ref\"> & RefAttributes<SVGSVGElement>>; call: ForwardRefExoticComponent<...>; email: ForwardRefExoticComponent<...>; meeting: ForwardRefExoticComponent<...>; }'.",
+      "raw": "src/components/figma-make/customers/CustomerTable.tsx(594,25): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ whatsapp: ForwardRefExoticComponent<Omit<LucideProps, \"ref\"> & RefAttributes<SVGSVGElement>>; call: ForwardRefExoticComponent<...>; email: ForwardRefExoticComponent<...>; meeting: ForwardRefExoticComponent<...>; }'."
+    },
+    {
+      "file": "src/components/figma-make/customers/useCustomerTable.ts",
+      "line": 11,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/components/figma-make/types/customer' or its corresponding type declarations.",
+      "raw": "src/components/figma-make/customers/useCustomerTable.ts(11,8): error TS2307: Cannot find module '@/components/figma-make/types/customer' or its corresponding type declarations.",
+      "module": "@/components/figma-make/types/customer"
+    },
+    {
+      "file": "src/components/figma-make/customers/useCustomerTable.ts",
+      "line": 16,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/components/figma-make/utils/customerMockData' or its corresponding type declarations.",
+      "raw": "src/components/figma-make/customers/useCustomerTable.ts(16,8): error TS2307: Cannot find module '@/components/figma-make/utils/customerMockData' or its corresponding type declarations.",
+      "module": "@/components/figma-make/utils/customerMockData"
+    },
+    {
+      "file": "src/components/figma-make/customers/useCustomerTable.ts",
+      "line": 102,
+      "column": 18,
+      "error_code": "TS7053",
+      "message": "Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ A: number; B: number; C: number; D: number; }'.",
+      "raw": "src/components/figma-make/customers/useCustomerTable.ts(102,18): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ A: number; B: number; C: number; D: number; }'."
+    },
+    {
+      "file": "src/components/figma-make/customers/useCustomerTable.ts",
+      "line": 103,
+      "column": 18,
+      "error_code": "TS7053",
+      "message": "Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ A: number; B: number; C: number; D: number; }'.",
+      "raw": "src/components/figma-make/customers/useCustomerTable.ts(103,18): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ A: number; B: number; C: number; D: number; }'."
+    },
+    {
+      "file": "src/components/figma-make/customers/useCustomerTable.ts",
+      "line": 151,
+      "column": 17,
+      "error_code": "TS7006",
+      "message": "Parameter 'prev' implicitly has an 'any' type.",
+      "raw": "src/components/figma-make/customers/useCustomerTable.ts(151,17): error TS7006: Parameter 'prev' implicitly has an 'any' type.",
+      "parameter": "prev"
+    },
+    {
+      "file": "src/components/figma-make/customers/useCustomerTable.ts",
+      "line": 157,
+      "column": 17,
+      "error_code": "TS7006",
+      "message": "Parameter 'prev' implicitly has an 'any' type.",
+      "raw": "src/components/figma-make/customers/useCustomerTable.ts(157,17): error TS7006: Parameter 'prev' implicitly has an 'any' type.",
+      "parameter": "prev"
+    },
+    {
+      "file": "src/components/orders/App.tsx",
+      "line": 1,
+      "column": 25,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/ui/sonner' or its corresponding type declarations.",
+      "raw": "src/components/orders/App.tsx(1,25): error TS2307: Cannot find module './components/ui/sonner' or its corresponding type declarations.",
+      "module": "./components/ui/sonner"
+    },
+    {
+      "file": "src/components/orders/App.tsx",
+      "line": 2,
+      "column": 28,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/OrderTable' or its corresponding type declarations.",
+      "raw": "src/components/orders/App.tsx(2,28): error TS2307: Cannot find module './components/OrderTable' or its corresponding type declarations.",
+      "module": "./components/OrderTable"
+    },
+    {
+      "file": "src/components/orders/OrderTable.tsx",
+      "line": 167,
+      "column": 11,
+      "error_code": "TS2322",
+      "message": "Type 'OrderFilters' is not assignable to type 'FilterState'.",
+      "raw": "src/components/orders/OrderTable.tsx(167,11): error TS2322: Type 'OrderFilters' is not assignable to type 'FilterState'."
+    },
+    {
+      "file": "src/components/orders/OrderTable.tsx",
+      "line": 170,
+      "column": 11,
+      "error_code": "TS2322",
+      "message": "Type '(newFilters: Partial<OrderFilters>) => void' is not assignable to type '(filters: Partial<FilterState>) => void'.",
+      "raw": "src/components/orders/OrderTable.tsx(170,11): error TS2322: Type '(newFilters: Partial<OrderFilters>) => void' is not assignable to type '(filters: Partial<FilterState>) => void'."
+    },
+    {
+      "file": "src/components/orders/OrderTableRow.tsx",
+      "line": 57,
+      "column": 55,
+      "error_code": "TS2554",
+      "message": "Expected 1 arguments, but got 2.",
+      "raw": "src/components/orders/OrderTableRow.tsx(57,55): error TS2554: Expected 1 arguments, but got 2."
+    },
+    {
+      "file": "src/components/payments/AdvancedFilters.tsx",
+      "line": 126,
+      "column": 48,
+      "error_code": "TS2554",
+      "message": "Expected 1 arguments, but got 2.",
+      "raw": "src/components/payments/AdvancedFilters.tsx(126,48): error TS2554: Expected 1 arguments, but got 2."
+    },
+    {
+      "file": "src/components/payments/AdvancedFilters.tsx",
+      "line": 128,
+      "column": 19,
+      "error_code": "TS2554",
+      "message": "Expected 1 arguments, but got 2.",
+      "raw": "src/components/payments/AdvancedFilters.tsx(128,19): error TS2554: Expected 1 arguments, but got 2."
+    },
+    {
+      "file": "src/components/payments/App.tsx",
+      "line": 1,
+      "column": 25,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/ui/sonner' or its corresponding type declarations.",
+      "raw": "src/components/payments/App.tsx(1,25): error TS2307: Cannot find module './components/ui/sonner' or its corresponding type declarations.",
+      "module": "./components/ui/sonner"
+    },
+    {
+      "file": "src/components/payments/App.tsx",
+      "line": 2,
+      "column": 33,
+      "error_code": "TS2307",
+      "message": "Cannot find module './components/PaymentSchedule' or its corresponding type declarations.",
+      "raw": "src/components/payments/App.tsx(2,33): error TS2307: Cannot find module './components/PaymentSchedule' or its corresponding type declarations.",
+      "module": "./components/PaymentSchedule"
+    },
+    {
+      "file": "src/components/payments/CalendarView.tsx",
+      "line": 135,
+      "column": 31,
+      "error_code": "TS7053",
+      "message": "Element implicitly has an 'any' type because expression of type 'PaymentStatus' can't be used to index type '{ pending: { label: string; color: string; }; paid: { label: string; color: string; }; overdue: { label: string; color: string; }; partial: { label: string; color: string; }; }'.",
+      "raw": "src/components/payments/CalendarView.tsx(135,31): error TS7053: Element implicitly has an 'any' type because expression of type 'PaymentStatus' can't be used to index type '{ pending: { label: string; color: string; }; paid: { label: string; color: string; }; overdue: { label: string; color: string; }; partial: { label: string; color: string; }; }'."
+    },
+    {
+      "file": "src/components/payments/CalendarView.tsx",
+      "line": 151,
+      "column": 33,
+      "error_code": "TS7053",
+      "message": "Element implicitly has an 'any' type because expression of type 'PaymentStatus' can't be used to index type '{ pending: { label: string; color: string; }; paid: { label: string; color: string; }; overdue: { label: string; color: string; }; partial: { label: string; color: string; }; }'.",
+      "raw": "src/components/payments/CalendarView.tsx(151,33): error TS7053: Element implicitly has an 'any' type because expression of type 'PaymentStatus' can't be used to index type '{ pending: { label: string; color: string; }; paid: { label: string; color: string; }; overdue: { label: string; color: string; }; partial: { label: string; color: string; }; }'."
+    },
+    {
+      "file": "src/components/payments/CalendarView.tsx",
+      "line": 154,
+      "column": 30,
+      "error_code": "TS7053",
+      "message": "Element implicitly has an 'any' type because expression of type 'PaymentStatus' can't be used to index type '{ pending: { label: string; color: string; }; paid: { label: string; color: string; }; overdue: { label: string; color: string; }; partial: { label: string; color: string; }; }'.",
+      "raw": "src/components/payments/CalendarView.tsx(154,30): error TS7053: Element implicitly has an 'any' type because expression of type 'PaymentStatus' can't be used to index type '{ pending: { label: string; color: string; }; paid: { label: string; color: string; }; overdue: { label: string; color: string; }; partial: { label: string; color: string; }; }'."
+    },
+    {
+      "file": "src/components/payments/ExportDialog.tsx",
+      "line": 123,
+      "column": 33,
+      "error_code": "TS7006",
+      "message": "Parameter 'v' implicitly has an 'any' type.",
+      "raw": "src/components/payments/ExportDialog.tsx(123,33): error TS7006: Parameter 'v' implicitly has an 'any' type.",
+      "parameter": "v"
+    },
+    {
+      "file": "src/components/payments/ExportDialog.tsx",
+      "line": 161,
+      "column": 33,
+      "error_code": "TS7006",
+      "message": "Parameter 'v' implicitly has an 'any' type.",
+      "raw": "src/components/payments/ExportDialog.tsx(161,33): error TS7006: Parameter 'v' implicitly has an 'any' type.",
+      "parameter": "v"
+    },
+    {
+      "file": "src/components/payments/MetricsCards.tsx",
+      "line": 24,
+      "column": 26,
+      "error_code": "TS2339",
+      "message": "Property 'receivablesChange' does not exist on type 'Statistics'.",
+      "raw": "src/components/payments/MetricsCards.tsx(24,26): error TS2339: Property 'receivablesChange' does not exist on type 'Statistics'.",
+      "property": "receivablesChange",
+      "type": "Statistics"
+    },
+    {
+      "file": "src/components/payments/MetricsCards.tsx",
+      "line": 25,
+      "column": 25,
+      "error_code": "TS2339",
+      "message": "Property 'receivablesTrend' does not exist on type 'Statistics'.",
+      "raw": "src/components/payments/MetricsCards.tsx(25,25): error TS2339: Property 'receivablesTrend' does not exist on type 'Statistics'.",
+      "property": "receivablesTrend",
+      "type": "Statistics"
+    },
+    {
+      "file": "src/components/payments/MetricsCards.tsx",
+      "line": 33,
+      "column": 31,
+      "error_code": "TS2551",
+      "message": "Property 'overdueCount' does not exist on type 'Statistics'. Did you mean 'overdueAmount'?",
+      "raw": "src/components/payments/MetricsCards.tsx(33,31): error TS2551: Property 'overdueCount' does not exist on type 'Statistics'. Did you mean 'overdueAmount'?"
+    },
+    {
+      "file": "src/components/payments/MetricsCards.tsx",
+      "line": 35,
+      "column": 26,
+      "error_code": "TS2551",
+      "message": "Property 'overdueCount' does not exist on type 'Statistics'. Did you mean 'overdueAmount'?",
+      "raw": "src/components/payments/MetricsCards.tsx(35,26): error TS2551: Property 'overdueCount' does not exist on type 'Statistics'. Did you mean 'overdueAmount'?"
+    },
+    {
+      "file": "src/components/payments/MetricsCards.tsx",
+      "line": 42,
+      "column": 31,
+      "error_code": "TS2551",
+      "message": "Property 'dueThisWeekCount' does not exist on type 'Statistics'. Did you mean 'dueThisWeek'?",
+      "raw": "src/components/payments/MetricsCards.tsx(42,31): error TS2551: Property 'dueThisWeekCount' does not exist on type 'Statistics'. Did you mean 'dueThisWeek'?"
+    },
+    {
+      "file": "src/components/payments/PaymentModal.tsx",
+      "line": 78,
+      "column": 7,
+      "error_code": "TS2322",
+      "message": "Type 'string | undefined' is not assignable to type 'string'.",
+      "raw": "src/components/payments/PaymentModal.tsx(78,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'."
+    },
+    {
+      "file": "src/components/payments/PaymentSchedule.tsx",
+      "line": 12,
+      "column": 22,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'canvas-confetti' or its corresponding type declarations.",
+      "raw": "src/components/payments/PaymentSchedule.tsx(12,22): error TS2307: Cannot find module 'canvas-confetti' or its corresponding type declarations.",
+      "module": "canvas-confetti"
+    },
+    {
+      "file": "src/components/payments/PaymentSchedule.tsx",
+      "line": 39,
+      "column": 55,
+      "error_code": "TS2345",
+      "message": "Argument of type '{ id: string; invoiceNo: string; customerName: string; amount: number; currency: string; dueDate: string; status: string; age: number; }[]' is not assignable to parameter of type 'Invoice[] | (() => Invoice[])'.",
+      "raw": "src/components/payments/PaymentSchedule.tsx(39,55): error TS2345: Argument of type '{ id: string; invoiceNo: string; customerName: string; amount: number; currency: string; dueDate: string; status: string; age: number; }[]' is not assignable to parameter of type 'Invoice[] | (() => Invoice[])'."
+    },
+    {
+      "file": "src/components/payments/PaymentSchedule.tsx",
+      "line": 238,
+      "column": 30,
+      "error_code": "TS2339",
+      "message": "Property 'totalReceivables' does not exist on type '{ totalOutstanding: number; overdueAmount: number; dueThisWeek: number; collectionRate: number; }'.",
+      "raw": "src/components/payments/PaymentSchedule.tsx(238,30): error TS2339: Property 'totalReceivables' does not exist on type '{ totalOutstanding: number; overdueAmount: number; dueThisWeek: number; collectionRate: number; }'.",
+      "property": "totalReceivables",
+      "type": "{ totalOutstanding: number; overdueAmount: number; dueThisWeek: number; collectionRate: number; }"
+    },
+    {
+      "file": "src/components/payments/PaymentSchedule.tsx",
+      "line": 320,
+      "column": 32,
+      "error_code": "TS2339",
+      "message": "Property 'totalReceivables' does not exist on type '{ totalOutstanding: number; overdueAmount: number; dueThisWeek: number; collectionRate: number; }'.",
+      "raw": "src/components/payments/PaymentSchedule.tsx(320,32): error TS2339: Property 'totalReceivables' does not exist on type '{ totalOutstanding: number; overdueAmount: number; dueThisWeek: number; collectionRate: number; }'.",
+      "property": "totalReceivables",
+      "type": "{ totalOutstanding: number; overdueAmount: number; dueThisWeek: number; collectionRate: number; }"
+    },
+    {
+      "file": "src/components/payments/PaymentSchedule.tsx",
+      "line": 489,
+      "column": 23,
+      "error_code": "TS2741",
+      "message": "Property 'totalReceivables' is missing in type '{ totalOutstanding: number; overdueAmount: number; dueThisWeek: number; collectionRate: number; }' but required in type 'Statistics'.",
+      "raw": "src/components/payments/PaymentSchedule.tsx(489,23): error TS2741: Property 'totalReceivables' is missing in type '{ totalOutstanding: number; overdueAmount: number; dueThisWeek: number; collectionRate: number; }' but required in type 'Statistics'."
+    },
+    {
+      "file": "src/components/payments/PaymentSchedule.tsx",
+      "line": 549,
+      "column": 48,
+      "error_code": "TS2739",
+      "message": "Type '{ range: string; amount: number; count: number; }[]' is missing the following properties from type 'AgingReport': current, aging_30, aging_60, aging_90",
+      "raw": "src/components/payments/PaymentSchedule.tsx(549,48): error TS2739: Type '{ range: string; amount: number; count: number; }[]' is missing the following properties from type 'AgingReport': current, aging_30, aging_60, aging_90"
+    },
+    {
+      "file": "src/components/payments/PaymentTable.tsx",
+      "line": 16,
+      "column": 3,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/utils-payment\"' has no exported member 'formatRelativeTime'.",
+      "raw": "src/components/payments/PaymentTable.tsx(16,3): error TS2305: Module '\"@/lib/utils-payment\"' has no exported member 'formatRelativeTime'.",
+      "module": "@/lib/utils-payment"
+    },
+    {
+      "file": "src/components/payments/PaymentTable.tsx",
+      "line": 17,
+      "column": 3,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/utils-payment\"' has no exported member 'getDueDateColor'.",
+      "raw": "src/components/payments/PaymentTable.tsx(17,3): error TS2305: Module '\"@/lib/utils-payment\"' has no exported member 'getDueDateColor'.",
+      "module": "@/lib/utils-payment"
+    },
+    {
+      "file": "src/components/payments/PaymentTable.tsx",
+      "line": 18,
+      "column": 3,
+      "error_code": "TS2305",
+      "message": "Module '\"@/lib/utils-payment\"' has no exported member 'getOverdueBadgeColor'.",
+      "raw": "src/components/payments/PaymentTable.tsx(18,3): error TS2305: Module '\"@/lib/utils-payment\"' has no exported member 'getOverdueBadgeColor'.",
+      "module": "@/lib/utils-payment"
+    },
+    {
+      "file": "src/components/payments/PaymentTable.tsx",
+      "line": 170,
+      "column": 34,
+      "error_code": "TS2551",
+      "message": "Property 'customerCode' does not exist on type 'Invoice'. Did you mean 'customerId'?",
+      "raw": "src/components/payments/PaymentTable.tsx(170,34): error TS2551: Property 'customerCode' does not exist on type 'Invoice'. Did you mean 'customerId'?"
+    },
+    {
+      "file": "src/components/payments/PaymentTable.tsx",
+      "line": 210,
+      "column": 30,
+      "error_code": "TS2339",
+      "message": "Property 'daysOverdue' does not exist on type 'Invoice'.",
+      "raw": "src/components/payments/PaymentTable.tsx(210,30): error TS2339: Property 'daysOverdue' does not exist on type 'Invoice'.",
+      "property": "daysOverdue",
+      "type": "Invoice"
+    },
+    {
+      "file": "src/components/payments/PaymentTable.tsx",
+      "line": 215,
+      "column": 37,
+      "error_code": "TS2339",
+      "message": "Property 'daysOverdue' does not exist on type 'Invoice'.",
+      "raw": "src/components/payments/PaymentTable.tsx(215,37): error TS2339: Property 'daysOverdue' does not exist on type 'Invoice'.",
+      "property": "daysOverdue",
+      "type": "Invoice"
+    },
+    {
+      "file": "src/components/payments/PaymentTable.tsx",
+      "line": 219,
+      "column": 34,
+      "error_code": "TS2339",
+      "message": "Property 'daysOverdue' does not exist on type 'Invoice'.",
+      "raw": "src/components/payments/PaymentTable.tsx(219,34): error TS2339: Property 'daysOverdue' does not exist on type 'Invoice'.",
+      "property": "daysOverdue",
+      "type": "Invoice"
+    },
+    {
+      "file": "src/components/payments/PaymentTable.tsx",
+      "line": 222,
+      "column": 34,
+      "error_code": "TS2339",
+      "message": "Property 'daysOverdue' does not exist on type 'Invoice'.",
+      "raw": "src/components/payments/PaymentTable.tsx(222,34): error TS2339: Property 'daysOverdue' does not exist on type 'Invoice'.",
+      "property": "daysOverdue",
+      "type": "Invoice"
+    },
+    {
+      "file": "src/components/payments/PaymentTable.tsx",
+      "line": 231,
+      "column": 27,
+      "error_code": "TS7053",
+      "message": "Element implicitly has an 'any' type because expression of type 'PaymentStatus' can't be used to index type '{ pending: { label: string; color: string; }; paid: { label: string; color: string; }; overdue: { label: string; color: string; }; partial: { label: string; color: string; }; }'.",
+      "raw": "src/components/payments/PaymentTable.tsx(231,27): error TS7053: Element implicitly has an 'any' type because expression of type 'PaymentStatus' can't be used to index type '{ pending: { label: string; color: string; }; paid: { label: string; color: string; }; overdue: { label: string; color: string; }; partial: { label: string; color: string; }; }'."
+    },
+    {
+      "file": "src/components/payments/PaymentTable.tsx",
+      "line": 235,
+      "column": 24,
+      "error_code": "TS7053",
+      "message": "Element implicitly has an 'any' type because expression of type 'PaymentStatus' can't be used to index type '{ pending: { label: string; color: string; }; paid: { label: string; color: string; }; overdue: { label: string; color: string; }; partial: { label: string; color: string; }; }'.",
+      "raw": "src/components/payments/PaymentTable.tsx(235,24): error TS7053: Element implicitly has an 'any' type because expression of type 'PaymentStatus' can't be used to index type '{ pending: { label: string; color: string; }; paid: { label: string; color: string; }; overdue: { label: string; color: string; }; partial: { label: string; color: string; }; }'."
+    },
+    {
+      "file": "src/components/payments/RealTimeUpdates.tsx",
+      "line": 3,
+      "column": 41,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'motion/react' or its corresponding type declarations.",
+      "raw": "src/components/payments/RealTimeUpdates.tsx(3,41): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.",
+      "module": "motion/react"
+    },
+    {
+      "file": "src/components/SecurityDashboard.tsx",
+      "line": 33,
+      "column": 24,
+      "error_code": "TS2345",
+      "message": "Argument of type '{ recentEvents: SecurityEvent[]; eventsByType: Record<string, number>; eventsBySeverity: Record<string, number>; performanceMetrics: PerformanceMetric[]; systemHealth: string; }' is not assignable to parameter of type 'SetStateAction<SecurityDashboardData | null>'.",
+      "raw": "src/components/SecurityDashboard.tsx(33,24): error TS2345: Argument of type '{ recentEvents: SecurityEvent[]; eventsByType: Record<string, number>; eventsBySeverity: Record<string, number>; performanceMetrics: PerformanceMetric[]; systemHealth: string; }' is not assignable to parameter of type 'SetStateAction<SecurityDashboardData | null>'."
+    },
+    {
+      "file": "src/components/SecurityDashboard.tsx",
+      "line": 465,
+      "column": 34,
+      "error_code": "TS2345",
+      "message": "Argument of type '{ recentEvents: SecurityEvent[]; eventsByType: Record<string, number>; eventsBySeverity: Record<string, number>; performanceMetrics: PerformanceMetric[]; systemHealth: string; }' is not assignable to parameter of type 'SetStateAction<SecurityDashboardData | null>'.",
+      "raw": "src/components/SecurityDashboard.tsx(465,34): error TS2345: Argument of type '{ recentEvents: SecurityEvent[]; eventsByType: Record<string, number>; eventsBySeverity: Record<string, number>; performanceMetrics: PerformanceMetric[]; systemHealth: string; }' is not assignable to parameter of type 'SetStateAction<SecurityDashboardData | null>'."
+    },
+    {
+      "file": "src/components/ui/accordion.tsx",
+      "line": 4,
+      "column": 37,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-accordion' or its corresponding type declarations.",
+      "raw": "src/components/ui/accordion.tsx(4,37): error TS2307: Cannot find module '@radix-ui/react-accordion' or its corresponding type declarations.",
+      "module": "@radix-ui/react-accordion"
+    },
+    {
+      "file": "src/components/ui/alert-dialog.tsx",
+      "line": 4,
+      "column": 39,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-alert-dialog' or its corresponding type declarations.",
+      "raw": "src/components/ui/alert-dialog.tsx(4,39): error TS2307: Cannot find module '@radix-ui/react-alert-dialog' or its corresponding type declarations.",
+      "module": "@radix-ui/react-alert-dialog"
+    },
+    {
+      "file": "src/components/ui/aspect-ratio.tsx",
+      "line": 3,
+      "column": 39,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-aspect-ratio' or its corresponding type declarations.",
+      "raw": "src/components/ui/aspect-ratio.tsx(3,39): error TS2307: Cannot find module '@radix-ui/react-aspect-ratio' or its corresponding type declarations.",
+      "module": "@radix-ui/react-aspect-ratio"
+    },
+    {
+      "file": "src/components/ui/calendar.tsx",
+      "line": 5,
+      "column": 27,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'react-day-picker@8.10.1' or its corresponding type declarations.",
+      "raw": "src/components/ui/calendar.tsx(5,27): error TS2307: Cannot find module 'react-day-picker@8.10.1' or its corresponding type declarations.",
+      "module": "react-day-picker@8.10.1"
+    },
+    {
+      "file": "src/components/ui/calendar.tsx",
+      "line": 63,
+      "column": 22,
+      "error_code": "TS7031",
+      "message": "Binding element 'className' implicitly has an 'any' type.",
+      "raw": "src/components/ui/calendar.tsx(63,22): error TS7031: Binding element 'className' implicitly has an 'any' type."
+    },
+    {
+      "file": "src/components/ui/calendar.tsx",
+      "line": 66,
+      "column": 23,
+      "error_code": "TS7031",
+      "message": "Binding element 'className' implicitly has an 'any' type.",
+      "raw": "src/components/ui/calendar.tsx(66,23): error TS7031: Binding element 'className' implicitly has an 'any' type."
+    },
+    {
+      "file": "src/components/ui/carousel.tsx",
+      "line": 6,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'embla-carousel-react@8.6.0' or its corresponding type declarations.",
+      "raw": "src/components/ui/carousel.tsx(6,8): error TS2307: Cannot find module 'embla-carousel-react@8.6.0' or its corresponding type declarations.",
+      "module": "embla-carousel-react@8.6.0"
+    },
+    {
+      "file": "src/components/ui/chart.tsx",
+      "line": 4,
+      "column": 36,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'recharts@2.15.2' or its corresponding type declarations.",
+      "raw": "src/components/ui/chart.tsx(4,36): error TS2307: Cannot find module 'recharts@2.15.2' or its corresponding type declarations.",
+      "module": "recharts@2.15.2"
+    },
+    {
+      "file": "src/components/ui/chart.tsx",
+      "line": 182,
+      "column": 23,
+      "error_code": "TS7006",
+      "message": "Parameter 'item' implicitly has an 'any' type.",
+      "raw": "src/components/ui/chart.tsx(182,23): error TS7006: Parameter 'item' implicitly has an 'any' type.",
+      "parameter": "item"
+    },
+    {
+      "file": "src/components/ui/chart.tsx",
+      "line": 182,
+      "column": 29,
+      "error_code": "TS7006",
+      "message": "Parameter 'index' implicitly has an 'any' type.",
+      "raw": "src/components/ui/chart.tsx(182,29): error TS7006: Parameter 'index' implicitly has an 'any' type.",
+      "parameter": "index"
+    },
+    {
+      "file": "src/components/ui/chart.tsx",
+      "line": 278,
+      "column": 21,
+      "error_code": "TS7006",
+      "message": "Parameter 'item' implicitly has an 'any' type.",
+      "raw": "src/components/ui/chart.tsx(278,21): error TS7006: Parameter 'item' implicitly has an 'any' type.",
+      "parameter": "item"
+    },
+    {
+      "file": "src/components/ui/collapsible.tsx",
+      "line": 3,
+      "column": 39,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-collapsible' or its corresponding type declarations.",
+      "raw": "src/components/ui/collapsible.tsx(3,39): error TS2307: Cannot find module '@radix-ui/react-collapsible' or its corresponding type declarations.",
+      "module": "@radix-ui/react-collapsible"
+    },
+    {
+      "file": "src/components/ui/command.tsx",
+      "line": 4,
+      "column": 45,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'cmdk@1.1.1' or its corresponding type declarations.",
+      "raw": "src/components/ui/command.tsx(4,45): error TS2307: Cannot find module 'cmdk@1.1.1' or its corresponding type declarations.",
+      "module": "cmdk@1.1.1"
+    },
+    {
+      "file": "src/components/ui/context-menu.tsx",
+      "line": 4,
+      "column": 39,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-context-menu' or its corresponding type declarations.",
+      "raw": "src/components/ui/context-menu.tsx(4,39): error TS2307: Cannot find module '@radix-ui/react-context-menu' or its corresponding type declarations.",
+      "module": "@radix-ui/react-context-menu"
+    },
+    {
+      "file": "src/components/ui/drawer.tsx",
+      "line": 4,
+      "column": 43,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'vaul@1.1.2' or its corresponding type declarations.",
+      "raw": "src/components/ui/drawer.tsx(4,43): error TS2307: Cannot find module 'vaul@1.1.2' or its corresponding type declarations.",
+      "module": "vaul@1.1.2"
+    },
+    {
+      "file": "src/components/ui/form.tsx",
+      "line": 4,
+      "column": 33,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-label' or its corresponding type declarations.",
+      "raw": "src/components/ui/form.tsx(4,33): error TS2307: Cannot find module '@radix-ui/react-label' or its corresponding type declarations.",
+      "module": "@radix-ui/react-label"
+    },
+    {
+      "file": "src/components/ui/form.tsx",
+      "line": 14,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'react-hook-form@7.55.0' or its corresponding type declarations.",
+      "raw": "src/components/ui/form.tsx(14,8): error TS2307: Cannot find module 'react-hook-form@7.55.0' or its corresponding type declarations.",
+      "module": "react-hook-form@7.55.0"
+    },
+    {
+      "file": "src/components/ui/hover-card.tsx",
+      "line": 4,
+      "column": 37,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-hover-card' or its corresponding type declarations.",
+      "raw": "src/components/ui/hover-card.tsx(4,37): error TS2307: Cannot find module '@radix-ui/react-hover-card' or its corresponding type declarations.",
+      "module": "@radix-ui/react-hover-card"
+    },
+    {
+      "file": "src/components/ui/input-otp.tsx",
+      "line": 4,
+      "column": 43,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'input-otp@1.4.2' or its corresponding type declarations.",
+      "raw": "src/components/ui/input-otp.tsx(4,43): error TS2307: Cannot find module 'input-otp@1.4.2' or its corresponding type declarations.",
+      "module": "input-otp@1.4.2"
+    },
+    {
+      "file": "src/components/ui/input-otp.tsx",
+      "line": 47,
+      "column": 61,
+      "error_code": "TS2339",
+      "message": "Property 'slots' does not exist on type '{}'.",
+      "raw": "src/components/ui/input-otp.tsx(47,61): error TS2339: Property 'slots' does not exist on type '{}'.",
+      "property": "slots",
+      "type": "{}"
+    },
+    {
+      "file": "src/components/ui/label.tsx",
+      "line": 4,
+      "column": 33,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-label' or its corresponding type declarations.",
+      "raw": "src/components/ui/label.tsx(4,33): error TS2307: Cannot find module '@radix-ui/react-label' or its corresponding type declarations.",
+      "module": "@radix-ui/react-label"
+    },
+    {
+      "file": "src/components/ui/menubar.tsx",
+      "line": 4,
+      "column": 35,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-menubar' or its corresponding type declarations.",
+      "raw": "src/components/ui/menubar.tsx(4,35): error TS2307: Cannot find module '@radix-ui/react-menubar' or its corresponding type declarations.",
+      "module": "@radix-ui/react-menubar"
+    },
+    {
+      "file": "src/components/ui/navigation-menu.tsx",
+      "line": 2,
+      "column": 42,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-navigation-menu' or its corresponding type declarations.",
+      "raw": "src/components/ui/navigation-menu.tsx(2,42): error TS2307: Cannot find module '@radix-ui/react-navigation-menu' or its corresponding type declarations.",
+      "module": "@radix-ui/react-navigation-menu"
+    },
+    {
+      "file": "src/components/ui/navigation-menu.tsx",
+      "line": 3,
+      "column": 21,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'class-variance-authority@0.7.1' or its corresponding type declarations.",
+      "raw": "src/components/ui/navigation-menu.tsx(3,21): error TS2307: Cannot find module 'class-variance-authority@0.7.1' or its corresponding type declarations.",
+      "module": "class-variance-authority@0.7.1"
+    },
+    {
+      "file": "src/components/ui/popover.tsx",
+      "line": 4,
+      "column": 35,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-popover' or its corresponding type declarations.",
+      "raw": "src/components/ui/popover.tsx(4,35): error TS2307: Cannot find module '@radix-ui/react-popover' or its corresponding type declarations.",
+      "module": "@radix-ui/react-popover"
+    },
+    {
+      "file": "src/components/ui/radio-group.tsx",
+      "line": 4,
+      "column": 38,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-radio-group' or its corresponding type declarations.",
+      "raw": "src/components/ui/radio-group.tsx(4,38): error TS2307: Cannot find module '@radix-ui/react-radio-group' or its corresponding type declarations.",
+      "module": "@radix-ui/react-radio-group"
+    },
+    {
+      "file": "src/components/ui/resizable.tsx",
+      "line": 5,
+      "column": 37,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'react-resizable-panels@2.1.7' or its corresponding type declarations.",
+      "raw": "src/components/ui/resizable.tsx(5,37): error TS2307: Cannot find module 'react-resizable-panels@2.1.7' or its corresponding type declarations.",
+      "module": "react-resizable-panels@2.1.7"
+    },
+    {
+      "file": "src/components/ui/scroll-area.tsx",
+      "line": 4,
+      "column": 38,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-scroll-area' or its corresponding type declarations.",
+      "raw": "src/components/ui/scroll-area.tsx(4,38): error TS2307: Cannot find module '@radix-ui/react-scroll-area' or its corresponding type declarations.",
+      "module": "@radix-ui/react-scroll-area"
+    },
+    {
+      "file": "src/components/ui/separator.tsx",
+      "line": 4,
+      "column": 37,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-separator' or its corresponding type declarations.",
+      "raw": "src/components/ui/separator.tsx(4,37): error TS2307: Cannot find module '@radix-ui/react-separator' or its corresponding type declarations.",
+      "module": "@radix-ui/react-separator"
+    },
+    {
+      "file": "src/components/ui/sidebar.tsx",
+      "line": 5,
+      "column": 35,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'class-variance-authority@0.7.1' or its corresponding type declarations.",
+      "raw": "src/components/ui/sidebar.tsx(5,35): error TS2307: Cannot find module 'class-variance-authority@0.7.1' or its corresponding type declarations.",
+      "module": "class-variance-authority@0.7.1"
+    },
+    {
+      "file": "src/components/ui/sidebar.tsx",
+      "line": 8,
+      "column": 29,
+      "error_code": "TS2307",
+      "message": "Cannot find module './use-mobile' or its corresponding type declarations.",
+      "raw": "src/components/ui/sidebar.tsx(8,29): error TS2307: Cannot find module './use-mobile' or its corresponding type declarations.",
+      "module": "./use-mobile"
+    },
+    {
+      "file": "src/components/ui/slider.tsx",
+      "line": 4,
+      "column": 34,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-slider' or its corresponding type declarations.",
+      "raw": "src/components/ui/slider.tsx(4,34): error TS2307: Cannot find module '@radix-ui/react-slider' or its corresponding type declarations.",
+      "module": "@radix-ui/react-slider"
+    },
+    {
+      "file": "src/components/ui/sonner.tsx",
+      "line": 3,
+      "column": 26,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'next-themes@0.4.6' or its corresponding type declarations.",
+      "raw": "src/components/ui/sonner.tsx(3,26): error TS2307: Cannot find module 'next-themes@0.4.6' or its corresponding type declarations.",
+      "module": "next-themes@0.4.6"
+    },
+    {
+      "file": "src/components/ui/switch.tsx",
+      "line": 4,
+      "column": 34,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-switch' or its corresponding type declarations.",
+      "raw": "src/components/ui/switch.tsx(4,34): error TS2307: Cannot find module '@radix-ui/react-switch' or its corresponding type declarations.",
+      "module": "@radix-ui/react-switch"
+    },
+    {
+      "file": "src/components/ui/toggle-group.tsx",
+      "line": 4,
+      "column": 39,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-toggle-group' or its corresponding type declarations.",
+      "raw": "src/components/ui/toggle-group.tsx(4,39): error TS2307: Cannot find module '@radix-ui/react-toggle-group' or its corresponding type declarations.",
+      "module": "@radix-ui/react-toggle-group"
+    },
+    {
+      "file": "src/components/ui/toggle-group.tsx",
+      "line": 5,
+      "column": 35,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'class-variance-authority@0.7.1' or its corresponding type declarations.",
+      "raw": "src/components/ui/toggle-group.tsx(5,35): error TS2307: Cannot find module 'class-variance-authority@0.7.1' or its corresponding type declarations.",
+      "module": "class-variance-authority@0.7.1"
+    },
+    {
+      "file": "src/components/ui/toggle.tsx",
+      "line": 4,
+      "column": 34,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@radix-ui/react-toggle' or its corresponding type declarations.",
+      "raw": "src/components/ui/toggle.tsx(4,34): error TS2307: Cannot find module '@radix-ui/react-toggle' or its corresponding type declarations.",
+      "module": "@radix-ui/react-toggle"
+    },
+    {
+      "file": "src/components/ui/toggle.tsx",
+      "line": 5,
+      "column": 40,
+      "error_code": "TS2307",
+      "message": "Cannot find module 'class-variance-authority@0.7.1' or its corresponding type declarations.",
+      "raw": "src/components/ui/toggle.tsx(5,40): error TS2307: Cannot find module 'class-variance-authority@0.7.1' or its corresponding type declarations.",
+      "module": "class-variance-authority@0.7.1"
+    },
+    {
+      "file": "src/hooks/useCustomerTable.ts",
+      "line": 17,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../utils/customerMockData' or its corresponding type declarations.",
+      "raw": "src/hooks/useCustomerTable.ts(17,8): error TS2307: Cannot find module '../utils/customerMockData' or its corresponding type declarations.",
+      "module": "../utils/customerMockData"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 7,
+      "column": 3,
+      "error_code": "TS2305",
+      "message": "Module '\"../types/customer\"' has no exported member 'PaymentRecord'.",
+      "raw": "src/lib/customer-intelligence.ts(7,3): error TS2305: Module '\"../types/customer\"' has no exported member 'PaymentRecord'.",
+      "module": "../types/customer"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 8,
+      "column": 3,
+      "error_code": "TS2305",
+      "message": "Module '\"../types/customer\"' has no exported member 'CustomerGradeAnalysis'.",
+      "raw": "src/lib/customer-intelligence.ts(8,3): error TS2305: Module '\"../types/customer\"' has no exported member 'CustomerGradeAnalysis'.",
+      "module": "../types/customer"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 89,
+      "column": 5,
+      "error_code": "TS2322",
+      "message": "Type '{ grade: string; date: Date; reason: string; }[]' is not assignable to type '{ grade: \"A\" | \"B\" | \"C\" | \"D\"; date: Date; reason: string; }[]'.",
+      "raw": "src/lib/customer-intelligence.ts(89,5): error TS2322: Type '{ grade: string; date: Date; reason: string; }[]' is not assignable to type '{ grade: \"A\" | \"B\" | \"C\" | \"D\"; date: Date; reason: string; }[]'."
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 100,
+      "column": 6,
+      "error_code": "TS7006",
+      "message": "Parameter 'p' implicitly has an 'any' type.",
+      "raw": "src/lib/customer-intelligence.ts(100,6): error TS7006: Parameter 'p' implicitly has an 'any' type.",
+      "parameter": "p"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 105,
+      "column": 26,
+      "error_code": "TS7006",
+      "message": "Parameter 'sum' implicitly has an 'any' type.",
+      "raw": "src/lib/customer-intelligence.ts(105,26): error TS7006: Parameter 'sum' implicitly has an 'any' type.",
+      "parameter": "sum"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 105,
+      "column": 31,
+      "error_code": "TS7006",
+      "message": "Parameter 'p' implicitly has an 'any' type.",
+      "raw": "src/lib/customer-intelligence.ts(105,31): error TS7006: Parameter 'p' implicitly has an 'any' type.",
+      "parameter": "p"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 149,
+      "column": 6,
+      "error_code": "TS7006",
+      "message": "Parameter 'p' implicitly has an 'any' type.",
+      "raw": "src/lib/customer-intelligence.ts(149,6): error TS7006: Parameter 'p' implicitly has an 'any' type.",
+      "parameter": "p"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 154,
+      "column": 34,
+      "error_code": "TS7006",
+      "message": "Parameter 'p' implicitly has an 'any' type.",
+      "raw": "src/lib/customer-intelligence.ts(154,34): error TS7006: Parameter 'p' implicitly has an 'any' type.",
+      "parameter": "p"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 155,
+      "column": 29,
+      "error_code": "TS7006",
+      "message": "Parameter 'sum' implicitly has an 'any' type.",
+      "raw": "src/lib/customer-intelligence.ts(155,29): error TS7006: Parameter 'sum' implicitly has an 'any' type.",
+      "parameter": "sum"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 155,
+      "column": 34,
+      "error_code": "TS7006",
+      "message": "Parameter 'd' implicitly has an 'any' type.",
+      "raw": "src/lib/customer-intelligence.ts(155,34): error TS7006: Parameter 'd' implicitly has an 'any' type.",
+      "parameter": "d"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 157,
+      "column": 18,
+      "error_code": "TS7006",
+      "message": "Parameter 'sum' implicitly has an 'any' type.",
+      "raw": "src/lib/customer-intelligence.ts(157,18): error TS7006: Parameter 'sum' implicitly has an 'any' type.",
+      "parameter": "sum"
+    },
+    {
+      "file": "src/lib/customer-intelligence.ts",
+      "line": 157,
+      "column": 23,
+      "error_code": "TS7006",
+      "message": "Parameter 'd' implicitly has an 'any' type.",
+      "raw": "src/lib/customer-intelligence.ts(157,23): error TS7006: Parameter 'd' implicitly has an 'any' type.",
+      "parameter": "d"
+    },
+    {
+      "file": "src/lib/database.ts",
+      "line": 15,
+      "column": 33,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../lib/database' or its corresponding type declarations.",
+      "raw": "src/lib/database.ts(15,33): error TS2307: Cannot find module '../../lib/database' or its corresponding type declarations.",
+      "module": "../../lib/database"
+    },
+    {
+      "file": "src/lib/database.ts",
+      "line": 23,
+      "column": 8,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../lib/database' or its corresponding type declarations.",
+      "raw": "src/lib/database.ts(23,8): error TS2307: Cannot find module '../../lib/database' or its corresponding type declarations.",
+      "module": "../../lib/database"
+    },
+    {
+      "file": "src/lib/defensekit/asymmflow-search-engine.ts",
+      "line": 202,
+      "column": 17,
+      "error_code": "TS2353",
+      "message": "Object literal may only specify known properties, and 'firstName' does not exist in type 'CustomerWhereInput'.",
+      "raw": "src/lib/defensekit/asymmflow-search-engine.ts(202,17): error TS2353: Object literal may only specify known properties, and 'firstName' does not exist in type 'CustomerWhereInput'."
+    },
+    {
+      "file": "src/lib/defensekit/asymmflow-search-engine.ts",
+      "line": 203,
+      "column": 17,
+      "error_code": "TS2353",
+      "message": "Object literal may only specify known properties, and 'lastName' does not exist in type 'CustomerWhereInput'.",
+      "raw": "src/lib/defensekit/asymmflow-search-engine.ts(203,17): error TS2353: Object literal may only specify known properties, and 'lastName' does not exist in type 'CustomerWhereInput'."
+    },
+    {
+      "file": "src/lib/defensekit/asymmflow-search-engine.ts",
+      "line": 215,
+      "column": 32,
+      "error_code": "TS2339",
+      "message": "Property 'firstName' does not exist on type '{ source: string | null; confidence: number; id: string; email: string | null; createdAt: Date; updatedAt: Date; customerCode: string; businessName: string; companyName: string | null; ... 11 more ...; paymentHistory: JsonValue; }'.",
+      "raw": "src/lib/defensekit/asymmflow-search-engine.ts(215,32): error TS2339: Property 'firstName' does not exist on type '{ source: string | null; confidence: number; id: string; email: string | null; createdAt: Date; updatedAt: Date; customerCode: string; businessName: string; companyName: string | null; ... 11 more ...; paymentHistory: JsonValue; }'.",
+      "property": "firstName",
+      "type": "{ source: string | null; confidence: number; id: string; email: string | null; createdAt: Date; updatedAt: Date; customerCode: string; businessName: string; companyName: string | null; ... 11 more ...; paymentHistory: JsonValue; }"
+    },
+    {
+      "file": "src/lib/defensekit/asymmflow-search-engine.ts",
+      "line": 215,
+      "column": 54,
+      "error_code": "TS2339",
+      "message": "Property 'lastName' does not exist on type '{ source: string | null; confidence: number; id: string; email: string | null; createdAt: Date; updatedAt: Date; customerCode: string; businessName: string; companyName: string | null; ... 11 more ...; paymentHistory: JsonValue; }'.",
+      "raw": "src/lib/defensekit/asymmflow-search-engine.ts(215,54): error TS2339: Property 'lastName' does not exist on type '{ source: string | null; confidence: number; id: string; email: string | null; createdAt: Date; updatedAt: Date; customerCode: string; businessName: string; companyName: string | null; ... 11 more ...; paymentHistory: JsonValue; }'.",
+      "property": "lastName",
+      "type": "{ source: string | null; confidence: number; id: string; email: string | null; createdAt: Date; updatedAt: Date; customerCode: string; businessName: string; companyName: string | null; ... 11 more ...; paymentHistory: JsonValue; }"
+    },
+    {
+      "file": "src/lib/outlook-auth.ts",
+      "line": 39,
+      "column": 30,
+      "error_code": "TS2307",
+      "message": "Cannot find module '../../generated/prisma' or its corresponding type declarations.",
+      "raw": "src/lib/outlook-auth.ts(39,30): error TS2307: Cannot find module '../../generated/prisma' or its corresponding type declarations.",
+      "module": "../../generated/prisma"
+    },
+    {
+      "file": "src/lib/outlook-auth.ts",
+      "line": 271,
+      "column": 35,
+      "error_code": "TS2551",
+      "message": "Property 'refreshToken' does not exist on type 'AuthenticationResult'. Did you mean 'refreshOn'?",
+      "raw": "src/lib/outlook-auth.ts(271,35): error TS2551: Property 'refreshToken' does not exist on type 'AuthenticationResult'. Did you mean 'refreshOn'?"
+    },
+    {
+      "file": "src/lib/outlook-auth.ts",
+      "line": 408,
+      "column": 44,
+      "error_code": "TS2551",
+      "message": "Property 'refreshToken' does not exist on type 'AuthenticationResult'. Did you mean 'refreshOn'?",
+      "raw": "src/lib/outlook-auth.ts(408,44): error TS2551: Property 'refreshToken' does not exist on type 'AuthenticationResult'. Did you mean 'refreshOn'?"
+    },
+    {
+      "file": "src/lib/outlook-auth.ts",
+      "line": 409,
+      "column": 31,
+      "error_code": "TS2551",
+      "message": "Property 'refreshToken' does not exist on type 'AuthenticationResult'. Did you mean 'refreshOn'?",
+      "raw": "src/lib/outlook-auth.ts(409,31): error TS2551: Property 'refreshToken' does not exist on type 'AuthenticationResult'. Did you mean 'refreshOn'?"
+    },
+    {
+      "file": "src/lib/performance/web-vitals-monitor.ts",
+      "line": 23,
+      "column": 17,
+      "error_code": "TS2305",
+      "message": "Module '\"web-vitals\"' has no exported member 'onFID'.",
+      "raw": "src/lib/performance/web-vitals-monitor.ts(23,17): error TS2305: Module '\"web-vitals\"' has no exported member 'onFID'.",
+      "module": "web-vitals"
+    },
+    {
+      "file": "src/lib/sockets/socket-error.ts",
+      "line": 14,
+      "column": 31,
+      "error_code": "TS2307",
+      "message": "Cannot find module '@/lib/defensekit/harmonic-timer' or its corresponding type declarations.",
+      "raw": "src/lib/sockets/socket-error.ts(14,31): error TS2307: Cannot find module '@/lib/defensekit/harmonic-timer' or its corresponding type declarations.",
+      "module": "@/lib/defensekit/harmonic-timer"
+    },
+    {
+      "file": "src/middleware.ts",
+      "line": 49,
+      "column": 22,
+      "error_code": "TS2339",
+      "message": "Property 'ip' does not exist on type 'NextRequest'.",
+      "raw": "src/middleware.ts(49,22): error TS2339: Property 'ip' does not exist on type 'NextRequest'.",
+      "property": "ip",
+      "type": "NextRequest"
+    }
+  ]
+}

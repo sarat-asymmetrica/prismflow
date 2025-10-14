@@ -1,0 +1,385 @@
+================================================================================
+ASYMMETRICA TYPESCRIPT DOCTOR V3 - ARCHITECTURE DIAGRAM
+================================================================================
+Philosophy: "If it fails? Roll it back!"
+Version: 3.0.0
+Date: October 14, 2025
+================================================================================
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│                        ATD V3 COMPLETE SYSTEM                            │
+│                     Three Pillars of Self-Healing                        │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+│  DETERMINISTIC  │  │   AI COLLAB     │  │   GIT SAFETY    │
+│     LOGIC       │  │     BRIDGE      │  │      NET        │
+├─────────────────┤  ├─────────────────┤  ├─────────────────┤
+│ Chain-of-       │  │ Detect AI       │  │ Checkpoint      │
+│ thought         │  │ Generate        │  │ Atomic commits  │
+│ reasoning       │  │ prompts         │  │ Rollback        │
+│                 │  │ Wait for user   │  │ protection      │
+│ Confidence:     │  │                 │  │                 │
+│ 0.7 - 1.0       │  │ NO API CALLS    │  │ Nuclear +       │
+│                 │  │                 │  │ Surgical        │
+└─────────────────┘  └─────────────────┘  └─────────────────┘
+        │                    │                    │
+        └────────────────────┼────────────────────┘
+                             │
+                             ▼
+┌──────────────────────────────────────────────────────────────────────────┐
+│                         MAIN CLI (atd_v3.py)                             │
+│                    Complete Workflow Orchestration                       │
+└──────────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+COMPLETE WORKFLOW - 6 PHASES
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE 1: GIT SAFETY CHECKPOINT                                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  User runs: python atd_v3.py fix --all                                 │
+│                                                                         │
+│  GitManager.create_checkpoint()                                        │
+│    │                                                                    │
+│    ├─► git stash save "ATD V3 Checkpoint"                              │
+│    ├─► git checkout -b atd-fixes-20251014-153022                       │
+│    └─► Save state to .atd/git-state.json                               │
+│                                                                         │
+│  Result: Safe to experiment, rollback available                        │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE 2: BASELINE ERROR COUNT                                           │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  ATD.run_tsc()                                                          │
+│    │                                                                    │
+│    ├─► npx tsc --noEmit                                                │
+│    └─► Count errors: 324                                               │
+│                                                                         │
+│  Result: Baseline = 324 errors                                          │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE 3: DETERMINISTIC FIXES                                            │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  ErrorParser.parse(tsc_output)                                          │
+│    │                                                                    │
+│    ├─► TS2307: 180 errors (Cannot find module)                         │
+│    ├─► TS7006:  61 errors (Implicit any)                               │
+│    ├─► TS2339:  45 errors (Property doesn't exist)                     │
+│    └─► Others:  38 errors                                              │
+│                                                                         │
+│  For each error type:                                                   │
+│    │                                                                    │
+│    ├─► If confidence >= 0.7:                                           │
+│    │     │                                                              │
+│    │     ├─► Apply fixer (chain-of-thought)                            │
+│    │     ├─► Modify files                                              │
+│    │     └─► git add + git commit                                      │
+│    │                                                                    │
+│    └─► Else: Skip for AI collaboration                                 │
+│                                                                         │
+│  Commit Message (Asymmetrica Protocol):                                 │
+│    ATD V3: Deterministic fixes                                          │
+│                                                                         │
+│    [σ] Semantic Layer: Fixed 241 TypeScript errors                     │
+│    [ρ] Resilience: Backed up to .atd/backups/20251014-153022           │
+│    [κ] Knowledge: Chain-of-thought reasoning applied                   │
+│                                                                         │
+│    Errors fixed:                                                        │
+│    - TS2307: 180 import path corrections                               │
+│    - TS7006:  61 type annotations added                                │
+│                                                                         │
+│  Result: 241 errors fixed                                               │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE 4: CORRUPTION DETECTION                                           │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  CorruptionDetector.validate_fix_batch()                                │
+│    │                                                                    │
+│    ├─► npx tsc --noEmit                                                │
+│    ├─► Count errors: 83                                                │
+│    │                                                                    │
+│    ├─► Compare: 83 < 324? YES                                          │
+│    │     │                                                              │
+│    │     ├─► Errors decreased by 241                                   │
+│    │     └─► STATUS: VALID                                             │
+│    │                                                                    │
+│    └─► If errors increased:                                            │
+│          │                                                              │
+│          ├─► STATUS: CORRUPTED                                          │
+│          ├─► git revert {commit}                                       │
+│          └─► Log to .atd/corruption-log.json                           │
+│                                                                         │
+│  Result: 241 errors fixed successfully, 83 remain                       │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE 5: AI COLLABORATION                                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  AIBridge.detect_users_ai()                                             │
+│    │                                                                    │
+│    └─► Detected: Claude Code                                           │
+│                                                                         │
+│  For remaining 83 errors:                                               │
+│    │                                                                    │
+│    ├─► Generate prompt with context:                                   │
+│    │     │                                                              │
+│    │     ├─► Error details (file, line, code)                          │
+│    │     ├─► Prisma models (relevant entities)                         │
+│    │     ├─► Socket registry (if API route)                            │
+│    │     ├─► Code context (surrounding lines)                          │
+│    │     └─► Asymmetrica annotations ([σ], [ρ], [κ])                  │
+│    │                                                                    │
+│    ├─► Save to: .atd/ai-prompts/error-{line}-{code}.md                 │
+│    │                                                                    │
+│    ├─► User opens in Claude Code                                       │
+│    ├─► AI suggests fix                                                 │
+│    ├─► User applies fix                                                │
+│    ├─► User presses ENTER                                              │
+│    │                                                                    │
+│    ├─► ATD commits fix                                                 │
+│    └─► ATD validates (corruption check)                                │
+│                                                                         │
+│  Result: AI-assisted fixes committed safely                             │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE 6: FINAL REPORT                                                   │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  AsymmetricaLogger.save_session_log()                                   │
+│    │                                                                    │
+│    └─► .atd/logs/session-20251014-153022.json                          │
+│          │                                                              │
+│          ├─► Session ID                                                │
+│          ├─► Cycle phase (STABILIZATION)                               │
+│          ├─► Operations (CHECKPOINT, FIX_BATCH, etc.)                  │
+│          ├─► Asymmetrica annotations                                   │
+│          ├─► Socket context (if applicable)                            │
+│          └─► Git context (branch, commits)                             │
+│                                                                         │
+│  Print Final Report:                                                    │
+│    ┌─────────────────────────────────────────┐                         │
+│    │ ATD V3 FINAL REPORT                     │                         │
+│    ├─────────────────────────────────────────┤                         │
+│    │ Errors fixed: 241                       │                         │
+│    │ Errors remaining: 83                    │                         │
+│    │ Success rate: 74%                       │                         │
+│    ├─────────────────────────────────────────┤                         │
+│    │ Safety Options:                         │                         │
+│    │   1. Keep fixes: git merge main         │                         │
+│    │   2. Rollback all: atd_v3.py --full     │                         │
+│    │   3. Rollback last: atd_v3.py --last    │                         │
+│    └─────────────────────────────────────────┘                         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+ROLLBACK OPTIONS
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ NUCLEAR ROLLBACK (--full)                                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  python atd_v3.py rollback --full                                       │
+│    │                                                                    │
+│    ├─► Load .atd/git-state.json                                        │
+│    ├─► git reset --hard {baseline_commit}                              │
+│    ├─► git checkout {original_branch}                                  │
+│    └─► git stash pop                                                   │
+│                                                                         │
+│  Result: Everything restored, like ATD never ran                        │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ SURGICAL ROLLBACK (--last)                                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  python atd_v3.py rollback --last                                       │
+│    │                                                                    │
+│    ├─► Load .atd/git-state.json                                        │
+│    ├─► Get last commit hash                                            │
+│    └─► git revert --no-edit {last_commit}                              │
+│                                                                         │
+│  Result: Last batch reverted, earlier fixes kept                        │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+COMPONENT ARCHITECTURE
+================================================================================
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│                        git_manager.py (400 lines)                        │
+├──────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  class GitManager:                                                       │
+│    │                                                                     │
+│    ├─ create_checkpoint()        # Stash + branch                       │
+│    ├─ commit_fix_batch()         # Atomic commit                        │
+│    ├─ rollback_to_baseline()     # Nuclear option                       │
+│    ├─ rollback_last_batch()      # Surgical option                      │
+│    └─ get_status()               # Current session info                 │
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│                  corruption_detector.py (350 lines)                      │
+├──────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  class CorruptionDetector:                                               │
+│    │                                                                     │
+│    ├─ validate_fix_batch()       # Check errors didn't increase         │
+│    ├─ _run_typescript_check()    # Run tsc and count errors             │
+│    ├─ _handle_corruption()       # Auto-restore files                   │
+│    └─ _log_corruption()          # Log to corruption-log.json           │
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│                      ai_bridge.py (300 lines)                            │
+├──────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  class AIBridge:                                                         │
+│    │                                                                     │
+│    ├─ detect_users_ai()                    # Claude Code, Cursor, etc.  │
+│    ├─ generate_collaboration_prompt()      # Full context               │
+│    ├─ wait_for_user_fix()                 # Wait for ENTER              │
+│    ├─ get_prisma_context()                # Relevant models             │
+│    └─ get_socket_context()                # Socket registry             │
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│                    asymm_logger.py (200 lines)                           │
+├──────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  class AsymmetricaLogger:                                                │
+│    │                                                                     │
+│    ├─ start_session()            # Initialize session                   │
+│    ├─ log_operation()            # Log with [σ], [ρ], [κ]              │
+│    ├─ _calculate_cycle_position()  # 0.0 - 1.0                          │
+│    ├─ _determine_cycle_phase()     # Emergence/Optimization/Stabilize   │
+│    └─ save_session_log()           # Save to .atd/logs/                 │
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│                         atd_v3.py (600 lines)                            │
+├──────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  class AsymmetricaTypeScriptDoctorV3:                                    │
+│    │                                                                     │
+│    ├─ analyze()                   # Analyze TypeScript errors           │
+│    ├─ fix_with_safety()           # Complete 6-phase workflow           │
+│    ├─ _apply_deterministic_fixes()  # High-confidence fixes             │
+│    ├─ _handle_ai_collaboration()    # AI-assisted fixes                 │
+│    └─ rollback()                     # Nuclear or surgical              │
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+FILE STRUCTURE
+================================================================================
+
+c:/Projects/AsymmFlow-PH-Trading/
+│
+├── scripts/atd/
+│   ├── atd_v3.py                # Main CLI (600 lines)
+│   ├── git_manager.py           # Git safety (400 lines)
+│   ├── corruption_detector.py   # Corruption detection (350 lines)
+│   ├── ai_bridge.py             # AI collaboration (300 lines)
+│   ├── asymm_logger.py          # Asymmetrica logging (200 lines)
+│   ├── test-atd-v3.ts           # Test file (50 lines)
+│   ├── README_V3.md             # Complete reference (500 lines)
+│   ├── QUICK_START_V3.md        # Quick start (250 lines)
+│   └── ATD_V3_ARCHITECTURE_DIAGRAM.txt  # This file
+│
+├── scripts/
+│   └── test-atd-v3.bat          # Test script
+│
+├── .atd/
+│   ├── registry.json            # Current error analysis
+│   ├── git-state.json           # Git checkpoint state
+│   ├── corruption-log.json      # Corruption events
+│   ├── ai-collaboration-log.json # AI interactions
+│   ├── backups/                 # File backups
+│   │   └── {timestamp}/
+│   ├── ai-prompts/              # Generated AI prompts
+│   │   └── error-{line}-{code}.md
+│   └── logs/                    # Session logs
+│       └── session-{timestamp}.json
+│
+├── ATD_V3_IMPLEMENTATION_COMPLETE.md  # Detailed report
+└── ATD_V3_EXECUTIVE_SUMMARY.md        # Executive summary
+
+
+================================================================================
+ASYMMETRICA PROTOCOL COMPLIANCE
+================================================================================
+
+All operations annotated with:
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ [σ] SEMANTIC LAYER                                                     │
+├────────────────────────────────────────────────────────────────────────┤
+│ - What was fixed and why                                               │
+│ - Chain-of-thought reasoning                                           │
+│ - Error type and count                                                 │
+└────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ [ρ] RESILIENCE LAYER                                                   │
+├────────────────────────────────────────────────────────────────────────┤
+│ - Git checkpoint protection                                            │
+│ - Rollback availability                                                │
+│ - Corruption detection                                                 │
+└────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ [κ] KNOWLEDGE LAYER                                                    │
+├────────────────────────────────────────────────────────────────────────┤
+│ - Prisma schema context                                                │
+│ - Socket registry (if API route)                                       │
+│ - Lessons learned                                                      │
+└────────────────────────────────────────────────────────────────────────┘
+
+Cycle Phases:
+- 30% Emergence: Initial analysis and exploration
+- 20% Optimization: Applying deterministic fixes
+- 50% Stabilization: Validation and AI collaboration
+
+
+================================================================================
+END OF ARCHITECTURE DIAGRAM
+================================================================================
+ATD Version: 3.0.0
+Date: October 14, 2025
+Status: PRODUCTION READY
+Philosophy: "If it fails? Roll it back!"
+================================================================================

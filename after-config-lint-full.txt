@@ -1,0 +1,1092 @@
+
+> prismflow-browser@1.0.0 lint
+> eslint .
+
+
+C:\Projects\PrismFlow Final\__tests__\browser.e2e.js
+    8:1   error    'describe' is not defined                        no-undef
+   13:3   error    'beforeAll' is not defined                       no-undef
+   35:3   error    'afterAll' is not defined                        no-undef
+   42:3   error    'describe' is not defined                        no-undef
+   43:5   error    'test' is not defined                            no-undef
+   52:7   error    'expect' is not defined                          no-undef
+   63:7   error    'expect' is not defined                          no-undef
+   66:5   error    'test' is not defined                            no-undef
+   69:13  warning  'backBtn' is assigned a value but never used     no-unused-vars
+   71:7   error    'expect' is not defined                          no-undef
+   74:5   error    'test' is not defined                            no-undef
+   75:13  warning  'forwardBtn' is assigned a value but never used  no-unused-vars
+   77:7   error    'expect' is not defined                          no-undef
+   80:5   error    'test' is not defined                            no-undef
+   82:7   error    'expect' is not defined                          no-undef
+   85:13  error    'expect' is not defined                          no-undef
+   88:5   error    'test' is not defined                            no-undef
+   90:7   error    'expect' is not defined                          no-undef
+   96:7   error    'expect' is not defined                          no-undef
+  100:3   error    'describe' is not defined                        no-undef
+  101:5   error    'test' is not defined                            no-undef
+  116:7   error    'expect' is not defined                          no-undef
+  119:5   error    'test' is not defined                            no-undef
+  136:9   error    'expect' is not defined                          no-undef
+  140:5   error    'test' is not defined                            no-undef
+  154:9   error    'expect' is not defined                          no-undef
+  158:5   error    'test' is not defined                            no-undef
+  171:7   error    'expect' is not defined                          no-undef
+  175:3   error    'describe' is not defined                        no-undef
+  176:5   error    'test' is not defined                            no-undef
+  189:9   error    'expect' is not defined                          no-undef
+  193:5   error    'test' is not defined                            no-undef
+  207:9   error    'expect' is not defined                          no-undef
+  211:5   error    'test' is not defined                            no-undef
+  213:7   error    'expect' is not defined                          no-undef
+  216:5   error    'test' is not defined                            no-undef
+  225:9   error    'expect' is not defined                          no-undef
+  230:3   error    'describe' is not defined                        no-undef
+  231:5   error    'test' is not defined                            no-undef
+  238:7   error    'expect' is not defined                          no-undef
+  241:5   error    'test' is not defined                            no-undef
+  252:7   error    'expect' is not defined                          no-undef
+  255:5   error    'test' is not defined                            no-undef
+  266:11  error    'expect' is not defined                          no-undef
+  272:3   error    'describe' is not defined                        no-undef
+  273:5   error    'test' is not defined                            no-undef
+  277:7   error    'expect' is not defined                          no-undef
+  281:7   error    'expect' is not defined                          no-undef
+  282:7   error    'expect' is not defined                          no-undef
+  283:7   error    'expect' is not defined                          no-undef
+  286:5   error    'test' is not defined                            no-undef
+  288:7   error    'expect' is not defined                          no-undef
+  291:5   error    'test' is not defined                            no-undef
+  293:7   error    'expect' is not defined                          no-undef
+  297:3   error    'describe' is not defined                        no-undef
+  298:5   error    'test' is not defined                            no-undef
+  304:9   error    'document' is not defined                        no-undef
+  306:7   error    'expect' is not defined                          no-undef
+  309:5   error    'test' is not defined                            no-undef
+  316:7   error    'expect' is not defined                          no-undef
+  319:5   error    'test' is not defined                            no-undef
+  324:7   error    'expect' is not defined                          no-undef
+  328:3   error    'describe' is not defined                        no-undef
+  329:5   error    'test' is not defined                            no-undef
+  331:7   error    'expect' is not defined                          no-undef
+  334:5   error    'test' is not defined                            no-undef
+  336:7   error    'expect' is not defined                          no-undef
+  339:5   error    'test' is not defined                            no-undef
+  341:7   error    'expect' is not defined                          no-undef
+  345:3   error    'describe' is not defined                        no-undef
+  346:5   error    'test' is not defined                            no-undef
+  357:7   error    'expect' is not defined                          no-undef
+  361:3   error    'describe' is not defined                        no-undef
+  362:5   error    'test' is not defined                            no-undef
+  368:7   error    'expect' is not defined                          no-undef
+  371:5   error    'test' is not defined                            no-undef
+  373:7   error    'expect' is not defined                          no-undef
+  377:3   error    'describe' is not defined                        no-undef
+  378:5   error    'test' is not defined                            no-undef
+  385:7   error    'expect' is not defined                          no-undef
+  389:3   error    'describe' is not defined                        no-undef
+  390:5   error    'test' is not defined                            no-undef
+  401:7   error    'expect' is not defined                          no-undef
+  404:5   error    'test' is not defined                            no-undef
+  413:7   error    'expect' is not defined                          no-undef
+  419:1   error    'describe' is not defined                        no-undef
+  420:3   error    'test' is not defined                            no-undef
+  433:29  error    'page' is not defined                            no-undef
+  439:17  error    'page' is not defined                            no-undef
+  440:17  error    'page' is not defined                            no-undef
+  443:18  warning  'e' is defined but never used                    no-unused-vars
+  457:5   error    'expect' is not defined                          no-undef
+
+C:\Projects\PrismFlow Final\browser-enhanced.js
+    11:7   warning  'BaseWindow' is assigned a value but never used      no-unused-vars
+    50:5   warning  'resourceMode' is assigned a value but never used    no-unused-vars
+   150:32  error    'WebAssembly' is not defined                         no-undef
+   156:18  warning  'e' is defined but never used                        no-unused-vars
+   187:25  warning  Strings must use singlequote                         quotes
+   732:10  warning  'createWindowOptimized' is defined but never used    no-unused-vars
+   788:10  warning  'createWindowLegacy' is defined but never used       no-unused-vars
+  1042:10  warning  'startResourceMonitoring' is defined but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\browser-native.js
+   19:5   warning  'downloads' is assigned a value but never used  no-unused-vars
+  319:26  warning  'e' is defined but never used                   no-unused-vars
+  569:11  warning  'config' is assigned a value but never used     no-unused-vars
+
+C:\Projects\PrismFlow Final\browser-optimizations.js
+  19:5   warning  'downloads' is assigned a value but never used      no-unused-vars
+  22:7   warning  'tabAudioState' is assigned a value but never used  no-unused-vars
+  91:26  warning  'e' is defined but never used                       no-unused-vars
+
+C:\Projects\PrismFlow Final\browser-stable.js
+  198:19  warning  'tab' is assigned a value but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\__tests__\browser.e2e.js
+    8:1   error    'describe' is not defined                        no-undef
+   13:3   error    'beforeAll' is not defined                       no-undef
+   35:3   error    'afterAll' is not defined                        no-undef
+   42:3   error    'describe' is not defined                        no-undef
+   43:5   error    'test' is not defined                            no-undef
+   52:7   error    'expect' is not defined                          no-undef
+   63:7   error    'expect' is not defined                          no-undef
+   66:5   error    'test' is not defined                            no-undef
+   69:13  warning  'backBtn' is assigned a value but never used     no-unused-vars
+   71:7   error    'expect' is not defined                          no-undef
+   74:5   error    'test' is not defined                            no-undef
+   75:13  warning  'forwardBtn' is assigned a value but never used  no-unused-vars
+   77:7   error    'expect' is not defined                          no-undef
+   80:5   error    'test' is not defined                            no-undef
+   82:7   error    'expect' is not defined                          no-undef
+   85:13  error    'expect' is not defined                          no-undef
+   88:5   error    'test' is not defined                            no-undef
+   90:7   error    'expect' is not defined                          no-undef
+   96:7   error    'expect' is not defined                          no-undef
+  100:3   error    'describe' is not defined                        no-undef
+  101:5   error    'test' is not defined                            no-undef
+  116:7   error    'expect' is not defined                          no-undef
+  119:5   error    'test' is not defined                            no-undef
+  136:9   error    'expect' is not defined                          no-undef
+  140:5   error    'test' is not defined                            no-undef
+  154:9   error    'expect' is not defined                          no-undef
+  158:5   error    'test' is not defined                            no-undef
+  171:7   error    'expect' is not defined                          no-undef
+  175:3   error    'describe' is not defined                        no-undef
+  176:5   error    'test' is not defined                            no-undef
+  189:9   error    'expect' is not defined                          no-undef
+  193:5   error    'test' is not defined                            no-undef
+  207:9   error    'expect' is not defined                          no-undef
+  211:5   error    'test' is not defined                            no-undef
+  213:7   error    'expect' is not defined                          no-undef
+  216:5   error    'test' is not defined                            no-undef
+  225:9   error    'expect' is not defined                          no-undef
+  230:3   error    'describe' is not defined                        no-undef
+  231:5   error    'test' is not defined                            no-undef
+  238:7   error    'expect' is not defined                          no-undef
+  241:5   error    'test' is not defined                            no-undef
+  252:7   error    'expect' is not defined                          no-undef
+  255:5   error    'test' is not defined                            no-undef
+  266:11  error    'expect' is not defined                          no-undef
+  272:3   error    'describe' is not defined                        no-undef
+  273:5   error    'test' is not defined                            no-undef
+  277:7   error    'expect' is not defined                          no-undef
+  281:7   error    'expect' is not defined                          no-undef
+  282:7   error    'expect' is not defined                          no-undef
+  283:7   error    'expect' is not defined                          no-undef
+  286:5   error    'test' is not defined                            no-undef
+  288:7   error    'expect' is not defined                          no-undef
+  291:5   error    'test' is not defined                            no-undef
+  293:7   error    'expect' is not defined                          no-undef
+  297:3   error    'describe' is not defined                        no-undef
+  298:5   error    'test' is not defined                            no-undef
+  304:9   error    'document' is not defined                        no-undef
+  306:7   error    'expect' is not defined                          no-undef
+  309:5   error    'test' is not defined                            no-undef
+  316:7   error    'expect' is not defined                          no-undef
+  319:5   error    'test' is not defined                            no-undef
+  324:7   error    'expect' is not defined                          no-undef
+  328:3   error    'describe' is not defined                        no-undef
+  329:5   error    'test' is not defined                            no-undef
+  331:7   error    'expect' is not defined                          no-undef
+  334:5   error    'test' is not defined                            no-undef
+  336:7   error    'expect' is not defined                          no-undef
+  339:5   error    'test' is not defined                            no-undef
+  341:7   error    'expect' is not defined                          no-undef
+  345:3   error    'describe' is not defined                        no-undef
+  346:5   error    'test' is not defined                            no-undef
+  357:7   error    'expect' is not defined                          no-undef
+  361:3   error    'describe' is not defined                        no-undef
+  362:5   error    'test' is not defined                            no-undef
+  368:7   error    'expect' is not defined                          no-undef
+  371:5   error    'test' is not defined                            no-undef
+  373:7   error    'expect' is not defined                          no-undef
+  377:3   error    'describe' is not defined                        no-undef
+  378:5   error    'test' is not defined                            no-undef
+  385:7   error    'expect' is not defined                          no-undef
+  389:3   error    'describe' is not defined                        no-undef
+  390:5   error    'test' is not defined                            no-undef
+  401:7   error    'expect' is not defined                          no-undef
+  404:5   error    'test' is not defined                            no-undef
+  413:7   error    'expect' is not defined                          no-undef
+  419:1   error    'describe' is not defined                        no-undef
+  420:3   error    'test' is not defined                            no-undef
+  433:29  error    'page' is not defined                            no-undef
+  439:17  error    'page' is not defined                            no-undef
+  440:17  error    'page' is not defined                            no-undef
+  443:18  warning  'e' is defined but never used                    no-unused-vars
+  457:5   error    'expect' is not defined                          no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\browser-enhanced.js
+  45:5   warning  'resourceMode' is assigned a value but never used  no-unused-vars
+  89:22  warning  'e' is defined but never used                      no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\browser-stable.js
+  198:19  warning  'tab' is assigned a value but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\emergence-scan.js
+   42:14  warning  'e' is defined but never used  no-unused-vars
+   79:14  warning  'e' is defined but never used  no-unused-vars
+  108:14  warning  'e' is defined but never used  no-unused-vars
+  138:15  warning  '_' is defined but never used  no-unused-vars
+  181:14  warning  'e' is defined but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\final-test.js
+  37:14  warning  'e' is defined but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\jest.e2e.setup.js
+   2:7  warning  'puppeteer' is assigned a value but never used  no-unused-vars
+   5:1  error    'jest' is not defined                           no-undef
+   8:1  error    'beforeAll' is not defined                      no-undef
+  13:1  error    'afterAll' is not defined                       no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\natural-asymmetry-audit.js
+  276:18  warning  'error' is defined but never used            no-unused-vars
+  387:21  warning  'stdout' is assigned a value but never used  no-unused-vars
+  387:29  warning  'stderr' is assigned a value but never used  no-unused-vars
+  392:18  warning  'error' is defined but never used            no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\quick-audit.js
+  43:14  warning  'e' is defined but never used  no-unused-vars
+  78:14  warning  'e' is defined but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\ai-browser-integration.js
+   21:34  error  'document' is not defined                      no-undef
+   29:37  error  'NaturalAsymmetryOrchestrator' is not defined  no-undef
+   78:26  error  'document' is not defined                      no-undef
+   90:29  error  'document' is not defined                      no-undef
+  101:42  error  'window' is not defined                        no-undef
+  101:75  error  'window' is not defined                        no-undef
+  102:39  error  'window' is not defined                        no-undef
+  102:67  error  'window' is not defined                        no-undef
+  120:9   error  'document' is not defined                      no-undef
+  135:25  error  'window' is not defined                        no-undef
+  136:24  error  'document' is not defined                      no-undef
+  151:21  error  'document' is not defined                      no-undef
+  153:21  error  'document' is not defined                      no-undef
+  167:13  error  'document' is not defined                      no-undef
+  201:21  error  'window' is not defined                        no-undef
+  207:21  error  'window' is not defined                        no-undef
+  208:21  error  'window' is not defined                        no-undef
+  217:21  error  'window' is not defined                        no-undef
+  225:25  error  'document' is not defined                      no-undef
+  227:25  error  'document' is not defined                      no-undef
+  246:13  error  'document' is not defined                      no-undef
+  499:5   error  'document' is not defined                      no-undef
+  500:5   error  'document' is not defined                      no-undef
+  502:9   error  'document' is not defined                      no-undef
+  505:9   error  'window' is not defined                        no-undef
+  509:5   error  'document' is not defined                      no-undef
+  512:5   error  'window' is not defined                        no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\ai-orchestrator.js
+   99:24  warning  'context' is defined but never used         no-unused-vars
+  125:43  warning  'classification' is defined but never used  no-unused-vars
+  145:43  warning  'classification' is defined but never used  no-unused-vars
+  165:41  warning  'classification' is defined but never used  no-unused-vars
+  223:27  error    'btoa' is not defined                       no-undef
+  224:9   error    'localStorage' is not defined               no-undef
+  232:31  error    'localStorage' is not defined               no-undef
+  235:47  error    'atob' is not defined                       no-undef
+  260:32  error    'fetch' is not defined                      no-undef
+  273:32  error    'fetch' is not defined                      no-undef
+  305:32  error    'fetch' is not defined                      no-undef
+  313:32  error    'fetch' is not defined                      no-undef
+  347:20  warning  'options' is defined but never used         no-unused-vars
+  372:20  warning  'options' is defined but never used         no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\components\particle_engine.js
+   28:9   error  'window' is not defined                 no-undef
+   31:9   error  'window' is not defined                 no-undef
+   41:29  error  'window' is not defined                 no-undef
+   42:30  error  'window' is not defined                 no-undef
+  198:9   error  'requestAnimationFrame' is not defined  no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\components\weather_engine.js
+   35:9   error  'window' is not defined                 no-undef
+   39:29  error  'window' is not defined                 no-undef
+   40:30  error  'window' is not defined                 no-undef
+  105:17  error  'requestAnimationFrame' is not defined  no-undef
+  280:9   error  'requestAnimationFrame' is not defined  no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\dark-mode.js
+   33:13  error  'window' is not defined                 no-undef
+   33:34  error  'window' is not defined                 no-undef
+   41:23  error  'localStorage' is not defined           no-undef
+   51:25  error  'document' is not defined               no-undef
+   54:26  error  'document' is not defined               no-undef
+   77:30  error  'document' is not defined               no-undef
+   88:9   error  'localStorage' is not defined           no-undef
+   91:21  error  'document' is not defined               no-undef
+  115:22  error  'document' is not defined               no-undef
+  132:13  error  'document' is not defined               no-undef
+  133:13  error  'document' is not defined               no-undef
+  149:13  error  'document' is not defined               no-undef
+  150:13  error  'document' is not defined               no-undef
+  154:9   error  'window' is not defined                 no-undef
+  154:34  error  'CustomEvent' is not defined            no-undef
+  161:25  error  'document' is not defined               no-undef
+  175:9   error  'document' is not defined               no-undef
+  178:9   error  'requestAnimationFrame' is not defined  no-undef
+  188:13  error  'window' is not defined                 no-undef
+  189:32  error  'window' is not defined                 no-undef
+  194:22  error  'localStorage' is not defined           no-undef
+  282:1   error  'document' is not defined               no-undef
+  284:5   error  'document' is not defined               no-undef
+  287:5   error  'window' is not defined                 no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\diaphanous\adaptive_color_engine.js
+   37:13  error  'window' is not defined                 no-undef
+   38:13  error  'window' is not defined                 no-undef
+   44:9   error  'window' is not defined                 no-undef
+   60:13  error  'requestAnimationFrame' is not defined  no-undef
+   68:24  error  'document' is not defined               no-undef
+  108:30  error  'document' is not defined               no-undef
+  112:31  error  'window' is not defined                 no-undef
+  245:17  error  'requestAnimationFrame' is not defined  no-undef
+  269:22  error  'document' is not defined               no-undef
+  284:13  error  'window' is not defined                 no-undef
+  284:32  error  'window' is not defined                 no-undef
+  335:13  error  'window' is not defined                 no-undef
+  337:13  error  'window' is not defined                 no-undef
+  343:20  error  'window' is not defined                 no-undef
+  345:13  error  'window' is not defined                 no-undef
+  351:5   error  'document' is not defined               no-undef
+  352:5   error  'document' is not defined               no-undef
+  353:9   error  'window' is not defined                 no-undef
+  356:5   error  'window' is not defined                 no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\download-manager.js
+   28:34  error    'document' is not defined                    no-undef
+   35:14  error    'document' is not defined                    no-undef
+   36:27  error    'document' is not defined                    no-undef
+   50:13  error    'document' is not defined                    no-undef
+   68:23  error    'document' is not defined                    no-undef
+   74:23  error    'document' is not defined                    no-undef
+   79:23  error    'document' is not defined                    no-undef
+  134:17  error    'window' is not defined                      no-undef
+  134:39  error    'window' is not defined                      no-undef
+  136:23  warning  'result' is assigned a value but never used  no-unused-vars
+  136:38  error    'window' is not defined                      no-undef
+  246:23  error    'localStorage' is not defined                no-undef
+  253:9   error    'localStorage' is not defined                no-undef
+  259:9   error    'localStorage' is not defined                no-undef
+  265:13  error    'window' is not defined                      no-undef
+  265:35  error    'window' is not defined                      no-undef
+  266:19  error    'window' is not defined                      no-undef
+  285:26  error    'document' is not defined                    no-undef
+  374:25  error    'window' is not defined                      no-undef
+  374:47  error    'window' is not defined                      no-undef
+  375:19  error    'window' is not defined                      no-undef
+  383:1   error    'window' is not defined                      no-undef
+  515:1   error    'document' is not defined                    no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\history-panel.js
+    4:7   warning  'HistoryPanel' is defined but never used  no-unused-vars
+   12:23  error    'document' is not defined                 no-undef
+   27:9   error    'document' is not defined                 no-undef
+   41:9   error    'document' is not defined                 no-undef
+   47:9   error    'document' is not defined                 no-undef
+   51:22  error    'document' is not defined                 no-undef
+   52:25  error    'document' is not defined                 no-undef
+   66:29  error    'document' is not defined                 no-undef
+   71:31  error    'document' is not defined                 no-undef
+  120:13  error    'confirm' is not defined                  no-undef
+  279:1   error    'document' is not defined                 no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\keyboard-shortcuts.js
+   67:23  error  'document' is not defined  no-undef
+  126:9   error  'document' is not defined  no-undef
+  143:25  error  'document' is not defined  no-undef
+  146:25  error  'document' is not defined  no-undef
+  160:29  error  'document' is not defined  no-undef
+  169:9   error  'document' is not defined  no-undef
+  187:31  error  'document' is not defined  no-undef
+  235:13  error  'window' is not defined    no-undef
+  235:35  error  'window' is not defined    no-undef
+  236:13  error  'window' is not defined    no-undef
+  249:21  error  'window' is not defined    no-undef
+  249:40  error  'window' is not defined    no-undef
+  252:21  error  'window' is not defined    no-undef
+  252:40  error  'window' is not defined    no-undef
+  255:17  error  'window' is not defined    no-undef
+  258:17  error  'window' is not defined    no-undef
+  261:17  error  'window' is not defined    no-undef
+  264:32  error  'document' is not defined  no-undef
+  268:21  error  'window' is not defined    no-undef
+  268:46  error  'window' is not defined    no-undef
+  271:38  error  'document' is not defined  no-undef
+  275:40  error  'document' is not defined  no-undef
+  279:21  error  'window' is not defined    no-undef
+  279:41  error  'window' is not defined    no-undef
+  282:21  error  'document' is not defined  no-undef
+  283:21  error  'document' is not defined  no-undef
+  285:21  error  'document' is not defined  no-undef
+  289:17  error  'window' is not defined    no-undef
+  302:23  error  'document' is not defined  no-undef
+  309:9   error  'document' is not defined  no-undef
+  323:23  error  'document' is not defined  no-undef
+  325:23  error  'document' is not defined  no-undef
+  335:13  error  'document' is not defined  no-undef
+  356:13  error  'window' is not defined    no-undef
+  357:13  error  'window' is not defined    no-undef
+  362:23  error  'document' is not defined  no-undef
+  373:23  error  'document' is not defined  no-undef
+  378:26  error  'document' is not defined  no-undef
+  381:9   error  'document' is not defined  no-undef
+  387:23  error  'document' is not defined  no-undef
+  392:26  error  'document' is not defined  no-undef
+  660:1   error  'document' is not defined  no-undef
+  662:5   error  'document' is not defined  no-undef
+  665:5   error  'window' is not defined    no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\main-complete.js
+  4:38  warning  'session' is assigned a value but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\main-enhanced.js
+    4:51  warning  'session' is assigned a value but never used          no-unused-vars
+    4:60  warning  'Menu' is assigned a value but never used             no-unused-vars
+    4:66  warning  'dialog' is assigned a value but never used           no-unused-vars
+    9:7   warning  'RESOURCE_LIMITS' is assigned a value but never used  no-unused-vars
+   77:38  warning  'event' is defined but never used                     no-unused-vars
+   88:41  warning  'event' is defined but never used                     no-unused-vars
+   99:37  warning  'event' is defined but never used                     no-unused-vars
+  122:49  warning  'event' is defined but never used                     no-unused-vars
+  131:43  warning  'event' is defined but never used                     no-unused-vars
+  140:51  warning  'event' is defined but never used                     no-unused-vars
+  156:46  warning  'event' is defined but never used                     no-unused-vars
+  161:46  warning  'event' is defined but never used                     no-unused-vars
+  170:43  warning  'event' is defined but never used                     no-unused-vars
+  176:46  warning  'event' is defined but never used                     no-unused-vars
+  341:9   warning  'isBackground' is assigned a value but never used     no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\main.js
+    4:38  warning  'session' is assigned a value but never used          no-unused-vars
+    8:7   warning  'RESOURCE_LIMITS' is assigned a value but never used  no-unused-vars
+  129:38  warning  'event' is defined but never used                     no-unused-vars
+  129:45  warning  'webContentsId' is defined but never used             no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\mantra-tab-manager.js
+   62:46  error  'window' is not defined  no-undef
+   63:38  error  'window' is not defined  no-undef
+   63:61  error  'window' is not defined  no-undef
+  462:5   error  'window' is not defined  no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\tab-groups.js
+   30:23  error    'localStorage' is not defined  no-undef
+   43:9   error    'localStorage' is not defined  no-undef
+   48:24  error    'document' is not defined      no-undef
+   52:27  error    'document' is not defined      no-undef
+   78:22  error    'document' is not defined      no-undef
+   89:47  warning  'i' is defined but never used  no-unused-vars
+  101:9   error    'document' is not defined      no-undef
+  106:22  error    'document' is not defined      no-undef
+  109:35  error    'document' is not defined      no-undef
+  118:9   error    'document' is not defined      no-undef
+  123:22  error    'document' is not defined      no-undef
+  151:9   error    'document' is not defined      no-undef
+  192:27  error    'document' is not defined      no-undef
+  204:32  error    'document' is not defined      no-undef
+  217:27  error    'document' is not defined      no-undef
+  227:29  error    'document' is not defined      no-undef
+  262:9   error    'document' is not defined      no-undef
+  271:9   error    'document' is not defined      no-undef
+  287:29  error    'document' is not defined      no-undef
+  293:29  error    'document' is not defined      no-undef
+  303:22  error    'document' is not defined      no-undef
+  312:9   error    'document' is not defined      no-undef
+  321:22  error    'document' is not defined      no-undef
+  326:22  error    'document' is not defined      no-undef
+  332:25  error    'document' is not defined      no-undef
+  345:22  error    'document' is not defined      no-undef
+  362:22  error    'document' is not defined      no-undef
+  370:25  error    'document' is not defined      no-undef
+  387:9   error    'document' is not defined      no-undef
+  395:22  error    'document' is not defined      no-undef
+  404:25  error    'document' is not defined      no-undef
+  421:22  error    'document' is not defined      no-undef
+  440:37  error    'document' is not defined      no-undef
+  455:9   error    'document' is not defined      no-undef
+  725:1   error    'document' is not defined      no-undef
+  727:5   error    'document' is not defined      no-undef
+  730:5   error    'window' is not defined        no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\universal-optimization-engine.js
+   74:46  error    'window' is not defined                         no-undef
+   75:38  error    'window' is not defined                         no-undef
+   75:61  error    'window' is not defined                         no-undef
+  226:15  warning  'resources' is assigned a value but never used  no-unused-vars
+  317:15  warning  'phi' is assigned a value but never used        no-unused-vars
+  449:21  warning  '_' is assigned a value but never used          no-unused-vars
+  471:5   error    'window' is not defined                         no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\src\webrtc-integration.js
+   25:34  error  'document' is not defined           no-undef
+   43:19  error  'navigator' is not defined          no-undef
+   44:18  error  'navigator' is not defined          no-undef
+   45:18  error  'window' is not defined             no-undef
+   50:23  error  'document' is not defined           no-undef
+   95:9   error  'document' is not defined           no-undef
+  102:25  error  'document' is not defined           no-undef
+  105:27  error  'document' is not defined           no-undef
+  119:25  error  'document' is not defined           no-undef
+  182:35  error  'RTCPeerConnection' is not defined  no-undef
+  186:33  error  'document' is not defined           no-undef
+  211:27  error  'document' is not defined           no-undef
+  212:28  error  'document' is not defined           no-undef
+  216:42  error  'navigator' is not defined          no-undef
+  240:17  error  'alert' is not defined              no-undef
+  258:26  error  'document' is not defined           no-undef
+  263:46  error  'navigator' is not defined          no-undef
+  275:17  error  'alert' is not defined              no-undef
+  292:27  error  'document' is not defined           no-undef
+  293:28  error  'document' is not defined           no-undef
+  296:40  error  'navigator' is not defined          no-undef
+  330:26  error  'document' is not defined           no-undef
+  331:27  error  'document' is not defined           no-undef
+  394:28  error  'document' is not defined           no-undef
+  395:29  error  'document' is not defined           no-undef
+  401:9   error  'document' is not defined           no-undef
+  405:9   error  'document' is not defined           no-undef
+  406:9   error  'document' is not defined           no-undef
+  407:9   error  'document' is not defined           no-undef
+  608:1   error  'document' is not defined           no-undef
+  610:5   error  'document' is not defined           no-undef
+  613:5   error  'window' is not defined             no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\test-all-features.js
+  320:43  warning  'promise' is defined but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\test-browser-quick.js
+   85:22  error    'document' is not defined               no-undef
+   87:23  error    'window' is not defined                 no-undef
+  113:26  error    'document' is not defined               no-undef
+  125:24  error    'document' is not defined               no-undef
+  143:18  warning  'clickError' is defined but never used  no-unused-vars
+  167:12  warning  'e' is defined but never used           no-unused-vars
+  177:21  error    'document' is not defined               no-undef
+  197:12  warning  'e' is defined but never used           no-unused-vars
+  214:12  warning  'e' is defined but never used           no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\test-complete-browser.js
+  6:9  warning  'app' is assigned a value but never used   no-unused-vars
+  7:7  warning  'path' is assigned a value but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\test-mantra-browser.js
+  7:7  warning  'path' is assigned a value but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\test-new-features.js
+   49:24  error  'document' is not defined  no-undef
+   85:31  error  'document' is not defined  no-undef
+  114:24  error  'document' is not defined  no-undef
+  150:31  error  'document' is not defined  no-undef
+  170:27  error  'document' is not defined  no-undef
+  171:26  error  'document' is not defined  no-undef
+  172:27  error  'document' is not defined  no-undef
+  173:24  error  'document' is not defined  no-undef
+
+C:\Projects\PrismFlow Final\dist-packager\prismflow-browser-win32-x64\resources\app\test-universal-browser.js
+  7:7  warning  'path' is assigned a value but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\emergence-scan.js
+   42:14  warning  'e' is defined but never used  no-unused-vars
+   79:14  warning  'e' is defined but never used  no-unused-vars
+  108:14  warning  'e' is defined but never used  no-unused-vars
+  138:15  warning  '_' is defined but never used  no-unused-vars
+  181:14  warning  'e' is defined but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\eslint.config.js
+   3:13  warning  Strings must use singlequote  quotes
+   6:19  warning  Strings must use singlequote  quotes
+   8:18  warning  Strings must use singlequote  quotes
+   9:17  warning  Strings must use singlequote  quotes
+  10:20  warning  Strings must use singlequote  quotes
+  11:18  warning  Strings must use singlequote  quotes
+  12:18  warning  Strings must use singlequote  quotes
+  13:17  warning  Strings must use singlequote  quotes
+  14:21  warning  Strings must use singlequote  quotes
+  15:22  warning  Strings must use singlequote  quotes
+  16:23  warning  Strings must use singlequote  quotes
+  17:24  warning  Strings must use singlequote  quotes
+  21:7   warning  Strings must use singlequote  quotes
+  21:25  warning  Strings must use singlequote  quotes
+  22:7   warning  Strings must use singlequote  quotes
+  22:19  warning  Strings must use singlequote  quotes
+  23:7   warning  Strings must use singlequote  quotes
+  23:16  warning  Strings must use singlequote  quotes
+  23:25  warning  Strings must use singlequote  quotes
+  24:7   warning  Strings must use singlequote  quotes
+  24:18  warning  Strings must use singlequote  quotes
+  24:26  warning  Strings must use singlequote  quotes
+  24:38  warning  Strings must use singlequote  quotes
+
+C:\Projects\PrismFlow Final\final-test.js
+  37:14  warning  'e' is defined but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\jest.e2e.setup.js
+   2:7  warning  'puppeteer' is assigned a value but never used  no-unused-vars
+   5:1  error    'jest' is not defined                           no-undef
+   8:1  error    'beforeAll' is not defined                      no-undef
+  13:1  error    'afterAll' is not defined                       no-undef
+
+C:\Projects\PrismFlow Final\natural-asymmetry-audit.js
+  276:18  warning  'error' is defined but never used            no-unused-vars
+  387:21  warning  'stdout' is assigned a value but never used  no-unused-vars
+  387:29  warning  'stderr' is assigned a value but never used  no-unused-vars
+  392:18  warning  'error' is defined but never used            no-unused-vars
+
+C:\Projects\PrismFlow Final\quick-audit.js
+  43:14  warning  'e' is defined but never used  no-unused-vars
+  78:14  warning  'e' is defined but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\scripts\abd\test-abd-v1.js
+  11:1  error  Parsing error: 'import' and 'export' may appear only with 'sourceType: module'
+
+C:\Projects\PrismFlow Final\scripts\ald\test-ald-v1.js
+  39:1  error  Parsing error: 'import' and 'export' may appear only with 'sourceType: module'
+
+C:\Projects\PrismFlow Final\src\ai-browser-integration.js
+   21:34  error  'document' is not defined                      no-undef
+   29:37  error  'NaturalAsymmetryOrchestrator' is not defined  no-undef
+   78:26  error  'document' is not defined                      no-undef
+   90:29  error  'document' is not defined                      no-undef
+  101:42  error  'window' is not defined                        no-undef
+  101:75  error  'window' is not defined                        no-undef
+  102:39  error  'window' is not defined                        no-undef
+  102:67  error  'window' is not defined                        no-undef
+  120:9   error  'document' is not defined                      no-undef
+  135:25  error  'window' is not defined                        no-undef
+  136:24  error  'document' is not defined                      no-undef
+  151:21  error  'document' is not defined                      no-undef
+  153:21  error  'document' is not defined                      no-undef
+  167:13  error  'document' is not defined                      no-undef
+  201:21  error  'window' is not defined                        no-undef
+  207:21  error  'window' is not defined                        no-undef
+  208:21  error  'window' is not defined                        no-undef
+  217:21  error  'window' is not defined                        no-undef
+  225:25  error  'document' is not defined                      no-undef
+  227:25  error  'document' is not defined                      no-undef
+  246:13  error  'document' is not defined                      no-undef
+  499:5   error  'document' is not defined                      no-undef
+  500:5   error  'document' is not defined                      no-undef
+  502:9   error  'document' is not defined                      no-undef
+  505:9   error  'window' is not defined                        no-undef
+  509:5   error  'document' is not defined                      no-undef
+  512:5   error  'window' is not defined                        no-undef
+
+C:\Projects\PrismFlow Final\src\ai-orchestrator.js
+   99:24  warning  'context' is defined but never used         no-unused-vars
+  125:43  warning  'classification' is defined but never used  no-unused-vars
+  145:43  warning  'classification' is defined but never used  no-unused-vars
+  165:41  warning  'classification' is defined but never used  no-unused-vars
+  223:27  error    'btoa' is not defined                       no-undef
+  224:9   error    'localStorage' is not defined               no-undef
+  232:31  error    'localStorage' is not defined               no-undef
+  235:47  error    'atob' is not defined                       no-undef
+  260:32  error    'fetch' is not defined                      no-undef
+  273:32  error    'fetch' is not defined                      no-undef
+  305:32  error    'fetch' is not defined                      no-undef
+  313:32  error    'fetch' is not defined                      no-undef
+  347:20  warning  'options' is defined but never used         no-unused-vars
+  372:20  warning  'options' is defined but never used         no-unused-vars
+
+C:\Projects\PrismFlow Final\src\browser-enhancements.js
+    33:14  error    'document' is not defined         no-undef
+    37:25  error    'document' is not defined         no-undef
+    49:27  error    'document' is not defined         no-undef
+    49:76  error    'document' is not defined         no-undef
+   290:21  error    'document' is not defined         no-undef
+   297:28  error    'document' is not defined         no-undef
+   298:26  error    'document' is not defined         no-undef
+   308:33  error    'document' is not defined         no-undef
+   314:28  error    'document' is not defined         no-undef
+   315:27  error    'document' is not defined         no-undef
+   323:29  error    'document' is not defined         no-undef
+   327:21  error    'document' is not defined         no-undef
+   329:21  error    'document' is not defined         no-undef
+   336:23  error    'document' is not defined         no-undef
+   348:23  error    'document' is not defined         no-undef
+   355:13  error    'window' is not defined           no-undef
+   355:35  error    'window' is not defined           no-undef
+   356:36  error    'window' is not defined           no-undef
+   359:35  error    'document' is not defined         no-undef
+   362:34  error    'document' is not defined         no-undef
+   365:30  error    'document' is not defined         no-undef
+   368:33  error    'document' is not defined         no-undef
+   377:23  error    'document' is not defined         no-undef
+   378:27  error    'document' is not defined         no-undef
+   379:23  error    'document' is not defined         no-undef
+   380:29  error    'document' is not defined         no-undef
+   381:33  error    'document' is not defined         no-undef
+   382:31  error    'document' is not defined         no-undef
+   383:33  error    'document' is not defined         no-undef
+   384:35  error    'document' is not defined         no-undef
+   387:13  error    'window' is not defined           no-undef
+   387:35  error    'window' is not defined           no-undef
+   388:19  error    'window' is not defined           no-undef
+   399:29  error    'document' is not defined         no-undef
+   571:21  error    'document' is not defined         no-undef
+   573:9   error    'document' is not defined         no-undef
+   576:29  error    'document' is not defined         no-undef
+   583:23  error    'document' is not defined         no-undef
+   594:23  error    'document' is not defined         no-undef
+   603:13  error    'window' is not defined           no-undef
+   603:35  error    'window' is not defined           no-undef
+   604:31  error    'window' is not defined           no-undef
+   606:36  error    'localStorage' is not defined     no-undef
+   609:24  error    'document' is not defined         no-undef
+   610:25  error    'document' is not defined         no-undef
+   630:13  error    'document' is not defined         no-undef
+   643:21  error    'document' is not defined         no-undef
+   644:23  error    'document' is not defined         no-undef
+   646:13  error    'window' is not defined           no-undef
+   646:35  error    'window' is not defined           no-undef
+   647:19  error    'window' is not defined           no-undef
+   649:40  error    'localStorage' is not defined     no-undef
+   656:13  error    'localStorage' is not defined     no-undef
+   662:21  error    'document' is not defined         no-undef
+   672:13  error    'window' is not defined           no-undef
+   672:35  error    'window' is not defined           no-undef
+   673:19  error    'window' is not defined           no-undef
+   675:40  error    'localStorage' is not defined     no-undef
+   677:13  error    'localStorage' is not defined     no-undef
+   684:23  error    'document' is not defined         no-undef
+   703:28  error    'document' is not defined         no-undef
+   714:30  error    'document' is not defined         no-undef
+   726:9   error    'document' is not defined         no-undef
+   835:21  error    'document' is not defined         no-undef
+   837:9   error    'document' is not defined         no-undef
+   840:27  error    'document' is not defined         no-undef
+   850:9   error    'document' is not defined         no-undef
+   851:9   error    'document' is not defined         no-undef
+   855:25  error    'document' is not defined         no-undef
+   861:17  error    'document' is not defined         no-undef
+   862:17  error    'document' is not defined         no-undef
+   868:25  error    'document' is not defined         no-undef
+   874:17  error    'window' is not defined           no-undef
+   874:39  error    'window' is not defined           no-undef
+   875:17  error    'window' is not defined           no-undef
+   882:13  error    'document' is not defined         no-undef
+   886:13  error    'window' is not defined           no-undef
+   886:35  error    'window' is not defined           no-undef
+   887:34  error    'window' is not defined           no-undef
+   888:13  error    'document' is not defined         no-undef
+   897:13  error    'window' is not defined           no-undef
+   897:35  error    'window' is not defined           no-undef
+   898:19  error    'window' is not defined           no-undef
+   903:13  error    'window' is not defined           no-undef
+   903:35  error    'window' is not defined           no-undef
+   904:19  error    'window' is not defined           no-undef
+   913:9   error    'document' is not defined         no-undef
+   929:9   error    'document' is not defined         no-undef
+   989:21  error    'document' is not defined         no-undef
+   991:9   error    'document' is not defined         no-undef
+  1010:13  error    'window' is not defined           no-undef
+  1010:35  error    'window' is not defined           no-undef
+  1011:19  error    'window' is not defined           no-undef
+  1013:13  error    'document' is not defined         no-undef
+  1017:27  error    'document' is not defined         no-undef
+  1018:27  error    'document' is not defined         no-undef
+  1034:9   error    'document' is not defined         no-undef
+  1045:13  error    'window' is not defined           no-undef
+  1045:35  error    'window' is not defined           no-undef
+  1046:19  error    'window' is not defined           no-undef
+  1048:13  error    'window' is not defined           no-undef
+  1055:13  error    'window' is not defined           no-undef
+  1055:35  error    'window' is not defined           no-undef
+  1056:13  error    'window' is not defined           no-undef
+  1056:47  warning  'data' is defined but never used  no-unused-vars
+  1067:13  error    'window' is not defined           no-undef
+  1067:35  error    'window' is not defined           no-undef
+  1068:13  error    'window' is not defined           no-undef
+  1074:29  error    'document' is not defined         no-undef
+  1083:17  error    'document' is not defined         no-undef
+  1084:32  error    'document' is not defined         no-undef
+  1106:21  error    'window' is not defined           no-undef
+  1106:43  error    'window' is not defined           no-undef
+  1107:21  error    'window' is not defined           no-undef
+  1109:21  error    'localStorage' is not defined     no-undef
+  1115:31  error    'localStorage' is not defined     no-undef
+  1117:13  error    'document' is not defined         no-undef
+  1125:25  error    'document' is not defined         no-undef
+  1126:27  error    'document' is not defined         no-undef
+  1152:17  error    'document' is not defined         no-undef
+  1153:17  error    'document' is not defined         no-undef
+  1158:21  error    'window' is not defined           no-undef
+  1159:21  error    'window' is not defined           no-undef
+  1168:9   error    'document' is not defined         no-undef
+  1186:27  error    'document' is not defined         no-undef
+  1196:22  error    'document' is not defined         no-undef
+  1197:27  error    'document' is not defined         no-undef
+  1207:22  error    'document' is not defined         no-undef
+  1208:27  error    'document' is not defined         no-undef
+  1218:13  error    'confirm' is not defined          no-undef
+  1219:13  error    'localStorage' is not defined     no-undef
+  1220:17  error    'window' is not defined           no-undef
+  1220:39  error    'window' is not defined           no-undef
+  1221:17  error    'window' is not defined           no-undef
+  1228:14  error    'document' is not defined         no-undef
+  1229:13  error    'document' is not defined         no-undef
+  1231:13  error    'document' is not defined         no-undef
+  1237:5   error    'document' is not defined         no-undef
+  1238:5   error    'document' is not defined         no-undef
+  1239:9   error    'window' is not defined           no-undef
+  1239:62  error    'window' is not defined           no-undef
+  1243:5   error    'window' is not defined           no-undef
+  1243:58  error    'window' is not defined           no-undef
+
+C:\Projects\PrismFlow Final\src\components\particle_engine.js
+   28:9   error  'window' is not defined                 no-undef
+   31:9   error  'window' is not defined                 no-undef
+   41:29  error  'window' is not defined                 no-undef
+   42:30  error  'window' is not defined                 no-undef
+  198:9   error  'requestAnimationFrame' is not defined  no-undef
+
+C:\Projects\PrismFlow Final\src\components\weather_engine.js
+   35:9   error  'window' is not defined                 no-undef
+   39:29  error  'window' is not defined                 no-undef
+   40:30  error  'window' is not defined                 no-undef
+  105:17  error  'requestAnimationFrame' is not defined  no-undef
+  280:9   error  'requestAnimationFrame' is not defined  no-undef
+
+C:\Projects\PrismFlow Final\src\dark-mode.js
+   33:13  error  'window' is not defined                 no-undef
+   33:34  error  'window' is not defined                 no-undef
+   41:23  error  'localStorage' is not defined           no-undef
+   51:25  error  'document' is not defined               no-undef
+   54:26  error  'document' is not defined               no-undef
+   77:30  error  'document' is not defined               no-undef
+   88:9   error  'localStorage' is not defined           no-undef
+   91:21  error  'document' is not defined               no-undef
+  115:22  error  'document' is not defined               no-undef
+  132:13  error  'document' is not defined               no-undef
+  133:13  error  'document' is not defined               no-undef
+  149:13  error  'document' is not defined               no-undef
+  150:13  error  'document' is not defined               no-undef
+  154:9   error  'window' is not defined                 no-undef
+  154:34  error  'CustomEvent' is not defined            no-undef
+  161:25  error  'document' is not defined               no-undef
+  175:9   error  'document' is not defined               no-undef
+  178:9   error  'requestAnimationFrame' is not defined  no-undef
+  188:13  error  'window' is not defined                 no-undef
+  189:32  error  'window' is not defined                 no-undef
+  194:22  error  'localStorage' is not defined           no-undef
+  282:1   error  'document' is not defined               no-undef
+  284:5   error  'document' is not defined               no-undef
+  287:5   error  'window' is not defined                 no-undef
+
+C:\Projects\PrismFlow Final\src\diaphanous\adaptive_color_engine.js
+   37:13  error  'window' is not defined                 no-undef
+   38:13  error  'window' is not defined                 no-undef
+   44:9   error  'window' is not defined                 no-undef
+   60:13  error  'requestAnimationFrame' is not defined  no-undef
+   68:24  error  'document' is not defined               no-undef
+  108:30  error  'document' is not defined               no-undef
+  112:31  error  'window' is not defined                 no-undef
+  245:17  error  'requestAnimationFrame' is not defined  no-undef
+  269:22  error  'document' is not defined               no-undef
+  284:13  error  'window' is not defined                 no-undef
+  284:32  error  'window' is not defined                 no-undef
+  335:13  error  'window' is not defined                 no-undef
+  337:13  error  'window' is not defined                 no-undef
+  343:20  error  'window' is not defined                 no-undef
+  345:13  error  'window' is not defined                 no-undef
+  351:5   error  'document' is not defined               no-undef
+  352:5   error  'document' is not defined               no-undef
+  353:9   error  'window' is not defined                 no-undef
+  356:5   error  'window' is not defined                 no-undef
+
+C:\Projects\PrismFlow Final\src\download-manager.js
+   28:34  error    'document' is not defined                    no-undef
+   35:14  error    'document' is not defined                    no-undef
+   36:27  error    'document' is not defined                    no-undef
+   50:13  error    'document' is not defined                    no-undef
+   68:23  error    'document' is not defined                    no-undef
+   74:23  error    'document' is not defined                    no-undef
+   79:23  error    'document' is not defined                    no-undef
+  134:17  error    'window' is not defined                      no-undef
+  134:39  error    'window' is not defined                      no-undef
+  136:23  warning  'result' is assigned a value but never used  no-unused-vars
+  136:38  error    'window' is not defined                      no-undef
+  246:23  error    'localStorage' is not defined                no-undef
+  253:9   error    'localStorage' is not defined                no-undef
+  259:9   error    'localStorage' is not defined                no-undef
+  265:13  error    'window' is not defined                      no-undef
+  265:35  error    'window' is not defined                      no-undef
+  266:19  error    'window' is not defined                      no-undef
+  285:26  error    'document' is not defined                    no-undef
+  374:25  error    'window' is not defined                      no-undef
+  374:47  error    'window' is not defined                      no-undef
+  375:19  error    'window' is not defined                      no-undef
+  383:1   error    'window' is not defined                      no-undef
+  515:1   error    'document' is not defined                    no-undef
+
+C:\Projects\PrismFlow Final\src\history-panel.js
+    4:7   warning  'HistoryPanel' is defined but never used  no-unused-vars
+   12:23  error    'document' is not defined                 no-undef
+   27:9   error    'document' is not defined                 no-undef
+   41:9   error    'document' is not defined                 no-undef
+   47:9   error    'document' is not defined                 no-undef
+   51:22  error    'document' is not defined                 no-undef
+   52:25  error    'document' is not defined                 no-undef
+   66:29  error    'document' is not defined                 no-undef
+   71:31  error    'document' is not defined                 no-undef
+  120:13  error    'confirm' is not defined                  no-undef
+  279:1   error    'document' is not defined                 no-undef
+
+C:\Projects\PrismFlow Final\src\keyboard-shortcuts.js
+   67:23  error  'document' is not defined  no-undef
+  126:9   error  'document' is not defined  no-undef
+  143:25  error  'document' is not defined  no-undef
+  146:25  error  'document' is not defined  no-undef
+  160:29  error  'document' is not defined  no-undef
+  169:9   error  'document' is not defined  no-undef
+  187:31  error  'document' is not defined  no-undef
+  235:13  error  'window' is not defined    no-undef
+  235:35  error  'window' is not defined    no-undef
+  236:13  error  'window' is not defined    no-undef
+  249:21  error  'window' is not defined    no-undef
+  249:40  error  'window' is not defined    no-undef
+  252:21  error  'window' is not defined    no-undef
+  252:40  error  'window' is not defined    no-undef
+  255:17  error  'window' is not defined    no-undef
+  258:17  error  'window' is not defined    no-undef
+  261:17  error  'window' is not defined    no-undef
+  264:32  error  'document' is not defined  no-undef
+  268:21  error  'window' is not defined    no-undef
+  268:46  error  'window' is not defined    no-undef
+  271:38  error  'document' is not defined  no-undef
+  275:40  error  'document' is not defined  no-undef
+  279:21  error  'window' is not defined    no-undef
+  279:41  error  'window' is not defined    no-undef
+  282:21  error  'document' is not defined  no-undef
+  283:21  error  'document' is not defined  no-undef
+  285:21  error  'document' is not defined  no-undef
+  289:17  error  'window' is not defined    no-undef
+  302:23  error  'document' is not defined  no-undef
+  309:9   error  'document' is not defined  no-undef
+  323:23  error  'document' is not defined  no-undef
+  325:23  error  'document' is not defined  no-undef
+  335:13  error  'document' is not defined  no-undef
+  356:13  error  'window' is not defined    no-undef
+  357:13  error  'window' is not defined    no-undef
+  362:23  error  'document' is not defined  no-undef
+  373:23  error  'document' is not defined  no-undef
+  378:26  error  'document' is not defined  no-undef
+  381:9   error  'document' is not defined  no-undef
+  387:23  error  'document' is not defined  no-undef
+  392:26  error  'document' is not defined  no-undef
+  660:1   error  'document' is not defined  no-undef
+  662:5   error  'document' is not defined  no-undef
+  665:5   error  'window' is not defined    no-undef
+
+C:\Projects\PrismFlow Final\src\tab-enhancements.js
+   17:13  error    'window' is not defined                              no-undef
+   18:13  error    'window' is not defined                              no-undef
+   22:13  error    'window' is not defined                              no-undef
+   28:13  error    'window' is not defined                              no-undef
+   28:35  error    'window' is not defined                              no-undef
+   29:13  error    'window' is not defined                              no-undef
+   45:15  warning  'originalAddTab' is assigned a value but never used  no-unused-vars
+   48:28  error    'document' is not defined                            no-undef
+   49:31  error    'document' is not defined                            no-undef
+   52:25  error    'document' is not defined                            no-undef
+  105:21  error    'document' is not defined                            no-undef
+  137:21  error    'document' is not defined                            no-undef
+  163:26  error    'document' is not defined                            no-undef
+  166:31  error    'document' is not defined                            no-undef
+  168:37  error    'document' is not defined                            no-undef
+  187:26  error    'document' is not defined                            no-undef
+  195:27  error    'document' is not defined                            no-undef
+  197:27  error    'document' is not defined                            no-undef
+  214:13  error    'document' is not defined                            no-undef
+  239:31  error    'document' is not defined                            no-undef
+  242:21  error    'document' is not defined                            no-undef
+  270:9   error    'document' is not defined                            no-undef
+  271:35  error    'document' is not defined                            no-undef
+  283:20  error    'document' is not defined                            no-undef
+  354:1   error    'document' is not defined                            no-undef
+  357:5   error    'document' is not defined                            no-undef
+  358:5   error    'document' is not defined                            no-undef
+  359:9   error    'window' is not defined                              no-undef
+  359:54  error    'window' is not defined                              no-undef
+  362:5   error    'window' is not defined                              no-undef
+  362:50  error    'window' is not defined                              no-undef
+
+C:\Projects\PrismFlow Final\src\universal-optimization-engine.js
+   74:46  error    'window' is not defined                         no-undef
+   75:38  error    'window' is not defined                         no-undef
+   75:61  error    'window' is not defined                         no-undef
+  226:15  warning  'resources' is assigned a value but never used  no-unused-vars
+  317:15  warning  'phi' is assigned a value but never used        no-unused-vars
+  449:21  warning  '_' is assigned a value but never used          no-unused-vars
+  471:5   error    'window' is not defined                         no-undef
+
+C:\Projects\PrismFlow Final\src\webrtc-integration.js
+   25:34  error  'document' is not defined           no-undef
+   43:19  error  'navigator' is not defined          no-undef
+   44:18  error  'navigator' is not defined          no-undef
+   45:18  error  'window' is not defined             no-undef
+   50:23  error  'document' is not defined           no-undef
+   95:9   error  'document' is not defined           no-undef
+  102:25  error  'document' is not defined           no-undef
+  105:27  error  'document' is not defined           no-undef
+  119:25  error  'document' is not defined           no-undef
+  182:35  error  'RTCPeerConnection' is not defined  no-undef
+  186:33  error  'document' is not defined           no-undef
+  211:27  error  'document' is not defined           no-undef
+  212:28  error  'document' is not defined           no-undef
+  216:42  error  'navigator' is not defined          no-undef
+  240:17  error  'alert' is not defined              no-undef
+  258:26  error  'document' is not defined           no-undef
+  263:46  error  'navigator' is not defined          no-undef
+  275:17  error  'alert' is not defined              no-undef
+  292:27  error  'document' is not defined           no-undef
+  293:28  error  'document' is not defined           no-undef
+  296:40  error  'navigator' is not defined          no-undef
+  330:26  error  'document' is not defined           no-undef
+  331:27  error  'document' is not defined           no-undef
+  394:28  error  'document' is not defined           no-undef
+  395:29  error  'document' is not defined           no-undef
+  401:9   error  'document' is not defined           no-undef
+  405:9   error  'document' is not defined           no-undef
+  406:9   error  'document' is not defined           no-undef
+  407:9   error  'document' is not defined           no-undef
+  608:1   error  'document' is not defined           no-undef
+  610:5   error  'document' is not defined           no-undef
+  613:5   error  'window' is not defined             no-undef
+
+C:\Projects\PrismFlow Final\test-all-features.js
+  320:43  warning  'promise' is defined but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\test-browser-quick.js
+   85:22  error    'document' is not defined               no-undef
+   87:23  error    'window' is not defined                 no-undef
+  113:26  error    'document' is not defined               no-undef
+  125:24  error    'document' is not defined               no-undef
+  143:18  warning  'clickError' is defined but never used  no-unused-vars
+  167:12  warning  'e' is defined but never used           no-unused-vars
+  177:21  error    'document' is not defined               no-undef
+  197:12  warning  'e' is defined but never used           no-unused-vars
+  214:12  warning  'e' is defined but never used           no-unused-vars
+
+C:\Projects\PrismFlow Final\test-complete-browser.js
+  6:9  warning  'app' is assigned a value but never used   no-unused-vars
+  7:7  warning  'path' is assigned a value but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\test-mantra-browser.js
+  7:7  warning  'path' is assigned a value but never used  no-unused-vars
+
+C:\Projects\PrismFlow Final\test-new-features.js
+   49:24  error  'document' is not defined  no-undef
+   85:31  error  'document' is not defined  no-undef
+  114:24  error  'document' is not defined  no-undef
+  150:31  error  'document' is not defined  no-undef
+  170:27  error  'document' is not defined  no-undef
+  171:26  error  'document' is not defined  no-undef
+  172:27  error  'document' is not defined  no-undef
+  173:24  error  'document' is not defined  no-undef
+
+C:\Projects\PrismFlow Final\test-universal-browser.js
+  7:7  warning  'path' is assigned a value but never used  no-unused-vars
+
+✖ 960 problems (825 errors, 135 warnings)
+  0 errors and 24 warnings potentially fixable with the `--fix` option.
+

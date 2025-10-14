@@ -1,0 +1,26 @@
+npm error Missing script: "lint"
+npm error
+npm error Did you mean this?
+npm error   npm link # Symlink a package folder
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: C:\Users\schan\AppData\Local\npm-cache\_logs\2025-10-14T16_21_49_995Z-debug-0.log
+npm warn exec The following package was not found and will be installed: eslint@9.37.0
+
+Oops! Something went wrong! :(
+
+ESLint: 9.37.0
+
+ESLint couldn't find an eslint.config.(js|mjs|cjs) file.
+
+From ESLint v9.0.0, the default configuration file is now eslint.config.js.
+If you are using a .eslintrc.* file, please follow the migration guide
+to update your configuration file to the new format:
+
+https://eslint.org/docs/latest/use/configure/migration-guide
+
+If you still have problems after following the migration guide, please stop by
+https://eslint.org/chat/help to chat with the team.
+
+NO_ESLINT_CONFIG
