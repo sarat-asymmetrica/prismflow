@@ -1,0 +1,17 @@
+node_modules/
+dist/
+dist-packager/
+.cache/
+coverage/
+*.log
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.tmp
+*.temp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

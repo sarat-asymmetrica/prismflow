@@ -1,0 +1,548 @@
+<!-- PrismFlow Browser Settings Panel -->
+<div id="settings-panel" class="settings-panel">
+    <div class="settings-header">
+        <h2>Settings</h2>
+        <button class="settings-close" id="settings-close">×</button>
+    </div>
+    
+    <div class="settings-sidebar">
+        <div class="settings-category active" data-category="general">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v6m0 6v6m4.22-13.22l-2.83 2.83m-2.78 2.78l-2.83 2.83M20.88 12h-6m-6 0H2m16.24 4.22l-2.83-2.83m-2.78-2.78l-2.83-2.83"/>
+            </svg>
+            General
+        </div>
+        <div class="settings-category" data-category="privacy">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Privacy & Security
+        </div>
+        <div class="settings-category" data-category="appearance">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+            Appearance
+        </div>
+        <div class="settings-category" data-category="performance">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            Performance
+        </div>
+        <div class="settings-category" data-category="downloads">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Downloads
+        </div>
+        <div class="settings-category" data-category="experimental">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            Experimental
+        </div>
+        <div class="settings-category" data-category="ai-orchestrator">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                <circle cx="12" cy="12" r="4"/>
+            </svg>
+            AI Orchestrator
+        </div>
+    </div>
+    
+    <div class="settings-content">
+        <!-- General Settings -->
+        <div class="settings-section active" id="general-settings">
+            <h3>General Settings</h3>
+            
+            <div class="setting-group">
+                <label>Homepage</label>
+                <input type="text" id="homepage-input" placeholder="https://www.google.com" />
+            </div>
+            
+            <div class="setting-group">
+                <label>Search Engine</label>
+                <select id="search-engine">
+                    <option value="google" selected>Google</option>
+                    <option value="bing">Bing</option>
+                    <option value="brave">Brave Search</option>
+                    <option value="ecosia">Ecosia (Plants trees)</option>
+                </select>
+            </div>
+            
+            <div class="setting-group">
+                <label>On Startup</label>
+                <select id="startup-behavior">
+                    <option value="homepage">Open homepage</option>
+                    <option value="restore">Restore previous session</option>
+                    <option value="blank">Open blank page</option>
+                </select>
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Show bookmarks bar</label>
+                <input type="checkbox" id="show-bookmarks" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Enable autofill</label>
+                <input type="checkbox" id="enable-autofill" />
+            </div>
+        </div>
+        
+        <!-- Privacy & Security Settings -->
+        <div class="settings-section" id="privacy-settings">
+            <h3>Privacy & Security</h3>
+            
+            <div class="setting-toggle">
+                <label>Block ads and trackers</label>
+                <input type="checkbox" id="block-ads" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Block third-party cookies</label>
+                <input type="checkbox" id="block-cookies" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Send "Do Not Track" request</label>
+                <input type="checkbox" id="do-not-track" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Force HTTPS connections</label>
+                <input type="checkbox" id="force-https" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Block fingerprinting</label>
+                <input type="checkbox" id="block-fingerprint" checked />
+            </div>
+            
+            <div class="setting-group">
+                <label>Clear browsing data</label>
+                <button class="setting-button" id="clear-data">Clear Data...</button>
+            </div>
+            
+            <div class="setting-group">
+                <label>Manage certificates</label>
+                <button class="setting-button" id="manage-certs">Certificates...</button>
+            </div>
+        </div>
+        
+        <!-- Appearance Settings -->
+        <div class="settings-section" id="appearance-settings">
+            <h3>Appearance</h3>
+            
+            <div class="setting-group">
+                <label>Theme</label>
+                <select id="theme-select">
+                    <option value="diaphanous">Diaphanous Glass (Default)</option>
+                    <option value="dark">Dark Mode</option>
+                    <option value="light">Light Mode</option>
+                    <option value="auto">Auto (System)</option>
+                </select>
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Show particle effects</label>
+                <input type="checkbox" id="show-particles" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Show weather effects</label>
+                <input type="checkbox" id="show-weather" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Adaptive color extraction</label>
+                <input type="checkbox" id="adaptive-colors" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Show Natural Asymmetry indicator</label>
+                <input type="checkbox" id="show-na-indicator" checked />
+            </div>
+            
+            <div class="setting-group">
+                <label>Font size</label>
+                <select id="font-size">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                    <option value="xlarge">Extra Large</option>
+                </select>
+            </div>
+            
+            <div class="setting-group">
+                <label>Page zoom</label>
+                <input type="range" id="default-zoom" min="50" max="200" value="100" />
+                <span id="zoom-value">100%</span>
+            </div>
+        </div>
+        
+        <!-- Performance Settings -->
+        <div class="settings-section" id="performance-settings">
+            <h3>Performance</h3>
+            
+            <div class="setting-toggle">
+                <label>Enable Natural Asymmetry optimization</label>
+                <input type="checkbox" id="enable-na" checked />
+            </div>
+            
+            <div class="setting-group">
+                <label>Memory limit per tab</label>
+                <select id="memory-limit">
+                    <option value="256">256 MB (Minimal)</option>
+                    <option value="512" selected>512 MB (Balanced)</option>
+                    <option value="1024">1 GB (Performance)</option>
+                    <option value="0">Unlimited</option>
+                </select>
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Suspend background tabs</label>
+                <input type="checkbox" id="suspend-tabs" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Hardware acceleration</label>
+                <input type="checkbox" id="hw-acceleration" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Preload pages for faster browsing</label>
+                <input type="checkbox" id="preload-pages" />
+            </div>
+            
+            <div class="setting-group">
+                <label>Cache size</label>
+                <select id="cache-size">
+                    <option value="50">50 MB</option>
+                    <option value="100">100 MB</option>
+                    <option value="250" selected>250 MB</option>
+                    <option value="500">500 MB</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Downloads Settings -->
+        <div class="settings-section" id="downloads-settings">
+            <h3>Downloads</h3>
+            
+            <div class="setting-group">
+                <label>Download location</label>
+                <input type="text" id="download-path" placeholder="C:\Users\[User]\Downloads" />
+                <button class="setting-button" id="browse-download">Browse...</button>
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Ask where to save each file</label>
+                <input type="checkbox" id="ask-download-location" />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Show download progress in taskbar</label>
+                <input type="checkbox" id="show-download-progress" checked />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Open downloads when complete</label>
+                <input type="checkbox" id="auto-open-downloads" />
+            </div>
+        </div>
+        
+        <!-- Experimental Settings -->
+        <div class="settings-section" id="experimental-settings">
+            <h3>Experimental Features</h3>
+            <p class="warning">⚠️ These features are experimental and may affect stability</p>
+            
+            <div class="setting-toggle">
+                <label>Enable WebGPU</label>
+                <input type="checkbox" id="enable-webgpu" />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Enable QUIC protocol</label>
+                <input type="checkbox" id="enable-quic" />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Tab hibernation (aggressive)</label>
+                <input type="checkbox" id="tab-hibernation" />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>Parallel downloading</label>
+                <input type="checkbox" id="parallel-downloads" />
+            </div>
+            
+            <div class="setting-toggle">
+                <label>DNS over HTTPS</label>
+                <input type="checkbox" id="dns-over-https" />
+            </div>
+            
+            <div class="setting-group">
+                <label>Experimental flags</label>
+                <button class="setting-button" id="chrome-flags">Open Flags...</button>
+            </div>
+        </div>
+        
+        <!-- AI Orchestrator Settings -->
+        <div class="settings-section" id="ai-orchestrator-settings">
+            <h3>AI Orchestrator - Natural Asymmetry Distribution</h3>
+            <p class="info">Connect your AI accounts to enable intelligent task routing using Natural Asymmetry (30/20/50)</p>
+            
+            <div class="ai-orchestrator-container">
+                <iframe src="ai-orchestrator-ui.html" 
+                        style="width: 100%; height: 800px; border: none; border-radius: 10px;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    
+    <div class="settings-footer">
+        <button class="settings-btn reset" id="reset-settings">Reset to Defaults</button>
+        <button class="settings-btn apply" id="apply-settings">Apply</button>
+    </div>
+</div>
+
+<style>
+.settings-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 900px;
+    height: 70%;
+    max-height: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    z-index: 10000;
+}
+
+.settings-panel.visible {
+    display: flex;
+}
+
+.settings-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.settings-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.settings-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.settings-panel > div:not(.settings-header):not(.settings-footer) {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.settings-sidebar {
+    width: 200px;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.settings-category {
+    padding: 12px 16px;
+    margin: 4px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.settings-category:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.settings-category.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+.settings-content {
+    flex: 1;
+    padding: 20px 30px;
+    overflow-y: auto;
+}
+
+.settings-section {
+    display: none;
+}
+
+.settings-section.active {
+    display: block;
+}
+
+.settings-section h3 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.setting-group {
+    margin: 20px 0;
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.setting-group input[type="text"],
+.setting-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+}
+
+.setting-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.setting-toggle label {
+    font-size: 14px;
+}
+
+.setting-toggle input[type="checkbox"] {
+    width: 40px;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.setting-toggle input[type="checkbox"]:checked {
+    background: var(--accent-color);
+}
+
+.setting-toggle input[type="checkbox"]::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s;
+}
+
+.setting-toggle input[type="checkbox"]:checked::after {
+    left: 22px;
+}
+
+.setting-button {
+    padding: 8px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.setting-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.settings-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.settings-btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.settings-btn.reset {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.settings-btn.reset:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.settings-btn.apply {
+    background: var(--accent-color);
+    color: white;
+}
+
+.settings-btn.apply:hover {
+    opacity: 0.9;
+}
+
+.warning {
+    padding: 10px;
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 3px solid #ffc107;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #856404;
+    margin-bottom: 20px;
+}
+
+input[type="range"] {
+    width: 200px;
+    margin-right: 10px;
+}
+</style>

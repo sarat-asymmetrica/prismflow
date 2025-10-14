@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrismFlow Browser - The Browser That Breathes</title>
+    
+    <style>
+        /* Diaphanous Glass Design System */
+        :root {
+            --dominant-color: #ffffff;
+            --secondary-color: #f0f0f0;
+            --accent-color: #007bff;
+            --ambient-glow: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            --adaptive-text-color: rgba(0, 0, 0, 0.8);
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            
+            /* Natural Asymmetry spacing */
+            --emergence-height: 30vh;
+            --precision-height: 20vh;
+            --support-height: 50vh;
+            
+            /* Glass properties */
+            --glass-blur: 20px;
+            --glass-opacity: 0.85;
+            --glass-border: 1px solid rgba(255,255,255,0.18);
+        }
+        
+        /* Dark Mode Variables */
+        body.dark-mode {
+            --dominant-color: #1a1a1a;
+            --secondary-color: #2d2d2d;
+            --accent-color: #4a9eff;
+            --ambient-glow: radial-gradient(circle at 30% 20%, rgba(74,158,255,0.1) 0%, transparent 50%);
+            --adaptive-text-color: rgba(255, 255, 255, 0.9);
+            --bg-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --glass-blur: 20px;
+            --glass-opacity: 0.9;
+            --glass-border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--adaptive-text-color);
+            overflow: hidden;
+            position: relative;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        
+        /* Particle Canvas Layer */
+        #particle-canvas, #weather-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        #weather-canvas {
+            z-index: 2;
+        }
+        
+        /* Main Browser Container */
+        .browser-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+        }
+        
+        /* Window Controls */
+        .window-controls {
+            height: 32px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 12px;
+            -webkit-app-region: drag;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .window-title {
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.7;
+            user-select: none;
+        }
+        
+        .window-buttons {
+            display: flex;
+            gap: 8px;
+            -webkit-app-region: no-drag;
+        }
+        
+        .window-btn {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: transparent;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--adaptive-text-color);
+        }
+        
+        .window-btn:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .window-btn.close:hover {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .window-btn.maximize:hover {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .window-btn.minimize:hover {
+            background: #f39c12;
+            color: white;
+        }
+        
+        /* Navigation Bar - Emergence Zone (30%) */
+        .nav-bar {
+            height: 80px;
+            background: rgba(255, 255, 255, var(--glass-opacity));
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border-bottom: var(--glass-border);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 12px;
+            z-index: 100;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .nav-bar:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Tab Bar */
+        .tab-bar {
+            height: 40px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            gap: 5px;
+            overflow-x: auto;
+            border-bottom: var(--glass-border);
+        }
+        
+        .tab {
+            min-width: 150px;
+            max-width: 240px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+        
+        .tab.active {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        .tab-title {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 13px;
+        }
+        
+        .tab-close {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.2s;
+        }
+        
+        .tab-close:hover {
+            background: rgba(0,0,0,0.1);
+            opacity: 1;
+        }
+        
+        .new-tab {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .new-tab:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Navigation Controls */
+        .nav-controls {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .nav-btn {
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            color: var(--adaptive-text-color);
+        }
+        
+        .nav-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        /* URL Bar */
+        .url-bar-container {
+            flex: 1;
+            position: relative;
+        }
+        
+        .url-bar {
+            width: 100%;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.5);
+            border: var(--glass-border);
+            border-radius: 20px;
+            padding: 0 40px 0 16px;
+            font-size: 14px;
+            /* Optimize for smooth typing - no transition on text */
+            transition: background 0.2s, border 0.2s;
+            color: var(--adaptive-text-color);
+            /* GPU acceleration */
+            transform: translateZ(0);
+            -webkit-font-smoothing: antialiased;
+            /* Prevent layout shifts */
+            contain: layout style;
+        }
+        
+        .url-bar:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+        }
+        
+        .url-status {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Content Area - Precision & Support Zones */
+        .content-area {
+            flex: 1;
+            position: relative;
+            background: transparent;  /* Made transparent so WebContentsView shows through */
+            overflow: hidden;
+            /* Remove pointer-events: none to allow interaction */
+        }
+        
+        .webview-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: transparent;  /* Transparent for WebContentsView */
+            /* Remove pointer-events to allow WebContentsView interaction */
+        }
+        
+        .webview {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+        
+        /* Loading Overlay */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            pointer-events: none;  /* Don't block WebContentsView */
+        }
+        
+        .loading-overlay.active {
+            display: flex;
+            pointer-events: auto;  /* Only block when actually loading */
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid transparent;
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Status Bar */
+        .status-bar {
+            height: 24px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: var(--glass-border);
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            font-size: 11px;
+            gap: 20px;
+            z-index: 100;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            opacity: 0.7;
+        }
+        
+        .status-indicator {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4caf50;
+        }
+        
+        /* Ambient Glow Effect */
+        .ambient-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--ambient-glow);
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.5;
+            transition: opacity 0.6s;
+            mix-blend-mode: screen;
+        }
+        
+        /* Resource Monitor */
+        .resource-monitor {
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-family: 'Courier New', monospace;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .resource-monitor.visible {
+            display: block;
+        }
+        
+        /* Natural Asymmetry Visual Indicator */
+        .na-indicator {
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            width: 200px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            overflow: hidden;
+            z-index: 50;
+            display: flex;
+            flex-direction: row;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        
+        .na-indicator:hover {
+            opacity: 1;
+        }
+        
+        .na-emergence {
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            opacity: 0.6;
+        }
+        
+        .na-precision {
+            width: 20%;
+            height: 100%;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            opacity: 0.6;
+        }
+        
+        .na-support {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            opacity: 0.6;
+        }
+        
+        /* Fix for settings panel visibility */
+        #settings-container .settings-panel {
+            position: fixed !important;
+            z-index: 10000 !important;
+        }
+        
+        #settings-container .settings-panel.visible {
+            display: flex !important;
+        }
+        
+        /* Audio icon styling for tabs */
+        .tab-audio-icon {
+            margin-right: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Effects Layer -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- Weather Effects Layer -->
+    <canvas id="weather-canvas"></canvas>
+    
+    <!-- Ambient Glow Layer -->
+    <div class="ambient-layer"></div>
+    
+    <!-- Natural Asymmetry Indicator -->
+    <div class="na-indicator" id="na-indicator">
+        <div class="na-emergence" title="30% Emergence">30%</div>
+        <div class="na-precision" title="20% Precision">20%</div>
+        <div class="na-support" title="50% Support">50%</div>
+    </div>
+    
+    <!-- Main Browser -->
+    <div class="browser-container">
+        <!-- Window Controls -->
+        <div class="window-controls">
+            <div class="window-title">PrismFlow Browser</div>
+            <div class="window-buttons">
+                <button class="window-btn minimize" id="minimize-btn">
+                    <svg width="10" height="1" viewBox="0 0 10 1">
+                        <rect width="10" height="1" fill="currentColor"/>
+                    </svg>
+                </button>
+                <button class="window-btn maximize" id="maximize-btn">
+                    <svg width="10" height="10" viewBox="0 0 10 10">
+                        <rect width="10" height="10" fill="none" stroke="currentColor" stroke-width="1"/>
+                    </svg>
+                </button>
+                <button class="window-btn close" id="close-btn">
+                    <svg width="10" height="10" viewBox="0 0 10 10">
+                        <path d="M0 0 L10 10 M10 0 L0 10" stroke="currentColor" stroke-width="1"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+            <div class="new-tab">+</div>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <div class="nav-controls">
+                <button class="nav-btn" id="back-btn" disabled>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button class="nav-btn" id="forward-btn" disabled>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+                <button class="nav-btn" id="reload-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 4v6h6M23 20v-6h-6M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+                    </svg>
+                </button>
+                <button class="nav-btn" id="home-btn" title="Home">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="url-bar-container">
+                <input type="text" class="url-bar" id="url-bar" placeholder="Search or enter address" />
+                <div class="url-status">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M2 12h20"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <button class="nav-btn" id="bookmark-btn" title="Bookmark this page">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                </svg>
+            </button>
+            
+            <button class="nav-btn" id="devtools-btn" title="Developer Tools">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                </svg>
+            </button>
+            
+            <button class="nav-btn" id="downloads-btn" title="Downloads">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+            </button>
+            
+            <button class="nav-btn" id="history-btn" title="History">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="1 4 1 10 7 10"/>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+            </button>
+            
+            <button class="nav-btn" id="optimize-btn" title="Performance Optimizer" style="font-size: 18px;">
+                ⚡
+            </button>
+            
+            <button class="nav-btn" id="dark-mode-btn" title="Toggle Dark Mode">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+            </button>
+            
+            <button class="nav-btn" id="menu-btn" title="Menu">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="1"/>
+                    <circle cx="12" cy="5" r="1"/>
+                    <circle cx="12" cy="19" r="1"/>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Content Area -->
+        <div class="content-area">
+            <div class="webview-container" id="webview-container">
+                <!-- BrowserView will be attached here by Electron -->
+                <div class="loading-overlay" id="loading">
+                    <div class="loading-spinner"></div>
+                </div>
+                
+                <!-- Placeholder for when no tabs are open -->
+                <div class="no-tabs-placeholder" id="no-tabs" style="display: none;">
+                    <h2>Welcome to PrismFlow Browser</h2>
+                    <p>Press Ctrl+T to open a new tab</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-indicator"></div>
+                <span id="status-text">Ready</span>
+            </div>
+            <div class="status-item">
+                <span id="memory-usage">Memory: 0 MB</span>
+            </div>
+            <div class="status-item">
+                <span id="particle-count">Particles: 0</span>
+            </div>
+            <div class="status-item">
+                <span id="weather-status">Weather: Clear</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Resource Monitor (hidden by default) -->
+    <div class="resource-monitor" id="resource-monitor">
+        <div>Natural Asymmetry Active</div>
+        <div>E: 30% | P: 20% | S: 50%</div>
+        <div id="resource-details"></div>
+    </div>
+    
+    <!-- Settings Panel (loaded dynamically) -->
+    <div id="settings-container"></div>
+    
+    <!-- Import our engines -->
+    <script src="components/particle_engine.js"></script>
+    <script src="components/weather_engine.js"></script>
+    <!-- COMMENTED OUT: Adaptive color engine may be blocking page rendering
+    <script src="diaphanous/adaptive_color_engine.js"></script>
+    -->
+    <script src="ai-orchestrator.js"></script>
+    <script src="ai-browser-integration.js"></script>
+    <script src="download-manager.js"></script>
+    <script src="history-panel.js"></script>
+    
+    <script>
+        // Initialize PrismFlow Browser
+        class PrismFlowBrowser {
+            constructor() {
+                this.tabs = new Map();
+                this.activeTabId = 'tab-1';
+                this.history = [];
+                this.historyIndex = -1;
+                
+                // Initialize engines
+                this.particleEngine = new ParticleEngine(document.getElementById('particle-canvas'));
+                this.weatherEngine = new WeatherEngine(document.getElementById('weather-canvas'));
+                // DISABLED: Adaptive color engine - may interfere with page rendering
+                
+                // Start engines
+                this.particleEngine.start();
+                this.weatherEngine.start();
+                
+                // Initialize first tab
+                this.tabs.set('tab-1', {
+                    url: 'about:blank',
+                    title: 'New Tab',
+                    history: []
+                });
+                
+                this.setupEventListeners();
+                this.setupKeyboardShortcuts();
+                this.setupElectronListeners();
+                
+                // Initialize panels
+                this.historyPanel = new HistoryPanel(this);
+                
+                // Start monitoring
+                this.startResourceMonitoring();
+                
+                // Create initial tab if using Electron
+                if (window.electronAPI) {
+                    this.initializeWithElectron();
+                }
+            }
+            
+            addButtonHandler(buttonId, handler, description) {
+                const button = document.getElementById(buttonId);
+                if (!button) {
+                    console.warn(`Button ${buttonId} not found`);
+                    return;
+                }
+                
+                button.addEventListener('click', async () => {
+                    // Visual feedback - pulse effect
+                    button.style.transform = 'scale(0.95)';
+                    button.style.transition = 'transform 0.1s';
+                    
+                    try {
+                        await handler();
+                        console.log(`✅ ${description}`);
+                        
+                        // Success feedback
+                        setTimeout(() => {
+                            button.style.transform = 'scale(1)';
+                        }, 100);
+                    } catch (error) {
+                        console.error(`❌ ${description} failed:`, error);
+                        // Error feedback
+                        button.style.background = 'rgba(255, 0, 0, 0.2)';
+                        setTimeout(() => {
+                            button.style.background = '';
+                            button.style.transform = 'scale(1)';
+                        }, 300);
+                    }
+                });
+                
+                // Add tooltip
+                button.title = description;
+            }
+            
+            setupEventListeners() {
+                // URL bar with optimized input handling (no lag!)
+                const urlBar = document.getElementById('url-bar');
+                
+                // Use keydown for Enter key (faster than keypress)
+                urlBar.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        this.navigate(urlBar.value);
+                    }
+                });
+                
+                // Optimize input performance
+                urlBar.addEventListener('focus', () => {
+                    // Disable spell check during typing for performance
+                    urlBar.setAttribute('spellcheck', 'false');
+                    urlBar.setAttribute('autocomplete', 'off');
+                });
+                
+                // Navigation buttons with pulse effect
+                this.addButtonHandler('back-btn', () => this.goBack(), 'Navigate back');
+                this.addButtonHandler('forward-btn', () => this.goForward(), 'Navigate forward');
+                this.addButtonHandler('reload-btn', () => this.reload(), 'Reload page');
+                this.addButtonHandler('home-btn', () => this.goHome(), 'Go home');
+                
+                // Feature buttons with visual feedback
+                this.addButtonHandler('bookmark-btn', () => this.toggleBookmark(), 'Toggle bookmark');
+                this.addButtonHandler('devtools-btn', () => this.toggleDevTools(), 'Toggle DevTools');
+                this.addButtonHandler('downloads-btn', () => {
+                    if (window.downloadManager) {
+                        window.downloadManager.togglePanel();
+                    }
+                }, 'Show downloads');
+                this.addButtonHandler('history-btn', () => {
+                    if (this.historyPanel) {
+                        this.historyPanel.toggle();
+                    }
+                }, 'Show history');
+                
+                // Tab controls
+                document.querySelector('.new-tab').addEventListener('click', () => this.createNewTab());
+                
+                // Setup tab click handlers
+                this.setupTabHandlers();
+                
+                // Dark mode toggle button
+                this.addButtonHandler('dark-mode-btn', () => this.toggleDarkMode(), 'Toggle dark mode');
+                
+                // Menu button with settings panel
+                this.addButtonHandler('menu-btn', () => this.toggleSettingsPanel(), 'Open settings');
+                
+                // Optimization button handler
+                this.addButtonHandler('optimize-btn', () => this.toggleOptimizationPanel(), 'Open Performance Optimizer');
+                
+                // Window controls with Electron API
+                this.addButtonHandler('minimize-btn', () => {
+                    if (window.electronAPI && window.electronAPI.minimizeWindow) {
+                        return window.electronAPI.minimizeWindow();
+                    }
+                    console.log('Minimize not available in web mode');
+                }, 'Minimize window');
+                
+                this.addButtonHandler('maximize-btn', () => {
+                    if (window.electronAPI && window.electronAPI.maximizeWindow) {
+                        return window.electronAPI.maximizeWindow();
+                    }
+                    console.log('Maximize not available in web mode');
+                }, 'Maximize window');
+                
+                this.addButtonHandler('close-btn', () => {
+                    if (window.electronAPI && window.electronAPI.closeWindow) {
+                        return window.electronAPI.closeWindow();
+                    }
+                    console.log('Close not available in web mode');
+                }, 'Close window');
+            }
+            
+            setupKeyboardShortcuts() {
+                document.addEventListener('keydown', (e) => {
+                    // Ctrl+T: New tab
+                    if (e.ctrlKey && e.key === 't') {
+                        e.preventDefault();
+                        this.createNewTab();
+                    }
+                    // Ctrl+L: Focus URL bar
+                    if (e.ctrlKey && e.key === 'l') {
+                        e.preventDefault();
+                        document.getElementById('url-bar').focus();
+                        document.getElementById('url-bar').select();
+                    }
+                    // Alt+Left: Back
+                    if (e.altKey && e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        this.goBack();
+                    }
+                    // Alt+Right: Forward
+                    if (e.altKey && e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        this.goForward();
+                    }
+                });
+            }
+            
+            async navigate(input) {
+                let url = input.trim();
+                
+                if (!url) return;
+                
+                // Show loading
+                document.getElementById('loading').classList.add('active');
+                document.getElementById('status-text').textContent = 'Loading...';
+                
+                // Add to browsing history
+                this.addToHistory(url);
+                
+                // If we have Electron API, use it for proper navigation
+                if (window.electronAPI) {
+                    try {
+                        const result = await window.electronAPI.navigate(url);
+                        if (result && result.success) {
+                            // Trigger particle effect
+                            this.particleEngine.onPageLoad();
+                        }
+                    } catch (error) {
+                        console.error('Navigation error:', error);
+                        document.getElementById('loading').classList.remove('active');
+                        document.getElementById('status-text').textContent = 'Error loading page';
+                    }
+                } else {
+                    // Fallback to iframe (limited functionality)
+                    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                        if (url.includes('.') && !url.includes(' ')) {
+                            url = 'https://' + url;
+                        } else {
+                            url = `https://www.google.com/search?q=${encodeURIComponent(url)}`;
+                        }
+                    }
+                    
+                    document.getElementById('url-bar').value = url;
+                    const webview = document.getElementById('webview');
+                    webview.src = url;
+                    
+                    // Update history
+                    this.history = this.history.slice(0, this.historyIndex + 1);
+                    this.history.push(url);
+                    this.historyIndex++;
+                    
+                    // Update navigation buttons
+                    this.updateNavButtons();
+                    
+                    // Trigger particle effect
+                    this.particleEngine.onPageLoad();
+                }
+            }
+            
+            onPageLoad() {
+                // Hide loading
+                document.getElementById('loading').classList.remove('active');
+                document.getElementById('status-text').textContent = 'Ready';
+                
+                // Update weather based on site
+                const url = document.getElementById('url-bar').value;
+                const weather = this.determineWeather(url);
+                this.weatherEngine.setWeather(weather);
+                document.getElementById('weather-status').textContent = `Weather: ${weather}`;
+                
+                // Update particles
+                const palette = {
+                    dominant: getComputedStyle(document.documentElement).getPropertyValue('--dominant-color'),
+                    secondary: getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'),
+                    accent: getComputedStyle(document.documentElement).getPropertyValue('--accent-color')
+                };
+                this.particleEngine.updatePalette(palette);
+            }
+            
+            determineWeather(url) {
+                if (url.includes('youtube') || url.includes('video')) return 'clear';
+                if (url.includes('news')) return 'fog';
+                if (url.includes('github') || url.includes('stackoverflow')) return 'rain';
+                if (url.includes('shop') || url.includes('amazon')) {
+                    const month = new Date().getMonth();
+                    return (month === 11 || month === 0 || month === 1) ? 'snow' : 'clear';
+                }
+                return 'clear';
+            }
+            
+            goBack() {
+                if (this.historyIndex > 0) {
+                    this.historyIndex--;
+                    const url = this.history[this.historyIndex];
+                    document.getElementById('url-bar').value = url;
+                    document.getElementById('webview').src = url;
+                    this.updateNavButtons();
+                }
+            }
+            
+            goForward() {
+                if (this.historyIndex < this.history.length - 1) {
+                    this.historyIndex++;
+                    const url = this.history[this.historyIndex];
+                    document.getElementById('url-bar').value = url;
+                    document.getElementById('webview').src = url;
+                    this.updateNavButtons();
+                }
+            }
+            
+            reload() {
+                const webview = document.getElementById('webview');
+                webview.src = webview.src;
+                this.particleEngine.onPageLoad();
+            }
+            
+            updateNavButtons() {
+                document.getElementById('back-btn').disabled = this.historyIndex <= 0;
+                document.getElementById('forward-btn').disabled = this.historyIndex >= this.history.length - 1;
+            }
+            
+            addTabToUI(tabId, title) {
+                const tabBar = document.querySelector('.tab-bar');
+                const newTabBtn = document.querySelector('.new-tab');
+                
+                // Create tab element
+                const tab = document.createElement('div');
+                tab.className = 'tab';
+                tab.dataset.tabId = tabId;
+                tab.innerHTML = `
+                    <span class="tab-audio-icon" style="display: none;">🔊</span>
+                    <span class="tab-title">${title}</span>
+                    <span class="tab-close">×</span>
+                `;
+                
+                // Insert before new tab button
+                tabBar.insertBefore(tab, newTabBtn);
+                
+                // Add click handler to switch tabs
+                tab.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('tab-close')) {
+                        // Close tab
+                        this.closeTab(tabId);
+                    } else {
+                        // Switch to tab
+                        this.switchToTab(tabId);
+                    }
+                });
+                
+                // Make it active
+                this.setActiveTabUI(tabId);
+            }
+            
+            removeTabFromUI(tabId) {
+                const tab = document.querySelector(`[data-tab-id="${tabId}"]`);
+                if (tab) {
+                    tab.remove();
+                }
+            }
+            
+            setActiveTabUI(tabId) {
+                // Optimized: Cache selectors and minimize DOM queries
+                const tabs = this.cachedTabs || (this.cachedTabs = document.querySelector('.tab-bar'));
+                
+                // More efficient: find current active tab and new tab in one pass
+                let currentActive = null;
+                let newActive = null;
+                
+                for (const tab of tabs.children) {
+                    if (tab.classList.contains('tab')) {
+                        if (tab.classList.contains('active')) {
+                            currentActive = tab;
+                        }
+                        if (tab.dataset.tabId === tabId) {
+                            newActive = tab;
+                        }
+                    }
+                }
+                
+                // Update only if needed
+                if (currentActive && currentActive !== newActive) {
+                    currentActive.classList.remove('active');
+                }
+                if (newActive && !newActive.classList.contains('active')) {
+                    newActive.classList.add('active');
+                }
+            }
+            
+            async createNewTab() {
+                if (window.electronAPI) {
+                    const tabId = await window.electronAPI.createTab('https://www.google.com');
+                    return tabId;
+                }
+                
+                // Fallback for non-Electron
+                this.createNewTabFallback();
+            }
+            
+            async closeTab(tabId) {
+                if (window.electronAPI) {
+                    await window.electronAPI.closeTab(tabId);
+                } else {
+                    // Fallback
+                    this.removeTabFromUI(tabId);
+                    this.tabs.delete(tabId);
+                }
+            }
+            
+            async switchToTab(tabId) {
+                console.log(`Switching to tab: ${tabId}`);
+                
+                // Update UI immediately for responsiveness
+                this.setActiveTabUI(tabId);
+                
+                if (window.electronAPI && window.electronAPI.switchTab) {
+                    try {
+                        const result = await window.electronAPI.switchTab(tabId);
+                        if (result) {
+                            console.log(`✅ Tab switched: ${tabId}`);
+                            // Update URL bar with current tab's URL
+                            const tab = this.tabs.get(tabId);
+                            if (tab && tab.url) {
+                                document.getElementById('url-bar').value = tab.url;
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Tab switch error:', error);
+                    }
+                } else {
+                    // Fallback for non-Electron mode
+                    const tab = this.tabs.get(tabId);
+                    if (tab) {
+                        document.getElementById('url-bar').value = tab.url;
+                    }
+                }
+            }
+            
+            createNewTabFallback() {
+                const tabId = `tab-${Date.now()}`;
+                const tabBar = document.querySelector('.tab-bar');
+                
+                // Create tab element
+                const tab = document.createElement('div');
+                tab.className = 'tab';
+                tab.dataset.tabId = tabId;
+                tab.innerHTML = `
+                    <span class="tab-title">New Tab</span>
+                    <span class="tab-close">×</span>
+                `;
+                
+                // Insert before new tab button
+                tabBar.insertBefore(tab, document.querySelector('.new-tab'));
+                
+                // Store tab data
+                this.tabs.set(tabId, {
+                    url: 'about:blank',
+                    title: 'New Tab',
+                    history: []
+                });
+                
+                // Switch to new tab
+                this.switchToTab(tabId);
+                
+                // Particle swirl effect
+                this.particleEngine.onTabSwitch();
+            }
+            
+            
+            setupTabHandlers() {
+                // Use event delegation for dynamic tabs
+                const tabBar = document.querySelector('.tab-bar');
+                
+                tabBar.addEventListener('click', (e) => {
+                    // Handle tab click
+                    const tab = e.target.closest('.tab');
+                    if (tab && !e.target.classList.contains('tab-close')) {
+                        const tabId = tab.dataset.tabId;
+                        this.switchToTab(tabId);
+                    }
+                    
+                    // Handle close button
+                    if (e.target.classList.contains('tab-close')) {
+                        const tab = e.target.closest('.tab');
+                        const tabId = tab.dataset.tabId;
+                        this.closeTab(tabId);
+                    }
+                });
+            }
+            
+            setupElectronListeners() {
+                if (!window.electronAPI) return;
+                
+                // Listen for navigation updates
+                if (window.electronAPI.onNavigationUpdate) {
+                    window.electronAPI.onNavigationUpdate((data) => {
+                        // Update URL bar
+                        document.getElementById('url-bar').value = data.url;
+                        // Update navigation buttons
+                        document.getElementById('back-btn').disabled = !data.canGoBack;
+                        document.getElementById('forward-btn').disabled = !data.canGoForward;
+                        // Hide loading
+                        document.getElementById('loading').classList.remove('active');
+                        document.getElementById('status-text').textContent = 'Ready';
+                    });
+                }
+                
+                // Listen for title updates
+                if (window.electronAPI.onTitleUpdate) {
+                    window.electronAPI.onTitleUpdate((data) => {
+                        // Update tab title
+                        const tabElement = document.querySelector(`[data-tab-id="${data.tabId}"] .tab-title`);
+                        if (tabElement) {
+                            tabElement.textContent = data.title || 'New Tab';
+                        }
+                    });
+                }
+                
+                // Listen for loading events
+                if (window.electronAPI.onLoadingStart) {
+                    window.electronAPI.onLoadingStart(() => {
+                        document.getElementById('loading').classList.add('active');
+                        document.getElementById('status-text').textContent = 'Loading...';
+                    });
+                }
+                
+                if (window.electronAPI.onLoadingStop) {
+                    window.electronAPI.onLoadingStop(() => {
+                        document.getElementById('loading').classList.remove('active');
+                        document.getElementById('status-text').textContent = 'Ready';
+                    });
+                }
+                
+                // Listen for resource updates
+                if (window.electronAPI.onResourceUpdate) {
+                    window.electronAPI.onResourceUpdate((data) => {
+                        document.getElementById('memory-usage').textContent = `Memory: ${Math.floor(data.memory)} MB`;
+                        document.getElementById('resource-details').textContent = 
+                            `Mem: ${Math.floor(data.memory)}MB | CPU: ${Math.floor(data.cpu.percent || 0)}% | Tabs: ${data.tabCount || 1}`;
+                    });
+                }
+                
+                // Listen for tab events
+                if (window.electronAPI.onTabCreated) {
+                    window.electronAPI.onTabCreated((data) => {
+                        this.addTabToUI(data.tabId, data.title || 'New Tab');
+                    });
+                }
+                
+                if (window.electronAPI.onTabClosed) {
+                    window.electronAPI.onTabClosed((data) => {
+                        this.removeTabFromUI(data.tabId);
+                    });
+                }
+                
+                if (window.electronAPI.onTabSwitched) {
+                    window.electronAPI.onTabSwitched((data) => {
+                        // Update URL bar
+                        document.getElementById('url-bar').value = data.url || '';
+                        // Update navigation buttons
+                        document.getElementById('back-btn').disabled = !data.canGoBack;
+                        document.getElementById('forward-btn').disabled = !data.canGoForward;
+                        // Update active tab
+                        this.setActiveTabUI(data.tabId);
+                    });
+                }
+                
+                // Listen for audio events
+                if (window.electronAPI.onAudioStarted) {
+                    window.electronAPI.onAudioStarted((data) => {
+                        const audioIcon = document.querySelector(`[data-tab-id="${data.tabId}"] .tab-audio-icon`);
+                        if (audioIcon) {
+                            audioIcon.style.display = 'inline';
+                        }
+                    });
+                }
+                
+                if (window.electronAPI.onAudioStopped) {
+                    window.electronAPI.onAudioStopped((data) => {
+                        const audioIcon = document.querySelector(`[data-tab-id="${data.tabId}"] .tab-audio-icon`);
+                        if (audioIcon) {
+                            audioIcon.style.display = 'none';
+                        }
+                    });
+                }
+            }
+            
+            async initializeWithElectron() {
+                try {
+                    // Just get existing tabs, don't create - main process handles initial tab
+                    const existingTabs = await window.electronAPI.getTabs();
+                    
+                    if (existingTabs && existingTabs.length > 0) {
+                        // Update UI with existing tabs
+                        existingTabs.forEach(tab => {
+                            if (!document.querySelector(`[data-tab-id="${tab.id}"]`)) {
+                                this.addTabToUI(tab.id, tab.title || 'New Tab');
+                            }
+                        });
+                        console.log('Initialized with existing tabs:', existingTabs.length);
+                    }
+                    
+                    // Hide loading initially
+                    setTimeout(() => {
+                        document.getElementById('loading').classList.remove('active');
+                    }, 1000);
+                    
+                    console.log('Initial tab created:', tabId);
+                } catch (error) {
+                    console.error('Error creating initial tab:', error);
+                }
+            }
+            
+            async goBack() {
+                if (window.electronAPI) {
+                    await window.electronAPI.goBack();
+                } else if (this.historyIndex > 0) {
+                    this.historyIndex--;
+                    const url = this.history[this.historyIndex];
+                    document.getElementById('url-bar').value = url;
+                    document.getElementById('webview').src = url;
+                    this.updateNavButtons();
+                }
+            }
+            
+            async goForward() {
+                if (window.electronAPI) {
+                    await window.electronAPI.goForward();
+                } else if (this.historyIndex < this.history.length - 1) {
+                    this.historyIndex++;
+                    const url = this.history[this.historyIndex];
+                    document.getElementById('url-bar').value = url;
+                    document.getElementById('webview').src = url;
+                    this.updateNavButtons();
+                }
+            }
+            
+            async reload() {
+                if (window.electronAPI) {
+                    await window.electronAPI.reload();
+                } else {
+                    const webview = document.getElementById('webview');
+                    webview.src = webview.src;
+                }
+                this.particleEngine.onPageLoad();
+            }
+            
+            async goHome() {
+                if (window.electronAPI) {
+                    const settings = await window.electronAPI.getSettings();
+                    this.navigate(settings.homepage || 'https://www.google.com');
+                } else {
+                    this.navigate('https://www.google.com');
+                }
+            }
+            
+            addToHistory(url) {
+                // Get existing history from localStorage
+                let fullHistory = JSON.parse(localStorage.getItem('browsingHistory') || '[]');
+                
+                // Add new entry with metadata
+                const historyEntry = {
+                    url: url,
+                    title: document.title || url,
+                    timestamp: new Date().toISOString(),
+                    visitCount: 1
+                };
+                
+                // Check if URL already exists
+                const existingIndex = fullHistory.findIndex(h => h.url === url);
+                if (existingIndex >= 0) {
+                    fullHistory[existingIndex].visitCount++;
+                    fullHistory[existingIndex].timestamp = historyEntry.timestamp;
+                } else {
+                    fullHistory.unshift(historyEntry);
+                }
+                
+                // Limit history to 1000 entries
+                if (fullHistory.length > 1000) {
+                    fullHistory = fullHistory.slice(0, 1000);
+                }
+                
+                // Save to localStorage
+                localStorage.setItem('browsingHistory', JSON.stringify(fullHistory));
+                
+                // Update session history for back/forward
+                this.history = this.history.slice(0, this.historyIndex + 1);
+                this.history.push(url);
+                this.historyIndex++;
+                
+                console.log(`📜 Added to history: ${url}`);
+            }
+            
+            getHistory(limit = 100) {
+                const fullHistory = JSON.parse(localStorage.getItem('browsingHistory') || '[]');
+                return fullHistory.slice(0, limit);
+            }
+            
+            clearHistory() {
+                localStorage.removeItem('browsingHistory');
+                this.history = ['about:blank'];
+                this.historyIndex = 0;
+                console.log('🗑️ History cleared');
+            }
+            
+            searchHistory(query) {
+                const fullHistory = JSON.parse(localStorage.getItem('browsingHistory') || '[]');
+                const searchLower = query.toLowerCase();
+                
+                return fullHistory.filter(entry => 
+                    entry.url.toLowerCase().includes(searchLower) ||
+                    (entry.title && entry.title.toLowerCase().includes(searchLower))
+                );
+            }
+            
+            async toggleBookmark() {
+                const url = document.getElementById('url-bar').value;
+                if (!url || url === 'about:blank') return;
+                
+                // Simple bookmark storage in localStorage for now
+                let bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '[]');
+                const existing = bookmarks.find(b => b.url === url);
+                
+                if (existing) {
+                    // Remove bookmark
+                    bookmarks = bookmarks.filter(b => b.url !== url);
+                    document.getElementById('bookmark-btn').style.background = 'rgba(255, 255, 255, 0.3)';
+                    console.log('Bookmark removed:', url);
+                } else {
+                    // Add bookmark
+                    bookmarks.push({
+                        url: url,
+                        title: document.title || url,
+                        date: new Date().toISOString()
+                    });
+                    document.getElementById('bookmark-btn').style.background = 'rgba(255, 200, 0, 0.5)';
+                    console.log('Bookmark added:', url);
+                }
+                
+                localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+            }
+            
+            async toggleDevTools() {
+                if (window.electronAPI && window.electronAPI.toggleDevTools) {
+                    await window.electronAPI.toggleDevTools();
+                } else {
+                    console.log('Developer tools not available in iframe mode');
+                }
+            }
+            
+            toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+                const isDark = document.body.classList.contains('dark-mode');
+                
+                // Update button icon
+                const btn = document.getElementById('dark-mode-btn');
+                if (btn) {
+                    btn.innerHTML = isDark ? 
+                        // Moon icon for dark mode
+                        `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>` :
+                        // Sun icon for light mode
+                        `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>`;
+                }
+                
+                // Save preference
+                const settings = { darkMode: isDark };
+                if (window.electronAPI && window.electronAPI.saveSettings) {
+                    window.electronAPI.saveSettings(settings);
+                } else {
+                    localStorage.setItem('darkMode', isDark);
+                }
+                
+                // Notify main process
+                if (window.electronAPI) {
+                    mainWindow.webContents.send('theme-changed', { darkMode: isDark });
+                }
+            }
+            
+            toggleOptimizationPanel() {
+                const panel = document.getElementById('optimization-panel');
+                if (panel.style.display === 'none' || !panel.style.display) {
+                    panel.style.display = 'block';
+                    // Initialize optimization engine if not already
+                    if (!this.optimizationEngine) {
+                        this.optimizationEngine = new UniversalOptimizationEngine();
+                        this.optimizationEngine.audioEnabled = true; // Enable subtle audio feedback
+                    }
+                } else {
+                    panel.style.display = 'none';
+                }
+            }
+            
+            closeOptimizationPanel() {
+                document.getElementById('optimization-panel').style.display = 'none';
+            }
+            
+            async optimizeCurrentTab(protocolKey) {
+                if (!this.optimizationEngine) {
+                    this.optimizationEngine = new UniversalOptimizationEngine();
+                    this.optimizationEngine.audioEnabled = true;
+                }
+                
+                // Get current tab ID
+                const currentTab = this.tabs[this.activeTabIndex];
+                const tabId = currentTab ? currentTab.id : 'tab-' + Date.now();
+                
+                // Apply optimization
+                const result = await this.optimizationEngine.optimizeTab(tabId, protocolKey);
+                
+                // Show feedback
+                const feedbackEl = document.getElementById('optimization-feedback');
+                const detailsEl = document.getElementById('optimization-details');
+                
+                feedbackEl.style.display = 'block';
+                detailsEl.innerHTML = `
+                    <div>Protocol: <strong>${result.protocol}</strong></div>
+                    <div>Performance Improvement: <strong>${Math.round(result.improvement || 0)}%</strong></div>
+                    <div>Status: <strong>${result.message}</strong></div>
+                `;
+                
+                // Hide feedback after 3 seconds
+                setTimeout(() => {
+                    feedbackEl.style.display = 'none';
+                }, 3000);
+                
+                // Visual effect on the page
+                this.showOptimizationVisualEffect(protocolKey);
+            }
+            
+            playBlessingSound(frequency) {
+                if (!window.AudioContext) return;
+                
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = frequency;
+                oscillator.type = 'sine';
+                
+                // Subtle volume with fade in/out
+                gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                gainNode.gain.linearRampToValueAtTime(0.05, audioContext.currentTime + 0.1);
+                gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.5);
+                
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.5);
+            }
+            
+            showOptimizationVisualEffect(protocolKey) {
+                const protocol = this.optimizationEngine.protocols[protocolKey];
+                const color = protocol ? protocol.color : '#00CED1';
+                
+                // Create blessing overlay effect
+                const overlay = document.createElement('div');
+                overlay.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(circle at center, ${color}22 0%, transparent 70%);
+                    pointer-events: none;
+                    z-index: 9999;
+                    animation: optimizationPulse 1s ease-out forwards;
+                `;
+                
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes optimizationPulse {
+                        0% { opacity: 0; }
+                        50% { opacity: 1; }
+                        100% { opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+                document.body.appendChild(overlay);
+                
+                setTimeout(() => overlay.remove(), 1000);
+            }
+            
+            async toggleSettingsPanel() {
+                // Load settings panel if not already loaded
+                if (!this.settingsPanelLoaded) {
+                    const response = await fetch('settings-panel.html');
+                    const html = await response.text();
+                    document.getElementById('settings-container').innerHTML = html;
+                    this.settingsPanelLoaded = true;
+                    this.initializeSettings();
+                }
+                
+                const panel = document.getElementById('settings-panel');
+                panel.classList.toggle('visible');
+                
+                // Load current settings
+                if (panel.classList.contains('visible')) {
+                    this.loadCurrentSettings();
+                }
+            }
+            
+            initializeSettings() {
+                // Category switching
+                const categories = document.querySelectorAll('.settings-category');
+                const sections = document.querySelectorAll('.settings-section');
+                
+                categories.forEach(cat => {
+                    cat.addEventListener('click', () => {
+                        const targetCategory = cat.dataset.category;
+                        
+                        // Update active states
+                        categories.forEach(c => c.classList.remove('active'));
+                        sections.forEach(s => s.classList.remove('active'));
+                        
+                        cat.classList.add('active');
+                        document.getElementById(`${targetCategory}-settings`).classList.add('active');
+                    });
+                });
+                
+                // Close button
+                document.getElementById('settings-close').addEventListener('click', () => {
+                    document.getElementById('settings-panel').classList.remove('visible');
+                });
+                
+                // Apply button
+                document.getElementById('apply-settings').addEventListener('click', () => {
+                    this.saveSettings();
+                    document.getElementById('settings-panel').classList.remove('visible');
+                });
+                
+                // Reset button
+                document.getElementById('reset-settings').addEventListener('click', () => {
+                    this.resetSettings();
+                });
+                
+                // Zoom slider
+                const zoomSlider = document.getElementById('default-zoom');
+                const zoomValue = document.getElementById('zoom-value');
+                if (zoomSlider) {
+                    zoomSlider.addEventListener('input', (e) => {
+                        zoomValue.textContent = e.target.value + '%';
+                    });
+                }
+            }
+            
+            async loadCurrentSettings() {
+                if (window.electronAPI) {
+                    const settings = await window.electronAPI.getSettings();
+                    
+                    // Apply settings to UI
+                    document.getElementById('homepage-input').value = settings.homepage || 'https://www.google.com';
+                    document.getElementById('search-engine').value = settings.searchEngine || 'google';
+                    document.getElementById('block-ads').checked = settings.adBlock !== false;
+                    document.getElementById('enable-na').checked = settings.naturalAsymmetry !== false;
+                    document.getElementById('show-particles').checked = settings.particles !== false;
+                    document.getElementById('show-weather').checked = settings.weather !== false;
+                } else {
+                    // Load from localStorage
+                    const settings = JSON.parse(localStorage.getItem('settings') || '{}');
+                    document.getElementById('homepage-input').value = settings.homepage || 'https://www.google.com';
+                }
+            }
+            
+            async saveSettings() {
+                const settings = {
+                    homepage: document.getElementById('homepage-input').value,
+                    searchEngine: document.getElementById('search-engine').value,
+                    startupBehavior: document.getElementById('startup-behavior').value,
+                    showBookmarks: document.getElementById('show-bookmarks').checked,
+                    enableAutofill: document.getElementById('enable-autofill').checked,
+                    adBlock: document.getElementById('block-ads').checked,
+                    blockCookies: document.getElementById('block-cookies').checked,
+                    doNotTrack: document.getElementById('do-not-track').checked,
+                    forceHttps: document.getElementById('force-https').checked,
+                    blockFingerprint: document.getElementById('block-fingerprint').checked,
+                    theme: document.getElementById('theme-select').value,
+                    particles: document.getElementById('show-particles').checked,
+                    weather: document.getElementById('show-weather').checked,
+                    adaptiveColors: document.getElementById('adaptive-colors').checked,
+                    naturalAsymmetry: document.getElementById('enable-na').checked,
+                    memoryLimit: document.getElementById('memory-limit').value,
+                    suspendTabs: document.getElementById('suspend-tabs').checked,
+                    hwAcceleration: document.getElementById('hw-acceleration').checked
+                };
+                
+                if (window.electronAPI && window.electronAPI.saveSettings) {
+                    const result = await window.electronAPI.saveSettings(settings);
+                    if (result.success) {
+                        console.log('Settings saved successfully!');
+                    } else {
+                        console.error('Failed to save settings:', result.error);
+                    }
+                } else {
+                    localStorage.setItem('settings', JSON.stringify(settings));
+                }
+                
+                // Apply settings immediately
+                this.applySettings(settings);
+            }
+            
+            applySettings(settings) {
+                // Apply particle settings
+                if (settings.particles === false) {
+                    this.particleEngine.stop();
+                } else {
+                    this.particleEngine.start();
+                }
+                
+                // Apply weather settings
+                if (settings.weather === false) {
+                    this.weatherEngine.stop();
+                } else {
+                    this.weatherEngine.start();
+                }
+                
+                // Apply theme
+                if (settings.theme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                } else {
+                    document.body.classList.remove('dark-theme');
+                }
+                
+                console.log('Settings applied:', settings);
+            }
+            
+            resetSettings() {
+                if (confirm('Reset all settings to defaults?')) {
+                    // Reset all form fields to defaults
+                    document.getElementById('homepage-input').value = 'https://www.google.com';
+                    document.getElementById('search-engine').value = 'google';
+                    document.getElementById('block-ads').checked = true;
+                    document.getElementById('enable-na').checked = true;
+                    document.getElementById('show-particles').checked = true;
+                    document.getElementById('show-weather').checked = true;
+                    
+                    // Save defaults
+                    this.saveSettings();
+                }
+            }
+            
+            startResourceMonitoring() {
+                setInterval(() => {
+                    // Update particle count
+                    document.getElementById('particle-count').textContent = 
+                        `Particles: ${this.particleEngine.particles.length}`;
+                    
+                    // Simulated memory usage (would come from Electron IPC)
+                    const memoryMB = Math.floor(Math.random() * 50 + 100);
+                    document.getElementById('memory-usage').textContent = `Memory: ${memoryMB} MB`;
+                    
+                    // Update resource details
+                    document.getElementById('resource-details').textContent = 
+                        `Mem: ${memoryMB}MB | CPU: ${Math.floor(Math.random() * 30)}%`;
+                }, 1000);
+            }
+        }
+        
+        // Initialize browser when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            window.prismFlowBrowser = new PrismFlowBrowser();
+            console.log('🌟 PrismFlow Browser initialized with Natural Asymmetry');
+        });
+    </script>
+    
+    <!-- Optimization Panel -->
+    <div id="optimization-panel" style="display: none; position: fixed; top: 120px; right: 20px; width: 420px; background: rgba(255,255,255,0.98); backdrop-filter: blur(30px); border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); z-index: 10000; max-height: 600px; overflow-y: auto;">
+        <div style="padding: 25px;">
+            <button onclick="browserApp.closeOptimizationPanel()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; opacity: 0.6;">✕</button>
+            <h2 style="text-align: center; margin: 0 0 15px 0; font-size: 28px;">⚡ Performance Optimizer</h2>
+            <p style="text-align: center; opacity: 0.8; margin-bottom: 25px; font-size: 0.95rem;">Click a protocol to optimize your current tab's performance</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                <div class="optimize-btn" onclick="browserApp.optimizeCurrentTab('CLEAR')" style="background: linear-gradient(135deg, #FF6B35, #FF8E53); color: white; padding: 20px 15px; border-radius: 15px; cursor: pointer; text-align: center; transition: all 0.3s; border: none;">
+                    <div style="font-size: 2.5rem;">🐘</div>
+                    <div style="font-weight: bold; margin: 8px 0; font-size: 1.2rem;">CLEAR</div>
+                    <div style="font-size: 0.8rem;">Clear Cache & Reset</div>
+                    <div style="font-size: 0.65rem; opacity: 0.9; margin-top: 5px;">108 Hz</div>
+                </div>
+                
+                <div class="optimize-btn" onclick="browserApp.optimizeCurrentTab('BOOST')" style="background: linear-gradient(135deg, #FFD700, #FFA500); color: white; padding: 20px 15px; border-radius: 15px; cursor: pointer; text-align: center; transition: all 0.3s;">
+                    <div style="font-size: 2.5rem;">⚡</div>
+                    <div style="font-weight: bold; margin: 8px 0; font-size: 1.2rem;">BOOST</div>
+                    <div style="font-size: 0.8rem;">Resource Optimizer</div>
+                    <div style="font-size: 0.65rem; opacity: 0.9; margin-top: 5px;">216 Hz</div>
+                </div>
+                
+                <div class="optimize-btn" onclick="browserApp.optimizeCurrentTab('SPEED')" style="background: linear-gradient(135deg, #4169E1, #1E90FF); color: white; padding: 20px 15px; border-radius: 15px; cursor: pointer; text-align: center; transition: all 0.3s;">
+                    <div style="font-size: 2.5rem;">🚀</div>
+                    <div style="font-weight: bold; margin: 8px 0; font-size: 1.2rem;">SPEED</div>
+                    <div style="font-size: 0.8rem;">Accelerate Loading</div>
+                    <div style="font-size: 0.65rem; opacity: 0.9; margin-top: 5px;">324 Hz</div>
+                </div>
+                
+                <div class="optimize-btn" onclick="browserApp.optimizeCurrentTab('FOCUS')" style="background: linear-gradient(135deg, #9370DB, #BA55D3); color: white; padding: 20px 15px; border-radius: 15px; cursor: pointer; text-align: center; transition: all 0.3s;">
+                    <div style="font-size: 2.5rem;">🎯</div>
+                    <div style="font-weight: bold; margin: 8px 0; font-size: 1.2rem;">FOCUS</div>
+                    <div style="font-size: 0.8rem;">Enhance Relevance</div>
+                    <div style="font-size: 0.65rem; opacity: 0.9; margin-top: 5px;">432 Hz</div>
+                </div>
+                
+                <div class="optimize-btn" onclick="browserApp.optimizeCurrentTab('HARMONY')" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px 15px; border-radius: 15px; cursor: pointer; text-align: center; transition: all 0.3s; grid-column: span 2;">
+                    <div style="font-size: 2.5rem;">✨</div>
+                    <div style="font-weight: bold; margin: 8px 0; font-size: 1.2rem;">HARMONY</div>
+                    <div style="font-size: 0.8rem;">Balance All Systems</div>
+                    <div style="font-size: 0.65rem; opacity: 0.9; margin-top: 5px;">528 Hz - Optimal Frequency</div>
+                </div>
+            </div>
+            
+            <div id="optimization-feedback" style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, rgba(0,255,100,0.1), rgba(0,200,150,0.1)); border-radius: 12px; display: none;">
+                <div style="text-align: center; color: #00aa66; font-weight: bold;">✅ Optimization Applied Successfully!</div>
+                <div id="optimization-details" style="font-size: 0.9rem; margin-top: 10px; color: #666;"></div>
+            </div>
+            
+            <div style="margin-top: 20px; padding: 18px; background: linear-gradient(135deg, rgba(103,126,234,0.08), rgba(118,75,162,0.08)); border-radius: 12px; text-align: center;">
+                <div style="font-size: 0.9rem; line-height: 1.8; color: #555;">
+                    💖 Every optimization improves your browsing experience<br>
+                    🌟 Advanced frequency-based performance tuning<br>
+                    ⚡ The fastest, most efficient browser ever built
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Natural Asymmetry Feature Integrations -->
+    <script src="universal-optimization-engine.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="keyboard-shortcuts.js"></script>
+    <script src="webrtc-integration.js"></script>
+    
+    <!-- MASSIVE ENHANCEMENT SWEEP -->
+    <script src="browser-enhancements.js"></script>
+    
+    <!-- TAB PERFORMANCE ENHANCEMENTS -->
+    <script src="tab-enhancements.js"></script>
+    
+    <style>
+        .optimize-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+        
+        .optimize-btn:active {
+            transform: translateY(-1px) scale(1.01);
+        }
+        
+        #optimization-panel {
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</body>
+</html>

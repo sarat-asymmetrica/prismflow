@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantra Tab Blessings - PrismFlow Browser</title>
+    <style>
+        /* Sacred geometry and golden ratio throughout */
+        :root {
+            --phi: 1.618;
+            --ganesha-orange: #FF6B35;
+            --lakshmi-gold: #FFD700;
+            --rama-blue: #4169E1;
+            --krishna-purple: #9370DB;
+            --om-white: #FFFFFF;
+            --sacred-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--sacred-bg);
+            color: white;
+        }
+        
+        .mantra-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            animation: gentle-pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes gentle-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.01); }
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.618rem; /* phi squared */
+            margin-bottom: 1.618rem;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+        
+        .om-symbol {
+            font-size: 3rem;
+            text-align: center;
+            margin: 20px 0;
+            animation: rotate-slow 20s linear infinite;
+        }
+        
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .mantra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .mantra-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mantra-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .mantra-card.gam { border-color: var(--ganesha-orange); }
+        .mantra-card.shreem { border-color: var(--lakshmi-gold); }
+        .mantra-card.ram { border-color: var(--rama-blue); }
+        .mantra-card.kleem { border-color: var(--krishna-purple); }
+        .mantra-card.om { border-color: var(--om-white); }
+        
+        .mantra-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, currentColor 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        .mantra-card:hover::before {
+            opacity: 0.1;
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            from { transform: scale(0.5); }
+            to { transform: scale(1.5); }
+        }
+        
+        .deity-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .mantra-text {
+            font-size: 1.618rem;
+            font-weight: bold;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+        
+        .deity-name {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin: 5px 0;
+        }
+        
+        .purpose {
+            font-size: 0.875rem;
+            opacity: 0.7;
+            font-style: italic;
+        }
+        
+        .frequency {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+            opacity: 0.5;
+        }
+        
+        .active-blessings {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .blessing-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            animation: slide-in 0.5s ease-out;
+        }
+        
+        @keyframes slide-in {
+            from { 
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .coherence-meter {
+            width: 200px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .coherence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff00, #ffff00, #ff0000);
+            transition: width 1s ease;
+            box-shadow: 0 0 10px currentColor;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--lakshmi-gold);
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+        
+        .love-message {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2rem;
+            line-height: 1.618;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        /* Floating particles for ambiance */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.5;
+            animation: float-up 10s linear infinite;
+        }
+        
+        @keyframes float-up {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            to {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mantra-container">
+        <div class="om-symbol">🕉️</div>
+        <h1>Mantra Tab Blessings</h1>
+        <p style="text-align: center; opacity: 0.8;">Click a mantra to bless your current tab with divine optimization</p>
+        
+        <div class="mantra-grid">
+            <div class="mantra-card gam" onclick="blessTab('GAM')">
+                <span class="frequency">108 Hz</span>
+                <div class="deity-icon">🐘</div>
+                <div class="mantra-text">GAM</div>
+                <div class="deity-name">Lord Ganesha</div>
+                <div class="purpose">Removes Obstacles</div>
+            </div>
+            
+            <div class="mantra-card shreem" onclick="blessTab('SHREEM')">
+                <span class="frequency">216 Hz</span>
+                <div class="deity-icon">🪷</div>
+                <div class="mantra-text">SHREEM</div>
+                <div class="deity-name">Goddess Lakshmi</div>
+                <div class="purpose">Resource Abundance</div>
+            </div>
+            
+            <div class="mantra-card ram" onclick="blessTab('RAM')">
+                <span class="frequency">324 Hz</span>
+                <div class="deity-icon">🏹</div>
+                <div class="mantra-text">RAM</div>
+                <div class="deity-name">Lord Rama</div>
+                <div class="purpose">Swift Action</div>
+            </div>
+            
+            <div class="mantra-card kleem" onclick="blessTab('KLEEM')">
+                <span class="frequency">432 Hz</span>
+                <div class="deity-icon">🦚</div>
+                <div class="mantra-text">KLEEM</div>
+                <div class="deity-name">Lord Krishna</div>
+                <div class="purpose">Attract Relevance</div>
+            </div>
+            
+            <div class="mantra-card om" onclick="blessTab('OM')">
+                <span class="frequency">528 Hz</span>
+                <div class="deity-icon">✨</div>
+                <div class="mantra-text">OM</div>
+                <div class="deity-name">Universal Consciousness</div>
+                <div class="purpose">Complete Harmony</div>
+            </div>
+        </div>
+        
+        <div class="active-blessings">
+            <h2>Active Blessings</h2>
+            <div id="blessings-list">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="coherence-avg">0%</div>
+                <div class="stat-label">Average Coherence</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="tabs-blessed">0</div>
+                <div class="stat-label">Tabs Blessed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="perf-improvement">0%</div>
+                <div class="stat-label">Performance Boost</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="love-spread">0</div>
+                <div class="stat-label">Love Units Spread</div>
+            </div>
+        </div>
+        
+        <div class="love-message">
+            💖 Every blessing you apply spreads coherence through the digital realm.<br>
+            You're not just browsing - you're healing the internet with ancient wisdom.<br>
+            <strong>This browser is our love letter to the world.</strong>
+        </div>
+    </div>
+    
+    <script src="../mantra-tab-manager.js"></script>
+    <script>
+        // Initialize Mantra Manager
+        const mantraManager = new MantraTabManager();
+        let totalBlessings = 0;
+        let totalCoherence = 0;
+        let totalImprovement = 0;
+        
+        // Bless current tab with selected mantra
+        async function blessTab(mantraKey) {
+            // Get current tab (in real implementation, this would be from Electron)
+            const currentTab = 'tab-' + Date.now();
+            
+            // Apply blessing
+            const result = await mantraManager.blessTab(currentTab, mantraKey);
+            
+            // Update statistics
+            totalBlessings++;
+            totalCoherence += result.coherence || 0;
+            totalImprovement += result.performance?.improvement || 0;
+            
+            updateStats();
+            updateBlessingsList();
+            
+            // Show visual feedback
+            showBlessingAnimation(mantraKey);
+        }
+        
+        function updateStats() {
+            document.getElementById('coherence-avg').textContent = 
+                Math.round(totalCoherence / Math.max(1, totalBlessings)) + '%';
+            document.getElementById('tabs-blessed').textContent = totalBlessings;
+            document.getElementById('perf-improvement').textContent = 
+                Math.round(totalImprovement / Math.max(1, totalBlessings)) + '%';
+            document.getElementById('love-spread').textContent = 
+                Math.round(totalBlessings * 108); // 108 love units per blessing
+        }
+        
+        function updateBlessingsList() {
+            const blessings = mantraManager.getBlessingStatus();
+            const container = document.getElementById('blessings-list');
+            
+            container.innerHTML = blessings.slice(-5).map(blessing => `
+                <div class="blessing-item">
+                    <div>
+                        <strong>${blessing.deity}</strong> blessing
+                        <span style="opacity: 0.7">(${blessing.mantra})</span>
+                    </div>
+                    <div class="coherence-meter">
+                        <div class="coherence-fill" style="width: ${blessing.coherence}%"></div>
+                    </div>
+                    <div>${blessing.improvement.toFixed(1)}% boost</div>
+                </div>
+            `).join('');
+        }
+        
+        function showBlessingAnimation(mantraKey) {
+            const mantra = mantraManager.mantras[mantraKey];
+            
+            // Create floating particle
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.textContent = '✨';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            particle.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            document.body.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 10000);
+            
+            // Flash the page with mantra color
+            document.body.style.background = mantra.color + '22';
+            setTimeout(() => {
+                document.body.style.background = '';
+            }, 500);
+        }
+        
+        // Create ambient particles
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                showBlessingAnimation('OM');
+            }
+        }, 5000);
+        
+        // Auto-bless struggling tabs
+        setInterval(() => {
+            // In real implementation, check for slow tabs and auto-bless them
+            console.log('Checking for tabs needing blessings...');
+        }, 30000);
+    </script>
+</body>
+</html>
