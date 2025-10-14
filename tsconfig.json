@@ -13,15 +13,6 @@
     "resolveJsonModule": true,
     "moduleResolution": "node"
   },
-  "include": [
-    "*.js",
-    "src/**/*.js",
-    "__tests__/**/*.js"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "dist-packager",
-    ".cache"
-  ]
+  "include": ["*.js", "src/**/*.js", "__tests__/**/*.js"],
+  "exclude": ["node_modules", "dist", "dist-packager", ".cache"]
 }

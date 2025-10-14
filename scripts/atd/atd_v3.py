@@ -177,6 +177,7 @@ class AsymmetricaTypeScriptDoctorV3:
         [ρ] Complete V3 workflow with Git safety and AI collaboration
 
         Phases:
+        0. JavaScript Mode Configuration (PRISMFLOW)
         1. Git Safety Checkpoint
         2. ATD Deterministic Analysis
         3. Apply Deterministic Fixes
@@ -190,6 +191,22 @@ class AsymmetricaTypeScriptDoctorV3:
 
         if dry_run:
             print("[ATD-V3] DRY RUN MODE - No files will be modified\n")
+
+        # Phase 0: JavaScript Mode Configuration (PRISMFLOW)
+        print("\n[PHASE 0/6] JavaScript Mode Configuration (PRISMFLOW)")
+        print("-" * 70)
+
+        try:
+            from javascript_mode import JavaScriptMode
+            js_mode = JavaScriptMode(str(self.project_root))
+            result = js_mode.configure_for_javascript()
+            if result['success']:
+                print(f"[ATD-V3] {result['message']}")
+                if result.get('fixes', 0) > 0:
+                    print("[ATD-V3] tsconfig.json configured for JavaScript/JSDoc checking")
+        except Exception as e:
+            print(f"[ATD-V3] Warning: Could not configure JavaScript mode: {e}")
+            print("[ATD-V3] Continuing with existing TypeScript configuration...")
 
         # Start session logging
         session_id = datetime.now().strftime("%Y%m%d-%H%M%S")

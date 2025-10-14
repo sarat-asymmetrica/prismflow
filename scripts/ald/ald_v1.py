@@ -17,6 +17,10 @@ from typing import List, Dict, Optional, Any
 import argparse
 import re
 from datetime import datetime
+import os
+
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent))
 
 
 class AsymmetricaLintingDoctor:
@@ -46,17 +50,23 @@ class AsymmetricaLintingDoctor:
 
         # Run ESLint with JSON output
         print("[ALD-V1] Running ESLint analysis...")
-        result = subprocess.run(
-            "npx eslint . --format json --max-warnings=999 2>nul",
-            shell=True,
-            capture_output=True,
-            text=True,
-            cwd=self.project_root
-        )
+        try:
+            result = subprocess.run(
+                "npx eslint . --format json --max-warnings=999 2>nul",
+                shell=True,
+                capture_output=True,
+                text=True,
+                encoding='utf-8',
+                errors='replace',
+                cwd=self.project_root
+            )
+        except Exception as e:
+            print(f"[ALD-V1] Error running ESLint: {e}")
+            return self._get_empty_analysis()
 
         # Parse ESLint JSON output
         try:
-            if result.stdout.strip():
+            if result.stdout and result.stdout.strip():
                 eslint_output = json.loads(result.stdout)
             else:
                 # No output means no violations or ESLint not configured
@@ -182,11 +192,27 @@ class AsymmetricaLintingDoctor:
             specific_rule: If provided, only fix this rule
         """
 
+        # Phase 0: Electron Globals Configuration (PRISMFLOW)
+        print("\n[PHASE 0/6] Electron Globals Configuration (PRISMFLOW)")
+        print("-" * 70)
+
+        try:
+            from fixers.electron_globals_fixer import ElectronGlobalsFixer
+            globals_fixer = ElectronGlobalsFixer(str(self.project_root))
+            if globals_fixer.can_fix():
+                result = globals_fixer.fix()
+                if result['success']:
+                    print(f"[ALD-V1] {result['message']}")
+                    if result.get('fixes', 0) > 0:
+                        print("[ALD-V1] ESLint config updated for Electron compatibility")
+        except Exception as e:
+            print(f"[ALD-V1] Warning: Could not configure Electron globals: {e}")
+
         # Phase 1: Git Safety Checkpoint
         print("\n[PHASE 1/6] Git Safety Checkpoint")
         print("-" * 70)
 
-        from .git_manager import GitManager
+        from git_manager import GitManager
         git_mgr = GitManager(self.project_root)
         checkpoint = git_mgr.create_checkpoint()
 
@@ -326,11 +352,11 @@ class AsymmetricaLintingDoctor:
             Fixer instance or None
         """
         try:
-            from .fixers.no_unused_vars_fixer import NoUnusedVarsFixer
-            from .fixers.no_console_fixer import NoConsoleFixer
-            from .fixers.prefer_const_fixer import PreferConstFixer
-            from .fixers.quotes_fixer import QuotesFixer
-            from .fixers.semi_fixer import SemiFixer
+            from fixers.no_unused_vars_fixer import NoUnusedVarsFixer
+            from fixers.no_console_fixer import NoConsoleFixer
+            from fixers.prefer_const_fixer import PreferConstFixer
+            from fixers.quotes_fixer import QuotesFixer
+            from fixers.semi_fixer import SemiFixer
 
             fixer_map = {
                 'no-unused-vars': NoUnusedVarsFixer(self.project_root),

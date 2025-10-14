@@ -9,6 +9,7 @@ ALD V1 Fixer Modules:
 - prefer_const_fixer: Convert let to const where safe
 - quotes_fixer: Standardize quote style
 - semi_fixer: Add or remove semicolons
+- electron_globals_fixer: Configure Electron/Browser/Node globals (PRISMFLOW)
 """
 
 __all__ = [
@@ -17,4 +18,5 @@ __all__ = [
     'PreferConstFixer',
     'QuotesFixer',
     'SemiFixer',
+    'ElectronGlobalsFixer',
 ]

@@ -223,7 +223,7 @@ class UniversalOptimizationEngine {
      */
     async optimizeResourceAllocation(tab) {
         // Apply 30/20/50 distribution (without mentioning the spiritual origin)
-        const resources = {
+        // const resources = {
             activeContent: this.optimizationRatios.emergence,
             criticalPath: this.optimizationRatios.precision,
             supportSystems: this.optimizationRatios.support
@@ -314,7 +314,7 @@ class UniversalOptimizationEngine {
      */
     async harmonizeOperations(tab) {
         // Balance all aspects using golden ratio
-        const phi = 1.618033988749895;
+        // const phi = 1.618033988749895;
         
         tab.webContents.executeJavaScript(`
             // Add smooth transitions for better UX

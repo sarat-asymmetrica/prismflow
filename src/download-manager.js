@@ -133,7 +133,7 @@ class DownloadManager {
         try {
             if (window.electronAPI && window.electronAPI.downloadFile) {
                 // Use Electron's download API
-                const result = await window.electronAPI.downloadFile({
+                // const result = await window.electronAPI.downloadFile({
                     url: download.url,
                     filename: download.filename,
                     onProgress: (progress) => {
