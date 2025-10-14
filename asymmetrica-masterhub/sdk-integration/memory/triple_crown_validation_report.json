@@ -1,0 +1,41 @@
+{
+  "total_tests": 5,
+  "passed": 4,
+  "pass_rate": 80.0,
+  "performance_metrics": {
+    "parallel_execution_time_s": 0.5033013820648193,
+    "speedup_factor": 14.901608195929985
+  },
+  "test_results": [
+    {
+      "test": "Basic Orchestration",
+      "passed": true,
+      "duration_ms": 512.8154754638672,
+      "notes": "3 agents executed, confidence: 95.00%"
+    },
+    {
+      "test": "Speedup Measurement",
+      "passed": true,
+      "duration_ms": 503.30138206481934,
+      "notes": "Parallel: 0.50s, Speedup: 14.9x (mock agents)"
+    },
+    {
+      "test": "Memory Integration",
+      "passed": false,
+      "duration_ms": 516.3590908050537,
+      "notes": "'list' object has no attribute 'get'"
+    },
+    {
+      "test": "Error Handling",
+      "passed": true,
+      "duration_ms": 509.0000629425049,
+      "notes": "Handles edge cases gracefully"
+    },
+    {
+      "test": "Weighted Confidence",
+      "passed": true,
+      "duration_ms": 502.11119651794434,
+      "notes": "Correct weighting: 95.00%"
+    }
+  ]
+}

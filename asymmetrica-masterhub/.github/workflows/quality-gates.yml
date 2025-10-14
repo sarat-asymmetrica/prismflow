@@ -1,0 +1,166 @@
+name: Asymmetrica Quality Gates
+
+# Enforces Asymmetrica Protocol compliance and Three-Regime test thresholds
+# Runs on: Pull requests, pushes to main, manual triggers
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+jobs:
+  protocol-compliance:
+    name: Asymmetrica Protocol Compliance Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml  # Required for compliance checker
+
+      - name: Run Protocol Compliance Check
+        run: |
+          python scripts/check_protocol_compliance.py --min-compliance 80
+        continue-on-error: false  # Block merge if fails
+
+      - name: Check @validation annotations
+        run: |
+          python scripts/check_protocol_compliance.py --check-validation
+
+      - name: Check @performance annotations
+        run: |
+          python scripts/check_protocol_compliance.py --check-performance
+
+      - name: Check @complexity annotations
+        run: |
+          python scripts/check_protocol_compliance.py --check-complexity
+
+  three-regime-tests:
+    name: Three-Regime Test Suite
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pytest-cov pyyaml
+
+      - name: Create test logs directory
+        run: mkdir -p test_logs
+
+      - name: Run tests with regime reporting
+        run: |
+          pytest --regime-report --verbose
+        continue-on-error: true  # Continue to generate report even if tests fail
+
+      - name: Upload regime report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: regime-test-report
+          path: test_logs/regime_report.json
+
+      - name: Validate regime thresholds
+        run: |
+          python scripts/validate_regime_thresholds.py
+        # This script reads regime_report.json and enforces thresholds
+
+  memory-system-validation:
+    name: Memory System Validation (Stabilization)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Run Memory System Tests
+        run: |
+          cd sdk-integration
+          python test_memory_system.py
+
+      - name: Verify 100% pass rate
+        run: |
+          cd sdk-integration/memory
+          if [ -f memory_validation_report.json ]; then
+            pass_rate=$(python -c "import json; print(json.load(open('memory_validation_report.json'))['pass_rate'])")
+            if [ "$pass_rate" != "100.0" ]; then
+              echo "FAIL: Memory system tests at $pass_rate% (requires 100%)"
+              exit 1
+            fi
+            echo "PASS: Memory system tests at 100%"
+          else
+            echo "ERROR: Validation report not found"
+            exit 1
+          fi
+
+  quality-gate-summary:
+    name: Quality Gate Summary
+    runs-on: ubuntu-latest
+    needs: [protocol-compliance, three-regime-tests, memory-system-validation]
+    if: always()
+
+    steps:
+      - name: Check job statuses
+        run: |
+          echo "Protocol Compliance: ${{ needs.protocol-compliance.result }}"
+          echo "Three-Regime Tests: ${{ needs.three-regime-tests.result }}"
+          echo "Memory System: ${{ needs.memory-system-validation.result }}"
+
+          if [[ "${{ needs.protocol-compliance.result }}" != "success" ]]; then
+            echo "FAIL: Protocol compliance check failed"
+            exit 1
+          fi
+
+          if [[ "${{ needs.memory-system-validation.result }}" != "success" ]]; then
+            echo "FAIL: Memory system validation failed"
+            exit 1
+          fi
+
+          echo "PASS: All critical quality gates passed"
+
+# Quality Gate Configuration:
+#
+# BLOCKING (must pass to merge):
+# - Protocol Compliance: 80%+ compliance rate
+# - @validation: 100% of files must have annotation
+# - @performance: 100% of files must have annotation
+# - @complexity: 100% of files must have annotation
+# - Stabilization tests: 100% pass rate
+# - Memory system: 100% pass rate (5/5 tests)
+#
+# WARNING (reported but not blocking):
+# - Optimization tests: 85%+ pass rate (warning if below)
+# - Exploration tests: 70%+ pass rate (warning if below)
+#
+# INFORMATIONAL:
+# - Weighted confidence score (reported in summary)
+# - Regime distribution vs. targets (30/20/50)

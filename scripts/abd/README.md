@@ -119,12 +119,15 @@ rm src/pages/test-abd.js
 ## Safety
 
 ### 1. Git Checkpoint
+
 Creates checkpoint before any changes
 
 ### 2. Corruption Detection
+
 Validates fixes don't introduce new errors
 
 ### 3. Automatic Rollback
+
 Rolls back if corruption detected
 
 ---

@@ -29,7 +29,7 @@ export function TemplateCard({
   onEdit,
   onDelete,
   typeIcon,
-  typeColor
+  typeColor,
 }: TemplateCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -44,7 +44,7 @@ export function TemplateCard({
           borderColor: "#6C63FF",
           boxShadow: "0 4px 12px rgba(108, 99, 255, 0.15)",
           duration: 0.3,
-          ease: "power2.out"
+          ease: "power2.out",
         });
       }
     };
@@ -56,7 +56,7 @@ export function TemplateCard({
           borderColor: "#E9ECEF",
           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)",
           duration: 0.3,
-          ease: "power2.out"
+          ease: "power2.out",
         });
       }
     };
@@ -70,8 +70,12 @@ export function TemplateCard({
     };
   }, []);
 
-  const canEdit = role === "SUPERADMIN" || (role === "ADMIN" && template.createdBy === "user1");
-  const canDelete = role === "SUPERADMIN" || (role === "ADMIN" && template.createdBy === "user1" && !template.isPublic);
+  const canEdit =
+    role === "SUPERADMIN" ||
+    (role === "ADMIN" && template.createdBy === "user1");
+  const canDelete =
+    role === "SUPERADMIN" ||
+    (role === "ADMIN" && template.createdBy === "user1" && !template.isPublic);
 
   return (
     <div
@@ -96,7 +100,7 @@ export function TemplateCard({
             onClick={(e) => {
               e.stopPropagation();
               onToggleFavorite(template.id);
-              
+
               // Animate star
               if (window.gsap) {
                 const starIcon = e.currentTarget.querySelector("svg");
@@ -106,7 +110,7 @@ export function TemplateCard({
                       scale: 0,
                       rotation: -180,
                       duration: 0.5,
-                      ease: "back.out(1.7)"
+                      ease: "back.out(1.7)",
                     });
                   }
                 }
@@ -138,7 +142,9 @@ export function TemplateCard({
                 Apply Template
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => onToggleFavorite(template.id)}>
-                {template.isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+                {template.isFavorite
+                  ? "Remove from Favorites"
+                  : "Add to Favorites"}
               </DropdownMenuItem>
               {canEdit && onEdit && (
                 <DropdownMenuItem onClick={() => onEdit(template.id)}>
@@ -160,9 +166,7 @@ export function TemplateCard({
 
       {/* Card Body */}
       <div className="mb-3">
-        <h3 className="text-[#212529] mb-1 line-clamp-2">
-          {template.name}
-        </h3>
+        <h3 className="text-[#212529] mb-1 line-clamp-2">{template.name}</h3>
         <p className="text-[#6C757D] text-sm line-clamp-2">
           {template.description}
         </p>

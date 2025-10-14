@@ -1,0 +1,246 @@
+{
+  "domains": [
+    {
+      "domain": "Neural Networks",
+      "regime_proportions": [
+        0.3,
+        0.2,
+        0.5
+      ],
+      "components": {
+        "collatz": 0.7766046106115885,
+        "williams": 0.85,
+        "harmonic": 0.5,
+        "goldbach": 1.0,
+        "riemann": 0.7819793587753673,
+        "three_regime": 1.0,
+        "fibonacci": 0.9,
+        "pi_d": 0.8597122302158273
+      },
+      "classical_confidence": 0.7623195530375334,
+      "fibonacci_confidence": 0.6100883873688216,
+      "tesla_confidence": 0.6100883873688216,
+      "engine_c_confidence": 0.9185578014952834,
+      "stage_results": [
+        {
+          "stage": "Stage 1: TSP Optimal Ordering",
+          "confidence": null,
+          "boost": null
+        },
+        {
+          "stage": "Stage 2: Classical Arithmetic Mean",
+          "confidence": 0.8335370249503479,
+          "boost": 1.0
+        },
+        {
+          "stage": "Stage 3: Fibonacci Spiral Convergence",
+          "confidence": 0.9185578014952834,
+          "boost": 1.102
+        },
+        {
+          "stage": "Stage 4: Tesla Asymmetric Impulse",
+          "confidence": 0.9185578014952834,
+          "boost": 1.0
+        }
+      ],
+      "component_ordering": [
+        "collatz",
+        "williams",
+        "harmonic",
+        "goldbach",
+        "riemann",
+        "three_regime",
+        "fibonacci",
+        "pi_d"
+      ],
+      "total_boost": 1.102,
+      "improvements": {
+        "over_classical": 0.15623824845775003,
+        "over_fibonacci": 0.3084694141264618,
+        "over_tesla": 0.3084694141264618
+      }
+    },
+    {
+      "domain": "DefenseKit Software",
+      "regime_proportions": [
+        0.3385,
+        0.2872,
+        0.3744
+      ],
+      "components": {
+        "collatz": 0.8334265177166545,
+        "williams": 0.82,
+        "harmonic": 0.5,
+        "goldbach": 0.8214680593110749,
+        "riemann": 0.822245604836336,
+        "three_regime": 0.85,
+        "fibonacci": 0.85,
+        "pi_d": 0.7077333333333333
+      },
+      "classical_confidence": 0.7336101830847546,
+      "fibonacci_confidence": 0.7374057879547317,
+      "tesla_confidence": 0.8187676238127769,
+      "engine_c_confidence": 0.8536959613969527,
+      "stage_results": [
+        {
+          "stage": "Stage 1: TSP Optimal Ordering",
+          "confidence": null,
+          "boost": null
+        },
+        {
+          "stage": "Stage 2: Classical Arithmetic Mean",
+          "confidence": 0.7756091893996748,
+          "boost": 1.0
+        },
+        {
+          "stage": "Stage 3: Fibonacci Spiral Convergence",
+          "confidence": 0.842247309334314,
+          "boost": 1.0859171356469066
+        },
+        {
+          "stage": "Stage 4: Tesla Asymmetric Impulse",
+          "confidence": 0.8536959613969527,
+          "boost": 1.01359298146252
+        }
+      ],
+      "component_ordering": [
+        "collatz",
+        "williams",
+        "harmonic",
+        "goldbach",
+        "riemann",
+        "three_regime",
+        "fibonacci",
+        "pi_d"
+      ],
+      "total_boost": 1.1006779871415877,
+      "improvements": {
+        "over_classical": 0.12008577831219813,
+        "over_fibonacci": 0.11629017344222103,
+        "over_tesla": 0.034928337584175795
+      }
+    },
+    {
+      "domain": "Planetary Orbits (Stable)",
+      "regime_proportions": [
+        0.05,
+        0.05,
+        0.9
+      ],
+      "components": {
+        "collatz": 0.4397272985411479,
+        "williams": 0.65,
+        "harmonic": 0.9,
+        "goldbach": 0.43955146168219494,
+        "riemann": 0.4547175044071192,
+        "three_regime": 0.44,
+        "fibonacci": 0.7,
+        "pi_d": 0.9
+      },
+      "classical_confidence": 0.6037680341672546,
+      "fibonacci_confidence": 0.9662815513108339,
+      "tesla_confidence": 1.0,
+      "engine_c_confidence": 0.6652618694359462,
+      "stage_results": [
+        {
+          "stage": "Stage 1: TSP Optimal Ordering",
+          "confidence": null,
+          "boost": null
+        },
+        {
+          "stage": "Stage 2: Classical Arithmetic Mean",
+          "confidence": 0.6154995330788078,
+          "boost": 1.0
+        },
+        {
+          "stage": "Stage 3: Fibonacci Spiral Convergence",
+          "confidence": 0.6472054994457236,
+          "boost": 1.0515125758232804
+        },
+        {
+          "stage": "Stage 4: Tesla Asymmetric Impulse",
+          "confidence": 0.6652618694359462,
+          "boost": 1.0278989749093392
+        }
+      ],
+      "component_ordering": [
+        "collatz",
+        "williams",
+        "harmonic",
+        "goldbach",
+        "riemann",
+        "three_regime",
+        "fibonacci",
+        "pi_d"
+      ],
+      "total_boost": 1.0808486987930288,
+      "improvements": {
+        "over_classical": 0.06149383526869168,
+        "over_fibonacci": -0.3010196818748877,
+        "over_tesla": -0.33473813056405377
+      }
+    }
+  ],
+  "statistics": {
+    "mean_confidences": {
+      "classical": 0.6998992567631808,
+      "fibonacci": 0.7712585755447957,
+      "tesla": 0.8096186703938661,
+      "engine_c": 0.8125052107760607
+    },
+    "mean_improvements": {
+      "over_classical": 0.11260595401287994,
+      "over_fibonacci": 0.04124663523126504,
+      "over_tesla": 0.0028865403821946023
+    },
+    "paired_t_tests": {
+      "vs_classical": {
+        "t": 4.079205880142164,
+        "p": 0.055170171043090424
+      },
+      "vs_fibonacci": {
+        "t": 0.22927433446858642,
+        "p": 0.8399680121507234
+      },
+      "vs_tesla": {
+        "t": 0.015488398070423189,
+        "p": 0.9890487054528061
+      }
+    },
+    "effect_sizes": {
+      "vs_classical": 1.0184604956127823,
+      "vs_fibonacci": 0.26115374853715856,
+      "vs_tesla": 0.017346239529946895
+    },
+    "confidence_interval_95": {
+      "mean": 0.8125052107760607,
+      "lower": 0.48565257176381627,
+      "upper": 1.1393578497883052
+    },
+    "target_achievement": {
+      "target_range": [
+        0.92,
+        0.95
+      ],
+      "mean_in_range": false,
+      "all_above_92": false
+    }
+  },
+  "metadata": {
+    "engine": "Engine C - Optimal Integration",
+    "version": "1.0.0",
+    "date": "October 7, 2025",
+    "agents": [
+      "Beta",
+      "Alpha",
+      "Xray",
+      "Zulu",
+      "Charlie"
+    ],
+    "validation_data_sources": [
+      "Agent Xray: Fibonacci Spiral Quantum",
+      "Agent Zulu: Tesla Asymmetric Impulse",
+      "Agent Uniform: Complete TRC Framework"
+    ]
+  }
+}

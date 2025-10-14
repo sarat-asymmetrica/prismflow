@@ -1,4 +1,5 @@
 # 🚀 COMPREHENSIVE TESTING COMMANDS
+
 ## Your Testing Toolkit for PrismFlow Browser
 
 ---
@@ -6,11 +7,14 @@
 ## 🎯 QUICK START - INTERACTIVE TESTING
 
 ### 1. Open Feature Showcase (BEST for manual testing!)
+
 ```bash
 cd "C:\Projects\PrismFlow Final"
 start feature-showcase.html
 ```
+
 **What to test:**
+
 - Click "Test Dark Mode" → Toggle theme multiple times
 - Click "Test Shortcuts" → Press ? key to see help panel
 - Click "Test WebRTC" → Open video panel, test camera
@@ -22,49 +26,62 @@ start feature-showcase.html
 ## 🧪 AUTOMATED TEST SUITES
 
 ### 2. Run Emergence Scanner (Find what wants to be built next)
+
 ```bash
 cd "C:\Projects\PrismFlow Final"
 node emergence-scan.js
 ```
+
 **Look for:**
+
 - APIs not yet implemented
 - UX features missing
 - Natural Asymmetry alignment
 - Performance bottlenecks
 
 ### 3. Run Natural Asymmetry Audit
+
 ```bash
 cd "C:\Projects\PrismFlow Final"
 node natural-asymmetry-audit.js
 ```
+
 **Audit reveals:**
+
 - 202 opportunities
 - 23 optimizations
 - Integration health
 - Unused code
 
 ### 4. Run Quick Audit (Faster version)
+
 ```bash
 cd "C:\Projects\PrismFlow Final"
 node natural-asymmetry-audit.js quick
 ```
 
 ### 5. Test New Features Integration
+
 ```bash
 cd "C:\Projects\PrismFlow Final"
 node test-new-features.js
 ```
+
 **Tests:**
+
 - Dark mode functionality
 - Keyboard shortcuts
 - WebRTC integration
 
 ### 6. Run Final Integration Test
+
 ```bash
 cd "C:\Projects\PrismFlow Final"
 node final-test.js
 ```
+
 **Shows:**
+
 - File verification
 - Code statistics
 - Natural Asymmetry distribution
@@ -75,6 +92,7 @@ node final-test.js
 ## 🖱️ MANUAL TESTING CHECKLIST
 
 ### Dark Mode Testing:
+
 1. **Open browser**: `start src/browser.html`
 2. **Look for sun/moon icon** in toolbar
 3. **Click to toggle** - should transition smoothly
@@ -82,6 +100,7 @@ node final-test.js
 5. **Check all panels** - History, Downloads, etc.
 
 ### Keyboard Shortcuts Testing:
+
 1. **Press `?`** - Help panel should appear
 2. **Press `Ctrl+T`** - New tab
 3. **Press `Ctrl+W`** - Close tab
@@ -94,6 +113,7 @@ node final-test.js
 10. **Press `Esc`** - Close any dialog
 
 ### WebRTC Testing:
+
 1. **Click video icon** in toolbar
 2. **Click "Camera"** - Should request permission
 3. **Click "Mic"** - Audio test
@@ -102,6 +122,7 @@ node final-test.js
 6. **Click "End"** - Clean shutdown
 
 ### Tab Groups Testing:
+
 1. **Open multiple tabs** first
 2. **Click "New Group"** button
 3. **Name your group** in popup
@@ -115,18 +136,21 @@ node final-test.js
 ## 🔬 PERFORMANCE TESTING
 
 ### 7. Check Bundle Size
+
 ```bash
 cd "C:\Projects\PrismFlow Final"
 dir src\*.js | findstr /R "dark-mode keyboard tab-groups webrtc"
 ```
 
 ### 8. Test DOM Performance
+
 ```bash
 cd "C:\Projects\PrismFlow Final"
 node -e "console.time('test'); for(let i=0;i<10000;i++){} console.timeEnd('test')"
 ```
 
 ### 9. Memory Usage Check
+
 ```bash
 # Open Task Manager while running browser
 # Look for Electron/Chrome process
@@ -138,21 +162,24 @@ node -e "console.time('test'); for(let i=0;i<10000;i++){} console.timeEnd('test'
 ## 🐛 DEBUGGING COMMANDS
 
 ### 10. Open with DevTools
+
 ```bash
 cd "C:\Projects\PrismFlow Final"
 # Press F12 in the browser or Ctrl+Shift+I
 ```
 
 ### 11. Check Console for Errors
+
 ```javascript
 // In DevTools console:
-console.log(window.darkModeSystem);     // Should exist
-console.log(window.keyboardShortcuts);  // Should exist
-console.log(window.webrtcIntegration);  // Should exist
-console.log(window.tabGroups);          // Should exist
+console.log(window.darkModeSystem); // Should exist
+console.log(window.keyboardShortcuts); // Should exist
+console.log(window.webrtcIntegration); // Should exist
+console.log(window.tabGroups); // Should exist
 ```
 
 ### 12. Test Individual Features
+
 ```javascript
 // In DevTools console:
 
@@ -200,11 +227,13 @@ window.tabGroups.createNewGroup();
 ## 🎯 ONE-LINER TEST EVERYTHING
 
 ### The Ultimate Test Command:
+
 ```bash
 cd "C:\Projects\PrismFlow Final" && start feature-showcase.html && timeout 3 && node final-test.js && node emergence-scan.js
 ```
 
 This will:
+
 1. Open the showcase page
 2. Run integration tests
 3. Show what wants to emerge next
@@ -214,6 +243,7 @@ This will:
 ## 📝 NOTES FOR YOUR TESTING SESSION
 
 ### Things to Pay Attention To:
+
 - **Smooth transitions** in dark mode?
 - **All shortcuts working** as expected?
 - **Tab groups intuitive** to use?
@@ -222,23 +252,29 @@ This will:
 - **Memory leaks** after extended use?
 
 ### Document These for Next Sprint:
+
 ```markdown
 ## Testing Notes - [Date]
 
 ### What Works Great:
-- 
+
+-
 
 ### What Needs Polish:
-- 
+
+-
 
 ### What's Missing:
-- 
+
+-
 
 ### Performance Observations:
-- 
+
+-
 
 ### Ideas for Next Features:
-- 
+
+-
 ```
 
 ---

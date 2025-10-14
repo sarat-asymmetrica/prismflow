@@ -1,25 +1,38 @@
-import { useEffect, useRef, useState } from 'react';
-import { useTasksSocket } from '../../lib/hooks/useTasksSocket';
-import { TaskItem } from './TaskItem';
-import { Clipboard, Plus, MoreVertical, PartyPopper, ArrowRight } from 'lucide-react';
-import { Button } from '../ui/button';
-import { Skeleton } from '../ui/skeleton';
-import { 
+import { useEffect, useRef, useState } from "react";
+import { useTasksSocket } from "../../lib/hooks/useTasksSocket";
+import { TaskItem } from "./TaskItem";
+import {
+  Clipboard,
+  Plus,
+  MoreVertical,
+  PartyPopper,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "../ui/button";
+import { Skeleton } from "../ui/skeleton";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '../ui/dropdown-menu';
-import { toast } from 'sonner@2.0.3';
+} from "../ui/dropdown-menu";
+import { toast } from "sonner@2.0.3";
 
 interface TasksCardProps {
   userId: string;
-  role?: 'USER' | 'ADMIN' | 'SUPERADMIN';
+  role?: "USER" | "ADMIN" | "SUPERADMIN";
   limit?: number;
 }
 
-export function TasksCard({ userId, role = 'USER', limit = 5 }: TasksCardProps) {
-  const { tasks, loading, error, completeTask, stats } = useTasksSocket(userId, limit);
+export function TasksCard({
+  userId,
+  role = "USER",
+  limit = 5,
+}: TasksCardProps) {
+  const { tasks, loading, error, completeTask, stats } = useTasksSocket(
+    userId,
+    limit,
+  );
   const cardRef = useRef<HTMLDivElement>(null);
   const taskListRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
@@ -33,27 +46,27 @@ export function TasksCard({ userId, role = 'USER', limit = 5 }: TasksCardProps) 
     if (!mounted || loading) return;
 
     const loadGsap = async () => {
-      const gsap = (await import('gsap')).default;
-      
+      const gsap = (await import("gsap")).default;
+
       // Card load animation
       if (cardRef.current) {
         gsap.from(cardRef.current, {
           y: 20,
           opacity: 0,
           duration: 0.6,
-          ease: 'power2.out'
+          ease: "power2.out",
         });
       }
 
       // Task items stagger animation
-      const taskItems = document.querySelectorAll('.gsap-task-item');
+      const taskItems = document.querySelectorAll(".gsap-task-item");
       if (taskItems.length > 0) {
         gsap.from(taskItems, {
           x: -20,
           opacity: 0,
           duration: 0.4,
           stagger: 0.1,
-          ease: 'power2.out'
+          ease: "power2.out",
         });
       }
     };
@@ -66,36 +79,38 @@ export function TasksCard({ userId, role = 'USER', limit = 5 }: TasksCardProps) 
       if (completed) {
         // Animate task completion
         const loadGsap = async () => {
-          const gsap = (await import('gsap')).default;
-          const taskElement = document.querySelector(`[data-task-id="${taskId}"]`);
-          
+          const gsap = (await import("gsap")).default;
+          const taskElement = document.querySelector(
+            `[data-task-id="${taskId}"]`,
+          );
+
           if (taskElement) {
             await gsap.to(taskElement, {
               x: 100,
               opacity: 0,
               duration: 0.4,
-              ease: 'power2.in'
+              ease: "power2.in",
             });
           }
         };
 
         await loadGsap();
         await completeTask(taskId);
-        toast.success('Task completed! 🎉');
+        toast.success("Task completed! 🎉");
       } else {
         await completeTask(taskId);
       }
     } catch (err) {
-      toast.error('Failed to update task');
+      toast.error("Failed to update task");
     }
   };
 
   const handleAddTask = () => {
-    toast.info('Create Task modal would open here');
+    toast.info("Create Task modal would open here");
   };
 
   const handleViewAll = () => {
-    toast.info('Navigate to /tasks page');
+    toast.info("Navigate to /tasks page");
   };
 
   if (error) {
@@ -107,7 +122,7 @@ export function TasksCard({ userId, role = 'USER', limit = 5 }: TasksCardProps) 
   }
 
   return (
-    <div 
+    <div
       ref={cardRef}
       className="gsap-card-container w-full max-w-[400px] bg-white rounded-xl border border-[#E9ECEF] shadow-[0_2px_8px_rgba(0,0,0,0.08)] overflow-hidden"
     >
@@ -117,9 +132,7 @@ export function TasksCard({ userId, role = 'USER', limit = 5 }: TasksCardProps) 
           <div className="flex items-start gap-3">
             <Clipboard className="h-6 w-6 text-[#6C63FF] mt-0.5" />
             <div>
-              <h2 className="title text-[#212529]">
-                Today's Tasks
-              </h2>
+              <h2 className="title text-[#212529]">Today's Tasks</h2>
               <p className="subtitle text-[#6C757D] mt-1">
                 {stats.remaining} tasks remaining
               </p>
@@ -141,7 +154,7 @@ export function TasksCard({ userId, role = 'USER', limit = 5 }: TasksCardProps) 
               <DropdownMenuContent align="end">
                 <DropdownMenuItem>Filter tasks</DropdownMenuItem>
                 <DropdownMenuItem>Sort by priority</DropdownMenuItem>
-                {(role === 'ADMIN' || role === 'SUPERADMIN') && (
+                {(role === "ADMIN" || role === "SUPERADMIN") && (
                   <DropdownMenuItem>Export to CSV</DropdownMenuItem>
                 )}
               </DropdownMenuContent>
@@ -160,7 +173,7 @@ export function TasksCard({ userId, role = 'USER', limit = 5 }: TasksCardProps) 
       </div>
 
       {/* Task List */}
-      <div 
+      <div
         ref={taskListRef}
         className="gsap-task-list max-h-[480px] overflow-y-auto"
       >

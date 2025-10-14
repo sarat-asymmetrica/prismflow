@@ -1,0 +1,21 @@
+                      Mixed Linear Model Regression Results
+=================================================================================
+Model:                     MixedLM         Dependent Variable:         D         
+No. Observations:          33977           Method:                     ML        
+No. Groups:                6               Scale:                      0.0214    
+Min. group size:           2410            Log-Likelihood:             17066.6631
+Max. group size:           10024           Converged:                  Yes       
+Mean group size:           5662.8                                                
+---------------------------------------------------------------------------------
+                                      Coef.  Std.Err.    z    P>|z| [0.025 0.975]
+---------------------------------------------------------------------------------
+Intercept                              0.448    0.006  77.939 0.000  0.436  0.459
+C(task_category2)[T.COGNITIVE]        -0.038    0.005  -7.766 0.000 -0.047 -0.028
+C(task_category2)[T.CREATIVE]          0.004    0.007   0.547 0.584 -0.009  0.017
+time_c                                 0.000    0.001   0.273 0.785 -0.001  0.002
+time_c:C(task_category2)[T.COGNITIVE] -0.000    0.000  -2.721 0.006 -0.000 -0.000
+time_c:C(task_category2)[T.CREATIVE]  -0.000    0.000 -10.389 0.000 -0.000 -0.000
+Group Var                              0.000    0.000                            
+Group x time_c Cov                    -0.000    0.000                            
+time_c Var                             0.000                                     
+=================================================================================

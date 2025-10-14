@@ -1,0 +1,62 @@
+{
+  "bootstrap_ci": {
+    "original_framework": {
+      "mean": 0.5219999999999999,
+      "ci_lower": 0.142,
+      "ci_upper": 0.7479999999999999
+    },
+    "complete_framework": {
+      "mean": 0.7253490755473287,
+      "ci_lower": 0.6037680341672546,
+      "ci_upper": 0.8198290093899772
+    },
+    "ci_overlap": true
+  },
+  "paired_ttest": {
+    "t_statistic": 1.5026265568581227,
+    "p_value_two_tailed": 0.27179439675356365,
+    "p_value_one_tailed": 0.13589719837678182,
+    "degrees_of_freedom": 2,
+    "significant_at_0.05": false,
+    "significant_at_0.01": false,
+    "interpretation": "Not significant"
+  },
+  "effect_size": {
+    "cohens_d": 0.8675418470935177,
+    "mean_difference": 0.20334907554732873,
+    "std_difference": 0.23439684924548485,
+    "interpretation": "Large"
+  },
+  "cross_domain_consistency": {
+    "all_improvements_positive": true,
+    "mean_improvement": 0.20334907554732873,
+    "std_improvement": 0.23439684924548485,
+    "coefficient_of_variation": 1.1526821482447795,
+    "consistency_rating": "Low",
+    "outliers": {},
+    "range": {
+      "min": 0.004450183084754533,
+      "max": 0.46176803416725454
+    }
+  },
+  "component_contributions": {
+    "tesla_harmonic": 0.6333333333333333,
+    "riemann_convergence": 0.6863141560062741,
+    "collatz_collapse": 0.6832528089564636,
+    "goldbach_gravity": 0.7536731736644233,
+    "pi_d_complementarity": 0.8224818545163869
+  },
+  "tango_prediction_comparison": {
+    "predicted_range": [
+      0.85,
+      0.95
+    ],
+    "actual_confidence": 0.7253490755473287,
+    "prediction_validated": false,
+    "deviation_percentage_points": -12.465092445267123
+  },
+  "overall_assessment": {
+    "rating": "PARTIAL VALIDATION",
+    "explanation": "Complete framework shows practically meaningful improvement but lacks statistical significance"
+  }
+}

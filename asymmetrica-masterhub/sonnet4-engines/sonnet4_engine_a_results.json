@@ -1,0 +1,138 @@
+{
+  "domain_results": [
+    {
+      "domain": "Neural Networks",
+      "component_scores": [
+        0.5,
+        0.782,
+        0.777,
+        1.0,
+        0.86
+      ],
+      "classical_confidence": true,
+      "tesla_confidence": 1.0,
+      "sonnet4_confidence": 1.0,
+      "measured_confidence": 0.82,
+      "classical_amplification": true,
+      "tesla_amplification": true,
+      "sonnet4_amplification": true,
+      "improvement_over_classical_pct": true,
+      "improvement_over_tesla_pct": true,
+      "improvement_over_measured_pp": 18.000000000000004,
+      "engine_breakdown": {
+        "asymmetric_score": true,
+        "harmonic_resonance": 8.431005679832388,
+        "collaboration_bonus": 7.400000000000001,
+        "total_amplification": true,
+        "component_breakdown": {
+          "exploration": 0.3,
+          "optimization": true,
+          "stabilization": 0.25
+        }
+      }
+    },
+    {
+      "domain": "DefenseKit Software",
+      "component_scores": [
+        0.5,
+        0.822,
+        0.833,
+        0.821,
+        0.708
+      ],
+      "classical_confidence": true,
+      "tesla_confidence": true,
+      "sonnet4_confidence": 1.0,
+      "measured_confidence": 0.752,
+      "classical_amplification": true,
+      "tesla_amplification": true,
+      "sonnet4_amplification": true,
+      "improvement_over_classical_pct": true,
+      "improvement_over_tesla_pct": true,
+      "improvement_over_measured_pp": 24.8,
+      "engine_breakdown": {
+        "asymmetric_score": true,
+        "harmonic_resonance": 8.094733183178725,
+        "collaboration_bonus": 7.400000000000001,
+        "total_amplification": true,
+        "component_breakdown": {
+          "exploration": 0.24989999999999998,
+          "optimization": true,
+          "stabilization": 0.25
+        }
+      }
+    },
+    {
+      "domain": "Planetary Orbits",
+      "component_scores": [
+        0.9,
+        0.455,
+        0.44,
+        0.44,
+        0.9
+      ],
+      "classical_confidence": true,
+      "tesla_confidence": true,
+      "sonnet4_confidence": 1.0,
+      "measured_confidence": 0.604,
+      "classical_amplification": true,
+      "tesla_amplification": true,
+      "sonnet4_amplification": true,
+      "improvement_over_classical_pct": true,
+      "improvement_over_tesla_pct": true,
+      "improvement_over_measured_pp": 39.6,
+      "engine_breakdown": {
+        "asymmetric_score": true,
+        "harmonic_resonance": 6.5769468862201315,
+        "collaboration_bonus": 2.6000000000000005,
+        "total_amplification": true,
+        "component_breakdown": {
+          "exploration": 0.27,
+          "optimization": true,
+          "stabilization": 0.22
+        }
+      }
+    }
+  ],
+  "bootstrap_validation": {
+    "bootstrap_iterations": 100,
+    "sonnet4_mean": 1.0,
+    "sonnet4_std": 0.0,
+    "sonnet4_ci_95": [
+      1.0,
+      1.0
+    ],
+    "improvement_over_measured_mean": 0.27466666666666667,
+    "improvement_ci_95": [
+      0.1907666666666667,
+      0.396
+    ],
+    "p_value_vs_measured": 0.04989392546879618,
+    "p_value_vs_classical": 0.025708970460276766,
+    "cohens_d_vs_measured": 3.045924542453563,
+    "effect_size_label": "Large",
+    "statistically_significant_vs_measured": true,
+    "statistically_significant_vs_classical": true
+  },
+  "engine_contributions": {
+    "asymmetric_mean": 0.9787360926666665,
+    "asymmetric_std": 0.05644884914197525,
+    "harmonic_mean": 7.700895249743748,
+    "harmonic_std": 0.8065212296862719,
+    "collaboration_mean": 5.800000000000001,
+    "collaboration_std": 2.2627416997969525,
+    "asymmetric_contribution_pct": 15.227826269106027,
+    "harmonic_contribution_pct": 45.548744514158926,
+    "collaboration_contribution_pct": 39.22342921673506,
+    "most_valuable_engine": "harmonic"
+  },
+  "configuration": {
+    "regime_biases": [
+      0.3,
+      0.2,
+      0.5
+    ],
+    "tesla_harmonic_hz": 4.909,
+    "normalization_method": "direct"
+  }
+}

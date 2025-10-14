@@ -1,0 +1,112 @@
+{
+  "original_framework": {
+    "neural_networks": 0.676,
+    "defensekit_software": 0.748,
+    "planetary_orbits": 0.142,
+    "weighted_average": 0.5980000000000001
+  },
+  "complete_framework": {
+    "neural_networks": {
+      "domain": "Neural Networks",
+      "tesla_harmonic": 0.5,
+      "riemann_convergence": 0.7819793587753673,
+      "collatz_collapse": 0.7766046106115885,
+      "goldbach_gravity": 1.0,
+      "pi_d_complementarity": 0.8597122302158273,
+      "overall_confidence": 0.8198290093899772,
+      "regime_proportions": [
+        0.3,
+        0.2,
+        0.5
+      ],
+      "goldbach_metrics": {
+        "center_distance": 0.0,
+        "gravitational_pull": 1.0,
+        "symmetry_score": 0.7,
+        "pull_classification": "Very Strong",
+        "distance_from_optimal": 0.15767514071660124,
+        "proximity_to_center_pct": 100.0
+      },
+      "component_weights": {
+        "tesla_harmonic": 0.15,
+        "riemann_convergence": 0.2,
+        "collatz_collapse": 0.15,
+        "goldbach_gravity": 0.3,
+        "pi_d_complementarity": 0.2
+      }
+    },
+    "defensekit_software": {
+      "domain": "DefenseKit Software",
+      "tesla_harmonic": 0.5,
+      "riemann_convergence": 0.822245604836336,
+      "collatz_collapse": 0.8334265177166545,
+      "goldbach_gravity": 0.8214680593110749,
+      "pi_d_complementarity": 0.7077333333333333,
+      "overall_confidence": 0.7524501830847545,
+      "regime_proportions": [
+        0.3385,
+        0.2872,
+        0.3744
+      ],
+      "goldbach_metrics": {
+        "center_distance": 0.15767514071660124,
+        "gravitational_pull": 0.8214680593110749,
+        "symmetry_score": 0.9128000000000001,
+        "pull_classification": "Strong",
+        "distance_from_optimal": 0.0,
+        "proximity_to_center_pct": 82.1468059311075
+      },
+      "component_weights": {
+        "tesla_harmonic": 0.15,
+        "riemann_convergence": 0.2,
+        "collatz_collapse": 0.15,
+        "goldbach_gravity": 0.3,
+        "pi_d_complementarity": 0.2
+      }
+    },
+    "planetary_orbits_stable": {
+      "domain": "Planetary Orbits (Stable)",
+      "tesla_harmonic": 0.9,
+      "riemann_convergence": 0.4547175044071192,
+      "collatz_collapse": 0.4397272985411479,
+      "goldbach_gravity": 0.43955146168219494,
+      "pi_d_complementarity": 0.9,
+      "overall_confidence": 0.6037680341672546,
+      "regime_proportions": [
+        0.05,
+        0.05,
+        0.9
+      ],
+      "goldbach_metrics": {
+        "center_distance": 0.49497474683058335,
+        "gravitational_pull": 0.43955146168219494,
+        "symmetry_score": 0.15000000000000002,
+        "pull_classification": "Weak",
+        "distance_from_optimal": 0.6447879108668214,
+        "proximity_to_center_pct": 43.95514616821949
+      },
+      "component_weights": {
+        "tesla_harmonic": 0.15,
+        "riemann_convergence": 0.2,
+        "collatz_collapse": 0.15,
+        "goldbach_gravity": 0.3,
+        "pi_d_complementarity": 0.2
+      }
+    },
+    "weighted_average": 0.7496652838233437
+  },
+  "improvement": 0.15166528382334366,
+  "tango_prediction_validated": false,
+  "metadata": {
+    "validator": "Agent Uniform",
+    "date": "October 7, 2025",
+    "framework_version": "TRC_FRACTAL_COMPLETE_v1.0",
+    "components": [
+      "Tesla",
+      "Riemann",
+      "Collatz",
+      "Goldbach",
+      "pi-D"
+    ]
+  }
+}

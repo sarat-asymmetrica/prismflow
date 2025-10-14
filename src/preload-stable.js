@@ -35,10 +35,26 @@ contextBridge.exposeInMainWorld('electronAPI', {
     optimizeTab: (tabId, protocol) => ipcRenderer.invoke('optimize-tab', tabId, protocol),
     getOptimizationStats: () => ipcRenderer.invoke('get-optimization-stats'),
     
+    // Find in Page
+    findInPage: (text, options) => ipcRenderer.invoke('find-in-page', text, options),
+    stopFindInPage: (action) => ipcRenderer.invoke('stop-find-in-page', action),
+    
+    // Downloads
+    getDownloads: () => ipcRenderer.invoke('get-downloads'),
+    cancelDownload: (id) => ipcRenderer.invoke('cancel-download', id),
+    pauseDownload: (id) => ipcRenderer.invoke('pause-download', id),
+    resumeDownload: (id) => ipcRenderer.invoke('resume-download', id),
+    
     // Window
     minimizeWindow: () => ipcRenderer.invoke('minimize-window'),
     maximizeWindow: () => ipcRenderer.invoke('maximize-window'),
     closeWindow: () => ipcRenderer.invoke('close-window'),
+    
+    // Overlays (Opera-style floating panels)
+    toggleOverlay: (overlayType) => ipcRenderer.invoke('overlay:toggle', overlayType),
+    hideOverlay: (overlayType) => ipcRenderer.invoke('overlay:hide', overlayType),
+    hideAllOverlays: () => ipcRenderer.invoke('overlay:hide-all'),
+    isOverlayVisible: (overlayType) => ipcRenderer.invoke('overlay:is-visible', overlayType),
     
     // DevTools
     toggleDevTools: () => ipcRenderer.invoke('toggle-devtools'),
@@ -50,7 +66,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
     onNavigationUpdate: (cb) => ipcRenderer.on('navigation-update', (e, d) => cb(d)),
     onTitleUpdate: (cb) => ipcRenderer.on('title-update', (e, d) => cb(d)),
     onDownloadStarted: (cb) => ipcRenderer.on('download-started', (e, d) => cb(d)),
-    onResourceUpdate: (cb) => ipcRenderer.on('resource-update', (e, d) => cb(d))
+    onDownloadUpdated: (cb) => ipcRenderer.on('download-updated', (e, d) => cb(d)),
+    onResourceUpdate: (cb) => ipcRenderer.on('resource-update', (e, d) => cb(d)),
+    onFindResult: (cb) => ipcRenderer.on('found-in-page', (e, d) => cb(d))
 });
 
 console.log('✅ Preload: Bridge established');

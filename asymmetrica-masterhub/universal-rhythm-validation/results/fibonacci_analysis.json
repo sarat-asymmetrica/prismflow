@@ -1,0 +1,71 @@
+{
+  "total_resonances_analyzed": 36,
+  "fibonacci_growth_resonances": 4,
+  "collatz_optimization_resonances": 2,
+  "harmonic_stabilization_resonances": 7,
+  "phase_distribution": {
+    "fibonacci": 0.1111,
+    "collatz": 0.0556,
+    "harmonic": 0.1944
+  },
+  "jupiter_saturn_analysis": {
+    "observed_ratio": 2.484,
+    "expected_fibonacci_ratio": 2.5,
+    "golden_ratio_squared": 2.618,
+    "error_from_5_2": 0.016,
+    "error_from_phi_squared": 0.1341,
+    "is_fibonacci_resonance": true,
+    "rhythm_signature": "Fibonacci Growth"
+  },
+  "neptune_pluto_analysis": {
+    "observed_ratio": 1.5055,
+    "expected_harmonic_ratio": 1.5,
+    "error": 0.0055,
+    "is_harmonic_lock": true,
+    "rhythm_signature": "Harmonic Stabilization"
+  },
+  "top_stable_resonances": [
+    {
+      "planets": "Venus-Earth",
+      "ratio": "13:21",
+      "decimal": 1.6129,
+      "fibonacci_match": 0.995,
+      "is_harmonic": true,
+      "stability": 0.9969
+    },
+    {
+      "planets": "Neptune-Pluto",
+      "ratio": "2:3",
+      "decimal": 1.5055,
+      "fibonacci_match": 0.9891,
+      "is_harmonic": true,
+      "stability": 0.9806
+    },
+    {
+      "planets": "Uranus-Neptune",
+      "ratio": "1:2",
+      "decimal": 1.9616,
+      "fibonacci_match": 0.926,
+      "is_harmonic": true,
+      "stability": 0.9205
+    },
+    {
+      "planets": "Earth-Mars",
+      "ratio": "1:2",
+      "decimal": 1.88,
+      "fibonacci_match": 0.7866,
+      "is_harmonic": true,
+      "stability": 0.8609
+    },
+    {
+      "planets": "Jupiter-Saturn",
+      "ratio": "1:2",
+      "decimal": 2.484,
+      "fibonacci_match": 0.3799,
+      "is_harmonic": true,
+      "stability": 0.5829
+    }
+  ],
+  "universal_rhythm_detected": true,
+  "confidence_score": 0.1417
+}

@@ -1,0 +1,127 @@
+================================================================================
+STATISTICAL VALIDATION - COMPLETE TRC FRACTAL FRAMEWORK
+================================================================================
+
+1. BOOTSTRAP CONFIDENCE INTERVALS (10,000 iterations)
+--------------------------------------------------------------------------------
+Original Framework (3-component):
+  Mean: 52.2%
+  95% CI: [14.2%, 74.8%]
+
+Complete Framework (5-component):
+  Mean: 72.5%
+  95% CI: [60.4%, 82.0%]
+
+Confidence intervals overlap: True
+  -> Further testing needed
+
+
+2. PAIRED T-TEST (3-component vs 5-component)
+--------------------------------------------------------------------------------
+Null hypothesis: No difference between frameworks
+Alternative hypothesis: 5-component > 3-component
+
+t-statistic: 1.5026
+Degrees of freedom: 2
+p-value (one-tailed): 0.135897
+
+Result: NOT SIGNIFICANT (p >= 0.05)
+  -> Insufficient evidence of improvement
+
+
+3. EFFECT SIZE (Cohen's d)
+--------------------------------------------------------------------------------
+Cohen's d: 0.8675
+Mean improvement: 20.3%
+Standard deviation: 0.2344
+
+Interpretation: Large
+  -> Practically significant improvement
+
+
+4. CROSS-DOMAIN CONSISTENCY ANALYSIS
+--------------------------------------------------------------------------------
+All improvements positive: True
+Mean improvement: 20.3%
+Std improvement: 23.4%
+Coefficient of variation: 1.15
+
+Consistency rating: Low
+
+No outliers detected
+
+Improvement range: [0.4%, 46.2%]
+
+
+5. COMPONENT CONTRIBUTION ANALYSIS
+--------------------------------------------------------------------------------
+Average component scores across all domains:
+  1. pi_d_complementarity       Score: 0.822  Weight: 0.20  Contribution: 0.164
+  2. goldbach_gravity           Score: 0.754  Weight: 0.30  Contribution: 0.226
+  3. riemann_convergence        Score: 0.686  Weight: 0.20  Contribution: 0.137
+  4. collatz_collapse           Score: 0.683  Weight: 0.15  Contribution: 0.102
+  5. tesla_harmonic             Score: 0.633  Weight: 0.15  Contribution: 0.095
+
+Key findings:
+  - Strongest component: pi_d_complementarity (0.822)
+  - Weakest component: tesla_harmonic (0.633)
+  - Goldbach gravity rank: #2 of 5
+    -> Agent Tango's prediction confirmed: Goldbach is a top contributor
+
+
+6. COMPARISON TO AGENT TANGO'S PREDICTION
+--------------------------------------------------------------------------------
+Agent Tango's prediction: 85.0% - 95.0%
+Actual measured confidence: 72.5%
+
+Result: BELOW PREDICTION
+Deviation: -12.5 percentage points below minimum
+
+Possible reasons for lower-than-predicted confidence:
+  1. Heuristic measurements for pi-D complementarity (no direct data)
+  2. Riemann/Collatz signatures measured by distance, not native fit
+  3. Planetary domain still challenging despite filtering for stable systems
+  4. Tesla harmonic limited to static regime proportions (no temporal data)
+
+Improvements to reach 85-95%:
+  - Collect actual temporal data for Tesla harmonic measurement
+  - Implement full fractal dimension calculation for pi-D
+  - Add more domains with better alignment (chemistry predicted at 95%)
+  - Refine planetary orbit analysis (weight by orbital stability)
+
+
+================================================================================
+FINAL STATISTICAL SUMMARY
+================================================================================
+
+Overall confidence improvement: 15.2%
+95% Bootstrap CI: [60.4%, 82.0%]
+Statistical significance: p = 0.135897 (NOT SIGNIFICANT)
+Effect size (Cohen's d): 0.87 (Large)
+Cross-domain consistency: Low
+
+OVERALL ASSESSMENT: PARTIAL VALIDATION
+  Complete framework shows practically meaningful improvement but lacks statistical significance
+
+Traceback (most recent call last):
+  File "C:\Projects\asymmetrica-masterhub\complete-validation\statistical_validation.py", line 472, in <module>
+    main()
+    ~~~~^^
+  File "C:\Projects\asymmetrica-masterhub\complete-validation\statistical_validation.py", line 465, in main
+    json.dump(stats_output, f, indent=2)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\json\__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "C:\Python313\Lib\json\encoder.py", line 433, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Python313\Lib\json\encoder.py", line 407, in _iterencode_dict
+    yield from chunks
+  File "C:\Python313\Lib\json\encoder.py", line 407, in _iterencode_dict
+    yield from chunks
+  File "C:\Python313\Lib\json\encoder.py", line 440, in _iterencode
+    o = _default(o)
+  File "C:\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type bool is not JSON serializable

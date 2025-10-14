@@ -1,0 +1,1219 @@
+{
+  "config": {
+    "configFile": "C:\\Projects\\PrismFlow Final\\playwright.config.js",
+    "rootDir": "C:/Projects/PrismFlow Final/__tests__",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Projects/PrismFlow Final/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Projects/PrismFlow Final/__tests__",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.integration.spec.js"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "integration\\browser.integration.spec.js",
+      "file": "integration/browser.integration.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "PrismFlow Browser - Core Stabilization Tests",
+          "file": "integration/browser.integration.spec.js",
+          "line": 132,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should launch browser successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4208,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:34:51.002Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-12356c9b2d741bcd5c4c",
+              "file": "integration/browser.integration.spec.js",
+              "line": 139,
+              "column": 3
+            },
+            {
+              "title": "should create initial tab on startup",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4568,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:34:55.242Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-a05957160c9276af9b66",
+              "file": "integration/browser.integration.spec.js",
+              "line": 157,
+              "column": 3
+            },
+            {
+              "title": "should navigate to URL",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3778,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:34:59.837Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-01d4ed79392e63feb319",
+              "file": "integration/browser.integration.spec.js",
+              "line": 179,
+              "column": 3
+            },
+            {
+              "title": "should create new tab",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30022,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "\n═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🌌 ASYMMETRICA TEST ECOSYSTEM - SESSION COMPLETE\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "📊 Three-Regime Distribution:\n"
+                        },
+                        {
+                          "text": "   • Stabilization (50%): Core browser functions\n"
+                        },
+                        {
+                          "text": "   • Optimization  (20%): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Exploration   (30%): New feature discovery\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "💫 Leverage Multipliers Active:\n"
+                        },
+                        {
+                          "text": "   • Support       (32.1x): Critical stability tests\n"
+                        },
+                        {
+                          "text": "   • Exploration   (26.8x): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Balance       (11.5x): Feature exploration\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🎯 Total Multiplicative Leverage: 10,494x\n"
+                        },
+                        {
+                          "text": "⚡ Tesla Frequency: 4.909 Hz (203.7ms pulse)\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:35:03.633Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-4f59c3ab7228395f1b14",
+              "file": "integration/browser.integration.spec.js",
+              "line": 207,
+              "column": 3
+            },
+            {
+              "title": "should switch between tabs",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30014,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "\n═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🌌 ASYMMETRICA TEST ECOSYSTEM - SESSION COMPLETE\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "📊 Three-Regime Distribution:\n"
+                        },
+                        {
+                          "text": "   • Stabilization (50%): Core browser functions\n"
+                        },
+                        {
+                          "text": "   • Optimization  (20%): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Exploration   (30%): New feature discovery\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "💫 Leverage Multipliers Active:\n"
+                        },
+                        {
+                          "text": "   • Support       (32.1x): Critical stability tests\n"
+                        },
+                        {
+                          "text": "   • Exploration   (26.8x): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Balance       (11.5x): Feature exploration\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🎯 Total Multiplicative Leverage: 10,494x\n"
+                        },
+                        {
+                          "text": "⚡ Tesla Frequency: 4.909 Hz (203.7ms pulse)\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:35:35.674Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-7ba7ff7e7c3b6930c63d",
+              "file": "integration/browser.integration.spec.js",
+              "line": 233,
+              "column": 3
+            },
+            {
+              "title": "should close tab",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30016,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "\n═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🌌 ASYMMETRICA TEST ECOSYSTEM - SESSION COMPLETE\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "📊 Three-Regime Distribution:\n"
+                        },
+                        {
+                          "text": "   • Stabilization (50%): Core browser functions\n"
+                        },
+                        {
+                          "text": "   • Optimization  (20%): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Exploration   (30%): New feature discovery\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "💫 Leverage Multipliers Active:\n"
+                        },
+                        {
+                          "text": "   • Support       (32.1x): Critical stability tests\n"
+                        },
+                        {
+                          "text": "   • Exploration   (26.8x): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Balance       (11.5x): Feature exploration\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🎯 Total Multiplicative Leverage: 10,494x\n"
+                        },
+                        {
+                          "text": "⚡ Tesla Frequency: 4.909 Hz (203.7ms pulse)\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:36:07.661Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-e37354eabd0ae0089afb",
+              "file": "integration/browser.integration.spec.js",
+              "line": 270,
+              "column": 3
+            },
+            {
+              "title": "should persist bookmarks",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30010,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "\n═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🌌 ASYMMETRICA TEST ECOSYSTEM - SESSION COMPLETE\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "📊 Three-Regime Distribution:\n"
+                        },
+                        {
+                          "text": "   • Stabilization (50%): Core browser functions\n"
+                        },
+                        {
+                          "text": "   • Optimization  (20%): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Exploration   (30%): New feature discovery\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "💫 Leverage Multipliers Active:\n"
+                        },
+                        {
+                          "text": "   • Support       (32.1x): Critical stability tests\n"
+                        },
+                        {
+                          "text": "   • Exploration   (26.8x): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Balance       (11.5x): Feature exploration\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🎯 Total Multiplicative Leverage: 10,494x\n"
+                        },
+                        {
+                          "text": "⚡ Tesla Frequency: 4.909 Hz (203.7ms pulse)\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:36:39.911Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-eee7cd58aaac313a5435",
+              "file": "integration/browser.integration.spec.js",
+              "line": 305,
+              "column": 3
+            },
+            {
+              "title": "should show history",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30009,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "\n═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🌌 ASYMMETRICA TEST ECOSYSTEM - SESSION COMPLETE\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "📊 Three-Regime Distribution:\n"
+                        },
+                        {
+                          "text": "   • Stabilization (50%): Core browser functions\n"
+                        },
+                        {
+                          "text": "   • Optimization  (20%): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Exploration   (30%): New feature discovery\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "💫 Leverage Multipliers Active:\n"
+                        },
+                        {
+                          "text": "   • Support       (32.1x): Critical stability tests\n"
+                        },
+                        {
+                          "text": "   • Exploration   (26.8x): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Balance       (11.5x): Feature exploration\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🎯 Total Multiplicative Leverage: 10,494x\n"
+                        },
+                        {
+                          "text": "⚡ Tesla Frequency: 4.909 Hz (203.7ms pulse)\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:37:11.880Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-f932f2c90d5e287d2efc",
+              "file": "integration/browser.integration.spec.js",
+              "line": 333,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "PrismFlow Browser - Performance Optimization Tests",
+          "file": "integration/browser.integration.spec.js",
+          "line": 364,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should start up within 3 seconds",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30017,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "\n═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🌌 ASYMMETRICA TEST ECOSYSTEM - SESSION COMPLETE\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "📊 Three-Regime Distribution:\n"
+                        },
+                        {
+                          "text": "   • Stabilization (50%): Core browser functions\n"
+                        },
+                        {
+                          "text": "   • Optimization  (20%): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Exploration   (30%): New feature discovery\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "💫 Leverage Multipliers Active:\n"
+                        },
+                        {
+                          "text": "   • Support       (32.1x): Critical stability tests\n"
+                        },
+                        {
+                          "text": "   • Exploration   (26.8x): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Balance       (11.5x): Feature exploration\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🎯 Total Multiplicative Leverage: 10,494x\n"
+                        },
+                        {
+                          "text": "⚡ Tesla Frequency: 4.909 Hz (203.7ms pulse)\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:37:43.839Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-6df83261780a5b451504",
+              "file": "integration/browser.integration.spec.js",
+              "line": 371,
+              "column": 3
+            },
+            {
+              "title": "should switch tabs instantly (<100ms)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30019,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "\n═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🌌 ASYMMETRICA TEST ECOSYSTEM - SESSION COMPLETE\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "📊 Three-Regime Distribution:\n"
+                        },
+                        {
+                          "text": "   • Stabilization (50%): Core browser functions\n"
+                        },
+                        {
+                          "text": "   • Optimization  (20%): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Exploration   (30%): New feature discovery\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "💫 Leverage Multipliers Active:\n"
+                        },
+                        {
+                          "text": "   • Support       (32.1x): Critical stability tests\n"
+                        },
+                        {
+                          "text": "   • Exploration   (26.8x): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Balance       (11.5x): Feature exploration\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🎯 Total Multiplicative Leverage: 10,494x\n"
+                        },
+                        {
+                          "text": "⚡ Tesla Frequency: 4.909 Hz (203.7ms pulse)\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:38:15.608Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-40409743815f85ac7148",
+              "file": "integration/browser.integration.spec.js",
+              "line": 394,
+              "column": 3
+            },
+            {
+              "title": "should maintain low memory usage",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30015,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "\n═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🌌 ASYMMETRICA TEST ECOSYSTEM - SESSION COMPLETE\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "📊 Three-Regime Distribution:\n"
+                        },
+                        {
+                          "text": "   • Stabilization (50%): Core browser functions\n"
+                        },
+                        {
+                          "text": "   • Optimization  (20%): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Exploration   (30%): New feature discovery\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "💫 Leverage Multipliers Active:\n"
+                        },
+                        {
+                          "text": "   • Support       (32.1x): Critical stability tests\n"
+                        },
+                        {
+                          "text": "   • Exploration   (26.8x): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Balance       (11.5x): Feature exploration\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🎯 Total Multiplicative Leverage: 10,494x\n"
+                        },
+                        {
+                          "text": "⚡ Tesla Frequency: 4.909 Hz (203.7ms pulse)\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:38:47.618Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-bf495ee68520d381cfb2",
+              "file": "integration/browser.integration.spec.js",
+              "line": 429,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "PrismFlow Browser - Exploration Tests (New Features)",
+          "file": "integration/browser.integration.spec.js",
+          "line": 458,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should have Universal Optimization Engine UI",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4495,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "ℹ️  Universal Optimization Engine UI not yet implemented\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:39:19.582Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-085bf913ef7f90648a14",
+              "file": "integration/browser.integration.spec.js",
+              "line": 465,
+              "column": 3
+            },
+            {
+              "title": "should have Diaphanous Glass UI effects",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4181,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "ℹ️  Diaphanous Glass UI not yet implemented\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:39:24.108Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-0599f3d25e8ecb0d9cd0",
+              "file": "integration/browser.integration.spec.js",
+              "line": 489,
+              "column": 3
+            },
+            {
+              "title": "should support dark mode toggle",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4359,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "ℹ️  Dark mode toggle not yet implemented\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:39:28.320Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-252c88d8981f27b61e18",
+              "file": "integration/browser.integration.spec.js",
+              "line": 511,
+              "column": 3
+            },
+            {
+              "title": "should have AI orchestrator integration ready",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3970,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "ℹ️  AI orchestrator not yet exposed in UI\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:39:32.711Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-2547df6ffc54cb49131a",
+              "file": "integration/browser.integration.spec.js",
+              "line": 539,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "PrismFlow Browser - Full Integration Flow",
+          "file": "integration/browser.integration.spec.js",
+          "line": 562,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should complete full browser workflow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4476,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m100\u001b[39m\nReceived:   \u001b[31m1105\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m100\u001b[39m\nReceived:   \u001b[31m1105\u001b[39m\n    at C:\\Projects\\PrismFlow Final\\__tests__\\integration\\browser.integration.spec.js:597:24",
+                        "location": {
+                          "file": "C:\\Projects\\PrismFlow Final\\__tests__\\integration\\browser.integration.spec.js",
+                          "column": 24,
+                          "line": 597
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 595 |\u001b[39m     \u001b[36mawait\u001b[39m tabs\u001b[33m.\u001b[39mnth(\u001b[35m0\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 596 |\u001b[39m     \u001b[36mconst\u001b[39m switchTime \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m switchStart\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 597 |\u001b[39m     expect(switchTime)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m100\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 598 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m`  ✅ Step 4: Tab switch (${switchTime}ms)`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 599 |\u001b[39m     \n \u001b[90m 600 |\u001b[39m     \u001b[90m// 5. STABILIZATION: Close tab\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Projects\\PrismFlow Final\\__tests__\\integration\\browser.integration.spec.js",
+                            "column": 24,
+                            "line": 597
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m100\u001b[39m\nReceived:   \u001b[31m1105\u001b[39m\n\n\u001b[0m \u001b[90m 595 |\u001b[39m     \u001b[36mawait\u001b[39m tabs\u001b[33m.\u001b[39mnth(\u001b[35m0\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 596 |\u001b[39m     \u001b[36mconst\u001b[39m switchTime \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m switchStart\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 597 |\u001b[39m     expect(switchTime)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m100\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 598 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m`  ✅ Step 4: Tab switch (${switchTime}ms)`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 599 |\u001b[39m     \n \u001b[90m 600 |\u001b[39m     \u001b[90m// 5. STABILIZATION: Close tab\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Projects\\PrismFlow Final\\__tests__\\integration\\browser.integration.spec.js:597:24\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🚀 Starting full integration workflow...\n"
+                        },
+                        {
+                          "text": "  ✅ Step 1: Browser launched\n"
+                        },
+                        {
+                          "text": "  ✅ Step 2: New tab created\n"
+                        },
+                        {
+                          "text": "  ✅ Step 3: Navigation initiated\n"
+                        },
+                        {
+                          "text": "\n═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🌌 ASYMMETRICA TEST ECOSYSTEM - SESSION COMPLETE\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "📊 Three-Regime Distribution:\n"
+                        },
+                        {
+                          "text": "   • Stabilization (50%): Core browser functions\n"
+                        },
+                        {
+                          "text": "   • Optimization  (20%): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Exploration   (30%): New feature discovery\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "💫 Leverage Multipliers Active:\n"
+                        },
+                        {
+                          "text": "   • Support       (32.1x): Critical stability tests\n"
+                        },
+                        {
+                          "text": "   • Exploration   (26.8x): Performance validation\n"
+                        },
+                        {
+                          "text": "   • Balance       (11.5x): Feature exploration\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n"
+                        },
+                        {
+                          "text": "🎯 Total Multiplicative Leverage: 10,494x\n"
+                        },
+                        {
+                          "text": "⚡ Tesla Frequency: 4.909 Hz (203.7ms pulse)\n"
+                        },
+                        {
+                          "text": "═══════════════════════════════════════════════════════\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-14T18:39:36.700Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "C:\\Projects\\PrismFlow Final\\__tests__\\integration\\browser.integration.spec.js",
+                        "column": 24,
+                        "line": 597
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "cf2e65370dc172516e84-7832791a16a1fde711ad",
+              "file": "integration/browser.integration.spec.js",
+              "line": 569,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-10-14T18:34:49.307Z",
+    "duration": 293030.119,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}

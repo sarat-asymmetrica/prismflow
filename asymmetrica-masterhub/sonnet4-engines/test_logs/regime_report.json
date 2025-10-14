@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-10-07T12:52:47.953400",
+  "total_tests": 26,
+  "weighted_confidence": 0,
+  "regimes": {
+    "unmarked": {
+      "total": 26,
+      "passed": 26,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "actual_ratio": 1.0,
+      "target_ratio": null,
+      "pass_threshold": null,
+      "weight": null
+    }
+  }
+}

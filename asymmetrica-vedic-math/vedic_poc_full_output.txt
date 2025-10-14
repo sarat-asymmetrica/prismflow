@@ -1,0 +1,91 @@
+C:\Users\schan\AppData\Roaming\Python\Python313\site-packages\numpy\lib\_function_base_impl.py:3065: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+C:\Users\schan\AppData\Roaming\Python\Python313\site-packages\numpy\lib\_function_base_impl.py:3066: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+Starting Vedic Security Math POC...
+Running 5 scan trials...
+  Trial 1/5: 1100 alerts generated - Baseline: -103.547, Vedic: 0.100
+  Trial 2/5: 1100 alerts generated - Baseline: -109.794, Vedic: 0.100
+  Trial 3/5: 1100 alerts generated - Baseline: -108.044, Vedic: 0.100
+  Trial 4/5: 1100 alerts generated - Baseline: -115.046, Vedic: 0.100
+  Trial 5/5: 1100 alerts generated - Baseline: -110.296, Vedic: 0.100
+Babel Point Equation: vedic_index = 0.000 * baseline_index + 0.100
+Correlation: nan, p-value: 7.495e-03, Effect Size: 1.998
+
+======================================================================
+OM  VEDIC MATHEMATICAL ANALYSIS (CORRECTED FRAMEWORK)
+======================================================================
+
+----------------------------------------------------------------------
+[POINT] 1. DHARMA ATTRACTOR (Constant as Truth, not Error)
+----------------------------------------------------------------------
+Vedic Constant (Dharma): 0.100000
+Vedic Variance: 0.0000000000
+Dharma Index (Stability): 1.000000
+Interpretation: System has achieved 100.00% dharma stability
+                (1.0 = perfect stillness, 0.0 = pure chaos)
+
+----------------------------------------------------------------------
+[MUSIC] 2. HARMONIC RESONANCE (Vedic vs Western Relationship)
+----------------------------------------------------------------------
+Baseline Harmonic Mean: 109.218735
+Vedic Constant: 0.100000
+Resonance Ratio (V/B): 0.000916
+
+Closest Sacred Proportion: PHI^2 (Squared Beauty) = 0.381966
+Distance from Sacred: 0.381050
+[DATA] Novel Proportion: 0.000916 (not a known sacred ratio)
+
+----------------------------------------------------------------------
+[BALANCE] 3. DUAL-AXIS SECURITY MODEL (Debt-Merit Space)
+----------------------------------------------------------------------
+Axis 1 - RNA (Debt): Baseline ranges [-115.05, -103.55]
+Axis 2 - DHARMA (Merit): Vedic constant at 0.10
+
+Security State Analysis:
+  Trial 1: Debt=103.55, Merit=0.100, Ratio=0.000966
+  Trial 2: Debt=109.79, Merit=0.100, Ratio=0.000911
+  Trial 3: Debt=108.04, Merit=0.100, Ratio=0.000926
+  Trial 4: Debt=115.05, Merit=0.100, Ratio=0.000869
+  Trial 5: Debt=110.30, Merit=0.100, Ratio=0.000907
+
+Mean Security Debt: 109.35 units
+Mean Merit/Debt Ratio: 0.000916
+Interpretation: System owes 109 units of security work
+                while maintaining 0.100 dharma attainment
+
+----------------------------------------------------------------------
+[PLANET] 4. ORBITAL DYNAMICS (Convergence to Attractor)
+----------------------------------------------------------------------
+Attractor (Vedic Constant): 0.100000
+Mean Orbital Distance: 109.45
+Orbital Stability Index: 0.212195
+
+Interpretation: Baseline 'orbits' the Vedic attractor at distance 109
+                Orbit stability: 21.2%
+
+----------------------------------------------------------------------
+[LIGHTNING] 5. TESLA HARMONIC FREQUENCY ALIGNMENT
+----------------------------------------------------------------------
+Tesla Frequency: 4.909 Hz
+Tesla Period: 0.203707 seconds
+Vedic Constant: 0.100000
+Vedic × Tesla: 0.490900
+Vedic / Tesla_Period: 0.490900
+[DATA] Ratio recorded: Tesla_Resonance = 0.490900
+
+----------------------------------------------------------------------
+[GEOMETRY] 6. WILLIAMS SPACE OPTIMIZER ALIGNMENT
+----------------------------------------------------------------------
+Trial Count (t): 5
+Traceback (most recent call last):
+  File "C:\Projects\asymmetrica-vedic-math\vedic_security_math_poc.py", line 379, in <module>
+    main()
+    ~~~~^^
+  File "C:\Projects\asymmetrica-vedic-math\vedic_security_math_poc.py", line 336, in main
+    print(f"Williams Bound (\u221at × log\u2082(t)): {williams_bound:.6f}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u221a' in position 16: character maps to <undefined>

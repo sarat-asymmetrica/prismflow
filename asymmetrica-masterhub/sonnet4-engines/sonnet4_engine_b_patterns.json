@@ -1,0 +1,7872 @@
+{
+  "metadata": {
+    "engine": "Sonnet4EngineB",
+    "components": [
+      "fibonacci",
+      "collatz",
+      "harmonic",
+      "goldbach",
+      "pi_d",
+      "riemann",
+      "williams",
+      "three_regime"
+    ],
+    "total_patterns": 300,
+    "timestamp": "new"
+  },
+  "patterns": [
+    {
+      "route": [
+        1,
+        6,
+        2,
+        3,
+        5,
+        7,
+        0,
+        4
+      ],
+      "components": [
+        "collatz",
+        "williams",
+        "harmonic",
+        "goldbach",
+        "riemann",
+        "three_regime",
+        "fibonacci",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        6,
+        0,
+        3,
+        1,
+        7,
+        4,
+        2
+      ],
+      "components": [
+        "riemann",
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "harmonic"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        6,
+        0,
+        3,
+        1,
+        7,
+        4,
+        2
+      ],
+      "components": [
+        "riemann",
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "harmonic"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        7,
+        2,
+        3,
+        1,
+        6,
+        0,
+        4
+      ],
+      "components": [
+        "riemann",
+        "three_regime",
+        "harmonic",
+        "goldbach",
+        "collatz",
+        "williams",
+        "fibonacci",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        2,
+        6,
+        1,
+        7,
+        5,
+        3,
+        0,
+        4
+      ],
+      "components": [
+        "harmonic",
+        "williams",
+        "collatz",
+        "three_regime",
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        2,
+        7,
+        5,
+        3,
+        1,
+        6,
+        4,
+        0
+      ],
+      "components": [
+        "harmonic",
+        "three_regime",
+        "riemann",
+        "goldbach",
+        "collatz",
+        "williams",
+        "pi_d",
+        "fibonacci"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        1,
+        6,
+        5,
+        7,
+        2,
+        3,
+        4,
+        0
+      ],
+      "components": [
+        "collatz",
+        "williams",
+        "riemann",
+        "three_regime",
+        "harmonic",
+        "goldbach",
+        "pi_d",
+        "fibonacci"
+      ],
+      "total_distance": 0.02157632398753894,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 46.34709789200115
+    },
+    {
+      "route": [
+        1,
+        7,
+        3,
+        5,
+        6,
+        2,
+        4,
+        0
+      ],
+      "components": [
+        "collatz",
+        "three_regime",
+        "goldbach",
+        "riemann",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "fibonacci"
+      ],
+      "total_distance": 0.03615264797507788,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 27.66049116760017
+    },
+    {
+      "route": [
+        7,
+        5,
+        6,
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "components": [
+        "three_regime",
+        "riemann",
+        "williams",
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "pi_d",
+        "harmonic"
+      ],
+      "total_distance": 0.03615264797507788,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 27.66049116760017
+    },
+    {
+      "route": [
+        5,
+        6,
+        1,
+        3,
+        7,
+        2,
+        4,
+        0
+      ],
+      "components": [
+        "riemann",
+        "williams",
+        "collatz",
+        "goldbach",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "fibonacci"
+      ],
+      "total_distance": 0.03615264797507788,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 27.66049116760017
+    },
+    {
+      "route": [
+        5,
+        7,
+        6,
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "components": [
+        "riemann",
+        "three_regime",
+        "williams",
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "pi_d",
+        "harmonic"
+      ],
+      "total_distance": 0.03615264797507788,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 27.66049116760017
+    },
+    {
+      "route": [
+        5,
+        6,
+        7,
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "components": [
+        "riemann",
+        "williams",
+        "three_regime",
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "pi_d",
+        "harmonic"
+      ],
+      "total_distance": 0.03615264797507788,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 27.66049116760017
+    },
+    {
+      "route": [
+        1,
+        6,
+        0,
+        3,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        5,
+        6,
+        0,
+        7,
+        2,
+        1
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "riemann",
+        "williams",
+        "fibonacci",
+        "three_regime",
+        "harmonic",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        7,
+        4,
+        3,
+        1,
+        6,
+        0,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "goldbach",
+        "collatz",
+        "williams",
+        "fibonacci",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        7,
+        5,
+        3,
+        4,
+        6,
+        2,
+        1
+      ],
+      "components": [
+        "fibonacci",
+        "three_regime",
+        "riemann",
+        "goldbach",
+        "pi_d",
+        "williams",
+        "harmonic",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        6,
+        0,
+        3,
+        1,
+        7,
+        5,
+        4
+      ],
+      "components": [
+        "harmonic",
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "riemann",
+        "pi_d"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        5,
+        3,
+        2,
+        6,
+        0,
+        7,
+        4,
+        1
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "harmonic",
+        "williams",
+        "fibonacci",
+        "three_regime",
+        "pi_d",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        6,
+        2,
+        3,
+        1,
+        7,
+        5,
+        4
+      ],
+      "components": [
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "riemann",
+        "pi_d"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        5,
+        6,
+        0,
+        7,
+        2,
+        3,
+        4,
+        1
+      ],
+      "components": [
+        "riemann",
+        "williams",
+        "fibonacci",
+        "three_regime",
+        "harmonic",
+        "goldbach",
+        "pi_d",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        7,
+        0,
+        6,
+        5,
+        3,
+        2,
+        1
+      ],
+      "components": [
+        "pi_d",
+        "three_regime",
+        "fibonacci",
+        "williams",
+        "riemann",
+        "goldbach",
+        "harmonic",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        7,
+        4,
+        3,
+        0,
+        6,
+        5,
+        1
+      ],
+      "components": [
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "riemann",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        1,
+        7,
+        4,
+        6,
+        5,
+        0
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "williams",
+        "riemann",
+        "fibonacci"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        5,
+        7,
+        2,
+        3,
+        0,
+        6,
+        4,
+        1
+      ],
+      "components": [
+        "riemann",
+        "three_regime",
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "pi_d",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        5,
+        7,
+        2,
+        3,
+        4,
+        6,
+        1,
+        0
+      ],
+      "components": [
+        "riemann",
+        "three_regime",
+        "harmonic",
+        "goldbach",
+        "pi_d",
+        "williams",
+        "collatz",
+        "fibonacci"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        6,
+        5,
+        7,
+        4,
+        3,
+        1,
+        0
+      ],
+      "components": [
+        "harmonic",
+        "williams",
+        "riemann",
+        "three_regime",
+        "pi_d",
+        "goldbach",
+        "collatz",
+        "fibonacci"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        6,
+        2,
+        7,
+        1,
+        3,
+        5,
+        0
+      ],
+      "components": [
+        "pi_d",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "collatz",
+        "goldbach",
+        "riemann",
+        "fibonacci"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        7,
+        1,
+        6,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "three_regime",
+        "collatz",
+        "williams",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        6,
+        0,
+        3,
+        2,
+        7,
+        5,
+        4
+      ],
+      "components": [
+        "collatz",
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "harmonic",
+        "three_regime",
+        "riemann",
+        "pi_d"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        7,
+        5,
+        6,
+        2,
+        3,
+        1,
+        4
+      ],
+      "components": [
+        "fibonacci",
+        "three_regime",
+        "riemann",
+        "williams",
+        "harmonic",
+        "goldbach",
+        "collatz",
+        "pi_d"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        7,
+        0,
+        3,
+        4,
+        6,
+        5,
+        2
+      ],
+      "components": [
+        "collatz",
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "pi_d",
+        "williams",
+        "riemann",
+        "harmonic"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        4,
+        7,
+        0,
+        6,
+        2,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "pi_d",
+        "three_regime",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        6,
+        1,
+        7,
+        2,
+        3,
+        5,
+        4
+      ],
+      "components": [
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "goldbach",
+        "riemann",
+        "pi_d"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        6,
+        1,
+        3,
+        5,
+        7,
+        2,
+        0
+      ],
+      "components": [
+        "pi_d",
+        "williams",
+        "collatz",
+        "goldbach",
+        "riemann",
+        "three_regime",
+        "harmonic",
+        "fibonacci"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        7,
+        5,
+        6,
+        2,
+        1
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "three_regime",
+        "riemann",
+        "williams",
+        "harmonic",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        5,
+        7,
+        2,
+        6,
+        1,
+        0
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "riemann",
+        "three_regime",
+        "harmonic",
+        "williams",
+        "collatz",
+        "fibonacci"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        5,
+        7,
+        4,
+        1
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "riemann",
+        "three_regime",
+        "pi_d",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        3,
+        1,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        4,
+        7,
+        5,
+        6,
+        0,
+        1
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "pi_d",
+        "three_regime",
+        "riemann",
+        "williams",
+        "fibonacci",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        0,
+        6,
+        5,
+        7,
+        4,
+        3,
+        2,
+        1
+      ],
+      "components": [
+        "fibonacci",
+        "williams",
+        "riemann",
+        "three_regime",
+        "pi_d",
+        "goldbach",
+        "harmonic",
+        "collatz"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        4,
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        2,
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        7,
+        4,
+        5
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "three_regime",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.04331343283582089,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 23.087525844245352
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        0,
+        6,
+        3,
+        1,
+        7,
+        4,
+        2,
+        5
+      ],
+      "components": [
+        "fibonacci",
+        "williams",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        5,
+        7,
+        0,
+        6,
+        4,
+        2,
+        1
+      ],
+      "components": [
+        "goldbach",
+        "riemann",
+        "three_regime",
+        "fibonacci",
+        "williams",
+        "pi_d",
+        "harmonic",
+        "collatz"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        5,
+        7,
+        1,
+        3,
+        4,
+        0,
+        2
+      ],
+      "components": [
+        "williams",
+        "riemann",
+        "three_regime",
+        "collatz",
+        "goldbach",
+        "pi_d",
+        "fibonacci",
+        "harmonic"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        2,
+        3,
+        5,
+        7,
+        6,
+        1,
+        0,
+        4
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "riemann",
+        "three_regime",
+        "williams",
+        "collatz",
+        "fibonacci",
+        "pi_d"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        5,
+        6,
+        1,
+        7,
+        4,
+        2,
+        0
+      ],
+      "components": [
+        "goldbach",
+        "riemann",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "harmonic",
+        "fibonacci"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        1,
+        3,
+        2,
+        6,
+        7,
+        5,
+        0,
+        4
+      ],
+      "components": [
+        "collatz",
+        "goldbach",
+        "harmonic",
+        "williams",
+        "three_regime",
+        "riemann",
+        "fibonacci",
+        "pi_d"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        5,
+        3,
+        0,
+        7,
+        1,
+        4,
+        2
+      ],
+      "components": [
+        "williams",
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "three_regime",
+        "collatz",
+        "pi_d",
+        "harmonic"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        0,
+        7,
+        6,
+        5,
+        3,
+        2,
+        4,
+        1
+      ],
+      "components": [
+        "fibonacci",
+        "three_regime",
+        "williams",
+        "riemann",
+        "goldbach",
+        "harmonic",
+        "pi_d",
+        "collatz"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        5,
+        7,
+        0,
+        3,
+        1,
+        2,
+        4
+      ],
+      "components": [
+        "williams",
+        "riemann",
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        5,
+        6,
+        7,
+        1,
+        3,
+        4,
+        2,
+        0
+      ],
+      "components": [
+        "riemann",
+        "williams",
+        "three_regime",
+        "collatz",
+        "goldbach",
+        "pi_d",
+        "harmonic",
+        "fibonacci"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        1,
+        6,
+        0,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "collatz",
+        "williams",
+        "fibonacci",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        5,
+        3,
+        0,
+        6,
+        2,
+        4,
+        1
+      ],
+      "components": [
+        "three_regime",
+        "riemann",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "collatz"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        2,
+        6,
+        5,
+        7,
+        1,
+        4,
+        0
+      ],
+      "components": [
+        "goldbach",
+        "harmonic",
+        "williams",
+        "riemann",
+        "three_regime",
+        "collatz",
+        "pi_d",
+        "fibonacci"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        4,
+        2,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        5,
+        7,
+        2,
+        3,
+        0,
+        4,
+        1
+      ],
+      "components": [
+        "williams",
+        "riemann",
+        "three_regime",
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "pi_d",
+        "collatz"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        0,
+        7,
+        5,
+        6,
+        3,
+        1,
+        2,
+        4
+      ],
+      "components": [
+        "fibonacci",
+        "three_regime",
+        "riemann",
+        "williams",
+        "goldbach",
+        "collatz",
+        "harmonic",
+        "pi_d"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        2,
+        7,
+        5,
+        3,
+        1,
+        4,
+        0
+      ],
+      "components": [
+        "williams",
+        "harmonic",
+        "three_regime",
+        "riemann",
+        "goldbach",
+        "collatz",
+        "pi_d",
+        "fibonacci"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 2,
+      "regime_name": "balance",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        0,
+        6,
+        3,
+        1,
+        7,
+        5,
+        4,
+        2
+      ],
+      "components": [
+        "fibonacci",
+        "williams",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "riemann",
+        "pi_d",
+        "harmonic"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        6,
+        0,
+        3,
+        1,
+        7,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "three_regime",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        0,
+        3,
+        1,
+        6,
+        2,
+        4,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.05788975682335983,
+      "regime": 0,
+      "regime_name": "support",
+      "pattern_score": 17.27421317473003
+    },
+    {
+      "route": [
+        7,
+        3,
+        5,
+        6,
+        2,
+        4,
+        0,
+        1
+      ],
+      "components": [
+        "three_regime",
+        "goldbach",
+        "riemann",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "fibonacci",
+        "collatz"
+      ],
+      "total_distance": 0.07246608081089878,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 13.799559584428383
+    },
+    {
+      "route": [
+        6,
+        1,
+        7,
+        3,
+        2,
+        4,
+        0,
+        5
+      ],
+      "components": [
+        "williams",
+        "collatz",
+        "three_regime",
+        "goldbach",
+        "harmonic",
+        "pi_d",
+        "fibonacci",
+        "riemann"
+      ],
+      "total_distance": 0.07246608081089878,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 13.799559584428383
+    },
+    {
+      "route": [
+        7,
+        5,
+        6,
+        3,
+        2,
+        4,
+        0,
+        1
+      ],
+      "components": [
+        "three_regime",
+        "riemann",
+        "williams",
+        "goldbach",
+        "harmonic",
+        "pi_d",
+        "fibonacci",
+        "collatz"
+      ],
+      "total_distance": 0.07246608081089878,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 13.799559584428383
+    },
+    {
+      "route": [
+        7,
+        6,
+        1,
+        3,
+        2,
+        4,
+        0,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "williams",
+        "collatz",
+        "goldbach",
+        "harmonic",
+        "pi_d",
+        "fibonacci",
+        "riemann"
+      ],
+      "total_distance": 0.07246608081089878,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 13.799559584428383
+    },
+    {
+      "route": [
+        2,
+        3,
+        4,
+        7,
+        6,
+        0,
+        5,
+        1
+      ],
+      "components": [
+        "harmonic",
+        "goldbach",
+        "pi_d",
+        "three_regime",
+        "williams",
+        "fibonacci",
+        "riemann",
+        "collatz"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        5,
+        6,
+        3,
+        4,
+        7,
+        1,
+        2,
+        0
+      ],
+      "components": [
+        "riemann",
+        "williams",
+        "goldbach",
+        "pi_d",
+        "three_regime",
+        "collatz",
+        "harmonic",
+        "fibonacci"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        3,
+        4,
+        6,
+        5,
+        7,
+        2,
+        1,
+        0
+      ],
+      "components": [
+        "goldbach",
+        "pi_d",
+        "williams",
+        "riemann",
+        "three_regime",
+        "harmonic",
+        "collatz",
+        "fibonacci"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        2,
+        7,
+        0,
+        3,
+        6,
+        1,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "three_regime",
+        "fibonacci",
+        "goldbach",
+        "williams",
+        "collatz",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        3,
+        2,
+        6,
+        0,
+        7,
+        1,
+        5,
+        4
+      ],
+      "components": [
+        "goldbach",
+        "harmonic",
+        "williams",
+        "fibonacci",
+        "three_regime",
+        "collatz",
+        "riemann",
+        "pi_d"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        3,
+        2,
+        6,
+        4,
+        7,
+        0,
+        1,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "harmonic",
+        "williams",
+        "pi_d",
+        "three_regime",
+        "fibonacci",
+        "collatz",
+        "riemann"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        4,
+        7,
+        5,
+        3,
+        6,
+        2,
+        0,
+        1
+      ],
+      "components": [
+        "pi_d",
+        "three_regime",
+        "riemann",
+        "goldbach",
+        "williams",
+        "harmonic",
+        "fibonacci",
+        "collatz"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        4,
+        6,
+        7,
+        1,
+        3,
+        2,
+        5,
+        0
+      ],
+      "components": [
+        "pi_d",
+        "williams",
+        "three_regime",
+        "collatz",
+        "goldbach",
+        "harmonic",
+        "riemann",
+        "fibonacci"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        2,
+        7,
+        6,
+        0,
+        3,
+        1,
+        4,
+        5
+      ],
+      "components": [
+        "harmonic",
+        "three_regime",
+        "williams",
+        "fibonacci",
+        "goldbach",
+        "collatz",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        4,
+        3,
+        5,
+        7,
+        6,
+        2,
+        1,
+        0
+      ],
+      "components": [
+        "pi_d",
+        "goldbach",
+        "riemann",
+        "three_regime",
+        "williams",
+        "harmonic",
+        "collatz",
+        "fibonacci"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        4,
+        7,
+        5,
+        6,
+        3,
+        1,
+        0,
+        2
+      ],
+      "components": [
+        "pi_d",
+        "three_regime",
+        "riemann",
+        "williams",
+        "goldbach",
+        "collatz",
+        "fibonacci",
+        "harmonic"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        7,
+        5,
+        3,
+        4,
+        6,
+        2,
+        0,
+        1
+      ],
+      "components": [
+        "three_regime",
+        "riemann",
+        "goldbach",
+        "pi_d",
+        "williams",
+        "harmonic",
+        "fibonacci",
+        "collatz"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        6,
+        4,
+        3,
+        5,
+        7,
+        2,
+        1,
+        0
+      ],
+      "components": [
+        "williams",
+        "pi_d",
+        "goldbach",
+        "riemann",
+        "three_regime",
+        "harmonic",
+        "collatz",
+        "fibonacci"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        4,
+        6,
+        2,
+        3,
+        7,
+        1,
+        0,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "williams",
+        "harmonic",
+        "goldbach",
+        "three_regime",
+        "collatz",
+        "fibonacci",
+        "riemann"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        0,
+        7,
+        2,
+        6,
+        3,
+        4,
+        5,
+        1
+      ],
+      "components": [
+        "fibonacci",
+        "three_regime",
+        "harmonic",
+        "williams",
+        "goldbach",
+        "pi_d",
+        "riemann",
+        "collatz"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        6,
+        5,
+        3,
+        4,
+        7,
+        2,
+        1,
+        0
+      ],
+      "components": [
+        "williams",
+        "riemann",
+        "goldbach",
+        "pi_d",
+        "three_regime",
+        "harmonic",
+        "collatz",
+        "fibonacci"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        4,
+        7,
+        3,
+        0,
+        6,
+        2,
+        1,
+        5
+      ],
+      "components": [
+        "pi_d",
+        "three_regime",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "harmonic",
+        "collatz",
+        "riemann"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        7,
+        4,
+        3,
+        0,
+        6,
+        1,
+        2,
+        5
+      ],
+      "components": [
+        "three_regime",
+        "pi_d",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "collatz",
+        "harmonic",
+        "riemann"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        7,
+        2,
+        3,
+        4,
+        6,
+        1,
+        5,
+        0
+      ],
+      "components": [
+        "three_regime",
+        "harmonic",
+        "goldbach",
+        "pi_d",
+        "williams",
+        "collatz",
+        "riemann",
+        "fibonacci"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        7,
+        2,
+        3,
+        0,
+        6,
+        4,
+        5,
+        1
+      ],
+      "components": [
+        "three_regime",
+        "harmonic",
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "pi_d",
+        "riemann",
+        "collatz"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        0,
+        3,
+        2,
+        6,
+        7,
+        1,
+        5,
+        4
+      ],
+      "components": [
+        "fibonacci",
+        "goldbach",
+        "harmonic",
+        "williams",
+        "three_regime",
+        "collatz",
+        "riemann",
+        "pi_d"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        5,
+        3,
+        6,
+        4,
+        7,
+        1,
+        0,
+        2
+      ],
+      "components": [
+        "riemann",
+        "goldbach",
+        "williams",
+        "pi_d",
+        "three_regime",
+        "collatz",
+        "fibonacci",
+        "harmonic"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        7,
+        4,
+        3,
+        1,
+        6,
+        5,
+        2,
+        0
+      ],
+      "components": [
+        "three_regime",
+        "pi_d",
+        "goldbach",
+        "collatz",
+        "williams",
+        "riemann",
+        "harmonic",
+        "fibonacci"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        1,
+        7,
+        4,
+        3,
+        6,
+        2,
+        5,
+        0
+      ],
+      "components": [
+        "collatz",
+        "three_regime",
+        "pi_d",
+        "goldbach",
+        "williams",
+        "harmonic",
+        "riemann",
+        "fibonacci"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        2,
+        7,
+        0,
+        6,
+        3,
+        5,
+        4,
+        1
+      ],
+      "components": [
+        "harmonic",
+        "three_regime",
+        "fibonacci",
+        "williams",
+        "goldbach",
+        "riemann",
+        "pi_d",
+        "collatz"
+      ],
+      "total_distance": 0.07962686567164179,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 12.558575445173384
+    },
+    {
+      "route": [
+        6,
+        3,
+        0,
+        7,
+        4,
+        2,
+        5,
+        1
+      ],
+      "components": [
+        "williams",
+        "goldbach",
+        "fibonacci",
+        "three_regime",
+        "pi_d",
+        "harmonic",
+        "riemann",
+        "collatz"
+      ],
+      "total_distance": 0.09420318965918073,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 10.615351811524816
+    },
+    {
+      "route": [
+        3,
+        6,
+        5,
+        7,
+        4,
+        2,
+        0,
+        1
+      ],
+      "components": [
+        "goldbach",
+        "williams",
+        "riemann",
+        "three_regime",
+        "pi_d",
+        "harmonic",
+        "fibonacci",
+        "collatz"
+      ],
+      "total_distance": 0.09420318965918073,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 10.615351811524816
+    },
+    {
+      "route": [
+        6,
+        7,
+        2,
+        3,
+        1,
+        0,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "three_regime",
+        "harmonic",
+        "goldbach",
+        "collatz",
+        "fibonacci",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.09420318965918073,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 10.615351811524816
+    },
+    {
+      "route": [
+        6,
+        2,
+        7,
+        3,
+        1,
+        0,
+        4,
+        5
+      ],
+      "components": [
+        "williams",
+        "harmonic",
+        "three_regime",
+        "goldbach",
+        "collatz",
+        "fibonacci",
+        "pi_d",
+        "riemann"
+      ],
+      "total_distance": 0.09420318965918073,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 10.615351811524816
+    },
+    {
+      "route": [
+        6,
+        3,
+        0,
+        7,
+        4,
+        2,
+        1,
+        5
+      ],
+      "components": [
+        "williams",
+        "goldbach",
+        "fibonacci",
+        "three_regime",
+        "pi_d",
+        "harmonic",
+        "collatz",
+        "riemann"
+      ],
+      "total_distance": 0.09420318965918073,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 10.615351811524816
+    },
+    {
+      "route": [
+        3,
+        0,
+        6,
+        7,
+        4,
+        2,
+        5,
+        1
+      ],
+      "components": [
+        "goldbach",
+        "fibonacci",
+        "williams",
+        "three_regime",
+        "pi_d",
+        "harmonic",
+        "riemann",
+        "collatz"
+      ],
+      "total_distance": 0.09420318965918073,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 10.615351811524816
+    },
+    {
+      "route": [
+        3,
+        7,
+        2,
+        6,
+        0,
+        4,
+        1,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "three_regime",
+        "harmonic",
+        "williams",
+        "fibonacci",
+        "pi_d",
+        "collatz",
+        "riemann"
+      ],
+      "total_distance": 0.09420318965918073,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 10.615351811524816
+    },
+    {
+      "route": [
+        7,
+        3,
+        1,
+        6,
+        4,
+        0,
+        5,
+        2
+      ],
+      "components": [
+        "three_regime",
+        "goldbach",
+        "collatz",
+        "williams",
+        "pi_d",
+        "fibonacci",
+        "riemann",
+        "harmonic"
+      ],
+      "total_distance": 0.09420318965918073,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 10.615351811524816
+    },
+    {
+      "route": [
+        3,
+        7,
+        6,
+        2,
+        4,
+        0,
+        5,
+        1
+      ],
+      "components": [
+        "goldbach",
+        "three_regime",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "fibonacci",
+        "riemann",
+        "collatz"
+      ],
+      "total_distance": 0.10877951364671967,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 9.192907437035188
+    },
+    {
+      "route": [
+        3,
+        7,
+        6,
+        2,
+        4,
+        0,
+        1,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "three_regime",
+        "williams",
+        "harmonic",
+        "pi_d",
+        "fibonacci",
+        "collatz",
+        "riemann"
+      ],
+      "total_distance": 0.10877951364671967,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 9.192907437035188
+    },
+    {
+      "route": [
+        3,
+        4,
+        7,
+        6,
+        2,
+        5,
+        0,
+        1
+      ],
+      "components": [
+        "goldbach",
+        "pi_d",
+        "three_regime",
+        "williams",
+        "harmonic",
+        "riemann",
+        "fibonacci",
+        "collatz"
+      ],
+      "total_distance": 0.11594029850746268,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 8.625128733264676
+    },
+    {
+      "route": [
+        3,
+        6,
+        4,
+        7,
+        0,
+        2,
+        1,
+        5
+      ],
+      "components": [
+        "goldbach",
+        "williams",
+        "pi_d",
+        "three_regime",
+        "fibonacci",
+        "harmonic",
+        "collatz",
+        "riemann"
+      ],
+      "total_distance": 0.11594029850746268,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 8.625128733264676
+    },
+    {
+      "route": [
+        4,
+        6,
+        3,
+        7,
+        0,
+        2,
+        5,
+        1
+      ],
+      "components": [
+        "pi_d",
+        "williams",
+        "goldbach",
+        "three_regime",
+        "fibonacci",
+        "harmonic",
+        "riemann",
+        "collatz"
+      ],
+      "total_distance": 0.11594029850746268,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 8.625128733264676
+    },
+    {
+      "route": [
+        7,
+        3,
+        6,
+        5,
+        1,
+        4,
+        0,
+        2
+      ],
+      "components": [
+        "three_regime",
+        "goldbach",
+        "williams",
+        "riemann",
+        "collatz",
+        "pi_d",
+        "fibonacci",
+        "harmonic"
+      ],
+      "total_distance": 0.13051662249500162,
+      "regime": 1,
+      "regime_name": "exploration",
+      "pattern_score": 7.661859316335717
+    }
+  ],
+  "analysis": {
+    "total_patterns": 300,
+    "by_regime": {
+      "support": {
+        "count": 100,
+        "avg_distance": 0.04682448830613288,
+        "avg_score": 23.14629110790996,
+        "best_pattern": [
+          "riemann",
+          "goldbach",
+          "fibonacci",
+          "williams",
+          "collatz",
+          "three_regime",
+          "harmonic",
+          "pi_d"
+        ],
+        "unique_orderings": 8
+      },
+      "exploration": {
+        "count": 100,
+        "avg_distance": 0.06273333844794717,
+        "avg_score": 19.030396753712207,
+        "best_pattern": [
+          "collatz",
+          "williams",
+          "harmonic",
+          "goldbach",
+          "riemann",
+          "three_regime",
+          "fibonacci",
+          "pi_d"
+        ],
+        "unique_orderings": 99
+      },
+      "balance": {
+        "count": 100,
+        "avg_distance": 0.04668127260891802,
+        "avg_score": 23.495216295474766,
+        "best_pattern": [
+          "riemann",
+          "goldbach",
+          "fibonacci",
+          "williams",
+          "collatz",
+          "three_regime",
+          "harmonic",
+          "pi_d"
+        ],
+        "unique_orderings": 8
+      }
+    }
+  }
+}

@@ -1,30 +1,36 @@
-import React, { useState, useRef } from 'react';
-import { PipelineChartProps, ChartType, TimePeriod, FilterState, StageData } from './types';
-import { mockPipelineData } from './mockData';
-import { FunnelStage } from './FunnelStage';
-import { ConversionRatesChart } from './ConversionRatesChart';
-import { LossAnalysisChart } from './LossAnalysisChart';
-import { InsightsPanel } from './InsightsPanel';
-import { SankeyDiagram } from './SankeyDiagram';
-import { TimelineChart } from './TimelineChart';
-import { StageDetailsModal } from './StageDetailsModal';
-import { FilterPanel } from './FilterPanel';
-import { ShortcutHint } from './ShortcutHint';
-import { Confetti, celebrateDealWon } from './Confetti';
-import { useKeyboardShortcuts } from './useKeyboardShortcuts';
-import { usePageLoadAnimation } from './useAnimations';
-import { formatCurrency, formatNumber, formatPercentage } from './utils';
-import { Card } from '../ui/card';
-import { Button } from '../ui/button';
+import React, { useState, useRef } from "react";
+import {
+  PipelineChartProps,
+  ChartType,
+  TimePeriod,
+  FilterState,
+  StageData,
+} from "./types";
+import { mockPipelineData } from "./mockData";
+import { FunnelStage } from "./FunnelStage";
+import { ConversionRatesChart } from "./ConversionRatesChart";
+import { LossAnalysisChart } from "./LossAnalysisChart";
+import { InsightsPanel } from "./InsightsPanel";
+import { SankeyDiagram } from "./SankeyDiagram";
+import { TimelineChart } from "./TimelineChart";
+import { StageDetailsModal } from "./StageDetailsModal";
+import { FilterPanel } from "./FilterPanel";
+import { ShortcutHint } from "./ShortcutHint";
+import { Confetti, celebrateDealWon } from "./Confetti";
+import { useKeyboardShortcuts } from "./useKeyboardShortcuts";
+import { usePageLoadAnimation } from "./useAnimations";
+import { formatCurrency, formatNumber, formatPercentage } from "./utils";
+import { Card } from "../ui/card";
+import { Button } from "../ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '../ui/select';
-import { Badge } from '../ui/badge';
-import { toast } from 'sonner@2.0.3';
+} from "../ui/select";
+import { Badge } from "../ui/badge";
+import { toast } from "sonner@2.0.3";
 import {
   TrendingUp,
   Filter,
@@ -35,34 +41,29 @@ import {
   Activity,
   Keyboard,
   X,
-} from 'lucide-react';
+} from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '../ui/dropdown-menu';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from '../ui/dialog';
+} from "../ui/dropdown-menu";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
 
 const STAGE_COLORS: Record<string, string> = {
-  capture: '#FFD166',
-  rfq: '#FF9800',
-  quotation: '#8B5CF6',
-  order: '#3B82F6',
-  delivery: '#06D6A0',
-  payment: '#10B981',
+  capture: "#FFD166",
+  rfq: "#FF9800",
+  quotation: "#8B5CF6",
+  order: "#3B82F6",
+  delivery: "#06D6A0",
+  payment: "#10B981",
 };
 
 export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
   userId,
-  role = 'ADMIN',
-  defaultPeriod = '30days',
-  defaultChartType = 'funnel',
+  role = "ADMIN",
+  defaultPeriod = "30days",
+  defaultChartType = "funnel",
   onDealClick,
   onStageClick,
 }) => {
@@ -86,11 +87,11 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
 
   const handleRefresh = async () => {
     setIsRefreshing(true);
-    toast.info('Refreshing pipeline data...');
+    toast.info("Refreshing pipeline data...");
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsRefreshing(false);
-    toast.success('Pipeline data updated!');
+    toast.success("Pipeline data updated!");
   };
 
   const handleStageClick = (stage: StageData) => {
@@ -101,7 +102,7 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
     }
   };
 
-  const handleExport = (format: 'png' | 'pdf' | 'excel' | 'csv') => {
+  const handleExport = (format: "png" | "pdf" | "excel" | "csv") => {
     toast.info(`Exporting as ${format.toUpperCase()}...`);
     // Simulate export
     setTimeout(() => {
@@ -111,21 +112,26 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
 
   const handleFocusStage = (index: number) => {
     if (stageRefs.current[index]) {
-      stageRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      stageRefs.current[index]?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
       stageRefs.current[index]?.focus();
-      toast.info(`Focused on ${pipelineData.stages[index].name} stage`, { duration: 1000 });
+      toast.info(`Focused on ${pipelineData.stages[index].name} stage`, {
+        duration: 1000,
+      });
     }
   };
 
   const handleClearFilters = () => {
     setFilters({});
-    toast.info('Filters cleared');
+    toast.info("Filters cleared");
   };
 
   const handleDealWon = () => {
     // Simulate deal won
     setShowConfetti(true);
-    toast.success('🎉 Deal Won! Congratulations!', { duration: 5000 });
+    toast.success("🎉 Deal Won! Congratulations!", { duration: 5000 });
   };
 
   // Keyboard shortcuts
@@ -141,36 +147,49 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
   });
 
   return (
-    <div className="w-full min-h-screen p-6 md:p-8" style={{ backgroundColor: '#F8F9FA' }}>
+    <div
+      className="w-full min-h-screen p-6 md:p-8"
+      style={{ backgroundColor: "#F8F9FA" }}
+    >
       {/* Header */}
       <div className="mb-6 pipeline-header">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div className="flex items-start gap-3">
             <div
               className="p-2 rounded-lg"
-              style={{ backgroundColor: 'rgba(108, 99, 255, 0.1)' }}
+              style={{ backgroundColor: "rgba(108, 99, 255, 0.1)" }}
             >
               <TrendingUp size={28} color="#6C63FF" />
             </div>
             <div>
-              <h1 className="text-3xl mb-1" style={{ color: '#212529' }}>
+              <h1 className="text-3xl mb-1" style={{ color: "#212529" }}>
                 Sales Pipeline Analytics
               </h1>
-              <div className="flex flex-wrap items-center gap-3 text-sm" style={{ color: '#6C757D' }}>
+              <div
+                className="flex flex-wrap items-center gap-3 text-sm"
+                style={{ color: "#6C757D" }}
+              >
                 <span>
-                  {formatNumber(pipelineData.totals.totalOpportunities)} opportunities
+                  {formatNumber(pipelineData.totals.totalOpportunities)}{" "}
+                  opportunities
                 </span>
                 <span>·</span>
-                <span>{formatCurrency(pipelineData.totals.totalPipelineValue)} pipeline value</span>
+                <span>
+                  {formatCurrency(pipelineData.totals.totalPipelineValue)}{" "}
+                  pipeline value
+                </span>
                 <span>·</span>
-                <span>{formatPercentage(pipelineData.totals.overallWinRate)} win rate</span>
+                <span>
+                  {formatPercentage(pipelineData.totals.overallWinRate)} win
+                  rate
+                </span>
                 <Badge
                   variant="outline"
                   className="ml-2 gap-1"
                   style={{
-                    backgroundColor: 'rgba(6, 214, 160, 0.1)',
-                    color: '#06D6A0',
-                    borderColor: '#06D6A0',
+                    backgroundColor: "rgba(6, 214, 160, 0.1)",
+                    color: "#06D6A0",
+                    borderColor: "#06D6A0",
                   }}
                 >
                   <Activity size={12} className="animate-pulse" />
@@ -199,7 +218,7 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
               <RefreshCw
                 size={16}
                 color="#6C63FF"
-                className={isRefreshing ? 'animate-spin' : ''}
+                className={isRefreshing ? "animate-spin" : ""}
               />
             </Button>
             <DropdownMenu>
@@ -210,16 +229,16 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => handleExport('png')}>
+                <DropdownMenuItem onClick={() => handleExport("png")}>
                   Export as PNG
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleExport('pdf')}>
+                <DropdownMenuItem onClick={() => handleExport("pdf")}>
                   Export as PDF
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleExport('excel')}>
+                <DropdownMenuItem onClick={() => handleExport("excel")}>
                   Export as Excel
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleExport('csv')}>
+                <DropdownMenuItem onClick={() => handleExport("csv")}>
                   Export as CSV
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -235,14 +254,18 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
             {/* Chart Type Toggle */}
             <div
               className="inline-flex rounded-lg p-1"
-              style={{ backgroundColor: '#F8F9FA', border: '1px solid #E9ECEF' }}
+              style={{
+                backgroundColor: "#F8F9FA",
+                border: "1px solid #E9ECEF",
+              }}
             >
               <button
-                onClick={() => setChartType('funnel')}
+                onClick={() => setChartType("funnel")}
                 className="flex items-center gap-2 px-4 py-2 rounded-md text-sm transition-all"
                 style={{
-                  backgroundColor: chartType === 'funnel' ? '#6C63FF' : 'transparent',
-                  color: chartType === 'funnel' ? '#FFFFFF' : '#6C757D',
+                  backgroundColor:
+                    chartType === "funnel" ? "#6C63FF" : "transparent",
+                  color: chartType === "funnel" ? "#FFFFFF" : "#6C757D",
                 }}
                 title="Funnel view (F)"
               >
@@ -250,11 +273,12 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
                 Funnel
               </button>
               <button
-                onClick={() => setChartType('sankey')}
+                onClick={() => setChartType("sankey")}
                 className="flex items-center gap-2 px-4 py-2 rounded-md text-sm transition-all"
                 style={{
-                  backgroundColor: chartType === 'sankey' ? '#6C63FF' : 'transparent',
-                  color: chartType === 'sankey' ? '#FFFFFF' : '#6C757D',
+                  backgroundColor:
+                    chartType === "sankey" ? "#6C63FF" : "transparent",
+                  color: chartType === "sankey" ? "#FFFFFF" : "#6C757D",
                 }}
                 title="Flow view (S)"
               >
@@ -262,11 +286,12 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
                 Flow
               </button>
               <button
-                onClick={() => setChartType('timeline')}
+                onClick={() => setChartType("timeline")}
                 className="flex items-center gap-2 px-4 py-2 rounded-md text-sm transition-all"
                 style={{
-                  backgroundColor: chartType === 'timeline' ? '#6C63FF' : 'transparent',
-                  color: chartType === 'timeline' ? '#FFFFFF' : '#6C757D',
+                  backgroundColor:
+                    chartType === "timeline" ? "#6C63FF" : "transparent",
+                  color: chartType === "timeline" ? "#FFFFFF" : "#6C757D",
                 }}
                 title="Timeline view (T)"
               >
@@ -281,17 +306,24 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
               variant="outline"
               size="sm"
               onClick={() => setShowFilters(!showFilters)}
-              className={showFilters ? 'bg-blue-50' : ''}
+              className={showFilters ? "bg-blue-50" : ""}
             >
               <Filter size={14} className="mr-2" />
               Filters
-              {(filters.customer?.length || filters.product?.length || filters.salesperson?.length) && (
+              {(filters.customer?.length ||
+                filters.product?.length ||
+                filters.salesperson?.length) && (
                 <Badge variant="secondary" className="ml-2">
-                  {(filters.customer?.length || 0) + (filters.product?.length || 0) + (filters.salesperson?.length || 0)}
+                  {(filters.customer?.length || 0) +
+                    (filters.product?.length || 0) +
+                    (filters.salesperson?.length || 0)}
                 </Badge>
               )}
             </Button>
-            <Select value={period} onValueChange={(value) => setPeriod(value as TimePeriod)}>
+            <Select
+              value={period}
+              onValueChange={(value) => setPeriod(value as TimePeriod)}
+            >
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Select period" />
               </SelectTrigger>
@@ -320,9 +352,9 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
 
       {/* Main Chart */}
       <Card className="p-8 mb-6" ref={chartContainerRef}>
-        {chartType === 'funnel' && (
+        {chartType === "funnel" && (
           <div className="chart-view">
-            <h2 className="text-xl mb-6" style={{ color: '#212529' }}>
+            <h2 className="text-xl mb-6" style={{ color: "#212529" }}>
               Sales Funnel
             </h2>
             <div className="space-y-0">
@@ -345,18 +377,18 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
           </div>
         )}
 
-        {chartType === 'sankey' && (
+        {chartType === "sankey" && (
           <div className="chart-view">
-            <h2 className="text-xl mb-6" style={{ color: '#212529' }}>
+            <h2 className="text-xl mb-6" style={{ color: "#212529" }}>
               Pipeline Flow Diagram
             </h2>
             <SankeyDiagram stages={pipelineData.stages} />
           </div>
         )}
 
-        {chartType === 'timeline' && (
+        {chartType === "timeline" && (
           <div className="chart-view">
-            <h2 className="text-xl mb-6" style={{ color: '#212529' }}>
+            <h2 className="text-xl mb-6" style={{ color: "#212529" }}>
               Pipeline Timeline
             </h2>
             <TimelineChart
@@ -386,14 +418,17 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
       {/* Stage Details Modal */}
       <StageDetailsModal
         stage={selectedStage}
-        color={selectedStage ? STAGE_COLORS[selectedStage.slug] : '#6C63FF'}
+        color={selectedStage ? STAGE_COLORS[selectedStage.slug] : "#6C63FF"}
         isOpen={showStageModal}
         onClose={() => setShowStageModal(false)}
         onDealClick={onDealClick}
       />
 
       {/* Keyboard Shortcuts Dialog */}
-      <Dialog open={showKeyboardShortcuts} onOpenChange={setShowKeyboardShortcuts}>
+      <Dialog
+        open={showKeyboardShortcuts}
+        onOpenChange={setShowKeyboardShortcuts}
+      >
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
@@ -403,68 +438,80 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
           </DialogHeader>
           <div className="grid grid-cols-2 gap-4 mt-4">
             <div>
-              <h4 className="mb-3" style={{ color: '#212529' }}>Chart Views</h4>
+              <h4 className="mb-3" style={{ color: "#212529" }}>
+                Chart Views
+              </h4>
               <div className="space-y-2 text-sm">
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Funnel view</span>
+                  <span style={{ color: "#6C757D" }}>Funnel view</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">F</kbd>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Flow view</span>
+                  <span style={{ color: "#6C757D" }}>Flow view</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">S</kbd>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Timeline view</span>
+                  <span style={{ color: "#6C757D" }}>Timeline view</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">T</kbd>
                 </div>
               </div>
             </div>
             <div>
-              <h4 className="mb-3" style={{ color: '#212529' }}>Actions</h4>
+              <h4 className="mb-3" style={{ color: "#212529" }}>
+                Actions
+              </h4>
               <div className="space-y-2 text-sm">
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Refresh data</span>
+                  <span style={{ color: "#6C757D" }}>Refresh data</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">R</kbd>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Export</span>
+                  <span style={{ color: "#6C757D" }}>Export</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">E</kbd>
                 </div>
               </div>
             </div>
             <div>
-              <h4 className="mb-3" style={{ color: '#212529' }}>Navigation</h4>
+              <h4 className="mb-3" style={{ color: "#212529" }}>
+                Navigation
+              </h4>
               <div className="space-y-2 text-sm">
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Focus Capture</span>
+                  <span style={{ color: "#6C757D" }}>Focus Capture</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">1</kbd>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Focus RFQ</span>
+                  <span style={{ color: "#6C757D" }}>Focus RFQ</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">2</kbd>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Focus Quotation</span>
+                  <span style={{ color: "#6C757D" }}>Focus Quotation</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">3</kbd>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Focus Order</span>
+                  <span style={{ color: "#6C757D" }}>Focus Order</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">4</kbd>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Focus Delivery</span>
+                  <span style={{ color: "#6C757D" }}>Focus Delivery</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">5</kbd>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span style={{ color: '#6C757D' }}>Focus Payment</span>
+                  <span style={{ color: "#6C757D" }}>Focus Payment</span>
                   <kbd className="px-2 py-1 rounded bg-gray-100 border">6</kbd>
                 </div>
               </div>
             </div>
             <div>
-              <h4 className="mb-3" style={{ color: '#212529' }}>Tip</h4>
-              <p className="text-sm" style={{ color: '#6C757D' }}>
-                Press <kbd className="px-2 py-1 rounded bg-gray-100 border text-xs">Esc</kbd> to close any dialog or modal.
+              <h4 className="mb-3" style={{ color: "#212529" }}>
+                Tip
+              </h4>
+              <p className="text-sm" style={{ color: "#6C757D" }}>
+                Press{" "}
+                <kbd className="px-2 py-1 rounded bg-gray-100 border text-xs">
+                  Esc
+                </kbd>{" "}
+                to close any dialog or modal.
               </p>
             </div>
           </div>
@@ -475,18 +522,21 @@ export const PipelineAnalytics: React.FC<PipelineChartProps> = ({
       <ShortcutHint />
 
       {/* Confetti Celebration */}
-      <Confetti trigger={showConfetti} onComplete={() => setShowConfetti(false)} />
+      <Confetti
+        trigger={showConfetti}
+        onComplete={() => setShowConfetti(false)}
+      />
 
       {/* Secret: Press Shift+W to trigger celebration! */}
-      {typeof window !== 'undefined' && (
+      {typeof window !== "undefined" && (
         <div
           onKeyDown={(e) => {
-            if (e.shiftKey && e.key === 'W') {
+            if (e.shiftKey && e.key === "W") {
               handleDealWon();
             }
           }}
           tabIndex={-1}
-          style={{ position: 'absolute', width: 0, height: 0, opacity: 0 }}
+          style={{ position: "absolute", width: 0, height: 0, opacity: 0 }}
         />
       )}
     </div>

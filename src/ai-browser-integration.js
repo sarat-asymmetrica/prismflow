@@ -2,158 +2,163 @@
 // Connects Natural Asymmetry Orchestrator with browser functionality
 
 class AIBrowserIntegration {
-    constructor() {
-        this.orchestrator = null;
-        this.initialized = false;
-        
-        // DOM cache for performance optimization
-        this.domCache = {
-            toolbar: null,
-            urlBar: null,
-            body: null
-        };
-        
-        this.setupIntegration();
+  constructor() {
+    this.orchestrator = null;
+    this.initialized = false;
+
+    // DOM cache for performance optimization
+    this.domCache = {
+      toolbar: null,
+      urlBar: null,
+      body: null,
+    };
+
+    this.setupIntegration();
+  }
+
+  getCachedElement(key, selector) {
+    if (!this.domCache[key]) {
+      this.domCache[key] = document.querySelector(selector);
     }
-    
-    getCachedElement(key, selector) {
-        if (!this.domCache[key]) {
-            this.domCache[key] = document.querySelector(selector);
-        }
-        return this.domCache[key];
+    return this.domCache[key];
+  }
+
+  async setupIntegration() {
+    // Wait for orchestrator to load
+    if (typeof NaturalAsymmetryOrchestrator !== "undefined") {
+      this.orchestrator = new NaturalAsymmetryOrchestrator();
+      this.initialized = true;
+      this.attachBrowserHooks();
+    } else {
+      // Retry in 100ms
+      setTimeout(() => this.setupIntegration(), 100);
     }
-    
-    async setupIntegration() {
-        // Wait for orchestrator to load
-        if (typeof NaturalAsymmetryOrchestrator !== 'undefined') {
-            this.orchestrator = new NaturalAsymmetryOrchestrator();
-            this.initialized = true;
-            this.attachBrowserHooks();
-        } else {
-            // Retry in 100ms
-            setTimeout(() => this.setupIntegration(), 100);
-        }
-    }
-    
-    attachBrowserHooks() {
-        // Hook into URL bar for AI-powered search
-        this.enhanceSearchBar();
-        
-        // Add AI button to toolbar
-        this.addAIButton();
-        
-        // Enable voice commands
-        this.setupVoiceCommands();
-        
-        // Smart page analysis
-        this.enablePageAnalysis();
-    }
-    
-    enhanceSearchBar() {
-        const urlBar = this.getCachedElement('urlBar', '#url-bar');
-        if (!urlBar) return;
-        
-        // Add AI suggestions on typing
-        let aiTimeout;
-        urlBar.addEventListener('input', (e) => {
-            clearTimeout(aiTimeout);
-            const query = e.target.value;
-            
-            // If query starts with "ai:", route to AI
-            if (query.startsWith('ai:')) {
-                aiTimeout = setTimeout(async () => {
-                    const aiQuery = query.substring(3).trim();
-                    const response = await this.askAI(aiQuery);
-                    this.showAIResponse(response);
-                }, 500);
-            }
-        });
-    }
-    
-    addAIButton() {
-        const toolbar = this.getCachedElement('toolbar', '.browser-toolbar');
-        if (!toolbar) return;
-        
-        // Create AI button
-        const aiButton = document.createElement('button');
-        aiButton.className = 'toolbar-btn ai-btn';
-        aiButton.id = 'ai-assistant-btn';
-        aiButton.innerHTML = `
+  }
+
+  attachBrowserHooks() {
+    // Hook into URL bar for AI-powered search
+    this.enhanceSearchBar();
+
+    // Add AI button to toolbar
+    this.addAIButton();
+
+    // Enable voice commands
+    this.setupVoiceCommands();
+
+    // Smart page analysis
+    this.enablePageAnalysis();
+  }
+
+  enhanceSearchBar() {
+    const urlBar = this.getCachedElement("urlBar", "#url-bar");
+    if (!urlBar) return;
+
+    // Add AI suggestions on typing
+    let aiTimeout;
+    urlBar.addEventListener("input", (e) => {
+      clearTimeout(aiTimeout);
+      const query = e.target.value;
+
+      // If query starts with "ai:", route to AI
+      if (query.startsWith("ai:")) {
+        aiTimeout = setTimeout(async () => {
+          const aiQuery = query.substring(3).trim();
+          const response = await this.askAI(aiQuery);
+          this.showAIResponse(response);
+        }, 500);
+      }
+    });
+  }
+
+  addAIButton() {
+    const toolbar = this.getCachedElement("toolbar", ".browser-toolbar");
+    if (!toolbar) return;
+
+    // Create AI button
+    const aiButton = document.createElement("button");
+    aiButton.className = "toolbar-btn ai-btn";
+    aiButton.id = "ai-assistant-btn";
+    aiButton.innerHTML = `
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                 <circle cx="12" cy="12" r="4"/>
             </svg>
         `;
-        aiButton.title = 'AI Assistant (Ctrl+Shift+A)';
-        
-        // Insert before settings button
-        const settingsBtn = document.getElementById('menu-btn');
-        toolbar.insertBefore(aiButton, settingsBtn);
-        
-        // Add click handler
-        aiButton.addEventListener('click', () => {
-            this.toggleAIPanel();
-        });
+    aiButton.title = "AI Assistant (Ctrl+Shift+A)";
+
+    // Insert before settings button
+    const settingsBtn = document.getElementById("menu-btn");
+    toolbar.insertBefore(aiButton, settingsBtn);
+
+    // Add click handler
+    aiButton.addEventListener("click", () => {
+      this.toggleAIPanel();
+    });
+  }
+
+  setupVoiceCommands() {
+    // Check if browser supports speech recognition
+    if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+      this.recognition = new SpeechRecognition();
+      this.recognition.continuous = false;
+      this.recognition.interimResults = false;
+
+      this.recognition.onresult = async (event) => {
+        const command = event.results[0][0].transcript;
+        console.log("Voice command:", command);
+
+        // Process with AI
+        const response = await this.askAI(command, { mode: "voice" });
+        this.executeAICommand(response);
+      };
     }
-    
-    setupVoiceCommands() {
-        // Check if browser supports speech recognition
-        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-            this.recognition = new SpeechRecognition();
-            this.recognition.continuous = false;
-            this.recognition.interimResults = false;
-            
-            this.recognition.onresult = async (event) => {
-                const command = event.results[0][0].transcript;
-                console.log('Voice command:', command);
-                
-                // Process with AI
-                const response = await this.askAI(command, { mode: 'voice' });
-                this.executeAICommand(response);
-            };
-        }
+  }
+
+  enablePageAnalysis() {
+    // Add context menu option for AI analysis
+    document.addEventListener("contextmenu", (e) => {
+      if (
+        e.target.tagName === "IMG" ||
+        e.target.tagName === "P" ||
+        e.target.tagName === "DIV"
+      ) {
+        // Can add custom context menu for AI analysis
+        // "Explain this with AI", "Summarize", etc.
+      }
+    });
+  }
+
+  async askAI(query, options = {}) {
+    if (!this.orchestrator) {
+      return { error: "AI not initialized" };
     }
-    
-    enablePageAnalysis() {
-        // Add context menu option for AI analysis
-        document.addEventListener('contextmenu', (e) => {
-            if (e.target.tagName === 'IMG' || e.target.tagName === 'P' || e.target.tagName === 'DIV') {
-                // Can add custom context menu for AI analysis
-                // "Explain this with AI", "Summarize", etc.
-            }
-        });
+
+    // Add browser context
+    const context = {
+      currentURL: window.location.href,
+      pageTitle: document.title,
+      ...options,
+    };
+
+    try {
+      const response = await this.orchestrator.process(query, context);
+      return response;
+    } catch (error) {
+      console.error("AI error:", error);
+      return { error: error.message };
     }
-    
-    async askAI(query, options = {}) {
-        if (!this.orchestrator) {
-            return { error: 'AI not initialized' };
-        }
-        
-        // Add browser context
-        const context = {
-            currentURL: window.location.href,
-            pageTitle: document.title,
-            ...options
-        };
-        
-        try {
-            const response = await this.orchestrator.process(query, context);
-            return response;
-        } catch (error) {
-            console.error('AI error:', error);
-            return { error: error.message };
-        }
-    }
-    
-    showAIResponse(response) {
-        // Create or update AI response panel
-        let panel = document.getElementById('ai-response-panel');
-        if (!panel) {
-            panel = document.createElement('div');
-            panel.id = 'ai-response-panel';
-            panel.className = 'ai-response-panel';
-            panel.innerHTML = `
+  }
+
+  showAIResponse(response) {
+    // Create or update AI response panel
+    let panel = document.getElementById("ai-response-panel");
+    if (!panel) {
+      panel = document.createElement("div");
+      panel.id = "ai-response-panel";
+      panel.className = "ai-response-panel";
+      panel.innerHTML = `
                 <div class="ai-response-header">
                     <span class="ai-response-title">AI Assistant</span>
                     <button class="ai-response-close">×</button>
@@ -164,70 +169,74 @@ class AIBrowserIntegration {
                     <span class="ai-response-time"></span>
                 </div>
             `;
-            document.body.appendChild(panel);
-            
-            // Add close handler
-            panel.querySelector('.ai-response-close').addEventListener('click', () => {
-                panel.classList.remove('visible');
-            });
-        }
-        
-        // Update content
-        const content = panel.querySelector('.ai-response-content');
-        const model = panel.querySelector('.ai-response-model');
-        const time = panel.querySelector('.ai-response-time');
-        
-        if (response.error) {
-            content.innerHTML = `<div class="error">${response.error}</div>`;
-        } else {
-            content.innerHTML = `<div class="response">${response.text || 'No response'}</div>`;
-            model.textContent = response.model || 'Unknown';
-            time.textContent = response.responseTime ? `${response.responseTime}ms` : '';
-        }
-        
-        // Show panel
-        panel.classList.add('visible');
+      document.body.appendChild(panel);
+
+      // Add close handler
+      panel
+        .querySelector(".ai-response-close")
+        .addEventListener("click", () => {
+          panel.classList.remove("visible");
+        });
     }
-    
-    executeAICommand(response) {
-        // Parse AI response for browser commands
-        if (response.text) {
-            const text = response.text.toLowerCase();
-            
-            // Navigation commands
-            if (text.includes('go to') || text.includes('navigate to')) {
-                const urlMatch = text.match(/(?:go to|navigate to)\s+(\S+)/);
-                if (urlMatch) {
-                    window.location.href = urlMatch[1];
-                }
-            }
-            
-            // Tab commands
-            if (text.includes('new tab')) {
-                if (window.electronAPI) {
-                    window.electronAPI.createTab();
-                }
-            }
-            
-            // Search commands
-            if (text.includes('search for')) {
-                const searchMatch = text.match(/search for\s+(.+)/);
-                if (searchMatch) {
-                    const query = searchMatch[1];
-                    window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-                }
-            }
-        }
+
+    // Update content
+    const content = panel.querySelector(".ai-response-content");
+    const model = panel.querySelector(".ai-response-model");
+    const time = panel.querySelector(".ai-response-time");
+
+    if (response.error) {
+      content.innerHTML = `<div class="error">${response.error}</div>`;
+    } else {
+      content.innerHTML = `<div class="response">${response.text || "No response"}</div>`;
+      model.textContent = response.model || "Unknown";
+      time.textContent = response.responseTime
+        ? `${response.responseTime}ms`
+        : "";
     }
-    
-    toggleAIPanel() {
-        // Create AI chat panel
-        let chatPanel = document.getElementById('ai-chat-panel');
-        if (!chatPanel) {
-            chatPanel = document.createElement('div');
-            chatPanel.id = 'ai-chat-panel';
-            chatPanel.className = 'ai-chat-panel';
-            chatPanel.innerHTML = `
+
+    // Show panel
+    panel.classList.add("visible");
+  }
+
+  executeAICommand(response) {
+    // Parse AI response for browser commands
+    if (response.text) {
+      const text = response.text.toLowerCase();
+
+      // Navigation commands
+      if (text.includes("go to") || text.includes("navigate to")) {
+        const urlMatch = text.match(/(?:go to|navigate to)\s+(\S+)/);
+        if (urlMatch) {
+          window.location.href = urlMatch[1];
+        }
+      }
+
+      // Tab commands
+      if (text.includes("new tab")) {
+        if (window.electronAPI) {
+          window.electronAPI.createTab();
+        }
+      }
+
+      // Search commands
+      if (text.includes("search for")) {
+        const searchMatch = text.match(/search for\s+(.+)/);
+        if (searchMatch) {
+          const query = searchMatch[1];
+          window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        }
+      }
+    }
+  }
+
+  toggleAIPanel() {
+    // Create AI chat panel
+    let chatPanel = document.getElementById("ai-chat-panel");
+    if (!chatPanel) {
+      chatPanel = document.createElement("div");
+      chatPanel.id = "ai-chat-panel";
+      chatPanel.className = "ai-chat-panel";
+      chatPanel.innerHTML = `
                 <div class="ai-chat-header">
                     <h3>AI Assistant</h3>
                     <button class="ai-chat-close">×</button>
@@ -243,59 +252,59 @@ class AIBrowserIntegration {
                     </span>
                 </div>
             `;
-            document.body.appendChild(chatPanel);
-            
-            // Event handlers
-            const closeBtn = chatPanel.querySelector('.ai-chat-close');
-            const input = chatPanel.querySelector('.ai-chat-input');
-            const sendBtn = chatPanel.querySelector('.ai-chat-send');
-            const messages = chatPanel.querySelector('.ai-chat-messages');
-            
-            closeBtn.addEventListener('click', () => {
-                chatPanel.classList.remove('visible');
-            });
-            
-            const sendMessage = async () => {
-                const query = input.value.trim();
-                if (!query) return;
-                
-                // Add user message
-                messages.innerHTML += `
+      document.body.appendChild(chatPanel);
+
+      // Event handlers
+      const closeBtn = chatPanel.querySelector(".ai-chat-close");
+      const input = chatPanel.querySelector(".ai-chat-input");
+      const sendBtn = chatPanel.querySelector(".ai-chat-send");
+      const messages = chatPanel.querySelector(".ai-chat-messages");
+
+      closeBtn.addEventListener("click", () => {
+        chatPanel.classList.remove("visible");
+      });
+
+      const sendMessage = async () => {
+        const query = input.value.trim();
+        if (!query) return;
+
+        // Add user message
+        messages.innerHTML += `
                     <div class="chat-message user">
                         <div class="message-content">${query}</div>
                     </div>
                 `;
-                
-                input.value = '';
-                
-                // Get AI response
-                const response = await this.askAI(query);
-                
-                // Add AI message
-                messages.innerHTML += `
+
+        input.value = "";
+
+        // Get AI response
+        const response = await this.askAI(query);
+
+        // Add AI message
+        messages.innerHTML += `
                     <div class="chat-message ai">
-                        <div class="message-content">${response.text || response.error || 'No response'}</div>
-                        <div class="message-meta">${response.model || 'System'} - ${response.responseTime || 0}ms</div>
+                        <div class="message-content">${response.text || response.error || "No response"}</div>
+                        <div class="message-meta">${response.model || "System"} - ${response.responseTime || 0}ms</div>
                     </div>
                 `;
-                
-                // Scroll to bottom
-                messages.scrollTop = messages.scrollHeight;
-            };
-            
-            sendBtn.addEventListener('click', sendMessage);
-            input.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') sendMessage();
-            });
-        }
-        
-        chatPanel.classList.toggle('visible');
-        
-        // Focus input when opened
-        if (chatPanel.classList.contains('visible')) {
-            chatPanel.querySelector('.ai-chat-input').focus();
-        }
+
+        // Scroll to bottom
+        messages.scrollTop = messages.scrollHeight;
+      };
+
+      sendBtn.addEventListener("click", sendMessage);
+      input.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendMessage();
+      });
     }
+
+    chatPanel.classList.toggle("visible");
+
+    // Focus input when opened
+    if (chatPanel.classList.contains("visible")) {
+      chatPanel.querySelector(".ai-chat-input").focus();
+    }
+  }
 }
 
 // Add styles for AI integration
@@ -496,18 +505,18 @@ const aiStyles = `
 `;
 
 // Initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        // Add styles
-        document.head.insertAdjacentHTML('beforeend', aiStyles);
-        
-        // Initialize integration
-        window.aiBrowserIntegration = new AIBrowserIntegration();
-    });
-} else {
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
     // Add styles
-    document.head.insertAdjacentHTML('beforeend', aiStyles);
-    
+    document.head.insertAdjacentHTML("beforeend", aiStyles);
+
     // Initialize integration
     window.aiBrowserIntegration = new AIBrowserIntegration();
+  });
+} else {
+  // Add styles
+  document.head.insertAdjacentHTML("beforeend", aiStyles);
+
+  // Initialize integration
+  window.aiBrowserIntegration = new AIBrowserIntegration();
 }

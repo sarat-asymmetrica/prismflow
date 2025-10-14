@@ -2,17 +2,17 @@
 // Quick access to browsing history with Natural Asymmetry organization
 
 class HistoryPanel {
-    constructor(browser) {
-        this.browser = browser;
-        this.visible = false;
-        this.initializeUI();
-    }
-    
-    initializeUI() {
-        const panel = document.createElement('div');
-        panel.id = 'history-panel';
-        panel.className = 'history-panel';
-        panel.innerHTML = `
+  constructor(browser) {
+    this.browser = browser;
+    this.visible = false;
+    this.initializeUI();
+  }
+
+  initializeUI() {
+    const panel = document.createElement("div");
+    panel.id = "history-panel";
+    panel.className = "history-panel";
+    panel.innerHTML = `
             <div class="history-header">
                 <h3>History</h3>
                 <input type="text" id="history-search" placeholder="Search history..." />
@@ -24,53 +24,61 @@ class HistoryPanel {
                 <span class="history-count">0 items</span>
             </div>
         `;
-        document.body.appendChild(panel);
-        
-        // Event handlers
-        panel.querySelector('.history-close').addEventListener('click', () => this.hide());
-        panel.querySelector('.clear-history').addEventListener('click', () => this.clearHistory());
-        panel.querySelector('#history-search').addEventListener('input', (e) => this.searchHistory(e.target.value));
+    document.body.appendChild(panel);
+
+    // Event handlers
+    panel
+      .querySelector(".history-close")
+      .addEventListener("click", () => this.hide());
+    panel
+      .querySelector(".clear-history")
+      .addEventListener("click", () => this.clearHistory());
+    panel
+      .querySelector("#history-search")
+      .addEventListener("input", (e) => this.searchHistory(e.target.value));
+  }
+
+  toggle() {
+    this.visible ? this.hide() : this.show();
+  }
+
+  show() {
+    this.visible = true;
+    document.getElementById("history-panel").classList.add("visible");
+    this.updateList();
+  }
+
+  hide() {
+    this.visible = false;
+    document.getElementById("history-panel").classList.remove("visible");
+  }
+
+  updateList(searchQuery = "") {
+    const list = document.querySelector(".history-list");
+    const countEl = document.querySelector(".history-count");
+
+    let history = this.browser.getHistory ? this.browser.getHistory(100) : [];
+
+    if (searchQuery) {
+      history = this.browser.searchHistory
+        ? this.browser.searchHistory(searchQuery)
+        : [];
     }
-    
-    toggle() {
-        this.visible ? this.hide() : this.show();
-    }
-    
-    show() {
-        this.visible = true;
-        document.getElementById('history-panel').classList.add('visible');
-        this.updateList();
-    }
-    
-    hide() {
-        this.visible = false;
-        document.getElementById('history-panel').classList.remove('visible');
-    }
-    
-    updateList(searchQuery = '') {
-        const list = document.querySelector('.history-list');
-        const countEl = document.querySelector('.history-count');
-        
-        let history = this.browser.getHistory ? this.browser.getHistory(100) : [];
-        
-        if (searchQuery) {
-            history = this.browser.searchHistory ? this.browser.searchHistory(searchQuery) : [];
-        }
-        
-        list.innerHTML = '';
-        
-        // Group by date
-        const grouped = this.groupByDate(history);
-        
-        Object.entries(grouped).forEach(([date, items]) => {
-            const section = document.createElement('div');
-            section.className = 'history-section';
-            section.innerHTML = `<div class="history-date">${date}</div>`;
-            
-            items.forEach(item => {
-                const entry = document.createElement('div');
-                entry.className = 'history-entry';
-                entry.innerHTML = `
+
+    list.innerHTML = "";
+
+    // Group by date
+    const grouped = this.groupByDate(history);
+
+    Object.entries(grouped).forEach(([date, items]) => {
+      const section = document.createElement("div");
+      section.className = "history-section";
+      section.innerHTML = `<div class="history-date">${date}</div>`;
+
+      items.forEach((item) => {
+        const entry = document.createElement("div");
+        entry.className = "history-entry";
+        entry.innerHTML = `
                     <div class="history-time">${new Date(item.timestamp).toLocaleTimeString()}</div>
                     <div class="history-content">
                         <div class="history-title">${item.title || item.url}</div>
@@ -78,50 +86,50 @@ class HistoryPanel {
                     </div>
                     <div class="history-visits">${item.visitCount || 1}x</div>
                 `;
-                
-                entry.addEventListener('click', () => {
-                    this.browser.navigate(item.url);
-                    this.hide();
-                });
-                
-                section.appendChild(entry);
-            });
-            
-            list.appendChild(section);
+
+        entry.addEventListener("click", () => {
+          this.browser.navigate(item.url);
+          this.hide();
         });
-        
-        countEl.textContent = `${history.length} items`;
+
+        section.appendChild(entry);
+      });
+
+      list.appendChild(section);
+    });
+
+    countEl.textContent = `${history.length} items`;
+  }
+
+  groupByDate(history) {
+    const grouped = {};
+    const today = new Date().toDateString();
+    const yesterday = new Date(Date.now() - 86400000).toDateString();
+
+    history.forEach((item) => {
+      const date = new Date(item.timestamp).toDateString();
+      let label = date;
+
+      if (date === today) label = "Today";
+      else if (date === yesterday) label = "Yesterday";
+
+      if (!grouped[label]) grouped[label] = [];
+      grouped[label].push(item);
+    });
+
+    return grouped;
+  }
+
+  searchHistory(query) {
+    this.updateList(query);
+  }
+
+  clearHistory() {
+    if (confirm("Clear all browsing history?")) {
+      this.browser.clearHistory();
+      this.updateList();
     }
-    
-    groupByDate(history) {
-        const grouped = {};
-        const today = new Date().toDateString();
-        const yesterday = new Date(Date.now() - 86400000).toDateString();
-        
-        history.forEach(item => {
-            const date = new Date(item.timestamp).toDateString();
-            let label = date;
-            
-            if (date === today) label = 'Today';
-            else if (date === yesterday) label = 'Yesterday';
-            
-            if (!grouped[label]) grouped[label] = [];
-            grouped[label].push(item);
-        });
-        
-        return grouped;
-    }
-    
-    searchHistory(query) {
-        this.updateList(query);
-    }
-    
-    clearHistory() {
-        if (confirm('Clear all browsing history?')) {
-            this.browser.clearHistory();
-            this.updateList();
-        }
-    }
+  }
 }
 
 // Add styles
@@ -276,4 +284,4 @@ const historyStyles = `
 </style>
 `;
 
-document.head.insertAdjacentHTML('beforeend', historyStyles);
+document.head.insertAdjacentHTML("beforeend", historyStyles);

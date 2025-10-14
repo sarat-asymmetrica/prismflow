@@ -5,51 +5,52 @@
  */
 
 class BrowserEnhancements {
-    constructor(browserInstance) {
-        this.browser = browserInstance;
-        this.panels = {};
-        this.shortcuts = new Map();
-        this.findInPageVisible = false;
-        
-        // Initialize all enhancements
-        this.initializeSettingsPanel();
-        this.initializeBookmarksPanel();
-        this.initializeHistoryPanel();
-        this.initializeDownloadsPanel();
-        this.initializeFindInPage();
-        this.initializeZoomControls();
-        this.initializePrintFunction();
-        this.initializeAudioControl();
-        this.fixDarkMode();
-        this.wirePlusButton();
-        this.enhanceKeyboardShortcuts();
-        
-        console.log('🚀 MASSIVE ENHANCEMENT SWEEP COMPLETE!');
+  constructor(browserInstance) {
+    this.browser = browserInstance;
+    this.panels = {};
+    this.shortcuts = new Map();
+    this.findInPageVisible = false;
+
+    // Initialize all enhancements
+    this.initializeSettingsPanel();
+    this.initializeBookmarksPanel();
+    this.initializeHistoryPanel();
+    this.initializeDownloadsPanel();
+    this.initializeFindInPage();
+    this.initializeZoomControls();
+    this.initializePrintFunction();
+    this.initializeAudioControl();
+    this.fixDarkMode();
+    this.wirePlusButton();
+    this.enhanceKeyboardShortcuts();
+
+    console.log("🚀 MASSIVE ENHANCEMENT SWEEP COMPLETE!");
+  }
+
+  // 1. SETTINGS PANEL - Full implementation
+  initializeSettingsPanel() {
+    // Check if settings HTML already exists, if not create it
+    if (!document.getElementById("settings-panel")) {
+      this.createSettingsPanel();
     }
-    
-    // 1. SETTINGS PANEL - Full implementation
-    initializeSettingsPanel() {
-        // Check if settings HTML already exists, if not create it
-        if (!document.getElementById('settings-panel')) {
-            this.createSettingsPanel();
-        }
-        
-        const menuBtn = document.getElementById('menu-btn');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => this.toggleSettingsPanel());
-        }
-        
-        // Wire up all settings controls
-        this.wireSettingsControls();
-        
-        console.log('✅ Settings Panel: FULLY WIRED!');
+
+    const menuBtn = document.getElementById("menu-btn");
+    if (menuBtn) {
+      menuBtn.addEventListener("click", () => this.toggleSettingsPanel());
     }
-    
-    createSettingsPanel() {
-        const container = document.getElementById('settings-container') || document.body;
-        
-        // Load settings HTML (inline for now)
-        const settingsHTML = `
+
+    // Wire up all settings controls
+    this.wireSettingsControls();
+
+    console.log("✅ Settings Panel: FULLY WIRED!");
+  }
+
+  createSettingsPanel() {
+    const container =
+      document.getElementById("settings-container") || document.body;
+
+    // Load settings HTML (inline for now)
+    const settingsHTML = `
         <div id="settings-panel" class="settings-panel">
             <div class="settings-header">
                 <h2>⚙️ Settings</h2>
@@ -148,9 +149,9 @@ class BrowserEnhancements {
                 <button class="button-primary" onclick="browserEnhancements.saveSettings()">Apply</button>
             </div>
         </div>`;
-        
-        // Add styles
-        const styles = `
+
+    // Add styles
+    const styles = `
         <style>
         .settings-panel {
             position: fixed;
@@ -285,129 +286,135 @@ class BrowserEnhancements {
             color: white;
         }
         </style>`;
-        
-        // Add to DOM
-        const div = document.createElement('div');
-        div.innerHTML = styles + settingsHTML;
-        container.appendChild(div);
+
+    // Add to DOM
+    const div = document.createElement("div");
+    div.innerHTML = styles + settingsHTML;
+    container.appendChild(div);
+  }
+
+  wireSettingsControls() {
+    // Category switching
+    const categories = document.querySelectorAll(".settings-category");
+    const sections = document.querySelectorAll(".settings-section");
+
+    categories.forEach((cat) => {
+      cat.addEventListener("click", () => {
+        const targetCategory = cat.dataset.category;
+
+        categories.forEach((c) => c.classList.remove("active"));
+        sections.forEach((s) => s.classList.remove("active"));
+
+        cat.classList.add("active");
+        const section = document.getElementById(`${targetCategory}-settings`);
+        if (section) section.classList.add("active");
+      });
+    });
+
+    // Zoom slider
+    const zoomSlider = document.getElementById("default-zoom");
+    const zoomValue = document.getElementById("zoom-value");
+    if (zoomSlider) {
+      zoomSlider.addEventListener("input", (e) => {
+        zoomValue.textContent = e.target.value + "%";
+      });
     }
-    
-    wireSettingsControls() {
-        // Category switching
-        const categories = document.querySelectorAll('.settings-category');
-        const sections = document.querySelectorAll('.settings-section');
-        
-        categories.forEach(cat => {
-            cat.addEventListener('click', () => {
-                const targetCategory = cat.dataset.category;
-                
-                categories.forEach(c => c.classList.remove('active'));
-                sections.forEach(s => s.classList.remove('active'));
-                
-                cat.classList.add('active');
-                const section = document.getElementById(`${targetCategory}-settings`);
-                if (section) section.classList.add('active');
-            });
-        });
-        
-        // Zoom slider
-        const zoomSlider = document.getElementById('default-zoom');
-        const zoomValue = document.getElementById('zoom-value');
-        if (zoomSlider) {
-            zoomSlider.addEventListener('input', (e) => {
-                zoomValue.textContent = e.target.value + '%';
-            });
+
+    // Theme selector
+    const themeSelect = document.getElementById("theme-select");
+    if (themeSelect) {
+      themeSelect.addEventListener("change", (e) => {
+        if (e.target.value === "dark") {
+          document.body.classList.add("dark-mode");
+        } else if (e.target.value === "light") {
+          document.body.classList.remove("dark-mode");
         }
-        
-        // Theme selector
-        const themeSelect = document.getElementById('theme-select');
-        if (themeSelect) {
-            themeSelect.addEventListener('change', (e) => {
-                if (e.target.value === 'dark') {
-                    document.body.classList.add('dark-mode');
-                } else if (e.target.value === 'light') {
-                    document.body.classList.remove('dark-mode');
-                }
-            });
-        }
+      });
     }
-    
-    toggleSettingsPanel() {
-        const panel = document.getElementById('settings-panel');
-        if (panel) {
-            panel.classList.toggle('visible');
-            
-            // Load current settings
-            if (panel.classList.contains('visible')) {
-                this.loadCurrentSettings();
-            }
-        }
+  }
+
+  toggleSettingsPanel() {
+    const panel = document.getElementById("settings-panel");
+    if (panel) {
+      panel.classList.toggle("visible");
+
+      // Load current settings
+      if (panel.classList.contains("visible")) {
+        this.loadCurrentSettings();
+      }
     }
-    
-    closeSettingsPanel() {
-        const panel = document.getElementById('settings-panel');
-        if (panel) {
-            panel.classList.remove('visible');
-        }
+  }
+
+  closeSettingsPanel() {
+    const panel = document.getElementById("settings-panel");
+    if (panel) {
+      panel.classList.remove("visible");
     }
-    
-    async loadCurrentSettings() {
-        if (window.electronAPI && window.electronAPI.getSettings) {
-            const settings = await window.electronAPI.getSettings();
-            
-            // Apply to UI
-            const homepageInput = document.getElementById('homepage-input');
-            if (homepageInput) homepageInput.value = settings.homepage || 'https://www.google.com';
-            
-            const searchEngine = document.getElementById('search-engine');
-            if (searchEngine) searchEngine.value = settings.searchEngine || 'google';
-            
-            const blockAds = document.getElementById('block-ads');
-            if (blockAds) blockAds.checked = settings.adBlockEnabled !== false;
-            
-            const themeSelect = document.getElementById('theme-select');
-            if (themeSelect && settings.darkMode) {
-                themeSelect.value = 'dark';
-            }
-        }
+  }
+
+  async loadCurrentSettings() {
+    if (window.electronAPI && window.electronAPI.getSettings) {
+      const settings = await window.electronAPI.getSettings();
+
+      // Apply to UI
+      const homepageInput = document.getElementById("homepage-input");
+      if (homepageInput)
+        homepageInput.value = settings.homepage || "https://www.google.com";
+
+      const searchEngine = document.getElementById("search-engine");
+      if (searchEngine) searchEngine.value = settings.searchEngine || "google";
+
+      const blockAds = document.getElementById("block-ads");
+      if (blockAds) blockAds.checked = settings.adBlockEnabled !== false;
+
+      const themeSelect = document.getElementById("theme-select");
+      if (themeSelect && settings.darkMode) {
+        themeSelect.value = "dark";
+      }
     }
-    
-    async saveSettings() {
-        const settings = {
-            homepage: document.getElementById('homepage-input')?.value || 'https://www.google.com',
-            searchEngine: document.getElementById('search-engine')?.value || 'google',
-            darkMode: document.getElementById('theme-select')?.value === 'dark',
-            adBlockEnabled: document.getElementById('block-ads')?.checked,
-            trackingProtection: document.getElementById('block-trackers')?.checked,
-            naturalAsymmetry: document.getElementById('enable-na')?.checked,
-            memoryOptimization: document.getElementById('memory-limit')?.value || 'balanced',
-            defaultZoom: parseInt(document.getElementById('default-zoom')?.value || 100)
-        };
-        
-        if (window.electronAPI && window.electronAPI.saveSettings) {
-            await window.electronAPI.saveSettings(settings);
-            console.log('✅ Settings saved!');
-        }
-        
-        this.closeSettingsPanel();
+  }
+
+  async saveSettings() {
+    const settings = {
+      homepage:
+        document.getElementById("homepage-input")?.value ||
+        "https://www.google.com",
+      searchEngine: document.getElementById("search-engine")?.value || "google",
+      darkMode: document.getElementById("theme-select")?.value === "dark",
+      adBlockEnabled: document.getElementById("block-ads")?.checked,
+      trackingProtection: document.getElementById("block-trackers")?.checked,
+      naturalAsymmetry: document.getElementById("enable-na")?.checked,
+      memoryOptimization:
+        document.getElementById("memory-limit")?.value || "balanced",
+      defaultZoom: parseInt(
+        document.getElementById("default-zoom")?.value || 100,
+      ),
+    };
+
+    if (window.electronAPI && window.electronAPI.saveSettings) {
+      await window.electronAPI.saveSettings(settings);
+      console.log("✅ Settings saved!");
     }
-    
-    // 2. BOOKMARKS PANEL - Full viewer implementation
-    initializeBookmarksPanel() {
-        this.createBookmarksPanel();
-        
-        const bookmarkBtn = document.getElementById('bookmark-btn');
-        if (bookmarkBtn) {
-            // Change click behavior to show panel instead of just toggling
-            bookmarkBtn.removeEventListener('click', this.browser.toggleBookmark);
-            bookmarkBtn.addEventListener('click', () => this.toggleBookmarksPanel());
-        }
-        
-        console.log('✅ Bookmarks Panel: FULLY IMPLEMENTED!');
+
+    this.closeSettingsPanel();
+  }
+
+  // 2. BOOKMARKS PANEL - Full viewer implementation
+  initializeBookmarksPanel() {
+    this.createBookmarksPanel();
+
+    const bookmarkBtn = document.getElementById("bookmark-btn");
+    if (bookmarkBtn) {
+      // Change click behavior to show panel instead of just toggling
+      bookmarkBtn.removeEventListener("click", this.browser.toggleBookmark);
+      bookmarkBtn.addEventListener("click", () => this.toggleBookmarksPanel());
     }
-    
-    createBookmarksPanel() {
-        const panelHTML = `
+
+    console.log("✅ Bookmarks Panel: FULLY IMPLEMENTED!");
+  }
+
+  createBookmarksPanel() {
+    const panelHTML = `
         <div id="bookmarks-panel" class="side-panel">
             <div class="panel-header">
                 <h2>⭐ Bookmarks</h2>
@@ -429,8 +436,8 @@ class BrowserEnhancements {
                 </div>
             </div>
         </div>`;
-        
-        const styles = `
+
+    const styles = `
         <style>
         .side-panel {
             position: fixed;
@@ -566,179 +573,187 @@ class BrowserEnhancements {
             opacity: 0.5;
         }
         </style>`;
-        
-        // Add to DOM
-        const div = document.createElement('div');
-        div.innerHTML = styles + panelHTML;
-        document.body.appendChild(div);
-        
-        // Wire search
-        const searchInput = document.getElementById('bookmarks-search');
-        if (searchInput) {
-            searchInput.addEventListener('input', (e) => this.filterBookmarks(e.target.value));
-        }
+
+    // Add to DOM
+    const div = document.createElement("div");
+    div.innerHTML = styles + panelHTML;
+    document.body.appendChild(div);
+
+    // Wire search
+    const searchInput = document.getElementById("bookmarks-search");
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) =>
+        this.filterBookmarks(e.target.value),
+      );
     }
-    
-    toggleBookmarksPanel() {
-        const panel = document.getElementById('bookmarks-panel');
-        if (panel) {
-            panel.classList.toggle('visible');
-            
-            if (panel.classList.contains('visible')) {
-                this.loadBookmarks();
-            }
-        }
+  }
+
+  toggleBookmarksPanel() {
+    const panel = document.getElementById("bookmarks-panel");
+    if (panel) {
+      panel.classList.toggle("visible");
+
+      if (panel.classList.contains("visible")) {
+        this.loadBookmarks();
+      }
     }
-    
-    closeBookmarksPanel() {
-        const panel = document.getElementById('bookmarks-panel');
-        if (panel) {
-            panel.classList.remove('visible');
-        }
+  }
+
+  closeBookmarksPanel() {
+    const panel = document.getElementById("bookmarks-panel");
+    if (panel) {
+      panel.classList.remove("visible");
     }
-    
-    async loadBookmarks() {
-        let bookmarks = [];
-        
-        if (window.electronAPI && window.electronAPI.getBookmarks) {
-            bookmarks = await window.electronAPI.getBookmarks();
-        } else {
-            bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '[]');
-        }
-        
-        const listEl = document.getElementById('bookmarks-list');
-        const emptyEl = document.getElementById('no-bookmarks');
-        
-        if (bookmarks.length === 0) {
-            listEl.style.display = 'none';
-            emptyEl.style.display = 'block';
-        } else {
-            listEl.style.display = 'block';
-            emptyEl.style.display = 'none';
-            
-            listEl.innerHTML = bookmarks.map(bookmark => `
+  }
+
+  async loadBookmarks() {
+    let bookmarks = [];
+
+    if (window.electronAPI && window.electronAPI.getBookmarks) {
+      bookmarks = await window.electronAPI.getBookmarks();
+    } else {
+      bookmarks = JSON.parse(localStorage.getItem("bookmarks") || "[]");
+    }
+
+    const listEl = document.getElementById("bookmarks-list");
+    const emptyEl = document.getElementById("no-bookmarks");
+
+    if (bookmarks.length === 0) {
+      listEl.style.display = "none";
+      emptyEl.style.display = "block";
+    } else {
+      listEl.style.display = "block";
+      emptyEl.style.display = "none";
+
+      listEl.innerHTML = bookmarks
+        .map(
+          (bookmark) => `
                 <div class="bookmark-item" data-url="${bookmark.url}">
                     <div class="bookmark-info">
-                        <div class="bookmark-title">${bookmark.title || 'Untitled'}</div>
+                        <div class="bookmark-title">${bookmark.title || "Untitled"}</div>
                         <div class="bookmark-url">${bookmark.url}</div>
                     </div>
                     <button class="bookmark-remove" onclick="browserEnhancements.removeBookmark('${bookmark.id || bookmark.url}')">×</button>
                 </div>
-            `).join('');
-            
-            // Add click handlers
-            document.querySelectorAll('.bookmark-item').forEach(item => {
-                item.addEventListener('click', (e) => {
-                    if (!e.target.classList.contains('bookmark-remove')) {
-                        const url = item.dataset.url;
-                        this.browser.navigate(url);
-                        this.closeBookmarksPanel();
-                    }
-                });
-            });
-        }
-    }
-    
-    async addCurrentPageBookmark() {
-        const url = document.getElementById('url-bar').value;
-        const title = document.title || url;
-        
-        if (window.electronAPI && window.electronAPI.addBookmark) {
-            await window.electronAPI.addBookmark({ url, title });
-        } else {
-            let bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '[]');
-            bookmarks.push({
-                id: Date.now().toString(),
-                url,
-                title,
-                date: new Date().toISOString()
-            });
-            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-        }
-        
-        this.loadBookmarks();
-        
-        // Visual feedback
-        const btn = document.getElementById('bookmark-btn');
-        if (btn) {
-            btn.style.background = 'rgba(255, 200, 0, 0.5)';
-            setTimeout(() => {
-                btn.style.background = '';
-            }, 1000);
-        }
-    }
-    
-    async removeBookmark(id) {
-        if (window.electronAPI && window.electronAPI.removeBookmark) {
-            await window.electronAPI.removeBookmark(id);
-        } else {
-            let bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '[]');
-            bookmarks = bookmarks.filter(b => b.id !== id && b.url !== id);
-            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-        }
-        
-        this.loadBookmarks();
-    }
-    
-    filterBookmarks(query) {
-        const items = document.querySelectorAll('.bookmark-item');
-        const searchLower = query.toLowerCase();
-        
-        items.forEach(item => {
-            const title = item.querySelector('.bookmark-title').textContent.toLowerCase();
-            const url = item.querySelector('.bookmark-url').textContent.toLowerCase();
-            
-            if (title.includes(searchLower) || url.includes(searchLower)) {
-                item.style.display = 'flex';
-            } else {
-                item.style.display = 'none';
-            }
+            `,
+        )
+        .join("");
+
+      // Add click handlers
+      document.querySelectorAll(".bookmark-item").forEach((item) => {
+        item.addEventListener("click", (e) => {
+          if (!e.target.classList.contains("bookmark-remove")) {
+            const url = item.dataset.url;
+            this.browser.navigate(url);
+            this.closeBookmarksPanel();
+          }
         });
+      });
     }
-    
-    // 3. HISTORY PANEL - Enhanced implementation
-    initializeHistoryPanel() {
-        // History panel is already created in browser.html via history-panel.js
-        // Just enhance it
-        const historyBtn = document.getElementById('history-btn');
-        if (historyBtn && !historyBtn.hasEnhancement) {
-            historyBtn.hasEnhancement = true;
-            console.log('✅ History Panel: ENHANCED!');
-        }
+  }
+
+  async addCurrentPageBookmark() {
+    const url = document.getElementById("url-bar").value;
+    const title = document.title || url;
+
+    if (window.electronAPI && window.electronAPI.addBookmark) {
+      await window.electronAPI.addBookmark({ url, title });
+    } else {
+      let bookmarks = JSON.parse(localStorage.getItem("bookmarks") || "[]");
+      bookmarks.push({
+        id: Date.now().toString(),
+        url,
+        title,
+        date: new Date().toISOString(),
+      });
+      localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     }
-    
-    // 4. DOWNLOADS PANEL - Create new implementation
-    initializeDownloadsPanel() {
-        // Downloads panel is loaded via download-manager.js
-        // Just ensure it's properly wired
-        const downloadsBtn = document.getElementById('downloads-btn');
-        if (downloadsBtn && !downloadsBtn.hasEnhancement) {
-            downloadsBtn.hasEnhancement = true;
-            console.log('✅ Downloads Panel: WIRED!');
-        }
+
+    this.loadBookmarks();
+
+    // Visual feedback
+    const btn = document.getElementById("bookmark-btn");
+    if (btn) {
+      btn.style.background = "rgba(255, 200, 0, 0.5)";
+      setTimeout(() => {
+        btn.style.background = "";
+      }, 1000);
     }
-    
-    // 5. FIND IN PAGE - Ctrl+F implementation
-    initializeFindInPage() {
-        this.createFindBar();
-        
-        // Add keyboard shortcut
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && e.key === 'f') {
-                e.preventDefault();
-                this.toggleFindBar();
-            }
-            
-            if (e.key === 'Escape' && this.findInPageVisible) {
-                this.closeFindBar();
-            }
-        });
-        
-        console.log('✅ Find in Page: IMPLEMENTED!');
+  }
+
+  async removeBookmark(id) {
+    if (window.electronAPI && window.electronAPI.removeBookmark) {
+      await window.electronAPI.removeBookmark(id);
+    } else {
+      let bookmarks = JSON.parse(localStorage.getItem("bookmarks") || "[]");
+      bookmarks = bookmarks.filter((b) => b.id !== id && b.url !== id);
+      localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     }
-    
-    createFindBar() {
-        const findBarHTML = `
+
+    this.loadBookmarks();
+  }
+
+  filterBookmarks(query) {
+    const items = document.querySelectorAll(".bookmark-item");
+    const searchLower = query.toLowerCase();
+
+    items.forEach((item) => {
+      const title = item
+        .querySelector(".bookmark-title")
+        .textContent.toLowerCase();
+      const url = item.querySelector(".bookmark-url").textContent.toLowerCase();
+
+      if (title.includes(searchLower) || url.includes(searchLower)) {
+        item.style.display = "flex";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
+  // 3. HISTORY PANEL - Enhanced implementation
+  initializeHistoryPanel() {
+    // History panel is already created in browser.html via history-panel.js
+    // Just enhance it
+    const historyBtn = document.getElementById("history-btn");
+    if (historyBtn && !historyBtn.hasEnhancement) {
+      historyBtn.hasEnhancement = true;
+      console.log("✅ History Panel: ENHANCED!");
+    }
+  }
+
+  // 4. DOWNLOADS PANEL - Create new implementation
+  initializeDownloadsPanel() {
+    // Downloads panel is loaded via download-manager.js
+    // Just ensure it's properly wired
+    const downloadsBtn = document.getElementById("downloads-btn");
+    if (downloadsBtn && !downloadsBtn.hasEnhancement) {
+      downloadsBtn.hasEnhancement = true;
+      console.log("✅ Downloads Panel: WIRED!");
+    }
+  }
+
+  // 5. FIND IN PAGE - Ctrl+F implementation
+  initializeFindInPage() {
+    this.createFindBar();
+
+    // Add keyboard shortcut
+    document.addEventListener("keydown", (e) => {
+      if (e.ctrlKey && e.key === "f") {
+        e.preventDefault();
+        this.toggleFindBar();
+      }
+
+      if (e.key === "Escape" && this.findInPageVisible) {
+        this.closeFindBar();
+      }
+    });
+
+    console.log("✅ Find in Page: IMPLEMENTED!");
+  }
+
+  createFindBar() {
+    const findBarHTML = `
         <div id="find-bar" class="find-bar">
             <input type="text" id="find-input" placeholder="Find in page..." class="find-input">
             <span id="find-results" class="find-results">0 of 0</span>
@@ -746,8 +761,8 @@ class BrowserEnhancements {
             <button id="find-next" class="find-btn" title="Next">↓</button>
             <button id="find-close" class="find-close" onclick="browserEnhancements.closeFindBar()">×</button>
         </div>`;
-        
-        const styles = `
+
+    const styles = `
         <style>
         .find-bar {
             position: fixed;
@@ -831,127 +846,133 @@ class BrowserEnhancements {
             background: rgba(0, 0, 0, 0.1);
         }
         </style>`;
-        
-        const div = document.createElement('div');
-        div.innerHTML = styles + findBarHTML;
-        document.body.appendChild(div);
-        
-        // Wire up find functionality
-        const findInput = document.getElementById('find-input');
-        if (findInput) {
-            findInput.addEventListener('input', (e) => this.findInPage(e.target.value));
-            findInput.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') {
-                    e.shiftKey ? this.findPrevious() : this.findNext();
-                }
-            });
+
+    const div = document.createElement("div");
+    div.innerHTML = styles + findBarHTML;
+    document.body.appendChild(div);
+
+    // Wire up find functionality
+    const findInput = document.getElementById("find-input");
+    if (findInput) {
+      findInput.addEventListener("input", (e) =>
+        this.findInPage(e.target.value),
+      );
+      findInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.shiftKey ? this.findPrevious() : this.findNext();
         }
-        
-        document.getElementById('find-prev')?.addEventListener('click', () => this.findPrevious());
-        document.getElementById('find-next')?.addEventListener('click', () => this.findNext());
+      });
     }
-    
-    toggleFindBar() {
-        const findBar = document.getElementById('find-bar');
-        if (findBar) {
-            findBar.classList.toggle('visible');
-            this.findInPageVisible = findBar.classList.contains('visible');
-            
-            if (this.findInPageVisible) {
-                document.getElementById('find-input').focus();
-                document.getElementById('find-input').select();
-            }
-        }
+
+    document
+      .getElementById("find-prev")
+      ?.addEventListener("click", () => this.findPrevious());
+    document
+      .getElementById("find-next")
+      ?.addEventListener("click", () => this.findNext());
+  }
+
+  toggleFindBar() {
+    const findBar = document.getElementById("find-bar");
+    if (findBar) {
+      findBar.classList.toggle("visible");
+      this.findInPageVisible = findBar.classList.contains("visible");
+
+      if (this.findInPageVisible) {
+        document.getElementById("find-input").focus();
+        document.getElementById("find-input").select();
+      }
     }
-    
-    closeFindBar() {
-        const findBar = document.getElementById('find-bar');
-        if (findBar) {
-            findBar.classList.remove('visible');
-            this.findInPageVisible = false;
-            
-            // Clear highlights
-            if (window.electronAPI && window.electronAPI.clearFind) {
-                window.electronAPI.clearFind();
-            }
-        }
+  }
+
+  closeFindBar() {
+    const findBar = document.getElementById("find-bar");
+    if (findBar) {
+      findBar.classList.remove("visible");
+      this.findInPageVisible = false;
+
+      // Clear highlights
+      if (window.electronAPI && window.electronAPI.clearFind) {
+        window.electronAPI.clearFind();
+      }
     }
-    
-    async findInPage(text) {
-        if (!text) {
-            document.getElementById('find-results').textContent = '0 of 0';
-            return;
+  }
+
+  async findInPage(text) {
+    if (!text) {
+      document.getElementById("find-results").textContent = "0 of 0";
+      return;
+    }
+
+    if (window.electronAPI && window.electronAPI.findInPage) {
+      const result = await window.electronAPI.findInPage(text);
+      document.getElementById("find-results").textContent =
+        `${result.activeMatchOrdinal || 0} of ${result.matches || 0}`;
+    } else {
+      // Fallback for non-Electron
+      console.log("Find in page:", text);
+    }
+  }
+
+  async findNext() {
+    if (window.electronAPI && window.electronAPI.findNext) {
+      await window.electronAPI.findNext();
+    }
+  }
+
+  async findPrevious() {
+    if (window.electronAPI && window.electronAPI.findPrevious) {
+      await window.electronAPI.findPrevious();
+    }
+  }
+
+  // 6. ZOOM CONTROLS - Page zoom functionality
+  initializeZoomControls() {
+    this.currentZoom = 100;
+
+    // Add keyboard shortcuts
+    document.addEventListener("keydown", (e) => {
+      if (e.ctrlKey) {
+        if (e.key === "+" || e.key === "=") {
+          e.preventDefault();
+          this.zoomIn();
+        } else if (e.key === "-") {
+          e.preventDefault();
+          this.zoomOut();
+        } else if (e.key === "0") {
+          e.preventDefault();
+          this.resetZoom();
         }
-        
-        if (window.electronAPI && window.electronAPI.findInPage) {
-            const result = await window.electronAPI.findInPage(text);
-            document.getElementById('find-results').textContent = 
-                `${result.activeMatchOrdinal || 0} of ${result.matches || 0}`;
+      }
+    });
+
+    // Add mouse wheel zoom
+    document.addEventListener("wheel", (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault();
+        if (e.deltaY < 0) {
+          this.zoomIn();
         } else {
-            // Fallback for non-Electron
-            console.log('Find in page:', text);
+          this.zoomOut();
         }
-    }
-    
-    async findNext() {
-        if (window.electronAPI && window.electronAPI.findNext) {
-            await window.electronAPI.findNext();
-        }
-    }
-    
-    async findPrevious() {
-        if (window.electronAPI && window.electronAPI.findPrevious) {
-            await window.electronAPI.findPrevious();
-        }
-    }
-    
-    // 6. ZOOM CONTROLS - Page zoom functionality
-    initializeZoomControls() {
-        this.currentZoom = 100;
-        
-        // Add keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey) {
-                if (e.key === '+' || e.key === '=') {
-                    e.preventDefault();
-                    this.zoomIn();
-                } else if (e.key === '-') {
-                    e.preventDefault();
-                    this.zoomOut();
-                } else if (e.key === '0') {
-                    e.preventDefault();
-                    this.resetZoom();
-                }
-            }
-        });
-        
-        // Add mouse wheel zoom
-        document.addEventListener('wheel', (e) => {
-            if (e.ctrlKey) {
-                e.preventDefault();
-                if (e.deltaY < 0) {
-                    this.zoomIn();
-                } else {
-                    this.zoomOut();
-                }
-            }
-        });
-        
-        // Create zoom indicator
-        this.createZoomIndicator();
-        
-        console.log('✅ Zoom Controls: IMPLEMENTED!');
-    }
-    
-    createZoomIndicator() {
-        const zoomHTML = `
+      }
+    });
+
+    // Create zoom indicator
+    this.createZoomIndicator();
+
+    console.log("✅ Zoom Controls: IMPLEMENTED!");
+  }
+
+  createZoomIndicator() {
+    const zoomHTML = `
         <div id="zoom-indicator" class="zoom-indicator">
             <button onclick="browserEnhancements.zoomOut()">-</button>
             <span id="zoom-level">100%</span>
             <button onclick="browserEnhancements.zoomIn()">+</button>
         </div>`;
-        
-        const styles = `
+
+    const styles = `
         <style>
         .zoom-indicator {
             position: fixed;
@@ -985,112 +1006,112 @@ class BrowserEnhancements {
             background: rgba(255, 255, 255, 0.3);
         }
         </style>`;
-        
-        const div = document.createElement('div');
-        div.innerHTML = styles + zoomHTML;
-        document.body.appendChild(div);
+
+    const div = document.createElement("div");
+    div.innerHTML = styles + zoomHTML;
+    document.body.appendChild(div);
+  }
+
+  async zoomIn() {
+    this.currentZoom = Math.min(this.currentZoom + 10, 300);
+    await this.setZoom(this.currentZoom);
+  }
+
+  async zoomOut() {
+    this.currentZoom = Math.max(this.currentZoom - 10, 50);
+    await this.setZoom(this.currentZoom);
+  }
+
+  async resetZoom() {
+    this.currentZoom = 100;
+    await this.setZoom(this.currentZoom);
+  }
+
+  async setZoom(level) {
+    if (window.electronAPI && window.electronAPI.setZoom) {
+      await window.electronAPI.setZoom(level / 100);
+    } else {
+      document.body.style.zoom = level + "%";
     }
-    
-    async zoomIn() {
-        this.currentZoom = Math.min(this.currentZoom + 10, 300);
-        await this.setZoom(this.currentZoom);
+
+    // Show zoom indicator temporarily
+    const indicator = document.getElementById("zoom-indicator");
+    const levelSpan = document.getElementById("zoom-level");
+
+    if (indicator && levelSpan) {
+      levelSpan.textContent = level + "%";
+      indicator.classList.add("visible");
+
+      clearTimeout(this.zoomTimeout);
+      this.zoomTimeout = setTimeout(() => {
+        indicator.classList.remove("visible");
+      }, 2000);
     }
-    
-    async zoomOut() {
-        this.currentZoom = Math.max(this.currentZoom - 10, 50);
-        await this.setZoom(this.currentZoom);
+  }
+
+  // 7. PRINT FUNCTIONALITY
+  initializePrintFunction() {
+    // Add keyboard shortcut
+    document.addEventListener("keydown", (e) => {
+      if (e.ctrlKey && e.key === "p") {
+        e.preventDefault();
+        this.print();
+      }
+    });
+
+    console.log("✅ Print Function: IMPLEMENTED!");
+  }
+
+  async print() {
+    if (window.electronAPI && window.electronAPI.print) {
+      await window.electronAPI.print();
+    } else {
+      window.print();
     }
-    
-    async resetZoom() {
-        this.currentZoom = 100;
-        await this.setZoom(this.currentZoom);
+  }
+
+  // 8. AUDIO CONTROL - Pause audio when switching tabs
+  initializeAudioControl() {
+    // Listen for tab switches
+    if (window.electronAPI && window.electronAPI.onTabSwitched) {
+      window.electronAPI.onTabSwitched((data) => {
+        this.pauseBackgroundAudio();
+      });
     }
-    
-    async setZoom(level) {
-        if (window.electronAPI && window.electronAPI.setZoom) {
-            await window.electronAPI.setZoom(level / 100);
-        } else {
-            document.body.style.zoom = level + '%';
-        }
-        
-        // Show zoom indicator temporarily
-        const indicator = document.getElementById('zoom-indicator');
-        const levelSpan = document.getElementById('zoom-level');
-        
-        if (indicator && levelSpan) {
-            levelSpan.textContent = level + '%';
-            indicator.classList.add('visible');
-            
-            clearTimeout(this.zoomTimeout);
-            this.zoomTimeout = setTimeout(() => {
-                indicator.classList.remove('visible');
-            }, 2000);
-        }
+
+    console.log("✅ Audio Control: IMPLEMENTED!");
+  }
+
+  pauseBackgroundAudio() {
+    // This would normally be handled in the main process
+    // by pausing audio in non-active BrowserViews
+    if (window.electronAPI && window.electronAPI.pauseBackgroundAudio) {
+      window.electronAPI.pauseBackgroundAudio();
     }
-    
-    // 7. PRINT FUNCTIONALITY
-    initializePrintFunction() {
-        // Add keyboard shortcut
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && e.key === 'p') {
-                e.preventDefault();
-                this.print();
-            }
-        });
-        
-        console.log('✅ Print Function: IMPLEMENTED!');
-    }
-    
-    async print() {
-        if (window.electronAPI && window.electronAPI.print) {
-            await window.electronAPI.print();
-        } else {
-            window.print();
-        }
-    }
-    
-    // 8. AUDIO CONTROL - Pause audio when switching tabs
-    initializeAudioControl() {
-        // Listen for tab switches
-        if (window.electronAPI && window.electronAPI.onTabSwitched) {
-            window.electronAPI.onTabSwitched((data) => {
-                this.pauseBackgroundAudio();
-            });
-        }
-        
-        console.log('✅ Audio Control: IMPLEMENTED!');
-    }
-    
-    pauseBackgroundAudio() {
-        // This would normally be handled in the main process
-        // by pausing audio in non-active BrowserViews
-        if (window.electronAPI && window.electronAPI.pauseBackgroundAudio) {
-            window.electronAPI.pauseBackgroundAudio();
-        }
-    }
-    
-    // 9. FIX DARK MODE - Complete implementation
-    fixDarkMode() {
-        const darkModeBtn = document.getElementById('dark-mode-btn');
-        
-        if (darkModeBtn) {
-            // Remove old handler
-            const newBtn = darkModeBtn.cloneNode(true);
-            darkModeBtn.parentNode.replaceChild(newBtn, darkModeBtn);
-            
-            // Add proper handler
-            newBtn.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-                const isDark = document.body.classList.contains('dark-mode');
-                
-                // Update icon
-                newBtn.innerHTML = isDark ? 
-                    // Moon icon
-                    `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  }
+
+  // 9. FIX DARK MODE - Complete implementation
+  fixDarkMode() {
+    const darkModeBtn = document.getElementById("dark-mode-btn");
+
+    if (darkModeBtn) {
+      // Remove old handler
+      const newBtn = darkModeBtn.cloneNode(true);
+      darkModeBtn.parentNode.replaceChild(newBtn, darkModeBtn);
+
+      // Add proper handler
+      newBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.contains("dark-mode");
+
+        // Update icon
+        newBtn.innerHTML = isDark
+          ? // Moon icon
+            `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                    </svg>` :
-                    // Sun icon
-                    `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    </svg>`
+          : // Sun icon
+            `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"/>
                         <line x1="12" y1="1" x2="12" y2="3"/>
                         <line x1="12" y1="21" x2="12" y2="23"/>
@@ -1101,146 +1122,150 @@ class BrowserEnhancements {
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
                     </svg>`;
-                
-                // Save preference
-                if (window.electronAPI && window.electronAPI.saveSettings) {
-                    window.electronAPI.saveSettings({ darkMode: isDark });
-                } else {
-                    localStorage.setItem('darkMode', isDark);
-                }
-            });
-        }
-        
-        // Load saved preference
-        const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-        if (savedDarkMode) {
-            document.body.classList.add('dark-mode');
-        }
-        
-        console.log('✅ Dark Mode: FIXED!');
-    }
-    
-    // 10. WIRE "+" BUTTON in search bar
-    wirePlusButton() {
-        const plusBtn = document.querySelector('.url-status');
-        const newTabBtn = document.querySelector('.new-tab');
-        
-        if (plusBtn) {
-            plusBtn.style.cursor = 'pointer';
-            plusBtn.title = 'New Tab';
-            
-            plusBtn.addEventListener('click', () => {
-                if (this.browser && this.browser.createNewTab) {
-                    this.browser.createNewTab();
-                } else if (newTabBtn) {
-                    newTabBtn.click();
-                }
-            });
-        }
-        
-        console.log('✅ Plus Button: WIRED!');
-    }
-    
-    // 11. ENHANCE KEYBOARD SHORTCUTS
-    enhanceKeyboardShortcuts() {
-        const shortcuts = {
-            'ctrl+t': () => this.browser.createNewTab(),
-            'ctrl+w': () => this.closeCurrentTab(),
-            'ctrl+tab': () => this.nextTab(),
-            'ctrl+shift+tab': () => this.previousTab(),
-            'ctrl+l': () => {
-                document.getElementById('url-bar').focus();
-                document.getElementById('url-bar').select();
-            },
-            'ctrl+d': () => this.addCurrentPageBookmark(),
-            'ctrl+h': () => this.browser.historyPanel?.toggle(),
-            'ctrl+j': () => {
-                if (window.downloadManager) {
-                    window.downloadManager.togglePanel();
-                }
-            },
-            'ctrl+shift+delete': () => this.clearBrowsingData(),
-            'f5': () => this.browser.reload(),
-            'f11': () => this.toggleFullscreen(),
-            'f12': () => this.browser.toggleDevTools()
-        };
-        
-        document.addEventListener('keydown', (e) => {
-            let key = '';
-            if (e.ctrlKey) key += 'ctrl+';
-            if (e.shiftKey) key += 'shift+';
-            if (e.altKey) key += 'alt+';
-            key += e.key.toLowerCase();
-            
-            if (shortcuts[key]) {
-                e.preventDefault();
-                shortcuts[key]();
-            }
-        });
-        
-        console.log('✅ Keyboard Shortcuts: ENHANCED!');
-    }
-    
-    async closeCurrentTab() {
-        // Get active tab
-        const activeTab = document.querySelector('.tab.active');
-        if (activeTab) {
-            const tabId = activeTab.dataset.tabId;
-            if (this.browser && this.browser.closeTab) {
-                await this.browser.closeTab(tabId);
-            }
-        }
-    }
-    
-    nextTab() {
-        const tabs = document.querySelectorAll('.tab');
-        const activeTab = document.querySelector('.tab.active');
-        
-        if (activeTab && tabs.length > 1) {
-            let index = Array.from(tabs).indexOf(activeTab);
-            index = (index + 1) % tabs.length;
-            tabs[index].click();
-        }
-    }
-    
-    previousTab() {
-        const tabs = document.querySelectorAll('.tab');
-        const activeTab = document.querySelector('.tab.active');
-        
-        if (activeTab && tabs.length > 1) {
-            let index = Array.from(tabs).indexOf(activeTab);
-            index = (index - 1 + tabs.length) % tabs.length;
-            tabs[index].click();
-        }
-    }
-    
-    clearBrowsingData() {
-        if (confirm('Clear all browsing data?')) {
-            localStorage.clear();
-            if (window.electronAPI && window.electronAPI.clearHistory) {
-                window.electronAPI.clearHistory();
-            }
-            console.log('✅ Browsing data cleared!');
-        }
-    }
-    
-    toggleFullscreen() {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen();
+
+        // Save preference
+        if (window.electronAPI && window.electronAPI.saveSettings) {
+          window.electronAPI.saveSettings({ darkMode: isDark });
         } else {
-            document.exitFullscreen();
+          localStorage.setItem("darkMode", isDark);
         }
+      });
     }
+
+    // Load saved preference
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    if (savedDarkMode) {
+      document.body.classList.add("dark-mode");
+    }
+
+    console.log("✅ Dark Mode: FIXED!");
+  }
+
+  // 10. WIRE "+" BUTTON in search bar
+  wirePlusButton() {
+    const plusBtn = document.querySelector(".url-status");
+    const newTabBtn = document.querySelector(".new-tab");
+
+    if (plusBtn) {
+      plusBtn.style.cursor = "pointer";
+      plusBtn.title = "New Tab";
+
+      plusBtn.addEventListener("click", () => {
+        if (this.browser && this.browser.createNewTab) {
+          this.browser.createNewTab();
+        } else if (newTabBtn) {
+          newTabBtn.click();
+        }
+      });
+    }
+
+    console.log("✅ Plus Button: WIRED!");
+  }
+
+  // 11. ENHANCE KEYBOARD SHORTCUTS
+  enhanceKeyboardShortcuts() {
+    const shortcuts = {
+      "ctrl+t": () => this.browser.createNewTab(),
+      "ctrl+w": () => this.closeCurrentTab(),
+      "ctrl+tab": () => this.nextTab(),
+      "ctrl+shift+tab": () => this.previousTab(),
+      "ctrl+l": () => {
+        document.getElementById("url-bar").focus();
+        document.getElementById("url-bar").select();
+      },
+      "ctrl+d": () => this.addCurrentPageBookmark(),
+      "ctrl+h": () => this.browser.historyPanel?.toggle(),
+      "ctrl+j": () => {
+        if (window.downloadManager) {
+          window.downloadManager.togglePanel();
+        }
+      },
+      "ctrl+shift+delete": () => this.clearBrowsingData(),
+      f5: () => this.browser.reload(),
+      f11: () => this.toggleFullscreen(),
+      f12: () => this.browser.toggleDevTools(),
+    };
+
+    document.addEventListener("keydown", (e) => {
+      let key = "";
+      if (e.ctrlKey) key += "ctrl+";
+      if (e.shiftKey) key += "shift+";
+      if (e.altKey) key += "alt+";
+      key += e.key.toLowerCase();
+
+      if (shortcuts[key]) {
+        e.preventDefault();
+        shortcuts[key]();
+      }
+    });
+
+    console.log("✅ Keyboard Shortcuts: ENHANCED!");
+  }
+
+  async closeCurrentTab() {
+    // Get active tab
+    const activeTab = document.querySelector(".tab.active");
+    if (activeTab) {
+      const tabId = activeTab.dataset.tabId;
+      if (this.browser && this.browser.closeTab) {
+        await this.browser.closeTab(tabId);
+      }
+    }
+  }
+
+  nextTab() {
+    const tabs = document.querySelectorAll(".tab");
+    const activeTab = document.querySelector(".tab.active");
+
+    if (activeTab && tabs.length > 1) {
+      let index = Array.from(tabs).indexOf(activeTab);
+      index = (index + 1) % tabs.length;
+      tabs[index].click();
+    }
+  }
+
+  previousTab() {
+    const tabs = document.querySelectorAll(".tab");
+    const activeTab = document.querySelector(".tab.active");
+
+    if (activeTab && tabs.length > 1) {
+      let index = Array.from(tabs).indexOf(activeTab);
+      index = (index - 1 + tabs.length) % tabs.length;
+      tabs[index].click();
+    }
+  }
+
+  clearBrowsingData() {
+    if (confirm("Clear all browsing data?")) {
+      localStorage.clear();
+      if (window.electronAPI && window.electronAPI.clearHistory) {
+        window.electronAPI.clearHistory();
+      }
+      console.log("✅ Browsing data cleared!");
+    }
+  }
+
+  toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  }
 }
 
 // Initialize enhancements when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        window.browserEnhancements = new BrowserEnhancements(window.prismFlowBrowser);
-    });
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    window.browserEnhancements = new BrowserEnhancements(
+      window.prismFlowBrowser,
+    );
+  });
 } else {
-    // DOM already loaded
-    window.browserEnhancements = new BrowserEnhancements(window.prismFlowBrowser);
+  // DOM already loaded
+  window.browserEnhancements = new BrowserEnhancements(window.prismFlowBrowser);
 }
 
-console.log('🚀 BROWSER ENHANCEMENTS LOADED - ASYMMETRIC COMPLEXITY PARADOX IN ACTION!');
+console.log(
+  "🚀 BROWSER ENHANCEMENTS LOADED - ASYMMETRIC COMPLEXITY PARADOX IN ACTION!",
+);

@@ -1,0 +1,26 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             log_lambda   R-squared:                       0.278
+Model:                            OLS   Adj. R-squared:                 -0.011
+Method:                 Least Squares   F-statistic:                    0.7344
+Date:                Tue, 30 Sep 2025   Prob (F-statistic):              0.525
+Time:                        04:09:10   Log-Likelihood:                -8.3872
+No. Observations:                   8   AIC:                             22.77
+Df Residuals:                       5   BIC:                             23.01
+Df Model:                           2                                         
+Covariance Type:                  HC3                                         
+========================================================================================
+                           coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+Intercept               -4.9296      0.196    -25.115      0.000      -5.314      -4.545
+C(task)[T.COGNITIVE]     0.6894      0.650      1.061      0.289      -0.585       1.963
+C(task)[T.CREATIVE]     -0.2856      0.597     -0.478      0.632      -1.456       0.885
+==============================================================================
+Omnibus:                        6.769   Durbin-Watson:                   1.760
+Prob(Omnibus):                  0.034   Jarque-Bera (JB):                2.075
+Skew:                           1.199   Prob(JB):                        0.354
+Kurtosis:                       3.691   Cond. No.                         4.38
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

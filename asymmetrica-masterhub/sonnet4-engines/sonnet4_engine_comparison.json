@@ -1,0 +1,62 @@
+{
+  "domains": {
+    "Neural Networks": {
+      "measured": 0.82,
+      "classical": 0.7838,
+      "tesla": 1.053708484,
+      "sonnet4": 1.0755685975966478,
+      "classical_error": 0.0361999999999999,
+      "tesla_error": 0.233708484,
+      "sonnet4_error": 0.25556859759664785,
+      "closest_method": "Classical"
+    },
+    "DefenseKit Software": {
+      "measured": 0.752,
+      "classical": 0.7368,
+      "tesla": 0.9649999339999998,
+      "sonnet4": 0.9895345976635743,
+      "classical_error": 0.015199999999999991,
+      "tesla_error": 0.21299993399999984,
+      "sonnet4_error": 0.23753459766357432,
+      "closest_method": "Classical"
+    },
+    "Planetary Orbits": {
+      "measured": 0.604,
+      "classical": 0.627,
+      "tesla": 0.9174998600000001,
+      "sonnet4": 0.8936387977244027,
+      "classical_error": 0.02300000000000002,
+      "tesla_error": 0.3134998600000001,
+      "sonnet4_error": 0.2896387977244027,
+      "closest_method": "Classical"
+    }
+  },
+  "summary": {
+    "mae": {
+      "classical": 0.02479999999999997,
+      "tesla": 0.2534027593333333,
+      "sonnet4": 0.2609139976615416
+    },
+    "rmse": {
+      "classical": 0.02627089644454482,
+      "tesla": 0.25708026606334594,
+      "sonnet4": 0.26180694306552865
+    },
+    "correlation": {
+      "classical": 0.9998625575265817,
+      "tesla": 0.9273279876294497,
+      "sonnet4": 0.9839554169931215
+    },
+    "wins": {
+      "Classical": 3,
+      "Tesla": 0,
+      "Sonnet4": 0
+    },
+    "overall_winner": "Classical",
+    "improvements": {
+      "tesla_vs_classical_pct": -921.7853198924741,
+      "sonnet4_vs_classical_pct": -952.0725712158949,
+      "sonnet4_vs_tesla_pct": -2.9641501726221637
+    }
+  }
+}

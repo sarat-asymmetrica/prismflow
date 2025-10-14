@@ -1,14 +1,14 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from './ui/button';
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "./ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from './ui/select';
-import { Pagination } from '../types/rfq';
-import { PER_PAGE_OPTIONS } from '../constants/rfqConstants';
+} from "./ui/select";
+import { Pagination } from "../types/rfq";
+import { PER_PAGE_OPTIONS } from "../constants/rfqConstants";
 
 interface PaginationControlsProps {
   pagination: Pagination;
@@ -26,7 +26,10 @@ export function PaginationControls({
 
   return (
     <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 p-4 md:p-6 bg-white border border-[#E9ECEF] rounded-xl">
-      <p className="text-[#6C757D]" style={{ fontSize: '13px', lineHeight: '18px' }}>
+      <p
+        className="text-[#6C757D]"
+        style={{ fontSize: "13px", lineHeight: "18px" }}
+      >
         Showing {start}-{end} of {pagination.total} RFQs
       </p>
 
@@ -68,7 +71,10 @@ export function PaginationControls({
             variant="outline"
             size="icon"
             onClick={() => onPageChange(pagination.page + 1)}
-            disabled={pagination.page === pagination.totalPages || pagination.totalPages === 0}
+            disabled={
+              pagination.page === pagination.totalPages ||
+              pagination.totalPages === 0
+            }
           >
             <ChevronRight className="w-4 h-4" />
           </Button>

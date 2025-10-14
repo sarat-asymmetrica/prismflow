@@ -3,6 +3,7 @@
 ## Quick Start (The Easy Way)
 
 ### Option 1: Use Chromium Embedded Framework (CEF)
+
 This is the FASTEST way to get a working Chromium-based browser with our optimizations!
 
 ```bash
@@ -18,6 +19,7 @@ cd "C:\Projects\PrismFlow Final"
 ```
 
 ### Option 2: Fork Electron (Even Easier!)
+
 Electron = Chromium + Node.js. Many apps use it (VS Code, Discord, Slack)
 
 ```bash
@@ -34,6 +36,7 @@ npm run build
 ## Why These Approaches Work
 
 ### CEF (Chromium Embedded Framework)
+
 - **What it is**: Chromium stripped down for embedding
 - **Used by**: Spotify, Steam, Epic Games Launcher, Adobe Creative Cloud
 - **Size**: ~200MB vs 2GB+ for full Chromium
@@ -41,6 +44,7 @@ npm run build
 - **Our additions**: Natural Asymmetry resource management
 
 ### Electron
+
 - **What it is**: Chromium + Node.js for desktop apps
 - **Used by**: VS Code, Discord, WhatsApp, Figma
 - **Size**: ~150MB
@@ -50,6 +54,7 @@ npm run build
 ## The PrismFlow Optimization Strategy
 
 ### 1. Start with CEF/Electron (Proven Base)
+
 ```
 ✅ Blink rendering engine (same as Chrome)
 ✅ V8 JavaScript engine (same as Chrome)
@@ -59,6 +64,7 @@ npm run build
 ```
 
 ### 2. Remove What We Don't Need
+
 ```
 ❌ Node.js integration (if using Electron)
 ❌ Chrome sync services
@@ -69,6 +75,7 @@ npm run build
 ```
 
 ### 3. Add Natural Asymmetry Magic
+
 ```cpp
 // Our secret sauce - resource_optimizer.cpp
 optimizer.SetActiveTabLimit(30%);      // 30% CPU/RAM max
@@ -79,6 +86,7 @@ optimizer.ReserveForSystem(50%);       // 50% always free
 ## Build Requirements
 
 ### Minimal Setup (CEF Route)
+
 - Visual Studio 2022 Community (Free)
 - Windows 10 SDK
 - CMake 3.25+
@@ -87,6 +95,7 @@ optimizer.ReserveForSystem(50%);       // 50% always free
 - 20GB disk space
 
 ### Full Setup (Building Chromium)
+
 - Visual Studio 2022
 - Windows 10 SDK
 - Python 3.8+
@@ -98,6 +107,7 @@ optimizer.ReserveForSystem(50%);       // 50% always free
 ## Step-by-Step Build (CEF Method)
 
 ### 1. Install Prerequisites
+
 ```powershell
 # Install Visual Studio 2022 Community
 # Download from: https://visualstudio.microsoft.com/
@@ -114,6 +124,7 @@ winget install Kitware.CMake
 ```
 
 ### 2. Get CEF
+
 ```powershell
 # Download CEF
 Invoke-WebRequest -Uri "https://cef-builds.spotifycdn.com/cef_binary_128.4.9+g9840ad9+chromium-128.0.6613.120_windows64_minimal.tar.bz2" -OutFile "cef.tar.bz2"
@@ -125,6 +136,7 @@ Move-Item cef_binary_* third_party/cef
 ```
 
 ### 3. Build PrismFlow
+
 ```powershell
 # Create build directory
 mkdir build
@@ -138,6 +150,7 @@ cmake --build . --config Release
 ```
 
 ### 4. Run Your Optimized Browser!
+
 ```powershell
 .\Release\PrismFlow.exe
 ```
@@ -146,16 +159,17 @@ cmake --build . --config Release
 
 After our optimizations, PrismFlow should achieve:
 
-| Metric | Chrome | PrismFlow | Improvement |
-|--------|--------|-----------|-------------|
-| RAM (10 tabs) | 2GB | 500MB | 75% less |
-| CPU (idle) | 5-10% | 1-2% | 80% less |
-| Startup | 3s | <1s | 66% faster |
-| Page load | Baseline | Same | No regression |
+| Metric        | Chrome   | PrismFlow | Improvement   |
+| ------------- | -------- | --------- | ------------- |
+| RAM (10 tabs) | 2GB      | 500MB     | 75% less      |
+| CPU (idle)    | 5-10%    | 1-2%      | 80% less      |
+| Startup       | 3s       | <1s       | 66% faster    |
+| Page load     | Baseline | Same      | No regression |
 
 ## Quick Wins (Immediate Optimizations)
 
 ### 1. Disable Unnecessary Chromium Features
+
 ```cpp
 // In browser_main.cc
 command_line->AppendSwitch("disable-background-networking");
@@ -171,6 +185,7 @@ command_line->AppendSwitch("disable-sync");
 ```
 
 ### 2. Aggressive Memory Management
+
 ```cpp
 // Force garbage collection every 30 seconds
 v8::Isolate::GetCurrent()->LowMemoryNotification();
@@ -180,6 +195,7 @@ SetProcessWorkingSetSize(GetCurrentProcess(), -1, -1);
 ```
 
 ### 3. Tab Suspension
+
 ```cpp
 // Suspend background tabs after 30s
 if (tab.IsBackground() && tab.IdleTime() > 30) {
@@ -210,6 +226,6 @@ PrismFlow = (Chromium - Google - Bloat) × Natural Asymmetry
 
 ---
 
-*"We're not competing with Chrome. We're showing what Chrome could have been."*
+_"We're not competing with Chrome. We're showing what Chrome could have been."_
 
 **Build time: 30 minutes. Performance gain: 75%. Natural Asymmetry: Priceless.**

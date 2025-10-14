@@ -1,0 +1,4 @@
+metric,anova_F,anova_p,kruskal_H,kruskal_p
+time_to_peak_ratio,1325.1747185103725,0.0,8206.742340482375,0.0
+collatz_steps,7370.961867438102,0.0,9578.806546127156,0.0
+consensus_distance_zmean,1886.7098404292024,0.0,2423.004010380521,0.0

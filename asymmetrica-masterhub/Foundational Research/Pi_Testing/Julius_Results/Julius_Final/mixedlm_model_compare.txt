@@ -1,0 +1,4 @@
+Subject-level AIC: -34113.32611712889
+Subject-level BIC: -34028.99172608789
+Epoch-level AIC: -38846.30715386162
+Epoch-level BIC: -38761.97276282062

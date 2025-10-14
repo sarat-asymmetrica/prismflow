@@ -1,0 +1,9 @@
+filename,size_bytes
+synthetic_20k_dataset.csv,1053872
+synthetic_counts.csv,53
+synthetic_summaries.csv,399
+synthetic_global_tests.csv,235
+synthetic_pairwise_tests.csv,910
+regime_centroids_numbers.csv,259
+regime_centroids_music.csv,252
+SUMMARY.md,2029

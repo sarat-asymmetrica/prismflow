@@ -23,20 +23,20 @@ let alsoNeverReassigned = 123;
 
 // Violation 5: inconsistent quotes (quotes)
 const name = "John";
-const greeting = 'Hello';
+const greeting = "Hello";
 const message = "Welcome";
 
 // Violation 6: missing semicolons (semi - if prefer always)
-const x = 1
-const y = 2
-const z = 3
+const x = 1;
+const y = 2;
+const z = 3;
 
 // Violation 7: var instead of const/let (no-var)
 var oldStyle = "legacy";
 var anotherOldStyle = 456;
 
 // Violation 8: unused imports (no-unused-vars)
-import { usedFunction, unusedFunction, anotherUnused } from './utils';
+import { usedFunction, unusedFunction, anotherUnused } from "./utils";
 
 // Violation 9: multiple unused variables
 const unused1 = "test";
@@ -47,7 +47,7 @@ const unused3 = "test3";
 const { usedProp, unusedProp } = { usedProp: 1, unusedProp: 2 };
 
 // Violation 11: extra semicolons (no-extra-semi)
-const extraSemi = 10;;
+const extraSemi = 10;
 
 // Some correct code
 function correctFunction(param) {

@@ -1,0 +1,391 @@
+{
+  "timestamp": "2025-10-14T22:34:01.912283",
+  "total": 47,
+  "by_type": {
+    "TS1005": 29,
+    "TS1128": 4,
+    "TS1472": 1,
+    "TS1068": 3,
+    "TS1434": 8,
+    "TS8017": 1,
+    "TS1003": 1
+  },
+  "errors": [
+    {
+      "file": "src/download-manager.js",
+      "line": 138,
+      "column": 29,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(138,29): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 139,
+      "column": 31,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(139,31): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 145,
+      "column": 18,
+      "error_code": "TS1128",
+      "message": "Declaration or statement expected.",
+      "raw": "src/download-manager.js(145,18): error TS1128: Declaration or statement expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 152,
+      "column": 15,
+      "error_code": "TS1472",
+      "message": "'catch' or 'finally' expected.",
+      "raw": "src/download-manager.js(152,15): error TS1472: 'catch' or 'finally' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 160,
+      "column": 11,
+      "error_code": "TS1068",
+      "message": "Unexpected token. A constructor, method, accessor, or property was expected.",
+      "raw": "src/download-manager.js(160,11): error TS1068: Unexpected token. A constructor, method, accessor, or property was expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 171,
+      "column": 5,
+      "error_code": "TS1128",
+      "message": "Declaration or statement expected.",
+      "raw": "src/download-manager.js(171,5): error TS1128: Declaration or statement expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 173,
+      "column": 5,
+      "error_code": "TS1434",
+      "message": "Unexpected keyword or identifier.",
+      "raw": "src/download-manager.js(173,5): error TS1434: Unexpected keyword or identifier."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 173,
+      "column": 38,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(173,38): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 189,
+      "column": 31,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(189,31): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 198,
+      "column": 32,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(198,32): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 207,
+      "column": 32,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(207,32): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 223,
+      "column": 20,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(223,20): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 233,
+      "column": 28,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(233,28): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 245,
+      "column": 19,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(245,19): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 252,
+      "column": 19,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(252,19): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 256,
+      "column": 20,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(256,20): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 264,
+      "column": 5,
+      "error_code": "TS1434",
+      "message": "Unexpected keyword or identifier.",
+      "raw": "src/download-manager.js(264,5): error TS1434: Unexpected keyword or identifier."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 264,
+      "column": 33,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(264,33): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 272,
+      "column": 16,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(272,16): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 314,
+      "column": 27,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(314,27): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 327,
+      "column": 29,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(327,29): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 337,
+      "column": 26,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(337,26): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 348,
+      "column": 30,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(348,30): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 357,
+      "column": 23,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(357,23): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 370,
+      "column": 5,
+      "error_code": "TS1434",
+      "message": "Unexpected keyword or identifier.",
+      "raw": "src/download-manager.js(370,5): error TS1434: Unexpected keyword or identifier."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 370,
+      "column": 32,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/download-manager.js(370,32): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/download-manager.js",
+      "line": 380,
+      "column": 1,
+      "error_code": "TS1128",
+      "message": "Declaration or statement expected.",
+      "raw": "src/download-manager.js(380,1): error TS1128: Declaration or statement expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 228,
+      "column": 25,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/universal-optimization-engine.js(228,25): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 229,
+      "column": 27,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/universal-optimization-engine.js(229,27): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 232,
+      "column": 9,
+      "error_code": "TS1434",
+      "message": "Unexpected keyword or identifier.",
+      "raw": "src/universal-optimization-engine.js(232,9): error TS1434: Unexpected keyword or identifier."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 232,
+      "column": 12,
+      "error_code": "TS1068",
+      "message": "Unexpected token. A constructor, method, accessor, or property was expected.",
+      "raw": "src/universal-optimization-engine.js(232,12): error TS1068: Unexpected token. A constructor, method, accessor, or property was expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 232,
+      "column": 13,
+      "error_code": "TS1434",
+      "message": "Unexpected keyword or identifier.",
+      "raw": "src/universal-optimization-engine.js(232,13): error TS1434: Unexpected keyword or identifier."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 232,
+      "column": 24,
+      "error_code": "TS1068",
+      "message": "Unexpected token. A constructor, method, accessor, or property was expected.",
+      "raw": "src/universal-optimization-engine.js(232,24): error TS1068: Unexpected token. A constructor, method, accessor, or property was expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 232,
+      "column": 25,
+      "error_code": "TS8017",
+      "message": "Signature declarations can only be used in TypeScript files.",
+      "raw": "src/universal-optimization-engine.js(232,25): error TS8017: Signature declarations can only be used in TypeScript files."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 232,
+      "column": 43,
+      "error_code": "TS1003",
+      "message": "Identifier expected.",
+      "raw": "src/universal-optimization-engine.js(232,43): error TS1003: Identifier expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 258,
+      "column": 5,
+      "error_code": "TS1434",
+      "message": "Unexpected keyword or identifier.",
+      "raw": "src/universal-optimization-engine.js(258,5): error TS1434: Unexpected keyword or identifier."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 258,
+      "column": 37,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/universal-optimization-engine.js(258,37): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 285,
+      "column": 5,
+      "error_code": "TS1434",
+      "message": "Unexpected keyword or identifier.",
+      "raw": "src/universal-optimization-engine.js(285,5): error TS1434: Unexpected keyword or identifier."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 285,
+      "column": 40,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/universal-optimization-engine.js(285,40): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 315,
+      "column": 5,
+      "error_code": "TS1434",
+      "message": "Unexpected keyword or identifier.",
+      "raw": "src/universal-optimization-engine.js(315,5): error TS1434: Unexpected keyword or identifier."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 315,
+      "column": 36,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/universal-optimization-engine.js(315,36): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 350,
+      "column": 53,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/universal-optimization-engine.js(350,53): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 374,
+      "column": 19,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/universal-optimization-engine.js(374,19): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 395,
+      "column": 25,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/universal-optimization-engine.js(395,25): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 408,
+      "column": 41,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/universal-optimization-engine.js(408,41): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 437,
+      "column": 21,
+      "error_code": "TS1005",
+      "message": "';' expected.",
+      "raw": "src/universal-optimization-engine.js(437,21): error TS1005: ';' expected."
+    },
+    {
+      "file": "src/universal-optimization-engine.js",
+      "line": 465,
+      "column": 1,
+      "error_code": "TS1128",
+      "message": "Declaration or statement expected.",
+      "raw": "src/universal-optimization-engine.js(465,1): error TS1128: Declaration or statement expected."
+    }
+  ]
+}

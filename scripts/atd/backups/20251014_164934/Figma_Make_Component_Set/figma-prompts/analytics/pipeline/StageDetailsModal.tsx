@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../ui/dialog';
-import { StageData, Deal } from './types';
-import { formatCurrency, formatNumber, formatDuration } from './utils';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
-import { Input } from '../ui/input';
-import { Button } from '../ui/button';
-import { Badge } from '../ui/badge';
-import { Hash, DollarSign, TrendingUp, Clock, Search, Download, ArrowUpDown } from 'lucide-react';
-import { Card } from '../ui/card';
+import React, { useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
+import { StageData, Deal } from "./types";
+import { formatCurrency, formatNumber, formatDuration } from "./utils";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../ui/table";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import {
+  Hash,
+  DollarSign,
+  TrendingUp,
+  Clock,
+  Search,
+  Download,
+  ArrowUpDown,
+} from "lucide-react";
+import { Card } from "../ui/card";
 
 interface StageDetailsModalProps {
   stage: StageData | null;
@@ -17,8 +32,13 @@ interface StageDetailsModalProps {
   onDealClick?: (deal: Deal) => void;
 }
 
-type SortField = 'name' | 'customerName' | 'value' | 'daysInStage' | 'winProbability';
-type SortDirection = 'asc' | 'desc';
+type SortField =
+  | "name"
+  | "customerName"
+  | "value"
+  | "daysInStage"
+  | "winProbability";
+type SortDirection = "asc" | "desc";
 
 export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
   stage,
@@ -27,9 +47,9 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
   onClose,
   onDealClick,
 }) => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [sortField, setSortField] = useState<SortField>('value');
-  const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortField, setSortField] = useState<SortField>("value");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 10;
 
@@ -37,30 +57,31 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
-      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
     } else {
       setSortField(field);
-      setSortDirection('desc');
+      setSortDirection("desc");
     }
   };
 
-  const filteredDeals = stage.deals.filter(deal =>
-    deal.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    deal.customerName.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredDeals = stage.deals.filter(
+    (deal) =>
+      deal.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      deal.customerName.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   const sortedDeals = [...filteredDeals].sort((a, b) => {
-    const multiplier = sortDirection === 'asc' ? 1 : -1;
+    const multiplier = sortDirection === "asc" ? 1 : -1;
     switch (sortField) {
-      case 'name':
+      case "name":
         return multiplier * a.name.localeCompare(b.name);
-      case 'customerName':
+      case "customerName":
         return multiplier * a.customerName.localeCompare(b.customerName);
-      case 'value':
+      case "value":
         return multiplier * (a.value - b.value);
-      case 'daysInStage':
+      case "daysInStage":
         return multiplier * (a.daysInStage - b.daysInStage);
-      case 'winProbability':
+      case "winProbability":
         return multiplier * (a.winProbability - b.winProbability);
       default:
         return 0;
@@ -70,7 +91,7 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
   const totalPages = Math.ceil(sortedDeals.length / pageSize);
   const paginatedDeals = sortedDeals.slice(
     (currentPage - 1) * pageSize,
-    currentPage * pageSize
+    currentPage * pageSize,
   );
 
   const SortIcon = ({ field }: { field: SortField }) => (
@@ -78,7 +99,7 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
       size={14}
       className="inline ml-1"
       style={{
-        color: sortField === field ? color : '#6C757D',
+        color: sortField === field ? color : "#6C757D",
         opacity: sortField === field ? 1 : 0.5,
       }}
     />
@@ -96,10 +117,10 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
               <Hash size={24} color={color} />
             </div>
             <div>
-              <h2 className="text-2xl" style={{ color: '#212529' }}>
+              <h2 className="text-2xl" style={{ color: "#212529" }}>
                 {stage.name} Stage Details
               </h2>
-              <p className="text-sm mt-1" style={{ color: '#6C757D' }}>
+              <p className="text-sm mt-1" style={{ color: "#6C757D" }}>
                 Detailed breakdown and deal list
               </p>
             </div>
@@ -111,11 +132,11 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
           <Card className="p-4">
             <div className="flex items-center gap-2 mb-2">
               <Hash size={18} color={color} />
-              <span className="text-sm" style={{ color: '#6C757D' }}>
+              <span className="text-sm" style={{ color: "#6C757D" }}>
                 Total Count
               </span>
             </div>
-            <div className="text-2xl" style={{ color: '#212529' }}>
+            <div className="text-2xl" style={{ color: "#212529" }}>
               {formatNumber(stage.count)}
             </div>
           </Card>
@@ -123,11 +144,11 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
           <Card className="p-4">
             <div className="flex items-center gap-2 mb-2">
               <DollarSign size={18} color={color} />
-              <span className="text-sm" style={{ color: '#6C757D' }}>
+              <span className="text-sm" style={{ color: "#6C757D" }}>
                 Total Value
               </span>
             </div>
-            <div className="text-2xl" style={{ color: '#212529' }}>
+            <div className="text-2xl" style={{ color: "#212529" }}>
               {formatCurrency(stage.totalValue)}
             </div>
           </Card>
@@ -135,11 +156,11 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
           <Card className="p-4">
             <div className="flex items-center gap-2 mb-2">
               <TrendingUp size={18} color="#3B82F6" />
-              <span className="text-sm" style={{ color: '#6C757D' }}>
+              <span className="text-sm" style={{ color: "#6C757D" }}>
                 Avg Deal Size
               </span>
             </div>
-            <div className="text-2xl" style={{ color: '#212529' }}>
+            <div className="text-2xl" style={{ color: "#212529" }}>
               {formatCurrency(stage.avgDealSize)}
             </div>
           </Card>
@@ -147,11 +168,11 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
           <Card className="p-4">
             <div className="flex items-center gap-2 mb-2">
               <Clock size={18} color="#FF9800" />
-              <span className="text-sm" style={{ color: '#6C757D' }}>
+              <span className="text-sm" style={{ color: "#6C757D" }}>
                 Avg Time in Stage
               </span>
             </div>
-            <div className="text-2xl" style={{ color: '#212529' }}>
+            <div className="text-2xl" style={{ color: "#212529" }}>
               {formatDuration(stage.avgTimeInStage)}
             </div>
           </Card>
@@ -163,7 +184,7 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
             <Search
               size={18}
               className="absolute left-3 top-1/2 -translate-y-1/2"
-              style={{ color: '#6C757D' }}
+              style={{ color: "#6C757D" }}
             />
             <Input
               placeholder="Search deals by name or customer..."
@@ -179,37 +200,40 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
         </div>
 
         {/* Deals Table */}
-        <div className="mt-6 border rounded-lg" style={{ borderColor: '#E9ECEF' }}>
+        <div
+          className="mt-6 border rounded-lg"
+          style={{ borderColor: "#E9ECEF" }}
+        >
           <Table>
             <TableHeader>
               <TableRow>
                 <TableHead
                   className="cursor-pointer hover:bg-gray-50"
-                  onClick={() => handleSort('name')}
+                  onClick={() => handleSort("name")}
                 >
                   Deal Name <SortIcon field="name" />
                 </TableHead>
                 <TableHead
                   className="cursor-pointer hover:bg-gray-50"
-                  onClick={() => handleSort('customerName')}
+                  onClick={() => handleSort("customerName")}
                 >
                   Customer <SortIcon field="customerName" />
                 </TableHead>
                 <TableHead
                   className="cursor-pointer hover:bg-gray-50"
-                  onClick={() => handleSort('value')}
+                  onClick={() => handleSort("value")}
                 >
                   Value <SortIcon field="value" />
                 </TableHead>
                 <TableHead
                   className="cursor-pointer hover:bg-gray-50"
-                  onClick={() => handleSort('daysInStage')}
+                  onClick={() => handleSort("daysInStage")}
                 >
                   Days in Stage <SortIcon field="daysInStage" />
                 </TableHead>
                 <TableHead
                   className="cursor-pointer hover:bg-gray-50"
-                  onClick={() => handleSort('winProbability')}
+                  onClick={() => handleSort("winProbability")}
                 >
                   Win Probability <SortIcon field="winProbability" />
                 </TableHead>
@@ -231,9 +255,13 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
                     <Badge
                       variant="outline"
                       style={{
-                        backgroundColor: deal.daysInStage > 7 ? 'rgba(255, 152, 0, 0.1)' : 'transparent',
-                        color: deal.daysInStage > 7 ? '#FF9800' : '#6C757D',
-                        borderColor: deal.daysInStage > 7 ? '#FF9800' : '#E9ECEF',
+                        backgroundColor:
+                          deal.daysInStage > 7
+                            ? "rgba(255, 152, 0, 0.1)"
+                            : "transparent",
+                        color: deal.daysInStage > 7 ? "#FF9800" : "#6C757D",
+                        borderColor:
+                          deal.daysInStage > 7 ? "#FF9800" : "#E9ECEF",
                       }}
                     >
                       {deal.daysInStage}d
@@ -243,7 +271,7 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
                     <div className="flex items-center gap-2">
                       <div
                         className="h-2 rounded-full flex-1"
-                        style={{ backgroundColor: '#E9ECEF', width: '60px' }}
+                        style={{ backgroundColor: "#E9ECEF", width: "60px" }}
                       >
                         <div
                           className="h-full rounded-full"
@@ -253,12 +281,12 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
                           }}
                         />
                       </div>
-                      <span className="text-sm" style={{ color: '#6C757D' }}>
+                      <span className="text-sm" style={{ color: "#6C757D" }}>
                         {deal.winProbability}%
                       </span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-sm" style={{ color: '#6C757D' }}>
+                  <TableCell className="text-sm" style={{ color: "#6C757D" }}>
                     {deal.ownerName}
                   </TableCell>
                   <TableCell>
@@ -282,25 +310,29 @@ export const StageDetailsModal: React.FC<StageDetailsModalProps> = ({
         {/* Pagination */}
         {totalPages > 1 && (
           <div className="flex items-center justify-between mt-4">
-            <div className="text-sm" style={{ color: '#6C757D' }}>
-              Showing {(currentPage - 1) * pageSize + 1} to {Math.min(currentPage * pageSize, sortedDeals.length)} of {sortedDeals.length} deals
+            <div className="text-sm" style={{ color: "#6C757D" }}>
+              Showing {(currentPage - 1) * pageSize + 1} to{" "}
+              {Math.min(currentPage * pageSize, sortedDeals.length)} of{" "}
+              {sortedDeals.length} deals
             </div>
             <div className="flex items-center gap-2">
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
               >
                 Previous
               </Button>
-              <div className="text-sm" style={{ color: '#6C757D' }}>
+              <div className="text-sm" style={{ color: "#6C757D" }}>
                 Page {currentPage} of {totalPages}
               </div>
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                onClick={() =>
+                  setCurrentPage((p) => Math.min(totalPages, p + 1))
+                }
                 disabled={currentPage === totalPages}
               >
                 Next

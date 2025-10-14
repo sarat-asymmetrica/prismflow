@@ -1,0 +1,236 @@
+
+> prismflow-browser@1.0.0 typecheck
+> tsc --noEmit
+
+__tests__/browser.e2e.js(433,29): error TS2304: Cannot find name 'page'.
+__tests__/browser.e2e.js(439,17): error TS2304: Cannot find name 'page'.
+__tests__/browser.e2e.js(440,17): error TS2304: Cannot find name 'page'.
+browser-enhanced.js(1139,20): error TS2322: Type '{ 'Cross-Origin-Embedder-Policy': string[]; 'Cross-Origin-Opener-Policy': string[]; }' is not assignable to type 'Headers'.
+  Property ''Cross-Origin-Embedder-Policy'' is incompatible with index signature.
+    Type 'string[]' is not assignable to type 'string'.
+emergence-scan.js(30,20): error TS2339: Property 'endsWith' does not exist on type 'string | Buffer<ArrayBufferLike>'.
+  Property 'endsWith' does not exist on type 'Buffer<ArrayBufferLike>'.
+emergence-scan.js(30,41): error TS2339: Property 'endsWith' does not exist on type 'string | Buffer<ArrayBufferLike>'.
+  Property 'endsWith' does not exist on type 'Buffer<ArrayBufferLike>'.
+emergence-scan.js(34,59): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(72,59): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(100,59): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(127,76): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(128,83): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(129,70): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(130,72): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(131,71): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(132,73): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(133,72): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(134,76): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+emergence-scan.js(153,40): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+final-test.js(94,22): error TS2365: Operator '>' cannot be applied to types 'string' and 'number'.
+quick-audit.js(11,73): error TS2339: Property 'endsWith' does not exist on type 'string | Buffer<ArrayBufferLike>'.
+  Property 'endsWith' does not exist on type 'Buffer<ArrayBufferLike>'.
+quick-audit.js(11,94): error TS2339: Property 'endsWith' does not exist on type 'string | Buffer<ArrayBufferLike>'.
+  Property 'endsWith' does not exist on type 'Buffer<ArrayBufferLike>'.
+quick-audit.js(19,59): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+quick-audit.js(76,53): error TS2345: Argument of type 'string | Buffer<ArrayBufferLike>' is not assignable to parameter of type 'string'.
+  Type 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+quick-audit.js(84,37): error TS2339: Property 'endsWith' does not exist on type 'string | Buffer<ArrayBufferLike>'.
+  Property 'endsWith' does not exist on type 'Buffer<ArrayBufferLike>'.
+quick-audit.js(85,39): error TS2339: Property 'endsWith' does not exist on type 'string | Buffer<ArrayBufferLike>'.
+  Property 'endsWith' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/ai-browser-integration.js(28,20): error TS2304: Cannot find name 'NaturalAsymmetryOrchestrator'.
+src/ai-browser-integration.js(29,37): error TS2304: Cannot find name 'NaturalAsymmetryOrchestrator'.
+src/ai-browser-integration.js(102,74): error TS2339: Property 'webkitSpeechRecognition' does not exist on type '(Window & typeof globalThis & Record<"webkitSpeechRecognition", unknown>) | (Window & typeof globalThis & Record<"SpeechRecognition", unknown>)'.
+  Property 'webkitSpeechRecognition' does not exist on type 'Window & typeof globalThis & Record<"SpeechRecognition", unknown>'.
+src/ai-browser-integration.js(121,26): error TS2339: Property 'tagName' does not exist on type 'EventTarget'.
+src/ai-browser-integration.js(121,56): error TS2339: Property 'tagName' does not exist on type 'EventTarget'.
+src/ai-browser-integration.js(121,84): error TS2339: Property 'tagName' does not exist on type 'EventTarget'.
+src/ai-browser-integration.js(207,28): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/ai-browser-integration.js(208,28): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/ai-browser-integration.js(259,37): error TS2339: Property 'value' does not exist on type 'Element'.
+src/ai-browser-integration.js(269,23): error TS2339: Property 'value' does not exist on type 'Element'.
+src/ai-browser-integration.js(288,23): error TS2339: Property 'key' does not exist on type 'Event'.
+src/ai-browser-integration.js(296,55): error TS2339: Property 'focus' does not exist on type 'Element'.
+src/ai-browser-integration.js(505,16): error TS2339: Property 'aiBrowserIntegration' does not exist on type 'Window & typeof globalThis'.
+src/ai-browser-integration.js(512,12): error TS2339: Property 'aiBrowserIntegration' does not exist on type 'Window & typeof globalThis'.
+src/browser-enhancements.js(302,44): error TS2339: Property 'dataset' does not exist on type 'Element'.
+src/browser-enhancements.js(318,50): error TS2339: Property 'value' does not exist on type 'EventTarget'.
+src/browser-enhancements.js(326,30): error TS2339: Property 'value' does not exist on type 'EventTarget'.
+src/browser-enhancements.js(328,37): error TS2339: Property 'value' does not exist on type 'EventTarget'.
+src/browser-enhancements.js(355,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(355,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(356,43): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(360,46): error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(363,44): error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(366,36): error TS2339: Property 'checked' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(370,29): error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(377,66): error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(378,69): error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(379,64): error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(380,67): error TS2339: Property 'checked' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(381,76): error TS2339: Property 'checked' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(382,69): error TS2339: Property 'checked' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(383,74): error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(384,76): error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(387,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(387,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(388,26): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(578,88): error TS2339: Property 'value' does not exist on type 'EventTarget'.
+src/browser-enhancements.js(603,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(603,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(604,38): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(632,35): error TS2339: Property 'classList' does not exist on type 'EventTarget'.
+src/browser-enhancements.js(633,42): error TS2339: Property 'dataset' does not exist on type 'Element'.
+src/browser-enhancements.js(643,56): error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(646,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(646,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(647,26): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(672,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(672,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(673,26): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(692,22): error TS2339: Property 'style' does not exist on type 'Element'.
+src/browser-enhancements.js(694,22): error TS2339: Property 'style' does not exist on type 'Element'.
+src/browser-enhancements.js(704,39): error TS2339: Property 'hasEnhancement' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(705,24): error TS2339: Property 'hasEnhancement' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(715,43): error TS2339: Property 'hasEnhancement' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(716,26): error TS2339: Property 'hasEnhancement' does not exist on type 'HTMLElement'.
+src/browser-enhancements.js(842,81): error TS2339: Property 'value' does not exist on type 'EventTarget'.
+src/browser-enhancements.js(862,55): error TS2551: Property 'select' does not exist on type 'HTMLElement'. Did you mean 'onselect'?
+src/browser-enhancements.js(874,24): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(874,46): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(875,24): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(886,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(886,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(887,41): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(897,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(897,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(898,26): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(903,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(903,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(904,26): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1010,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1010,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1011,26): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1045,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1045,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1046,26): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1055,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1055,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1056,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1067,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1067,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1068,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1087,24): error TS2339: Property 'innerHTML' does not exist on type 'Node'.
+src/browser-enhancements.js(1106,28): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1106,50): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1107,28): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1109,54): error TS2345: Argument of type 'boolean' is not assignable to parameter of type 'string'.
+src/browser-enhancements.js(1129,21): error TS2339: Property 'style' does not exist on type 'Element'.
+src/browser-enhancements.js(1130,21): error TS2339: Property 'title' does not exist on type 'Element'.
+src/browser-enhancements.js(1136,31): error TS2339: Property 'click' does not exist on type 'Element'.
+src/browser-enhancements.js(1153,52): error TS2551: Property 'select' does not exist on type 'HTMLElement'. Did you mean 'onselect'?
+src/browser-enhancements.js(1158,28): error TS2339: Property 'downloadManager' does not exist on type 'Window & typeof globalThis'.
+src/browser-enhancements.js(1159,28): error TS2339: Property 'downloadManager' does not exist on type 'Window & typeof globalThis'.
+src/browser-enhancements.js(1188,37): error TS2339: Property 'dataset' does not exist on type 'Element'.
+src/browser-enhancements.js(1202,25): error TS2339: Property 'click' does not exist on type 'Element'.
+src/browser-enhancements.js(1213,25): error TS2339: Property 'click' does not exist on type 'Element'.
+src/browser-enhancements.js(1220,24): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1220,46): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1221,24): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/browser-enhancements.js(1239,16): error TS2339: Property 'browserEnhancements' does not exist on type 'Window & typeof globalThis'.
+src/browser-enhancements.js(1239,69): error TS2339: Property 'prismFlowBrowser' does not exist on type 'Window & typeof globalThis'.
+src/browser-enhancements.js(1243,12): error TS2339: Property 'browserEnhancements' does not exist on type 'Window & typeof globalThis'.
+src/browser-enhancements.js(1243,65): error TS2339: Property 'prismFlowBrowser' does not exist on type 'Window & typeof globalThis'.
+src/dark-mode.js(287,12): error TS2339: Property 'darkModeSystem' does not exist on type 'Window & typeof globalThis'.
+src/diaphanous/adaptive_color_engine.js(37,20): error TS2551: Property 'navigation' does not exist on type 'Window & typeof globalThis'. Did you mean 'navigator'?
+src/diaphanous/adaptive_color_engine.js(38,20): error TS2551: Property 'navigation' does not exist on type 'Window & typeof globalThis'. Did you mean 'navigator'?
+src/diaphanous/adaptive_color_engine.js(284,20): error TS2339: Property 'cefQuery' does not exist on type 'Window & typeof globalThis'.
+src/diaphanous/adaptive_color_engine.js(284,39): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/diaphanous/adaptive_color_engine.js(335,20): error TS2339: Property 'cefQuery' does not exist on type 'Window & typeof globalThis'.
+src/diaphanous/adaptive_color_engine.js(337,20): error TS2339: Property 'cefQuery' does not exist on type 'Window & typeof globalThis'.
+src/diaphanous/adaptive_color_engine.js(343,27): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/diaphanous/adaptive_color_engine.js(345,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/diaphanous/adaptive_color_engine.js(353,16): error TS2339: Property 'adaptiveColorEngine' does not exist on type 'Window & typeof globalThis'.
+src/diaphanous/adaptive_color_engine.js(356,12): error TS2339: Property 'adaptiveColorEngine' does not exist on type 'Window & typeof globalThis'.
+src/download-manager.js(134,24): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/download-manager.js(134,46): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/download-manager.js(136,45): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/download-manager.js(265,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/download-manager.js(265,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/download-manager.js(266,26): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/download-manager.js(374,32): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/download-manager.js(374,54): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/download-manager.js(375,26): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/download-manager.js(383,8): error TS2339: Property 'downloadManager' does not exist on type 'Window & typeof globalThis'.
+src/history-panel.js(32,109): error TS2339: Property 'value' does not exist on type 'EventTarget'.
+src/keyboard-shortcuts.js(191,27): error TS2339: Property 'contentEditable' does not exist on type 'Element'.
+src/keyboard-shortcuts.js(235,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/keyboard-shortcuts.js(235,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/keyboard-shortcuts.js(236,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/keyboard-shortcuts.js(249,28): error TS2339: Property 'browserAPI' does not exist on type 'Window & typeof globalThis'.
+src/keyboard-shortcuts.js(249,47): error TS2339: Property 'browserAPI' does not exist on type 'Window & typeof globalThis'.
+src/keyboard-shortcuts.js(252,28): error TS2339: Property 'browserAPI' does not exist on type 'Window & typeof globalThis'.
+src/keyboard-shortcuts.js(252,47): error TS2339: Property 'browserAPI' does not exist on type 'Window & typeof globalThis'.
+src/keyboard-shortcuts.js(268,28): error TS2339: Property 'bookmarksManager' does not exist on type 'Window & typeof globalThis'.
+src/keyboard-shortcuts.js(268,53): error TS2339: Property 'bookmarksManager' does not exist on type 'Window & typeof globalThis'.
+src/keyboard-shortcuts.js(279,28): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/keyboard-shortcuts.js(279,48): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/keyboard-shortcuts.js(339,74): error TS2339: Property 'value' does not exist on type 'Element'.
+src/keyboard-shortcuts.js(348,50): error TS2339: Property 'focus' does not exist on type 'Element'.
+src/keyboard-shortcuts.js(356,20): error TS2339: Property 'find' does not exist on type 'Window & typeof globalThis'.
+src/keyboard-shortcuts.js(357,20): error TS2339: Property 'find' does not exist on type 'Window & typeof globalThis'.
+src/keyboard-shortcuts.js(665,12): error TS2339: Property 'keyboardShortcuts' does not exist on type 'Window & typeof globalThis'.
+src/tab-enhancements.js(17,20): error TS2339: Property 'audioAPI' does not exist on type 'Window & typeof globalThis'.
+src/tab-enhancements.js(18,20): error TS2339: Property 'audioAPI' does not exist on type 'Window & typeof globalThis'.
+src/tab-enhancements.js(22,20): error TS2339: Property 'audioAPI' does not exist on type 'Window & typeof globalThis'.
+src/tab-enhancements.js(28,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/tab-enhancements.js(28,42): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/tab-enhancements.js(29,20): error TS2551: Property 'electronAPI' does not exist on type 'Window & typeof globalThis'. Did you mean 'Electron'?
+src/tab-enhancements.js(110,31): error TS2339: Property 'style' does not exist on type 'Element'.
+src/tab-enhancements.js(125,31): error TS2339: Property 'style' does not exist on type 'Element'.
+src/tab-enhancements.js(146,32): error TS2339: Property 'style' does not exist on type 'Element'.
+src/tab-enhancements.js(147,32): error TS2339: Property 'style' does not exist on type 'Element'.
+src/tab-enhancements.js(149,32): error TS2339: Property 'style' does not exist on type 'Element'.
+src/tab-enhancements.js(150,32): error TS2339: Property 'style' does not exist on type 'Element'.
+src/tab-enhancements.js(152,32): error TS2339: Property 'style' does not exist on type 'Element'.
+src/tab-enhancements.js(153,32): error TS2339: Property 'style' does not exist on type 'Element'.
+src/tab-enhancements.js(273,45): error TS2345: Argument of type 'EventTarget' is not assignable to parameter of type 'Node'.
+  Type 'EventTarget' is missing the following properties from type 'Node': baseURI, childNodes, firstChild, isConnected, and 43 more.
+src/tab-enhancements.js(274,31): error TS2339: Property 'closest' does not exist on type 'EventTarget'.
+src/tab-enhancements.js(359,16): error TS2339: Property 'tabEnhancements' does not exist on type 'Window & typeof globalThis'.
+src/tab-enhancements.js(359,61): error TS2339: Property 'prismFlowBrowser' does not exist on type 'Window & typeof globalThis'.
+src/tab-enhancements.js(362,12): error TS2339: Property 'tabEnhancements' does not exist on type 'Window & typeof globalThis'.
+src/tab-enhancements.js(362,57): error TS2339: Property 'prismFlowBrowser' does not exist on type 'Window & typeof globalThis'.
+src/universal-optimization-engine.js(75,68): error TS2551: Property 'webkitAudioContext' does not exist on type 'Window & typeof globalThis'. Did you mean 'AudioContext'?
+src/universal-optimization-engine.js(106,18): error TS2339: Property 'audioEnabled' does not exist on type 'UniversalOptimizationEngine'.
+src/universal-optimization-engine.js(351,41): error TS2339: Property 'audioEnabled' does not exist on type 'UniversalOptimizationEngine'.
+src/universal-optimization-engine.js(471,12): error TS2339: Property 'UniversalOptimizationEngine' does not exist on type 'Window & typeof globalThis'.
+src/webrtc-integration.js(188,29): error TS2339: Property 'srcObject' does not exist on type 'HTMLElement'.
+src/webrtc-integration.js(225,28): error TS2339: Property 'srcObject' does not exist on type 'HTMLElement'.
+src/webrtc-integration.js(249,24): error TS2339: Property 'srcObject' does not exist on type 'HTMLElement'.
+src/webrtc-integration.js(297,26): error TS2353: Object literal may only specify known properties, and 'cursor' does not exist in type 'MediaTrackConstraints'.
+src/webrtc-integration.js(301,24): error TS2339: Property 'srcObject' does not exist on type 'HTMLElement'.
+src/webrtc-integration.js(397,36): error TS2339: Property 'srcObject' does not exist on type 'HTMLElement'.
+src/webrtc-integration.js(398,38): error TS2339: Property 'srcObject' does not exist on type 'HTMLElement'.
+src/webrtc-integration.js(613,12): error TS2339: Property 'webrtcIntegration' does not exist on type 'Window & typeof globalThis'.
+test-all-features.js(290,13): error TS2365: Operator '>=' cannot be applied to types 'string' and 'number'.
+test-all-features.js(292,20): error TS2365: Operator '>=' cannot be applied to types 'string' and 'number'.
+test-browser-quick.js(101,59): error TS2339: Property 'value' does not exist on type 'Element'.
+test-browser-quick.js(114,35): error TS2339: Property 'getContext' does not exist on type 'Element'.
+test-new-features.js(81,39): error TS2345: Argument of type '"Shift+/"' is not assignable to parameter of type 'KeyInput'.
+test-new-features.js(219,9): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+test-new-features.js(221,16): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+test-tab-switching.js(52,78): error TS2339: Property 'dataset' does not exist on type 'Element'.
+test-tab-switching.js(53,80): error TS2339: Property 'dataset' does not exist on type 'Element'.
+test-tab-switching.js(92,71): error TS2339: Property 'value' does not exist on type 'Element'.

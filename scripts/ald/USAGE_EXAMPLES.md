@@ -9,6 +9,7 @@ python scripts/ald/ald_v1.py analyze
 ```
 
 **Output**:
+
 ```
 ======================================================================
 ASYMMETRICA LINTING DOCTOR V1 - VIOLATION ANALYSIS
@@ -37,6 +38,7 @@ python scripts/ald/ald_v1.py fix
 ```
 
 **Output**:
+
 ```
 [PHASE 1/6] Git Safety Checkpoint
 ----------------------------------------------------------------------
@@ -106,6 +108,7 @@ python scripts/ald/ald_v1.py fix --dry-run
 ```
 
 **Output**:
+
 ```
 [PHASE 1/6] Git Safety Checkpoint
 ----------------------------------------------------------------------
@@ -132,6 +135,7 @@ python scripts/ald/ald_v1.py fix --rule no-unused-vars
 ```
 
 **Output**:
+
 ```
 [PHASE 2/6] Baseline Violation Count
 ----------------------------------------------------------------------
@@ -274,7 +278,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Run ALD V1
         run: python scripts/ald/ald_v1.py fix
@@ -474,6 +478,7 @@ done
 ## Success Patterns
 
 ### ✅ Do This
+
 - Run `analyze` before `fix` (understand what will change)
 - Use `--dry-run` for large projects
 - Fix one rule at a time for large violation counts
@@ -481,6 +486,7 @@ done
 - Commit frequently (after each successful fix)
 
 ### ❌ Don't Do This
+
 - Don't run on uncommitted changes (commit first!)
 - Don't skip the analyze step
 - Don't ignore remaining manual violations
@@ -489,4 +495,4 @@ done
 ---
 
 **ALD V1 Usage Examples**
-*Pattern: ATD V3 D3 | Enterprise D3 Quality*
+_Pattern: ATD V3 D3 | Enterprise D3 Quality_

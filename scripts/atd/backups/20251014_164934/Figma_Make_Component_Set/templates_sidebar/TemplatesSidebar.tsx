@@ -24,12 +24,42 @@ import { toast } from "sonner@2.0.3";
 
 // Template type configuration
 const TEMPLATE_TYPES = [
-  { type: "whatsapp" as TemplateType, label: "WhatsApp", icon: MessageSquare, color: "#25D366" },
-  { type: "call" as TemplateType, label: "Call", icon: Phone, color: "#FF6B6B" },
-  { type: "email" as TemplateType, label: "Email", icon: Mail, color: "#3B82F6" },
-  { type: "meeting" as TemplateType, label: "Meeting", icon: Calendar, color: "#8B5CF6" },
-  { type: "note" as TemplateType, label: "Note", icon: FileText, color: "#FFD166" },
-  { type: "task" as TemplateType, label: "Task", icon: CheckSquare, color: "#06D6A0" },
+  {
+    type: "whatsapp" as TemplateType,
+    label: "WhatsApp",
+    icon: MessageSquare,
+    color: "#25D366",
+  },
+  {
+    type: "call" as TemplateType,
+    label: "Call",
+    icon: Phone,
+    color: "#FF6B6B",
+  },
+  {
+    type: "email" as TemplateType,
+    label: "Email",
+    icon: Mail,
+    color: "#3B82F6",
+  },
+  {
+    type: "meeting" as TemplateType,
+    label: "Meeting",
+    icon: Calendar,
+    color: "#8B5CF6",
+  },
+  {
+    type: "note" as TemplateType,
+    label: "Note",
+    icon: FileText,
+    color: "#FFD166",
+  },
+  {
+    type: "task" as TemplateType,
+    label: "Task",
+    icon: CheckSquare,
+    color: "#06D6A0",
+  },
 ];
 
 export function TemplatesSidebar({
@@ -38,7 +68,7 @@ export function TemplatesSidebar({
   isCollapsed = false,
   onToggle,
   onApply,
-  onCreateNew
+  onCreateNew,
 }: TemplatesSidebarProps) {
   const [collapsed, setCollapsed] = useState(isCollapsed);
   const [searchValue, setSearchValue] = useState("");
@@ -58,7 +88,7 @@ export function TemplatesSidebar({
     toggleFavorite,
     deleteTemplate,
     searchTemplates,
-    filterByType
+    filterByType,
   } = useTemplates(userId);
 
   // Load GSAP
@@ -72,7 +102,7 @@ export function TemplatesSidebar({
         window.gsap.from(sidebarRef.current, {
           x: 320,
           duration: 0.4,
-          ease: "power1.inOut"
+          ease: "power1.inOut",
         });
       }
     };
@@ -92,23 +122,26 @@ export function TemplatesSidebar({
         opacity: 0,
         duration: 0.4,
         stagger: 0.05,
-        ease: "power2.out"
+        ease: "power2.out",
       });
     }
   }, [loading, templates.length, activeFilter, searchValue]);
 
   // Debounced search
-  const handleSearchChange = useCallback((value: string) => {
-    setSearchValue(value);
-    
-    if (searchTimeoutRef.current) {
-      clearTimeout(searchTimeoutRef.current);
-    }
+  const handleSearchChange = useCallback(
+    (value: string) => {
+      setSearchValue(value);
 
-    searchTimeoutRef.current = setTimeout(() => {
-      searchTemplates(value);
-    }, 300);
-  }, [searchTemplates]);
+      if (searchTimeoutRef.current) {
+        clearTimeout(searchTimeoutRef.current);
+      }
+
+      searchTimeoutRef.current = setTimeout(() => {
+        searchTemplates(value);
+      }, 300);
+    },
+    [searchTemplates],
+  );
 
   const handleToggleCollapse = () => {
     const newCollapsed = !collapsed;
@@ -119,7 +152,7 @@ export function TemplatesSidebar({
       window.gsap.to(sidebarRef.current, {
         x: newCollapsed ? 320 : 0,
         duration: 0.4,
-        ease: "power1.inOut"
+        ease: "power1.inOut",
       });
     }
   };
@@ -154,14 +187,14 @@ export function TemplatesSidebar({
   };
 
   const getTypeIcon = (type: TemplateType) => {
-    const config = TEMPLATE_TYPES.find(t => t.type === type);
+    const config = TEMPLATE_TYPES.find((t) => t.type === type);
     if (!config) return null;
     const Icon = config.icon;
     return <Icon size={16} />;
   };
 
   const getTypeColor = (type: TemplateType) => {
-    return TEMPLATE_TYPES.find(t => t.type === type)?.color || "#6C63FF";
+    return TEMPLATE_TYPES.find((t) => t.type === type)?.color || "#6C63FF";
   };
 
   const showCreateButton = role === "ADMIN" || role === "SUPERADMIN";
@@ -182,7 +215,7 @@ export function TemplatesSidebar({
       <div
         className="h-[72px] px-6 flex items-center justify-between"
         style={{
-          background: "linear-gradient(135deg, #6C63FF, #5A52E0)"
+          background: "linear-gradient(135deg, #6C63FF, #5A52E0)",
         }}
       >
         <div className="flex items-center gap-3">
@@ -200,9 +233,15 @@ export function TemplatesSidebar({
       </div>
 
       {/* Search Bar */}
-      <div className="h-[64px] px-6 py-3 bg-[#F8F9FA] border-b border-[#E9ECEF]" role="search">
+      <div
+        className="h-[64px] px-6 py-3 bg-[#F8F9FA] border-b border-[#E9ECEF]"
+        role="search"
+      >
         <div className="relative">
-          <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6C757D]" />
+          <Search
+            size={16}
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6C757D]"
+          />
           <Input
             type="text"
             placeholder="Search templates..."
@@ -265,7 +304,10 @@ export function TemplatesSidebar({
             // Error state
             <div className="text-center py-12">
               <p className="text-[#6C757D] mb-4">Failed to load templates</p>
-              <Button variant="outline" onClick={() => window.location.reload()}>
+              <Button
+                variant="outline"
+                onClick={() => window.location.reload()}
+              >
                 Retry
               </Button>
             </div>
@@ -274,7 +316,9 @@ export function TemplatesSidebar({
             <div className="text-center py-12">
               <Layout size={48} className="mx-auto mb-4 text-[#ADB5BD]" />
               <h3 className="text-[#212529] mb-2">
-                {searchValue || activeFilter ? "No matching templates" : "No templates yet"}
+                {searchValue || activeFilter
+                  ? "No matching templates"
+                  : "No templates yet"}
               </h3>
               <p className="text-[#6C757D] text-sm mb-4">
                 {searchValue || activeFilter
@@ -282,7 +326,10 @@ export function TemplatesSidebar({
                   : "Create your first template to save time"}
               </p>
               {searchValue && (
-                <Button variant="outline" onClick={() => handleSearchChange("")}>
+                <Button
+                  variant="outline"
+                  onClick={() => handleSearchChange("")}
+                >
                   Clear Search
                 </Button>
               )}
@@ -296,7 +343,9 @@ export function TemplatesSidebar({
                     <h3 className="text-[#6C757D] text-sm uppercase tracking-wide">
                       Favorites
                     </h3>
-                    <span className="text-[#6C757D] text-xs">{favorites.length}</span>
+                    <span className="text-[#6C757D] text-xs">
+                      {favorites.length}
+                    </span>
                   </div>
                   {favorites.map((template) => (
                     <TemplateCard
@@ -320,7 +369,9 @@ export function TemplatesSidebar({
                     <h3 className="text-[#6C757D] text-sm uppercase tracking-wide">
                       Recent
                     </h3>
-                    <span className="text-[#6C757D] text-xs">{recent.length}</span>
+                    <span className="text-[#6C757D] text-xs">
+                      {recent.length}
+                    </span>
                   </div>
                   {recent.map((template) => (
                     <TemplateCard
@@ -344,7 +395,9 @@ export function TemplatesSidebar({
                     <h3 className="text-[#6C757D] text-sm uppercase tracking-wide">
                       Popular
                     </h3>
-                    <span className="text-[#6C757D] text-xs">{popular.length}</span>
+                    <span className="text-[#6C757D] text-xs">
+                      {popular.length}
+                    </span>
                   </div>
                   {popular.map((template) => (
                     <TemplateCard
@@ -368,7 +421,9 @@ export function TemplatesSidebar({
                     <h3 className="text-[#6C757D] text-sm uppercase tracking-wide">
                       Results
                     </h3>
-                    <span className="text-[#6C757D] text-xs">{templates.length}</span>
+                    <span className="text-[#6C757D] text-xs">
+                      {templates.length}
+                    </span>
                   </div>
                   {templates.map((template) => (
                     <TemplateCard
@@ -396,7 +451,7 @@ export function TemplatesSidebar({
             onClick={onCreateNew}
             className="w-full h-10 text-white border-0 rounded-lg transition-all duration-300 hover:scale-105"
             style={{
-              background: "linear-gradient(135deg, #6C63FF, #5A52E0)"
+              background: "linear-gradient(135deg, #6C63FF, #5A52E0)",
             }}
             aria-label="Create new template"
           >

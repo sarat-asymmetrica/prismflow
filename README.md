@@ -68,4 +68,4 @@ MIT - Free to use, modify, and distribute
 ---
 
 **Built with love using Natural Asymmetry principles**
-*99.995% less code, 100% more heart*
+_99.995% less code, 100% more heart_

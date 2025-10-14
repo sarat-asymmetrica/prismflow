@@ -8,37 +8,37 @@
 // ============================================================================
 // ERROR 1: Module not found
 // ============================================================================
-import { NonExistentComponent } from './components/DoesNotExist';
+import { NonExistentComponent } from "./components/DoesNotExist";
 
 // ============================================================================
 // ERROR 2: Missing npm dependency
 // ============================================================================
-import somePackage from 'package-that-does-not-exist-in-npm-registry-12345';
+import somePackage from "package-that-does-not-exist-in-npm-registry-12345";
 
 // ============================================================================
 // ERROR 3: Invalid import - wrong export name
 // ============================================================================
-import { WrongName } from '@/components/ui/button'; // Should be Button
+import { WrongName } from "@/components/ui/button"; // Should be Button
 
 // ============================================================================
 // ERROR 4: Typo in module name
 // ============================================================================
-import { Custmer } from '@/types/customer'; // Should be Customer
+import { Custmer } from "@/types/customer"; // Should be Customer
 
 // ============================================================================
 // ERROR 5: Missing file extension
 // ============================================================================
-import { helper } from './utils/helper'; // Missing .ts/.js extension
+import { helper } from "./utils/helper"; // Missing .ts/.js extension
 
 // ============================================================================
 // ERROR 6: Incorrect relative path
 // ============================================================================
-import { Config } from '../../../config/wrong-path'; // Wrong relative path
+import { Config } from "../../../config/wrong-path"; // Wrong relative path
 
 // ============================================================================
 // ERROR 7: Path alias issue
 // ============================================================================
-import { Tool } from './components/tools/Tool'; // Should use @/ alias
+import { Tool } from "./components/tools/Tool"; // Should use @/ alias
 
 // ============================================================================
 // Test Component

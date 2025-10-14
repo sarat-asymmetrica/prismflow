@@ -1,0 +1,146 @@
+{
+  "domains": [
+    "Neural Networks",
+    "DefenseKit Software",
+    "Planetary Orbits (Stable)"
+  ],
+  "fibonacci_spiral_confidences": [
+    0.6100883873688216,
+    0.7374057879547317,
+    0.9662815513108339
+  ],
+  "tesla_corrected_confidences": [
+    0.6100883873688216,
+    0.8187676238127769,
+    1.196931516309943
+  ],
+  "tesla_improvements": [
+    0.0,
+    0.08136183585804524,
+    0.23064996499910906
+  ],
+  "gap_closure_percentages": [
+    0.0,
+    35.5291859642119,
+    100.72050873323542
+  ],
+  "asymmetric_impulse_strengths": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "observer_proximity_factors": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "frequency_sensitivities": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "tesla_predictions": [
+    {
+      "preponderance": {
+        "description": "One impulse preponderates over the other",
+        "validated": false,
+        "measured_strength": 0.0,
+        "expected": "strength > 0 (asymmetric, not symmetric)",
+        "tesla_quote": "\"positive and negative impulses are not equal\""
+      },
+      "distance_effect": {
+        "description": "Observer proximity affects correction strength",
+        "validated": false,
+        "proximity_factor": 1.0,
+        "correction_magnitude": 0.0,
+        "expected": "closer observer \u2192 stronger correction",
+        "tesla_quote": "\"approach or receding of the observer\" affects rotation"
+      },
+      "frequency_sensitivity": {
+        "description": "Peak sensitivity at Tesla frequency (4.909 Hz)",
+        "validated": true,
+        "measured_sensitivity": 1.0,
+        "tesla_frequency_hz": 4.909,
+        "expected": "sensitivity \u2265 0.8 at 4.909 Hz",
+        "tesla_quote": "\"highest sensitivity\" at specific frequency"
+      },
+      "directional_bias": {
+        "description": "Preponderant direction always toward [30%, 20%, 50%]",
+        "validated": false,
+        "original_distance": 0.0,
+        "corrected_distance": 0.0,
+        "moved_toward_center": false,
+        "expected": "correction always reduces distance to center",
+        "tesla_quote": "\"rotation in a definite direction\" (never reverses)"
+      }
+    },
+    {
+      "preponderance": {
+        "description": "One impulse preponderates over the other",
+        "validated": false,
+        "measured_strength": 0.0,
+        "expected": "strength > 0 (asymmetric, not symmetric)",
+        "tesla_quote": "\"positive and negative impulses are not equal\""
+      },
+      "distance_effect": {
+        "description": "Observer proximity affects correction strength",
+        "validated": false,
+        "proximity_factor": 1.0,
+        "correction_magnitude": 0.0,
+        "expected": "closer observer \u2192 stronger correction",
+        "tesla_quote": "\"approach or receding of the observer\" affects rotation"
+      },
+      "frequency_sensitivity": {
+        "description": "Peak sensitivity at Tesla frequency (4.909 Hz)",
+        "validated": true,
+        "measured_sensitivity": 1.0,
+        "tesla_frequency_hz": 4.909,
+        "expected": "sensitivity \u2265 0.8 at 4.909 Hz",
+        "tesla_quote": "\"highest sensitivity\" at specific frequency"
+      },
+      "directional_bias": {
+        "description": "Preponderant direction always toward [30%, 20%, 50%]",
+        "validated": false,
+        "original_distance": 0.0,
+        "corrected_distance": 0.0,
+        "moved_toward_center": false,
+        "expected": "correction always reduces distance to center",
+        "tesla_quote": "\"rotation in a definite direction\" (never reverses)"
+      }
+    },
+    {
+      "preponderance": {
+        "description": "One impulse preponderates over the other",
+        "validated": false,
+        "measured_strength": 0.0,
+        "expected": "strength > 0 (asymmetric, not symmetric)",
+        "tesla_quote": "\"positive and negative impulses are not equal\""
+      },
+      "distance_effect": {
+        "description": "Observer proximity affects correction strength",
+        "validated": false,
+        "proximity_factor": 1.0,
+        "correction_magnitude": 0.0,
+        "expected": "closer observer \u2192 stronger correction",
+        "tesla_quote": "\"approach or receding of the observer\" affects rotation"
+      },
+      "frequency_sensitivity": {
+        "description": "Peak sensitivity at Tesla frequency (4.909 Hz)",
+        "validated": true,
+        "measured_sensitivity": 1.0,
+        "tesla_frequency_hz": 4.909,
+        "expected": "sensitivity \u2265 0.8 at 4.909 Hz",
+        "tesla_quote": "\"highest sensitivity\" at specific frequency"
+      },
+      "directional_bias": {
+        "description": "Preponderant direction always toward [30%, 20%, 50%]",
+        "validated": false,
+        "original_distance": 0.0,
+        "corrected_distance": 0.0,
+        "moved_toward_center": false,
+        "expected": "correction always reduces distance to center",
+        "tesla_quote": "\"rotation in a definite direction\" (never reverses)"
+      }
+    }
+  ]
+}

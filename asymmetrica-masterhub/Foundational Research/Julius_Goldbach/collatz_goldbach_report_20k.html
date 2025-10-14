@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collatz-Goldbach Center-Seeking Analysis Report</title>
+<style>body { font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; margin: 40px; line-height: 1.6; color: #333; }.header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; }.section { margin: 30px 0; padding: 20px; border-left: 4px solid #667eea; background: #f8f9fa; }.highlight { background: #e3f2fd; padding: 15px; border-radius: 5px; margin: 15px 0; }.result { background: #f1f8e9; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #4caf50; }table { border-collapse: collapse; width: 100%; margin: 15px 0; } th, td { border: 1px solid #ddd; padding: 12px; text-align: left; } th { background: #667eea; color: white; }.figure { text-align: center; margin: 20px 0; } .metric { display: inline-block; margin: 10px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }.files { background: #fff3e0; padding: 15px; border-radius: 5px; margin: 15px 0; } .footer { color: #666; font-size: 0.9em; }a { color: #1a73e8; text-decoration: none; } a:hover { text-decoration: underline; }</style>
+</head>
+<body>
+<div class="header">
+<h1>🔢 Collatz-Goldbach Center-Seeking Analysis</h1>
+<h2>Comprehensive Report: n ≤ 20,000</h2>
+<p>Generated on September 07, 2025 at 06:48 AM</p>
+<p><strong>Hypothesis:</strong> Numbers with identical prime Goldbach pairs exhibit center-seeking behavior in Collatz dynamics toward the universal [30%, 20%, 50%] regime proportion center.</p>
+</div>
+<div class="section">
+<h2>📊 Executive Summary</h2>
+<div class="result">
+<h3>Key Findings</h3>
+<ul>
+<li><strong>Statistical Significance:</strong> Identical prime pairs show significantly smaller center distances (p < 0.001)</li>
+<li><strong>Robustness:</strong> Effect persists across 4 regime definitions and 3 distance metrics</li>
+<li><strong>Predictive Power:</strong> ~98.7% ROC AUC for predicting center-seeking behavior</li>
+<li><strong>Scope:</strong> Consensus scoring, permutation tests, and SHAP model interpretation on n ≤ 20,000</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2>🎯 Methodology</h2>
+<div class="highlight">
+<h3>Center and Metrics</h3>
+<p>Universal center vector: [30%, 20%, 50%]. Distances measured using Euclidean, L1, and Jensen-Shannon divergence across regime definitions (base, altA, altB, altC). Consensus distance is the z-mean across all combinations.</p>
+</div>
+</div>
+<div class="section">
+<h2>📈 Statistical Results</h2>
+<div class="result">
+<h3>Primary Analysis (Base Regime)</h3>
+<div class="metric"><strong>Identical Prime Mean:</strong> 0.426</div>
+<div class="metric"><strong>Control Mean:</strong> 0.4754</div>
+<div class="metric"><strong>Mean Difference:</strong> -0.0494</div>
+<div class="metric"><strong>95% CI:</strong> [-0.0575, -0.0413]</div>
+<div class="metric"><strong>Mann-Whitney p:</strong> 3.86e-48</div>
+</div>
+<h3>Permutation Tests</h3>
+<div class="result">
+<p><strong>Null:</strong> No difference in center distances between groups within magnitude bins.</p>
+<div class="metric"><strong>center_distance_base:</strong><br>Observed: -0.0494<br>p-value: 0.0<br>95% Null Range: [-0.0106, 0.0069]</div>
+<div class="metric"><strong>consensus_distance_zmean:</strong><br>Observed: -0.2532<br>p-value: 0.0<br>95% Null Range: [-0.0607, 0.0331]</div>
+</div>
+<h3>Meta-Analysis (Empirical Bayes)</h3>
+<div class="result">
+<p>Meta-analysis summary not available: 'pooled_mean'</p>
+</div>
+</div>
+<div class="section">
+<h2>🤖 Machine Learning Interpretation</h2>
+<div class="highlight">
+<h3>SHAP Feature Importance</h3>
+<p><strong>Model:</strong> Gradient Boosting Classifier predicting near-center (consensus) outcomes. Out-of-sample AUC ~ 0.987.</p>
+</div>
+<h3>Top Features</h3>
+<ul>
+<li><strong>time_to_peak_ratio:</strong> 2.5094</li>
+<li><strong>collatz_steps:</strong> 0.7746</li>
+<li><strong>divergence_ratio:</strong> 0.4716</li>
+<li><strong>mod4_2:</strong> 0.3822</li>
+<li><strong>log_n:</strong> 0.0439</li>
+<li><strong>mod30_14:</strong> 0.0278</li>
+<li><strong>mod30_18:</strong> 0.0274</li>
+<li><strong>mod12_4:</strong> 0.0264</li>
+</ul>
+<div class="result"><p><strong>Insight:</strong> Dynamics features (time_to_peak_ratio, collatz_steps, divergence_ratio) dominate predictive power, suggesting the signal acts through Collatz trajectory structure.</p></div>
+</div>
+<div class="section">
+<h2>📊 Visualizations</h2>
+<div class="figure">
+<h3>Center Distance Distributions</h3>
+<img src="center_distance_boxplot_20k.png" alt="Center Distance Distributions" style="max-width:100%;height:auto;">
+</div>
+<div class="figure">
+<h3>Mean Differences by Regime</h3>
+<img src="mean_diff_by_regime_20k.png" alt="Mean Differences by Regime" style="max-width:100%;height:auto;">
+</div>
+<div class="figure">
+<h3>Consensus Distance Distribution</h3>
+<img src="consensus_distance_hist_20k.png" alt="Consensus Distance Distribution" style="max-width:100%;height:auto;">
+</div>
+<div class="figure">
+<h3>Permutation Test Null Distributions</h3>
+<img src="permutation_nulls_20k.png" alt="Permutation Test Null Distributions" style="max-width:100%;height:auto;">
+</div>
+<div class="figure">
+<h3>SHAP Feature Importance</h3>
+<img src="shap_mean_abs_bar_20k.png" alt="SHAP Feature Importance" style="max-width:100%;height:auto;">
+</div>
+</div>
+<div class="section">
+<h2>📁 Data Files</h2>
+<div class="files">
+<ul>
+<li><a href="https://julius.ai/files?filename=collatz_center_seeking_20k.csv" target="_blank">collatz_center_seeking_20k.csv</a></li>
+<li><a href="https://julius.ai/files?filename=center_distance_summary_20k.csv" target="_blank">center_distance_summary_20k.csv</a></li>
+<li><a href="https://julius.ai/files?filename=stratified_summary_20k.csv" target="_blank">stratified_summary_20k.csv</a></li>
+<li><a href="https://julius.ai/files?filename=meta_empirical_bayes_20k.csv" target="_blank">meta_empirical_bayes_20k.csv</a></li>
+<li><a href="https://julius.ai/files?filename=consensus_scores_20k.csv" target="_blank">consensus_scores_20k.csv</a></li>
+<li><a href="https://julius.ai/files?filename=permutation_summary_20k.csv" target="_blank">permutation_summary_20k.csv</a></li>
+<li><a href="https://julius.ai/files?filename=shap_feature_importance_20k.csv" target="_blank">shap_feature_importance_20k.csv</a></li>
+<li><a href="https://julius.ai/files?filename=shap_values_sample_20k.csv" target="_blank">shap_values_sample_20k.csv</a></li>
+<li><a href="https://julius.ai/files?filename=center_distance_boxplot_20k.png" target="_blank">center_distance_boxplot_20k.png</a></li>
+<li><a href="https://julius.ai/files?filename=mean_diff_by_regime_20k.png" target="_blank">mean_diff_by_regime_20k.png</a></li>
+<li><a href="https://julius.ai/files?filename=consensus_distance_hist_20k.png" target="_blank">consensus_distance_hist_20k.png</a></li>
+<li><a href="https://julius.ai/files?filename=permutation_nulls_20k.png" target="_blank">permutation_nulls_20k.png</a></li>
+<li><a href="https://julius.ai/files?filename=shap_mean_abs_bar_20k.png" target="_blank">shap_mean_abs_bar_20k.png</a></li>
+</ul>
+</div>
+</div>
+<div class="section footer">
+<p>Report generated by Julius (https://julius.ai). For account settings visit https://julius.ai/settings. Refund policy: https://julius.ai/refunds. Support: team@julius.ai</p>
+</div>
+</body>
+</html>

@@ -2,55 +2,57 @@
 // Natural Asymmetry Video/Audio Communication
 
 class WebRTCIntegration {
-    constructor() {
-        // Natural Asymmetry distribution for WebRTC
-        this.PEER_CREATION = 0.3;    // 30% - Connection establishment
-        this.MEDIA_HANDLING = 0.2;   // 20% - Audio/video processing
-        this.UI_MANAGEMENT = 0.5;    // 50% - User interface & controls
-        
-        this.localStream = null;
-        this.remoteStream = null;
-        this.peerConnection = null;
-        this.isVideoEnabled = false;
-        this.isAudioEnabled = false;
-        
-        // DOM cache for performance
-        this.domCache = {};
-        
-        this.initializeWebRTC();
+  constructor() {
+    // Natural Asymmetry distribution for WebRTC
+    this.PEER_CREATION = 0.3; // 30% - Connection establishment
+    this.MEDIA_HANDLING = 0.2; // 20% - Audio/video processing
+    this.UI_MANAGEMENT = 0.5; // 50% - User interface & controls
+
+    this.localStream = null;
+    this.remoteStream = null;
+    this.peerConnection = null;
+    this.isVideoEnabled = false;
+    this.isAudioEnabled = false;
+
+    // DOM cache for performance
+    this.domCache = {};
+
+    this.initializeWebRTC();
+  }
+
+  getCachedElement(key, selector) {
+    if (!this.domCache[key]) {
+      this.domCache[key] = document.querySelector(selector);
     }
-    
-    getCachedElement(key, selector) {
-        if (!this.domCache[key]) {
-            this.domCache[key] = document.querySelector(selector);
-        }
-        return this.domCache[key];
+    return this.domCache[key];
+  }
+
+  async initializeWebRTC() {
+    // Check WebRTC support
+    if (!this.isWebRTCSupported()) {
+      console.log("WebRTC not supported in this browser");
+      return;
     }
-    
-    async initializeWebRTC() {
-        // Check WebRTC support
-        if (!this.isWebRTCSupported()) {
-            console.log('WebRTC not supported in this browser');
-            return;
-        }
-        
-        console.log('🎥 WebRTC Integration initialized');
-        this.createUI();
-        this.setupPeerConnection();
-    }
-    
-    isWebRTCSupported() {
-        return !!(navigator.mediaDevices && 
-                 navigator.mediaDevices.getUserMedia && 
-                 window.RTCPeerConnection);
-    }
-    
-    createUI() {
-        // Create WebRTC control panel
-        const panel = document.createElement('div');
-        panel.id = 'webrtc-panel';
-        panel.className = 'webrtc-panel hidden';
-        panel.innerHTML = `
+
+    console.log("🎥 WebRTC Integration initialized");
+    this.createUI();
+    this.setupPeerConnection();
+  }
+
+  isWebRTCSupported() {
+    return !!(
+      navigator.mediaDevices &&
+      navigator.mediaDevices.getUserMedia &&
+      window.RTCPeerConnection
+    );
+  }
+
+  createUI() {
+    // Create WebRTC control panel
+    const panel = document.createElement("div");
+    panel.id = "webrtc-panel";
+    panel.className = "webrtc-panel hidden";
+    panel.innerHTML = `
             <div class="webrtc-header">
                 <h3>📹 Video Call</h3>
                 <button class="webrtc-close">×</button>
@@ -91,327 +93,330 @@ class WebRTCIntegration {
                 </div>
             </div>
         `;
-        
-        document.body.appendChild(panel);
-        this.setupEventHandlers();
-        this.addWebRTCButton();
-    }
-    
-    addWebRTCButton() {
-        // Add WebRTC button to browser toolbar
-        const toolbar = document.querySelector('.browser-toolbar');
-        if (!toolbar) return;
-        
-        const webrtcBtn = document.createElement('button');
-        webrtcBtn.className = 'nav-btn';
-        webrtcBtn.id = 'webrtc-btn';
-        webrtcBtn.title = 'Video Call';
-        webrtcBtn.innerHTML = `
+
+    document.body.appendChild(panel);
+    this.setupEventHandlers();
+    this.addWebRTCButton();
+  }
+
+  addWebRTCButton() {
+    // Add WebRTC button to browser toolbar
+    const toolbar = document.querySelector(".browser-toolbar");
+    if (!toolbar) return;
+
+    const webrtcBtn = document.createElement("button");
+    webrtcBtn.className = "nav-btn";
+    webrtcBtn.id = "webrtc-btn";
+    webrtcBtn.title = "Video Call";
+    webrtcBtn.innerHTML = `
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M23 7l-7 5 7 5V7z"/>
                 <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
             </svg>
         `;
-        
-        webrtcBtn.addEventListener('click', () => this.togglePanel());
-        
-        // Insert before menu button
-        const menuBtn = document.getElementById('menu-btn');
-        toolbar.insertBefore(webrtcBtn, menuBtn);
+
+    webrtcBtn.addEventListener("click", () => this.togglePanel());
+
+    // Insert before menu button
+    const menuBtn = document.getElementById("menu-btn");
+    toolbar.insertBefore(webrtcBtn, menuBtn);
+  }
+
+  setupEventHandlers() {
+    const panel = this.getCachedElement("panel", "#webrtc-panel");
+
+    // Panel controls
+    panel.querySelector(".webrtc-close").addEventListener("click", () => {
+      this.hidePanel();
+    });
+
+    // Media controls
+    panel.querySelector("#start-camera").addEventListener("click", () => {
+      this.toggleCamera();
+    });
+
+    panel.querySelector("#start-audio").addEventListener("click", () => {
+      this.toggleAudio();
+    });
+
+    panel.querySelector("#share-screen").addEventListener("click", () => {
+      this.shareScreen();
+    });
+
+    panel.querySelector("#end-call").addEventListener("click", () => {
+      this.endCall();
+    });
+
+    // Connection controls
+    panel.querySelector("#connect-peer").addEventListener("click", () => {
+      const peerId = panel.querySelector("#peer-id").value.trim();
+      if (peerId) {
+        this.connectToPeer(peerId);
+      }
+    });
+  }
+
+  togglePanel() {
+    const panel = this.getCachedElement("panel", "#webrtc-panel");
+    panel.classList.toggle("hidden");
+
+    if (!panel.classList.contains("hidden")) {
+      // Auto-start camera when panel opens
+      this.toggleCamera();
     }
-    
-    setupEventHandlers() {
-        const panel = this.getCachedElement('panel', '#webrtc-panel');
-        
-        // Panel controls
-        panel.querySelector('.webrtc-close').addEventListener('click', () => {
-            this.hidePanel();
+  }
+
+  hidePanel() {
+    const panel = this.getCachedElement("panel", "#webrtc-panel");
+    panel.classList.add("hidden");
+    this.endCall();
+  }
+
+  setupPeerConnection() {
+    // STUN servers for NAT traversal
+    const configuration = {
+      iceServers: [
+        { urls: "stun:stun.l.google.com:19302" },
+        { urls: "stun:stun1.l.google.com:19302" },
+      ],
+    };
+
+    this.peerConnection = new RTCPeerConnection(configuration);
+
+    // Handle remote stream
+    this.peerConnection.ontrack = (event) => {
+      const remoteVideo = document.getElementById("remote-video");
+      if (remoteVideo && event.streams[0]) {
+        remoteVideo.srcObject = event.streams[0];
+        this.remoteStream = event.streams[0];
+        console.log("🎥 Remote stream received");
+      }
+    };
+
+    // Handle connection state changes
+    this.peerConnection.onconnectionstatechange = () => {
+      const state = this.peerConnection.connectionState;
+      this.updateConnectionStatus(state);
+      console.log(`📡 Connection state: ${state}`);
+    };
+
+    // Handle ICE candidates
+    this.peerConnection.onicecandidate = (event) => {
+      if (event.candidate) {
+        // In a real implementation, send this to the remote peer
+        console.log("🧊 ICE candidate:", event.candidate);
+      }
+    };
+  }
+
+  async toggleCamera() {
+    const cameraBtn = document.getElementById("start-camera");
+    const localVideo = document.getElementById("local-video");
+
+    if (!this.isVideoEnabled) {
+      try {
+        this.localStream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+            frameRate: { ideal: 30 },
+          },
+          audio: this.isAudioEnabled,
         });
-        
-        // Media controls
-        panel.querySelector('#start-camera').addEventListener('click', () => {
-            this.toggleCamera();
-        });
-        
-        panel.querySelector('#start-audio').addEventListener('click', () => {
-            this.toggleAudio();
-        });
-        
-        panel.querySelector('#share-screen').addEventListener('click', () => {
-            this.shareScreen();
-        });
-        
-        panel.querySelector('#end-call').addEventListener('click', () => {
-            this.endCall();
-        });
-        
-        // Connection controls
-        panel.querySelector('#connect-peer').addEventListener('click', () => {
-            const peerId = panel.querySelector('#peer-id').value.trim();
-            if (peerId) {
-                this.connectToPeer(peerId);
-            }
-        });
-    }
-    
-    togglePanel() {
-        const panel = this.getCachedElement('panel', '#webrtc-panel');
-        panel.classList.toggle('hidden');
-        
-        if (!panel.classList.contains('hidden')) {
-            // Auto-start camera when panel opens
-            this.toggleCamera();
-        }
-    }
-    
-    hidePanel() {
-        const panel = this.getCachedElement('panel', '#webrtc-panel');
-        panel.classList.add('hidden');
-        this.endCall();
-    }
-    
-    setupPeerConnection() {
-        // STUN servers for NAT traversal
-        const configuration = {
-            iceServers: [
-                { urls: 'stun:stun.l.google.com:19302' },
-                { urls: 'stun:stun1.l.google.com:19302' }
-            ]
-        };
-        
-        this.peerConnection = new RTCPeerConnection(configuration);
-        
-        // Handle remote stream
-        this.peerConnection.ontrack = (event) => {
-            const remoteVideo = document.getElementById('remote-video');
-            if (remoteVideo && event.streams[0]) {
-                remoteVideo.srcObject = event.streams[0];
-                this.remoteStream = event.streams[0];
-                console.log('🎥 Remote stream received');
-            }
-        };
-        
-        // Handle connection state changes
-        this.peerConnection.onconnectionstatechange = () => {
-            const state = this.peerConnection.connectionState;
-            this.updateConnectionStatus(state);
-            console.log(`📡 Connection state: ${state}`);
-        };
-        
-        // Handle ICE candidates
-        this.peerConnection.onicecandidate = (event) => {
-            if (event.candidate) {
-                // In a real implementation, send this to the remote peer
-                console.log('🧊 ICE candidate:', event.candidate);
-            }
-        };
-    }
-    
-    async toggleCamera() {
-        const cameraBtn = document.getElementById('start-camera');
-        const localVideo = document.getElementById('local-video');
-        
-        if (!this.isVideoEnabled) {
-            try {
-                this.localStream = await navigator.mediaDevices.getUserMedia({
-                    video: { 
-                        width: { ideal: 1280 },
-                        height: { ideal: 720 },
-                        frameRate: { ideal: 30 }
-                    },
-                    audio: this.isAudioEnabled
-                });
-                
-                localVideo.srcObject = this.localStream;
-                this.isVideoEnabled = true;
-                cameraBtn.classList.add('active');
-                cameraBtn.textContent = '📷 Stop Camera';
-                
-                // Add tracks to peer connection
-                if (this.peerConnection) {
-                    this.localStream.getTracks().forEach(track => {
-                        this.peerConnection.addTrack(track, this.localStream);
-                    });
-                }
-                
-                console.log('📷 Camera started');
-            } catch (error) {
-                console.error('Camera access denied:', error);
-                alert('Camera access denied. Please allow camera access to use video calls.');
-            }
-        } else {
-            // Stop camera
-            if (this.localStream) {
-                this.localStream.getVideoTracks().forEach(track => {
-                    track.stop();
-                });
-            }
-            localVideo.srcObject = null;
-            this.isVideoEnabled = false;
-            cameraBtn.classList.remove('active');
-            cameraBtn.textContent = '📷 Camera';
-            console.log('📷 Camera stopped');
-        }
-    }
-    
-    async toggleAudio() {
-        const audioBtn = document.getElementById('start-audio');
-        
-        if (!this.isAudioEnabled) {
-            try {
-                if (!this.localStream) {
-                    this.localStream = await navigator.mediaDevices.getUserMedia({
-                        audio: true,
-                        video: this.isVideoEnabled
-                    });
-                }
-                
-                this.isAudioEnabled = true;
-                audioBtn.classList.add('active');
-                audioBtn.textContent = '🎤 Mute';
-                console.log('🎤 Audio started');
-            } catch (error) {
-                console.error('Microphone access denied:', error);
-                alert('Microphone access denied. Please allow microphone access for audio calls.');
-            }
-        } else {
-            // Mute audio
-            if (this.localStream) {
-                this.localStream.getAudioTracks().forEach(track => {
-                    track.enabled = false;
-                });
-            }
-            this.isAudioEnabled = false;
-            audioBtn.classList.remove('active');
-            audioBtn.textContent = '🎤 Mic';
-            console.log('🎤 Audio muted');
-        }
-    }
-    
-    async shareScreen() {
-        const screenBtn = document.getElementById('share-screen');
-        const localVideo = document.getElementById('local-video');
-        
-        try {
-            const screenStream = await navigator.mediaDevices.getDisplayMedia({
-                video: { cursor: 'always' },
-                audio: true
-            });
-            
-            localVideo.srcObject = screenStream;
-            screenBtn.classList.add('active');
-            screenBtn.textContent = '🖥️ Stop Share';
-            
-            // Replace video track in peer connection
-            if (this.peerConnection && this.localStream) {
-                const sender = this.peerConnection.getSenders().find(s => 
-                    s.track && s.track.kind === 'video'
-                );
-                if (sender) {
-                    await sender.replaceTrack(screenStream.getVideoTracks()[0]);
-                }
-            }
-            
-            console.log('🖥️ Screen sharing started');
-            
-            // Handle screen share end
-            screenStream.getVideoTracks()[0].onended = () => {
-                screenBtn.classList.remove('active');
-                screenBtn.textContent = '🖥️ Screen';
-                this.toggleCamera(); // Return to camera
-            };
-            
-        } catch (error) {
-            console.error('Screen sharing failed:', error);
-        }
-    }
-    
-    updateConnectionStatus(state) {
-        const statusEl = document.getElementById('connection-state');
-        const qualityEl = document.getElementById('connection-quality');
-        
-        if (statusEl) {
-            statusEl.textContent = state.charAt(0).toUpperCase() + state.slice(1);
-            statusEl.className = `status-${state}`;
-        }
-        
-        // Update quality bars based on connection state
-        if (qualityEl) {
-            const bars = qualityEl.querySelectorAll('.bar');
-            bars.forEach(bar => bar.classList.remove('active'));
-            
-            switch (state) {
-                case 'connected':
-                    bars.forEach(bar => bar.classList.add('active'));
-                    break;
-                case 'connecting':
-                    bars[0].classList.add('active');
-                    break;
-                case 'failed':
-                case 'disconnected':
-                    // No active bars
-                    break;
-            }
-        }
-    }
-    
-    async connectToPeer(peerId) {
-        console.log(`🔗 Attempting to connect to peer: ${peerId}`);
-        
-        // In a real implementation, this would:
-        // 1. Connect to signaling server
-        // 2. Exchange offer/answer with peer
-        // 3. Exchange ICE candidates
-        
-        // For demo purposes, simulate connection
-        setTimeout(() => {
-            this.updateConnectionStatus('connecting');
-            setTimeout(() => {
-                this.updateConnectionStatus('connected');
-            }, 2000);
-        }, 500);
-    }
-    
-    endCall() {
-        // Stop all media streams
-        if (this.localStream) {
-            this.localStream.getTracks().forEach(track => track.stop());
-            this.localStream = null;
-        }
-        
-        if (this.remoteStream) {
-            this.remoteStream.getTracks().forEach(track => track.stop());
-            this.remoteStream = null;
-        }
-        
-        // Close peer connection
+
+        localVideo.srcObject = this.localStream;
+        this.isVideoEnabled = true;
+        cameraBtn.classList.add("active");
+        cameraBtn.textContent = "📷 Stop Camera";
+
+        // Add tracks to peer connection
         if (this.peerConnection) {
-            this.peerConnection.close();
-            this.setupPeerConnection(); // Recreate for next call
+          this.localStream.getTracks().forEach((track) => {
+            this.peerConnection.addTrack(track, this.localStream);
+          });
         }
-        
-        // Reset UI
-        const localVideo = document.getElementById('local-video');
-        const remoteVideo = document.getElementById('remote-video');
-        
-        if (localVideo) localVideo.srcObject = null;
-        if (remoteVideo) remoteVideo.srcObject = null;
-        
-        // Reset button states
-        document.querySelectorAll('.webrtc-btn').forEach(btn => {
-            btn.classList.remove('active');
+
+        console.log("📷 Camera started");
+      } catch (error) {
+        console.error("Camera access denied:", error);
+        alert(
+          "Camera access denied. Please allow camera access to use video calls.",
+        );
+      }
+    } else {
+      // Stop camera
+      if (this.localStream) {
+        this.localStream.getVideoTracks().forEach((track) => {
+          track.stop();
         });
-        
-        document.getElementById('start-camera').textContent = '📷 Camera';
-        document.getElementById('start-audio').textContent = '🎤 Mic';
-        document.getElementById('share-screen').textContent = '🖥️ Screen';
-        
-        this.isVideoEnabled = false;
-        this.isAudioEnabled = false;
-        
-        this.updateConnectionStatus('disconnected');
-        console.log('📞 Call ended');
+      }
+      localVideo.srcObject = null;
+      this.isVideoEnabled = false;
+      cameraBtn.classList.remove("active");
+      cameraBtn.textContent = "📷 Camera";
+      console.log("📷 Camera stopped");
     }
+  }
+
+  async toggleAudio() {
+    const audioBtn = document.getElementById("start-audio");
+
+    if (!this.isAudioEnabled) {
+      try {
+        if (!this.localStream) {
+          this.localStream = await navigator.mediaDevices.getUserMedia({
+            audio: true,
+            video: this.isVideoEnabled,
+          });
+        }
+
+        this.isAudioEnabled = true;
+        audioBtn.classList.add("active");
+        audioBtn.textContent = "🎤 Mute";
+        console.log("🎤 Audio started");
+      } catch (error) {
+        console.error("Microphone access denied:", error);
+        alert(
+          "Microphone access denied. Please allow microphone access for audio calls.",
+        );
+      }
+    } else {
+      // Mute audio
+      if (this.localStream) {
+        this.localStream.getAudioTracks().forEach((track) => {
+          track.enabled = false;
+        });
+      }
+      this.isAudioEnabled = false;
+      audioBtn.classList.remove("active");
+      audioBtn.textContent = "🎤 Mic";
+      console.log("🎤 Audio muted");
+    }
+  }
+
+  async shareScreen() {
+    const screenBtn = document.getElementById("share-screen");
+    const localVideo = document.getElementById("local-video");
+
+    try {
+      const screenStream = await navigator.mediaDevices.getDisplayMedia({
+        video: { cursor: "always" },
+        audio: true,
+      });
+
+      localVideo.srcObject = screenStream;
+      screenBtn.classList.add("active");
+      screenBtn.textContent = "🖥️ Stop Share";
+
+      // Replace video track in peer connection
+      if (this.peerConnection && this.localStream) {
+        const sender = this.peerConnection
+          .getSenders()
+          .find((s) => s.track && s.track.kind === "video");
+        if (sender) {
+          await sender.replaceTrack(screenStream.getVideoTracks()[0]);
+        }
+      }
+
+      console.log("🖥️ Screen sharing started");
+
+      // Handle screen share end
+      screenStream.getVideoTracks()[0].onended = () => {
+        screenBtn.classList.remove("active");
+        screenBtn.textContent = "🖥️ Screen";
+        this.toggleCamera(); // Return to camera
+      };
+    } catch (error) {
+      console.error("Screen sharing failed:", error);
+    }
+  }
+
+  updateConnectionStatus(state) {
+    const statusEl = document.getElementById("connection-state");
+    const qualityEl = document.getElementById("connection-quality");
+
+    if (statusEl) {
+      statusEl.textContent = state.charAt(0).toUpperCase() + state.slice(1);
+      statusEl.className = `status-${state}`;
+    }
+
+    // Update quality bars based on connection state
+    if (qualityEl) {
+      const bars = qualityEl.querySelectorAll(".bar");
+      bars.forEach((bar) => bar.classList.remove("active"));
+
+      switch (state) {
+        case "connected":
+          bars.forEach((bar) => bar.classList.add("active"));
+          break;
+        case "connecting":
+          bars[0].classList.add("active");
+          break;
+        case "failed":
+        case "disconnected":
+          // No active bars
+          break;
+      }
+    }
+  }
+
+  async connectToPeer(peerId) {
+    console.log(`🔗 Attempting to connect to peer: ${peerId}`);
+
+    // In a real implementation, this would:
+    // 1. Connect to signaling server
+    // 2. Exchange offer/answer with peer
+    // 3. Exchange ICE candidates
+
+    // For demo purposes, simulate connection
+    setTimeout(() => {
+      this.updateConnectionStatus("connecting");
+      setTimeout(() => {
+        this.updateConnectionStatus("connected");
+      }, 2000);
+    }, 500);
+  }
+
+  endCall() {
+    // Stop all media streams
+    if (this.localStream) {
+      this.localStream.getTracks().forEach((track) => track.stop());
+      this.localStream = null;
+    }
+
+    if (this.remoteStream) {
+      this.remoteStream.getTracks().forEach((track) => track.stop());
+      this.remoteStream = null;
+    }
+
+    // Close peer connection
+    if (this.peerConnection) {
+      this.peerConnection.close();
+      this.setupPeerConnection(); // Recreate for next call
+    }
+
+    // Reset UI
+    const localVideo = document.getElementById("local-video");
+    const remoteVideo = document.getElementById("remote-video");
+
+    if (localVideo) localVideo.srcObject = null;
+    if (remoteVideo) remoteVideo.srcObject = null;
+
+    // Reset button states
+    document.querySelectorAll(".webrtc-btn").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    document.getElementById("start-camera").textContent = "📷 Camera";
+    document.getElementById("start-audio").textContent = "🎤 Mic";
+    document.getElementById("share-screen").textContent = "🖥️ Screen";
+
+    this.isVideoEnabled = false;
+    this.isAudioEnabled = false;
+
+    this.updateConnectionStatus("disconnected");
+    console.log("📞 Call ended");
+  }
 }
 
 // Add styles for WebRTC UI
@@ -605,17 +610,17 @@ const webrtcStyles = `
 `;
 
 // Initialize WebRTC integration
-document.addEventListener('DOMContentLoaded', () => {
-    // Add styles
-    document.head.insertAdjacentHTML('beforeend', webrtcStyles);
-    
-    // Initialize WebRTC
-    window.webrtcIntegration = new WebRTCIntegration();
-    
-    console.log('🎥 WebRTC Integration ready - Natural Asymmetry powered!');
+document.addEventListener("DOMContentLoaded", () => {
+  // Add styles
+  document.head.insertAdjacentHTML("beforeend", webrtcStyles);
+
+  // Initialize WebRTC
+  window.webrtcIntegration = new WebRTCIntegration();
+
+  console.log("🎥 WebRTC Integration ready - Natural Asymmetry powered!");
 });
 
 // Export for Node.js if needed
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = WebRTCIntegration;
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = WebRTCIntegration;
 }

@@ -1,0 +1,48 @@
+{
+  "total_tests": 6,
+  "passed": 6,
+  "pass_rate": 100.0,
+  "performance_metrics": {
+    "williams_overhead_ms": 0.00441288948059082,
+    "subprocess_speedup_min": 11330.444648549354,
+    "subprocess_speedup_max": 22660.889297098707
+  },
+  "test_results": [
+    {
+      "test": "Williams Optimizer",
+      "passed": true,
+      "duration_ms": 0.05340576171875,
+      "notes": "Efficiency: 7.53x, Space: 86.7%"
+    },
+    {
+      "test": "Three-Regime Planner",
+      "passed": true,
+      "duration_ms": 0.06508827209472656,
+      "notes": "All regime classifications correct"
+    },
+    {
+      "test": "Harmonic Timer",
+      "passed": true,
+      "duration_ms": 206.17914199829102,
+      "notes": "Period: 203.7ms, Tick took: 206.2ms"
+    },
+    {
+      "test": "Exponential Backoff",
+      "passed": true,
+      "duration_ms": 0.5517005920410156,
+      "notes": "1\u00d7=203.7ms, 2\u00d7=407.4ms, 4\u00d7=814.8ms"
+    },
+    {
+      "test": "Performance Overhead",
+      "passed": true,
+      "duration_ms": 0.00441288948059082,
+      "notes": "Per-call: 0.0044ms, Speedup vs subprocess: 11330x-22661x"
+    },
+    {
+      "test": "Tool Definitions",
+      "passed": true,
+      "duration_ms": 0.017642974853515625,
+      "notes": "All 3 tools SDK-ready: williams_optimizer, three_regime_planner, harmonic_timer"
+    }
+  ]
+}

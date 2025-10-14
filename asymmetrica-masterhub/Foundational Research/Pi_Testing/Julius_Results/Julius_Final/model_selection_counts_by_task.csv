@@ -1,0 +1,4 @@
+task,exp1,exp2,linear
+BASELINE,0,2,1
+COGNITIVE,1,7,1
+CREATIVE,0,3,2

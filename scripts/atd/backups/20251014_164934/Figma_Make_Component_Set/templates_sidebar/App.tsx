@@ -24,7 +24,9 @@ export default function App() {
 
         <div className="space-y-3">
           <div>
-            <label className="block text-sm text-[#6C757D] mb-2">User Role</label>
+            <label className="block text-sm text-[#6C757D] mb-2">
+              User Role
+            </label>
             <div className="flex flex-wrap gap-2">
               {roles.map((r) => (
                 <Badge
@@ -81,19 +83,22 @@ export default function App() {
                 style={{
                   background: "linear-gradient(135deg, #6C63FF, #5A52E0)",
                   WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent"
+                  WebkitTextFillColor: "transparent",
                 }}
               >
                 Templates Sidebar
               </h1>
               <p className="text-[#6C757D] text-lg">
-                A production-ready component built from mathematical specifications
+                A production-ready component built from mathematical
+                specifications
               </p>
             </div>
 
             <div className="space-y-6">
               <div className="p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl border border-purple-100">
-                <h3 className="text-[#212529] mb-3">Component Specifications</h3>
+                <h3 className="text-[#212529] mb-3">
+                  Component Specifications
+                </h3>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
                     <span className="text-[#6C757D]">Dimensions:</span>
@@ -105,7 +110,9 @@ export default function App() {
                   </div>
                   <div>
                     <span className="text-[#6C757D]">Base Frequency:</span>
-                    <span className="ml-2 text-[#212529]">4.909 Hz (203.7ms)</span>
+                    <span className="ml-2 text-[#212529]">
+                      4.909 Hz (203.7ms)
+                    </span>
                   </div>
                   <div>
                     <span className="text-[#6C757D]">Primary Color:</span>
@@ -123,7 +130,10 @@ export default function App() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#6C63FF] mt-1">→</span>
-                    <span>Filter by 6 template types (WhatsApp, Call, Email, Meeting, Note, Task)</span>
+                    <span>
+                      Filter by 6 template types (WhatsApp, Call, Email,
+                      Meeting, Note, Task)
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#6C63FF] mt-1">→</span>
@@ -153,11 +163,15 @@ export default function App() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-600 mt-1">✓</span>
-                    <span>Hover effects: scale(1.01) + border color + shadow</span>
+                    <span>
+                      Hover effects: scale(1.01) + border color + shadow
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-600 mt-1">✓</span>
-                    <span>Favorite toggle: rotation + scale with back.out easing</span>
+                    <span>
+                      Favorite toggle: rotation + scale with back.out easing
+                    </span>
                   </li>
                 </ul>
               </div>

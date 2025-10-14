@@ -1,0 +1,6 @@
+QC criteria: r2>=0.1, -5<lambda<5, -3<D0<3
+Counts by task after QC:
+{'COGNITIVE': 2, 'CREATIVE': 1}
+Lambda by task summary (QC):
+[{'task_category': 'COGNITIVE', 'count': 2, 'mean': 0.0398734415909264, 'std': 0.041289821189221046, 'median': 0.0398734415909264}, {'task_category': 'CREATIVE', 'count': 1, 'mean': 0.0083204160049975, 'std': nan, 'median': 0.0083204160049975}]
+Welch t and Cliff delta written to lambda_between_tasks_tests.txt

@@ -1,0 +1,52 @@
+{
+  "domains": [
+    "Neural Networks",
+    "DefenseKit Software",
+    "Planetary Orbits (Stable)"
+  ],
+  "classical_confidences": [
+    0.7623195530375334,
+    0.7336101830847546,
+    0.6037680341672546
+  ],
+  "spiral_quantum_confidences": [
+    0.6100883873688216,
+    0.7374057879547317,
+    0.9662815513108339
+  ],
+  "confidence_boosts": [
+    -0.15223116566871175,
+    0.0037956048699770983,
+    0.3625135171435794
+  ],
+  "initial_distances": [
+    0.0,
+    0.15767514071660124,
+    0.49497474683058335
+  ],
+  "final_distances": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "convergence_steps": [
+    0,
+    1,
+    1
+  ],
+  "fractal_measures": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "static_quantum_confidences": [
+    0.5807,
+    0.6021,
+    0.64
+  ],
+  "spiral_vs_static_improvements": [
+    0.029388387368821656,
+    0.1353057879547317,
+    0.3262815513108339
+  ]
+}
