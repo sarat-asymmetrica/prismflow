@@ -39,7 +39,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
     findInPage: (text, options) => ipcRenderer.invoke('find-in-page', text, options),
     stopFindInPage: (action) => ipcRenderer.invoke('stop-find-in-page', action),
     
-    // Download actions (getDownloads already defined above in Downloads section)
+    // Downloads
+    getDownloads: () => ipcRenderer.invoke('get-downloads'),
     cancelDownload: (id) => ipcRenderer.invoke('cancel-download', id),
     pauseDownload: (id) => ipcRenderer.invoke('pause-download', id),
     resumeDownload: (id) => ipcRenderer.invoke('resume-download', id),
@@ -58,16 +59,52 @@ contextBridge.exposeInMainWorld('electronAPI', {
     // DevTools
     toggleDevTools: () => ipcRenderer.invoke('toggle-devtools'),
     
-    // Events
-    onTabCreated: (cb) => ipcRenderer.on('tab-created', (e, d) => cb(d)),
-    onTabClosed: (cb) => ipcRenderer.on('tab-closed', (e, d) => cb(d)),
-    onTabSwitched: (cb) => ipcRenderer.on('tab-switched', (e, d) => cb(d)),
-    onNavigationUpdate: (cb) => ipcRenderer.on('navigation-update', (e, d) => cb(d)),
-    onTitleUpdate: (cb) => ipcRenderer.on('title-update', (e, d) => cb(d)),
-    onDownloadStarted: (cb) => ipcRenderer.on('download-started', (e, d) => cb(d)),
-    onDownloadUpdated: (cb) => ipcRenderer.on('download-updated', (e, d) => cb(d)),
-    onResourceUpdate: (cb) => ipcRenderer.on('resource-update', (e, d) => cb(d)),
-    onFindResult: (cb) => ipcRenderer.on('found-in-page', (e, d) => cb(d))
+    // Events - return cleanup functions for React useEffect
+    onTabCreated: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('tab-created', handler);
+        return () => ipcRenderer.removeListener('tab-created', handler);
+    },
+    onTabClosed: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('tab-closed', handler);
+        return () => ipcRenderer.removeListener('tab-closed', handler);
+    },
+    onTabSwitched: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('tab-switched', handler);
+        return () => ipcRenderer.removeListener('tab-switched', handler);
+    },
+    onNavigationUpdate: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('navigation-update', handler);
+        return () => ipcRenderer.removeListener('navigation-update', handler);
+    },
+    onTitleUpdate: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('title-update', handler);
+        return () => ipcRenderer.removeListener('title-update', handler);
+    },
+    onDownloadStarted: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('download-started', handler);
+        return () => ipcRenderer.removeListener('download-started', handler);
+    },
+    onDownloadUpdated: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('download-updated', handler);
+        return () => ipcRenderer.removeListener('download-updated', handler);
+    },
+    onResourceUpdate: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('resource-update', handler);
+        return () => ipcRenderer.removeListener('resource-update', handler);
+    },
+    onFindResult: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('found-in-page', handler);
+        return () => ipcRenderer.removeListener('found-in-page', handler);
+    }
 });
 
 console.log('✅ Preload: Bridge established');

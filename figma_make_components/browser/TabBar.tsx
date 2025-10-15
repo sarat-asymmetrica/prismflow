@@ -73,9 +73,15 @@ export function TabBar({
   const regularTabs = tabs.filter(t => !t.isPinned);
 
   return (
-    <div className="h-11 px-4 flex items-center gap-3 glass-surface border-b border-black/8 dark:border-white/8">
+    <div 
+      className="h-11 px-4 flex items-center gap-3 glass-surface border-b border-black/8 dark:border-white/8"
+      style={{ WebkitAppRegion: 'drag' } as React.CSSProperties}
+    >
       {/* Tabs */}
-      <div className="flex items-center gap-2 flex-1 overflow-x-auto scrollbar-hide">
+      <div 
+        className="flex items-center gap-2 flex-1 overflow-x-auto scrollbar-hide"
+        style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties}
+      >
         {/* Pinned Tabs */}
         {pinnedTabs.map((tab, index) => (
           <button
@@ -156,6 +162,7 @@ export function TabBar({
       <button
         onClick={onNewTab}
         className="w-8 h-8 rounded-full glass-surface hover:glass-surface-bright flex items-center justify-center transition-all duration-200 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+        style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties}
         title="New Tab (Ctrl+T)"
         aria-label="New tab"
       >
@@ -166,6 +173,7 @@ export function TabBar({
       <button
         onClick={onSettingsClick}
         className="w-8 h-8 rounded-full glass-surface hover:glass-surface-bright flex items-center justify-center transition-all duration-200 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+        style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties}
         title="Settings (Ctrl+,)"
         aria-label="Settings"
       >
@@ -174,7 +182,10 @@ export function TabBar({
 
       {/* Window Controls */}
       {onMinimize && (
-        <div className="flex items-center gap-1 ml-2 border-l border-black/8 dark:border-white/8 pl-2">
+        <div 
+          className="flex items-center gap-1 ml-2 border-l border-black/8 dark:border-white/8 pl-2"
+          style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties}
+        >
           <button
             onClick={onMinimize}
             className="w-8 h-8 rounded-full hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-center transition-all duration-200 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"

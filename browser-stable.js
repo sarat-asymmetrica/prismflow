@@ -173,6 +173,13 @@ function setupIPCHandlers() {
     return { success: true };
   });
 
+  ipcMain.handle("reload-tab", (event, tabId) => {
+    if (tabId && tabs.has(tabId)) {
+      tabs.get(tabId).webContents.reload();
+    }
+    return { success: true };
+  });
+
   // Bookmarks
   ipcMain.handle("add-bookmark", (event, bookmark) => {
     bookmark = bookmark || {};
@@ -456,16 +463,52 @@ contextBridge.exposeInMainWorld('electronAPI', {
     // DevTools
     toggleDevTools: () => ipcRenderer.invoke('toggle-devtools'),
     
-    // Events
-    onTabCreated: (cb) => ipcRenderer.on('tab-created', (e, d) => cb(d)),
-    onTabClosed: (cb) => ipcRenderer.on('tab-closed', (e, d) => cb(d)),
-    onTabSwitched: (cb) => ipcRenderer.on('tab-switched', (e, d) => cb(d)),
-    onNavigationUpdate: (cb) => ipcRenderer.on('navigation-update', (e, d) => cb(d)),
-    onTitleUpdate: (cb) => ipcRenderer.on('title-update', (e, d) => cb(d)),
-    onDownloadStarted: (cb) => ipcRenderer.on('download-started', (e, d) => cb(d)),
-    onDownloadUpdated: (cb) => ipcRenderer.on('download-updated', (e, d) => cb(d)),
-    onResourceUpdate: (cb) => ipcRenderer.on('resource-update', (e, d) => cb(d)),
-    onFindResult: (cb) => ipcRenderer.on('found-in-page', (e, d) => cb(d))
+    // Events - return cleanup functions for React useEffect
+    onTabCreated: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('tab-created', handler);
+        return () => ipcRenderer.removeListener('tab-created', handler);
+    },
+    onTabClosed: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('tab-closed', handler);
+        return () => ipcRenderer.removeListener('tab-closed', handler);
+    },
+    onTabSwitched: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('tab-switched', handler);
+        return () => ipcRenderer.removeListener('tab-switched', handler);
+    },
+    onNavigationUpdate: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('navigation-update', handler);
+        return () => ipcRenderer.removeListener('navigation-update', handler);
+    },
+    onTitleUpdate: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('title-update', handler);
+        return () => ipcRenderer.removeListener('title-update', handler);
+    },
+    onDownloadStarted: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('download-started', handler);
+        return () => ipcRenderer.removeListener('download-started', handler);
+    },
+    onDownloadUpdated: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('download-updated', handler);
+        return () => ipcRenderer.removeListener('download-updated', handler);
+    },
+    onResourceUpdate: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('resource-update', handler);
+        return () => ipcRenderer.removeListener('resource-update', handler);
+    },
+    onFindResult: (cb) => {
+        const handler = (e, d) => cb(d);
+        ipcRenderer.on('found-in-page', handler);
+        return () => ipcRenderer.removeListener('found-in-page', handler);
+    }
 });
 
 console.log('✅ Preload: Bridge established');
@@ -600,6 +643,20 @@ console.log('✅ Preload: Bridge established');
 
   // Dev tools in separate window for debugging
   mainWindow.webContents.openDevTools({ mode: "detach" });
+
+  // Handle window resize - ensure BrowserView stays below chrome
+  mainWindow.on('resize', () => {
+    if (activeTabId && tabs.has(activeTabId)) {
+      const bounds = mainWindow.getContentBounds();
+      const chromeHeight = 100;
+      tabs.get(activeTabId).setBounds({
+        x: 0,
+        y: chromeHeight,
+        width: bounds.width,
+        height: Math.max(100, bounds.height - chromeHeight),
+      });
+    }
+  });
 }
 
 async function createTab(url = "https://www.google.com") {
@@ -623,12 +680,17 @@ async function createTab(url = "https://www.google.com") {
   // Minimal chrome: Tab bar (44px) + Navigation bar (56px) = 100px total
   // Keep it simple - BrowserView takes all space below chrome
   const chromeHeight = 100;
+  
+  console.log(`📐 Window bounds: ${bounds.width}x${bounds.height}, Chrome height: ${chromeHeight}px`);
+  
   tab.setBounds({
     x: 0,
     y: chromeHeight,
     width: bounds.width,
     height: Math.max(100, bounds.height - chromeHeight),
   });
+  
+  console.log(`📐 BrowserView bounds set: x=0, y=${chromeHeight}, w=${bounds.width}, h=${Math.max(100, bounds.height - chromeHeight)}`);
 
   // FIX: Set COOP/COEP headers for SharedArrayBuffer support (Google Earth)
   tab.webContents.session.webRequest.onBeforeSendHeaders((details, callback) => {
