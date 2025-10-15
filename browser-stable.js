@@ -654,13 +654,12 @@ async function createTab(url = "https://www.google.com") {
     callback({ responseHeaders: headers });
   });
 
-  await tab.webContents.loadURL(url);
-
+  // Add tab to map BEFORE loading URL (non-blocking)
   tabs.set(tabId, tab);
   activeTabId = tabId;
   mainWindow.setBrowserView(tab);
 
-  // Track events
+  // Track events BEFORE loading URL
   tab.webContents.on("did-navigate", (event, newUrl) => {
     mainWindow.webContents.send("navigation-update", { tabId, url: newUrl });
 
@@ -694,15 +693,32 @@ async function createTab(url = "https://www.google.com") {
 
   console.log(`📑 Tab created: ${url}`);
 
-  // Return full Tab object to match get-tabs format
+  // Load URL asynchronously (non-blocking - fire and forget)
+  // Event handlers above will notify UI of navigation/title updates
+  (async () => {
+    try {
+      await tab.webContents.loadURL(url);
+      console.log(`✅ Successfully loaded: ${url}`);
+    } catch (error) {
+      console.error(`❌ Failed to load ${url}:`, error.message);
+      // Notify UI of error
+      mainWindow.webContents.send("navigation-update", { 
+        tabId, 
+        url: 'about:blank',
+        error: error.message 
+      });
+    }
+  })();
+
+  // Return full Tab object to match get-tabs format (immediately, don't wait for load)
   return {
     id: tabId,
     url: url,
-    title: tab.webContents.getTitle() || url,
+    title: 'Loading...',
     favicon: '',
-    isLoading: tab.webContents.isLoading(),
-    canGoBack: tab.webContents.canGoBack(),
-    canGoForward: tab.webContents.canGoForward(),
+    isLoading: true,
+    canGoBack: false,
+    canGoForward: false,
     active: true
   };
 }

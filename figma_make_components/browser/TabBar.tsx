@@ -6,15 +6,15 @@ import { TabPreview } from './TabPreview';
 
 interface TabBarProps {
   tabs: Tab[];
-  onTabClick: (tabId: number) => void;
-  onTabClose: (tabId: number) => void;
+  onTabClick: (tabId: string | number) => void;
+  onTabClose: (tabId: string | number) => void;
   onNewTab: () => void;
   onSettingsClick: () => void;
-  onPinTab: (tabId: number) => void;
-  onMuteTab: (tabId: number) => void;
-  onDuplicateTab: (tabId: number) => void;
-  onCloseOtherTabs: (tabId: number) => void;
-  onRefreshTab: (tabId: number) => void;
+  onPinTab: (tabId: string | number) => void;
+  onMuteTab: (tabId: string | number) => void;
+  onDuplicateTab: (tabId: string | number) => void;
+  onCloseOtherTabs: (tabId: string | number) => void;
+  onRefreshTab: (tabId: string | number) => void;
   onMinimize?: () => void;
   onMaximize?: () => void;
   onClose?: () => void;
@@ -35,18 +35,18 @@ export function TabBar({
   onMaximize,
   onClose,
 }: TabBarProps) {
-  const [rippleTab, setRippleTab] = useState<number | null>(null);
-  const [contextMenu, setContextMenu] = useState<{ tabId: number; x: number; y: number } | null>(null);
+  const [rippleTab, setRippleTab] = useState<string | number | null>(null);
+  const [contextMenu, setContextMenu] = useState<{ tabId: string | number; x: number; y: number } | null>(null);
   const [hoverTab, setHoverTab] = useState<{ tab: Tab; x: number; y: number } | null>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout>();
 
-  const handleTabClick = (tabId: number) => {
+  const handleTabClick = (tabId: string | number) => {
     setRippleTab(tabId);
     setTimeout(() => setRippleTab(null), 600);
     onTabClick(tabId);
   };
 
-  const handleContextMenu = (e: React.MouseEvent, tabId: number) => {
+  const handleContextMenu = (e: React.MouseEvent, tabId: string | number) => {
     e.preventDefault();
     setContextMenu({ tabId, x: e.clientX, y: e.clientY });
   };

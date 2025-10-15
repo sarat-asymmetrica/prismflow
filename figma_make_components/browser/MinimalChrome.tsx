@@ -35,6 +35,77 @@ export function MinimalChrome() {
     loadTabs();
   }, []);
 
+  // Event listeners for tab updates
+  useEffect(() => {
+    // Listen for navigation updates
+    const unsubNav = electronAPI.onNavigationUpdate?.((data: { tabId: string; url: string }) => {
+      console.log('🔄 Navigation update:', data);
+      setTabs(prevTabs => prevTabs.map(tab => 
+        tab.id === data.tabId 
+          ? { ...tab, url: data.url }
+          : tab
+      ));
+      
+      // Update current URL if it's the active tab
+      const activeTab = tabs.find(t => t.active);
+      if (activeTab && activeTab.id === data.tabId) {
+        setCurrentUrl(data.url);
+        setIsSecure(data.url.startsWith('https://'));
+      }
+    });
+
+    // Listen for title updates
+    const unsubTitle = electronAPI.onTitleUpdate?.((data: { tabId: string; title: string }) => {
+      console.log('📝 Title update:', data);
+      setTabs(prevTabs => prevTabs.map(tab => 
+        tab.id === data.tabId 
+          ? { ...tab, title: data.title }
+          : tab
+      ));
+    });
+
+    // Listen for tab created events
+    const unsubCreate = electronAPI.onTabCreated?.((tab: Tab) => {
+      console.log('🆕 Tab created event:', tab);
+      setTabs(prevTabs => {
+        // Check if tab already exists (avoid duplicates)
+        if (prevTabs.some(t => t.id === tab.id)) {
+          return prevTabs;
+        }
+        return [...prevTabs, tab];
+      });
+    });
+
+    // Listen for tab closed events
+    const unsubClose = electronAPI.onTabClosed?.((data: { tabId: string }) => {
+      console.log('❌ Tab closed event:', data);
+      setTabs(prevTabs => prevTabs.filter(t => t.id !== data.tabId));
+    });
+
+    // Listen for tab switched events
+    const unsubSwitch = electronAPI.onTabSwitched?.((data: { tabId: string }) => {
+      console.log('🔀 Tab switched event:', data);
+      setTabs(prevTabs => prevTabs.map(tab => ({
+        ...tab,
+        active: tab.id === data.tabId
+      })));
+      
+      const switchedTab = tabs.find(t => t.id === data.tabId);
+      if (switchedTab) {
+        setCurrentUrl(switchedTab.url);
+        setIsSecure(switchedTab.url.startsWith('https://'));
+      }
+    });
+
+    return () => {
+      unsubNav?.();
+      unsubTitle?.();
+      unsubCreate?.();
+      unsubClose?.();
+      unsubSwitch?.();
+    };
+  }, [tabs]);
+
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -85,12 +156,12 @@ export function MinimalChrome() {
     setTabs(prevTabs => [...prevTabs, newTab]);
   };
 
-  const handleCloseTab = async (tabId: number) => {
+  const handleCloseTab = async (tabId: string | number) => {
     await electronAPI.closeTab(tabId);
     setTabs(prevTabs => prevTabs.filter(t => t.id !== tabId));
   };
 
-  const handleSwitchTab = async (tabId: number) => {
+  const handleSwitchTab = async (tabId: string | number) => {
     await electronAPI.switchTab(tabId);
     const updatedTabs = tabs.map(t => ({
       ...t,
@@ -102,23 +173,23 @@ export function MinimalChrome() {
   const handleNavigate = async (url: string) => {
     const activeTab = tabs.find(t => t.active);
     if (activeTab) {
-      await electronAPI.updateTab(activeTab.id, url);
+      await electronAPI.navigate(url);
       setCurrentUrl(url);
       setIsSecure(url.startsWith('https://'));
     }
   };
 
-  const handlePinTab = async (tabId: number) => {
+  const handlePinTab = async (tabId: string | number) => {
     // TODO: Implement pin logic
     console.log('Pin tab:', tabId);
   };
 
-  const handleMuteTab = async (tabId: number) => {
+  const handleMuteTab = async (tabId: string | number) => {
     // TODO: Implement mute logic
     console.log('Mute tab:', tabId);
   };
 
-  const handleDuplicateTab = async (tabId: number) => {
+  const handleDuplicateTab = async (tabId: string | number) => {
     const tab = tabs.find(t => t.id === tabId);
     if (tab) {
       const newTab = await electronAPI.createTab(tab.url);
@@ -126,7 +197,7 @@ export function MinimalChrome() {
     }
   };
 
-  const handleCloseOtherTabs = async (tabId: number) => {
+  const handleCloseOtherTabs = async (tabId: string | number) => {
     const otherTabs = tabs.filter(t => t.id !== tabId);
     for (const tab of otherTabs) {
       await electronAPI.closeTab(tab.id);
@@ -134,7 +205,7 @@ export function MinimalChrome() {
     setTabs(tabs.filter(t => t.id === tabId));
   };
 
-  const handleRefreshTab = async (tabId: number) => {
+  const handleRefreshTab = async (tabId: string | number) => {
     await electronAPI.reloadTab(tabId);
   };
 
@@ -169,9 +240,9 @@ export function MinimalChrome() {
         isSecure={isSecure}
         isBookmarked={false}
         onNavigate={handleNavigate}
-        onBack={() => electronAPI.goBack(tabs.find(t => t.active)?.id || 0)}
-        onForward={() => electronAPI.goForward(tabs.find(t => t.active)?.id || 0)}
-        onRefresh={() => electronAPI.reloadTab(tabs.find(t => t.active)?.id || 0)}
+        onBack={() => electronAPI.goBack()}
+        onForward={() => electronAPI.goForward()}
+        onRefresh={() => electronAPI.reload()}
         onToggleBookmark={() => electronAPI.toggleOverlay('bookmarks')}
         onMenuClick={() => electronAPI.toggleOverlay('command-palette')}
         onToggleReadingMode={() => console.log('Reading mode - TODO: Implement')}

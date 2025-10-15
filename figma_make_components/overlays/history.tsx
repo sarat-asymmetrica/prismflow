@@ -19,10 +19,7 @@ function HistoryOverlay() {
   };
 
   const handleNavigate = async (url: string) => {
-    const activeTab = await window.electronAPI?.getActiveTab();
-    if (activeTab) {
-      await window.electronAPI?.updateTab(activeTab.id, url);
-    }
+    await window.electronAPI?.navigate(url);
     // Close overlay after navigation
     handleClose();
   };

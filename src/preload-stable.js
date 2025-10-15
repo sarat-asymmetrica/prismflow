@@ -39,8 +39,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     findInPage: (text, options) => ipcRenderer.invoke('find-in-page', text, options),
     stopFindInPage: (action) => ipcRenderer.invoke('stop-find-in-page', action),
     
-    // Downloads
-    getDownloads: () => ipcRenderer.invoke('get-downloads'),
+    // Download actions (getDownloads already defined above in Downloads section)
     cancelDownload: (id) => ipcRenderer.invoke('cancel-download', id),
     pauseDownload: (id) => ipcRenderer.invoke('pause-download', id),
     resumeDownload: (id) => ipcRenderer.invoke('resume-download', id),

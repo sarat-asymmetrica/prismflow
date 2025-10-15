@@ -2,7 +2,7 @@
 // Replaces mock-electron-api.ts with actual Electron IPC communication
 
 export interface Tab {
-  id: number;
+  id: string | number; // Backend uses string ("tab-123"), but keeping number for compatibility
   url: string;
   title: string;
   favicon: string;
@@ -67,17 +67,20 @@ export interface FindResult {
 }
 
 export interface ElectronAPI {
+  // Navigation
+  navigate: (url: string) => Promise<{ success: boolean; url: string }>;
+  goBack: () => Promise<void>;
+  goForward: () => Promise<void>;
+  reload: () => Promise<void>;
+  
   // Tab Management
   createTab: (url?: string) => Promise<Tab>;
-  closeTab: (tabId: number) => Promise<void>;
-  switchTab: (tabId: number) => Promise<void>;
+  closeTab: (tabId: string | number) => Promise<void>;
+  switchTab: (tabId: string | number) => Promise<void>;
   getTabs: () => Promise<Tab[]>;
   getActiveTab: () => Promise<Tab | null>;
-  updateTab: (tabId: number, url: string) => Promise<void>;
-  reloadTab: (tabId: number) => Promise<void>;
-  goBack: (tabId: number) => Promise<void>;
-  goForward: (tabId: number) => Promise<void>;
-  stopTab: (tabId: number) => Promise<void>;
+  reloadTab: (tabId: string | number) => Promise<void>;
+  stopTab: (tabId: string | number) => Promise<void>;
   
   // Bookmarks
   getBookmarks: () => Promise<Bookmark[]>;
@@ -121,14 +124,16 @@ export interface ElectronAPI {
   isOverlayVisible: (overlayType: string) => Promise<{ visible: boolean }>;
   
   // Event Listeners
-  onTabCreated: (callback: (tab: Tab) => void) => () => void;
-  onTabClosed: (callback: (tabId: number) => void) => () => void;
-  onTabUpdated: (callback: (tab: Tab) => void) => () => void;
-  onTabSwitched: (callback: (tabId: number) => void) => () => void;
-  onDownloadStarted: (callback: (download: Download) => void) => () => void;
-  onDownloadProgress: (callback: (download: Download) => void) => () => void;
-  onDownloadCompleted: (callback: (download: Download) => void) => () => void;
-  onFindResult: (callback: (result: FindResult) => void) => () => void;
+  onTabCreated?: (callback: (tab: Tab) => void) => () => void;
+  onTabClosed?: (callback: (data: { tabId: string }) => void) => () => void;
+  onTabUpdated?: (callback: (tab: Tab) => void) => () => void;
+  onTabSwitched?: (callback: (data: { tabId: string }) => void) => () => void;
+  onNavigationUpdate?: (callback: (data: { tabId: string; url: string }) => void) => () => void;
+  onTitleUpdate?: (callback: (data: { tabId: string; title: string }) => void) => () => void;
+  onDownloadStarted?: (callback: (download: Download) => void) => () => void;
+  onDownloadProgress?: (callback: (download: Download) => void) => () => void;
+  onDownloadCompleted?: (callback: (download: Download) => void) => () => void;
+  onFindResult?: (callback: (result: FindResult) => void) => () => void;
 }
 
 // Check if running in Electron
@@ -183,6 +188,21 @@ function createMockAPI(): ElectronAPI {
       mockTabs.push(tab);
       return tab;
     },
+    
+    // Navigation
+    navigate: async (url: string) => {
+      console.log('Mock: Navigate to', url);
+      const activeTab = mockTabs.find(t => t.active);
+      if (activeTab) {
+        activeTab.url = url;
+        activeTab.isLoading = true;
+      }
+      return { success: true, url };
+    },
+    goBack: async () => console.log('Mock: Go back'),
+    goForward: async () => console.log('Mock: Go forward'),
+    reload: async () => console.log('Mock: Reload'),
+    
     closeTab: async (tabId) => {
       const index = mockTabs.findIndex(t => t.id === tabId);
       if (index !== -1) mockTabs.splice(index, 1);
@@ -192,16 +212,7 @@ function createMockAPI(): ElectronAPI {
     },
     getTabs: async () => mockTabs,
     getActiveTab: async () => mockTabs[0] || null,
-    updateTab: async (tabId, url) => {
-      const tab = mockTabs.find(t => t.id === tabId);
-      if (tab) {
-        tab.url = url;
-        tab.isLoading = true;
-      }
-    },
     reloadTab: async (tabId) => console.log('Mock: Reload tab', tabId),
-    goBack: async (tabId) => console.log('Mock: Go back', tabId),
-    goForward: async (tabId) => console.log('Mock: Go forward', tabId),
     stopTab: async (tabId) => console.log('Mock: Stop tab', tabId),
     
     getBookmarks: async () => mockBookmarks,
