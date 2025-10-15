@@ -11,11 +11,26 @@ export function MinimalChrome() {
   const [isSecure, setIsSecure] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Load initial tabs
+  // Load initial tabs - create one if none exist
   useEffect(() => {
     const loadTabs = async () => {
-      const tabsList = await electronAPI.getTabs();
-      setTabs(tabsList);
+      try {
+        console.log('🔍 Loading tabs...');
+        const tabsList = await electronAPI.getTabs();
+        console.log('📋 Tabs list:', tabsList);
+        
+        if (tabsList.length === 0) {
+          // No tabs exist, create initial tab
+          console.log('🆕 Creating initial tab...');
+          const newTab = await electronAPI.createTab('https://www.google.com');
+          console.log('✅ Initial tab created:', newTab);
+          setTabs([newTab]);
+        } else {
+          setTabs(tabsList);
+        }
+      } catch (error) {
+        console.error('❌ Error loading tabs:', error);
+      }
     };
     loadTabs();
   }, []);
@@ -133,13 +148,13 @@ export function MinimalChrome() {
       
       {/* Minimal Chrome - 100px total */}
       <div className="fixed top-0 left-0 right-0 z-50">
-        {/* Tab Bar */}
-        <TabBar
+      {/* Tab Bar */}
+      <TabBar
         tabs={tabs}
         onTabClick={handleSwitchTab}
         onTabClose={handleCloseTab}
         onNewTab={handleCreateTab}
-        onSettingsClick={() => console.log('Settings - TODO: Create overlay')}
+        onSettingsClick={() => electronAPI.toggleOverlay('settings')}
         onPinTab={handlePinTab}
         onMuteTab={handleMuteTab}
         onDuplicateTab={handleDuplicateTab}
@@ -148,9 +163,7 @@ export function MinimalChrome() {
         onMinimize={() => electronAPI.minimizeWindow()}
         onMaximize={() => electronAPI.maximizeWindow()}
         onClose={() => electronAPI.closeWindow()}
-      />
-
-      {/* Navigation Bar */}
+      />      {/* Navigation Bar */}
       <NavigationBar
         currentUrl={currentUrl}
         isSecure={isSecure}
@@ -159,9 +172,9 @@ export function MinimalChrome() {
         onBack={() => electronAPI.goBack(tabs.find(t => t.active)?.id || 0)}
         onForward={() => electronAPI.goForward(tabs.find(t => t.active)?.id || 0)}
         onRefresh={() => electronAPI.reloadTab(tabs.find(t => t.active)?.id || 0)}
-        onToggleBookmark={() => console.log('Bookmark - TODO: Create overlay')}
-        onMenuClick={() => console.log('Menu - TODO: Create overlay')}
-        onToggleReadingMode={() => console.log('Reading mode - TODO: Create overlay')}
+        onToggleBookmark={() => electronAPI.toggleOverlay('bookmarks')}
+        onMenuClick={() => electronAPI.toggleOverlay('command-palette')}
+        onToggleReadingMode={() => console.log('Reading mode - TODO: Implement')}
         canGoBack={tabs.find(t => t.active)?.canGoBack || false}
         canGoForward={tabs.find(t => t.active)?.canGoForward || false}
         isLoading={tabs.find(t => t.active)?.isLoading || false}

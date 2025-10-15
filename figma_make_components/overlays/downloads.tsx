@@ -11,37 +11,20 @@ import '../globals.css';
 import { DownloadsPanel } from '../browser/DownloadsPanel';
 import { Download } from '../electron-api';
 
-interface DownloadItem {
-  filename: string;
-  url: string;
-  status: 'downloading' | 'completed' | 'failed';
-  progress: number;
-  size: string;
-}
-
-// Convert Download to DownloadItem
-function convertDownload(download: Download): DownloadItem {
-  const progress = download.totalBytes > 0 
-    ? (download.receivedBytes / download.totalBytes) * 100 
-    : 0;
-    
-  const status = download.state === 'completed' ? 'completed' 
-    : download.state === 'progressing' ? 'downloading'
-    : 'failed';
-    
-  const size = `${(download.totalBytes / 1024 / 1024).toFixed(2)} MB`;
-  
-  return {
-    filename: download.filename,
-    url: download.url,
-    status,
-    progress,
-    size
-  };
-}
-
 function DownloadsOverlay() {
-  const [downloads, setDownloads] = useState<DownloadItem[]>([]);
+  const [downloads, setDownloads] = useState<Download[]>([]);
+
+  const handleClose = () => {
+    window.electronAPI?.hideOverlay('downloads');
+  };
+
+  const handleShowInFolder = async (id: string) => {
+    try {
+      await window.electronAPI?.showInFolder(id);
+    } catch (error) {
+      console.error('Failed to show in folder:', error);
+    }
+  };
 
   useEffect(() => {
     // Load downloads from backend
@@ -49,8 +32,7 @@ function DownloadsOverlay() {
       try {
         const data = await window.electronAPI?.getDownloads();
         if (data) {
-          const converted = data.map(convertDownload);
-          setDownloads(converted);
+          setDownloads(data);
         }
       } catch (error) {
         console.error('Failed to load downloads:', error);
@@ -60,26 +42,35 @@ function DownloadsOverlay() {
 
     // Listen for download updates
     const interval = setInterval(loadDownloads, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
-  const handleClose = () => {
-    window.close();
-  };
+    // Handle Escape key
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <div className="h-full w-screen bg-transparent dark overflow-hidden">
       {/* Glass morphism background */}
       <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-white/5 to-transparent backdrop-blur-xl" />
       
-      {/* Border glow */}
-      <div className="absolute inset-0 border-t border-white/20 shadow-2xl" />
+      {/* Border glow - top edge */}
+      <div className="absolute inset-0 border-t-2 border-white/30 shadow-2xl" />
       
-      {/* Content */}
-      <div className="relative z-10 h-full p-4">
+      {/* Content - Full height, no padding */}
+      <div className="relative z-10 h-full">
         <DownloadsPanel 
           downloads={downloads}
           onClose={handleClose}
+          onShowInFolder={handleShowInFolder}
         />
       </div>
     </div>

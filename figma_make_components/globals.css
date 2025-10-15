@@ -209,6 +209,7 @@ html {
 /* Minimalist Grey Glass - High Contrast */
 .glass-surface {
   background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
@@ -216,6 +217,7 @@ html {
 
 .dark .glass-surface {
   background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
@@ -223,6 +225,7 @@ html {
 
 .glass-surface-bright {
   background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0 6px 28px rgba(0, 0, 0, 0.12);
@@ -230,6 +233,7 @@ html {
 
 .dark .glass-surface-bright {
   background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 6px 28px rgba(0, 0, 0, 0.4);
@@ -237,24 +241,28 @@ html {
 
 .glass-surface-subtle {
   background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .dark .glass-surface-subtle {
   background: rgba(255, 255, 255, 0.02);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .glass-surface-dark {
   background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .dark .glass-surface-dark {
   background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }

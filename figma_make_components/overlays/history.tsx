@@ -14,6 +14,19 @@ import { HistoryEntry } from '../electron-api';
 function HistoryOverlay() {
   const [history, setHistory] = useState<HistoryEntry[]>([]);
 
+  const handleClose = () => {
+    window.electronAPI?.hideOverlay('history');
+  };
+
+  const handleNavigate = async (url: string) => {
+    const activeTab = await window.electronAPI?.getActiveTab();
+    if (activeTab) {
+      await window.electronAPI?.updateTab(activeTab.id, url);
+    }
+    // Close overlay after navigation
+    handleClose();
+  };
+
   useEffect(() => {
     // Load history from backend
     const loadHistory = async () => {
@@ -25,31 +38,27 @@ function HistoryOverlay() {
       }
     };
     loadHistory();
+
+    // Handle Escape key
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
-
-  const handleNavigate = async (url: string) => {
-    const activeTab = await window.electronAPI?.getActiveTab();
-    if (activeTab) {
-      await window.electronAPI?.updateTab(activeTab.id, url);
-    }
-    // Close overlay after navigation
-    window.close();
-  };
-
-  const handleClose = () => {
-    window.close();
-  };
 
   return (
     <div className="h-screen w-full bg-transparent dark overflow-hidden">
       {/* Glass morphism background */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl" />
       
-      {/* Border glow */}
-      <div className="absolute inset-0 border-r border-white/20 shadow-2xl" />
+      {/* Border glow - right edge */}
+      <div className="absolute inset-0 border-r-2 border-white/30 shadow-2xl" />
       
-      {/* Content */}
-      <div className="relative z-10 h-full p-4">
+      {/* Content - Full height, no padding */}
+      <div className="relative z-10 h-full">
         <HistoryPanel 
           history={history}
           onNavigate={handleNavigate}

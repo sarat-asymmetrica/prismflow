@@ -482,6 +482,9 @@ console.log('✅ Preload: Bridge established');
       nodeIntegration: false,
       contextIsolation: true,
       preload: preloadPath,
+      sandbox: false, // Need access to native modules
+      webSecurity: true, // Enable web security
+      allowRunningInsecureContent: false, // Block mixed content
     },
   });
 
@@ -608,9 +611,11 @@ async function createTab(url = "https://www.google.com") {
       nodeIntegration: false,
       contextIsolation: true,
       webSecurity: true,
+      sandbox: true, // Enable sandbox for web content
       // Enable SharedArrayBuffer for WebGL/WebAssembly (Google Earth, etc.)
       enableWebSQL: false,
       experimentalFeatures: true,
+      allowRunningInsecureContent: false, // Block mixed content
     },
   });
 
@@ -689,7 +694,17 @@ async function createTab(url = "https://www.google.com") {
 
   console.log(`📑 Tab created: ${url}`);
 
-  return { success: true, tabId, url };
+  // Return full Tab object to match get-tabs format
+  return {
+    id: tabId,
+    url: url,
+    title: tab.webContents.getTitle() || url,
+    favicon: '',
+    isLoading: tab.webContents.isLoading(),
+    canGoBack: tab.webContents.canGoBack(),
+    canGoForward: tab.webContents.canGoForward(),
+    active: true
+  };
 }
 
 function switchTab(tabId) {

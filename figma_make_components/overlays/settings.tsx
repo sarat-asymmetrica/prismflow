@@ -12,7 +12,18 @@ import { Settings as SettingsIcon, X, Home, Search, Moon, Shield, Download as Do
 import { Settings } from '../electron-api';
 
 function SettingsOverlay() {
-  const [settings, setSettings] = useState<Settings | null>(null);
+  const [settings, setSettings] = useState<Settings>({
+    homepage: 'https://www.google.com',
+    searchEngine: 'google',
+    darkMode: true,
+    autoSaveSession: true,
+    blockPopups: true,
+    enableJavaScript: true,
+    enableImages: true,
+    enableNotifications: true,
+    clearOnExit: false,
+    downloadPath: ''
+  });
 
   useEffect(() => {
     // Load settings from backend
@@ -25,11 +36,18 @@ function SettingsOverlay() {
       }
     };
     loadSettings();
+
+    // Handle Escape key
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   const handleChange = async (key: keyof Settings, value: any) => {
-    if (!settings) return;
-    
     const updated = { ...settings, [key]: value };
     setSettings(updated);
     
@@ -41,24 +59,16 @@ function SettingsOverlay() {
   };
 
   const handleClose = () => {
-    window.close();
+    window.electronAPI?.hideOverlay('settings');
   };
-
-  if (!settings) {
-    return (
-      <div className="h-screen w-screen bg-transparent dark overflow-hidden flex items-center justify-center">
-        <div className="text-white">Loading settings...</div>
-      </div>
-    );
-  }
 
   return (
     <div className="h-screen w-screen bg-transparent dark overflow-hidden flex items-center justify-center">
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      {/* Backdrop - click to close */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={handleClose} />
       
       {/* Modal Card */}
-      <div className="relative z-10 w-full h-full max-w-4xl max-h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+      <div className="relative z-10 w-full h-full max-w-4xl max-h-[600px] rounded-2xl overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
         {/* Glass morphism background */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl" />
         
@@ -76,6 +86,8 @@ function SettingsOverlay() {
             <button
               onClick={handleClose}
               className="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors text-gray-300"
+              aria-label="Close settings"
+              title="Close (Esc)"
             >
               <X className="w-5 h-5" />
             </button>
@@ -101,6 +113,8 @@ function SettingsOverlay() {
                     value={settings.homepage}
                     onChange={(e) => handleChange('homepage', e.target.value)}
                     className="px-3 py-1.5 bg-white/10 border border-white/20 rounded text-white text-sm outline-none focus:border-blue-400 w-64"
+                    aria-label="Homepage URL"
+                    placeholder="https://www.google.com"
                   />
                 </div>
 
@@ -117,6 +131,8 @@ function SettingsOverlay() {
                     value={settings.searchEngine}
                     onChange={(e) => handleChange('searchEngine', e.target.value)}
                     className="px-3 py-1.5 bg-white/10 border border-white/20 rounded text-white text-sm outline-none focus:border-blue-400 w-64"
+                    aria-label="Search Engine URL"
+                    placeholder="https://www.google.com/search?q="
                   />
                 </div>
               </div>
@@ -137,6 +153,8 @@ function SettingsOverlay() {
                 <button
                   onClick={() => handleChange('darkMode', !settings.darkMode)}
                   className={`relative w-12 h-6 rounded-full transition-colors ${settings.darkMode ? 'bg-blue-500' : 'bg-gray-600'}`}
+                  aria-label={`Dark mode ${settings.darkMode ? 'enabled' : 'disabled'}`}
+                  title={`Toggle dark mode (currently ${settings.darkMode ? 'on' : 'off'})`}
                 >
                   <div className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform ${settings.darkMode ? 'translate-x-6' : ''}`} />
                 </button>
@@ -159,6 +177,8 @@ function SettingsOverlay() {
                   <button
                     onClick={() => handleChange('blockPopups', !settings.blockPopups)}
                     className={`relative w-12 h-6 rounded-full transition-colors ${settings.blockPopups ? 'bg-blue-500' : 'bg-gray-600'}`}
+                    aria-label={`Block popups ${settings.blockPopups ? 'enabled' : 'disabled'}`}
+                    title={`Toggle popup blocking (currently ${settings.blockPopups ? 'on' : 'off'})`}
                   >
                     <div className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform ${settings.blockPopups ? 'translate-x-6' : ''}`} />
                   </button>
@@ -175,6 +195,8 @@ function SettingsOverlay() {
                   <button
                     onClick={() => handleChange('clearOnExit', !settings.clearOnExit)}
                     className={`relative w-12 h-6 rounded-full transition-colors ${settings.clearOnExit ? 'bg-blue-500' : 'bg-gray-600'}`}
+                    aria-label={`Clear data on exit ${settings.clearOnExit ? 'enabled' : 'disabled'}`}
+                    title={`Toggle clear on exit (currently ${settings.clearOnExit ? 'on' : 'off'})`}
                   >
                     <div className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform ${settings.clearOnExit ? 'translate-x-6' : ''}`} />
                   </button>
@@ -199,6 +221,8 @@ function SettingsOverlay() {
                   value={settings.downloadPath || 'Default'}
                   onChange={(e) => handleChange('downloadPath', e.target.value)}
                   className="px-3 py-1.5 bg-white/10 border border-white/20 rounded text-white text-sm outline-none focus:border-blue-400 w-64"
+                  aria-label="Download Location"
+                  placeholder="C:\Users\Downloads"
                 />
               </div>
             </section>

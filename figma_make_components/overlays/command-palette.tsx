@@ -8,7 +8,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import '../globals.css';
-import { Search, Command, Zap } from 'lucide-react';
+import { Search, Command, Zap, X } from 'lucide-react';
 
 interface Command {
   id: string;
@@ -22,6 +22,10 @@ interface Command {
 function CommandPaletteOverlay() {
   const [search, setSearch] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleClose = () => {
+    window.electronAPI?.hideOverlay('command-palette');
+  };
 
   const commands: Command[] = [
     {
@@ -73,7 +77,10 @@ function CommandPaletteOverlay() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowDown') {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        handleClose();
+      } else if (e.key === 'ArrowDown') {
         e.preventDefault();
         setSelectedIndex(prev => (prev + 1) % filteredCommands.length);
       } else if (e.key === 'ArrowUp') {
@@ -90,12 +97,12 @@ function CommandPaletteOverlay() {
   }, [filteredCommands, selectedIndex]);
 
   return (
-    <div className="h-screen w-screen bg-transparent dark overflow-hidden flex items-start justify-center pt-16">
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
+    <div className="h-screen w-screen bg-transparent dark overflow-hidden flex items-start justify-center pt-4">
+      {/* Backdrop - click to close */}
+      <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" onClick={handleClose} />
       
       {/* Command Palette Card */}
-      <div className="relative z-10 w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl">
+      <div className="relative z-10 w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
         {/* Glass morphism background */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl" />
         
@@ -113,8 +120,17 @@ function CommandPaletteOverlay() {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Type a command or search..."
               className="flex-1 bg-transparent border-none outline-none text-white placeholder-gray-400 text-lg"
+              aria-label="Search commands"
               autoFocus
             />
+            <button
+              onClick={handleClose}
+              className="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors text-gray-400 hover:text-white"
+              aria-label="Close command palette"
+              title="Close (Esc)"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
 
           {/* Command List */}
